@@ -1,0 +1,3375 @@
+{
+  "data": [
+    {
+      "takeAwayOrderId": 13653289,
+      "status": 10, //状态
+      "oldStatus": null,
+      "customerInfo": {
+        "name": "Wang",
+        "title": 0,
+        "email": null,
+        "phone": "95211229",
+        "phoneAreaCode": 1,
+        "tmUserId": null,
+        "regionName": null
+      },
+      "pickupTime": "2024-11-01T05:21:00Z", //取餐时间
+      "startDeliverytime": null,
+      "createTime": "2024-11-01T04:51:45Z", 
+      "paymentTime": "2024-11-01T04:51:56Z",//支付时间
+      "completedTime": "2024-11-01T07:22:00Z", //完成时间
+      "remark": "",
+      "cancelDetail": null,
+      "takeAwayOrderItems": [
+        {
+          "itemId": 503,
+          "syncId": 9999000097123,
+          "takeAwayOrderItemId": 27089762,
+          "takeAwayOrderId": 13653289,
+          "name": "10-C1牛肉套餐",
+          "desc": "",
+          "names": {
+            "tc": "10-C1牛肉套餐",
+            "en": "10-C1牛肉套餐",
+            "sc": "10-C1牛肉套餐"
+          },
+          "descs": {
+            "tc": "",
+            "en": "",
+            "sc": ""
+          },
+          "photoName": "855735",
+          "photoUrl": null,
+          "unitPrice": 68,
+          "categoryId": 28,
+          "isRecommended": false,
+          "referenceId": "ORI-503",
+          "remainingStock": 0,
+          "createTime": "2024-11-01T12:51:45Z",
+          "modifyTime": null,
+          "publishTime": "2024-11-01T00:00:00Z",
+          "expireTime": "2024-11-01T23:59:59Z",
+          "comboItems": [
+            {
+              "takeAwayOrderComboItemId": 38694771,
+              "comboItemId": 2249,
+              "itemId": 503,
+              "syncId": 9999000097123,
+              "takeAwayOrderId": 13653289,
+              "takeAwayOrderComboSetId": 34128607,
+              "name": "不需要餐具",
+              "desc": "",
+              "names": {
+                "tc": "不需要餐具",
+                "en": "不需要餐具",
+                "sc": "不需要餐具"
+              },
+              "descs": {
+                "tc": "",
+                "en": "",
+                "sc": ""
+              },
+              "photoName": null,
+              "photoUrl": null,
+              "maxQuantity": 1,
+              "unitPrice": 0,
+              "referenceId": "ORI-243",
+              "createTime": "2024-11-01T12:51:45Z",
+              "modifyTime": null,
+              "publishTime": "2024-04-25T00:00:00Z",
+              "expireTime": null,
+              "quantity": 1,
+              "remainingStock": 0,
+              "modifierItems": []
+            },
+            {
+              "takeAwayOrderComboItemId": 38694772,
+              "comboItemId": 2530,
+              "itemId": 503,
+              "syncId": 9999000097123,
+              "takeAwayOrderId": 13653289,
+              "takeAwayOrderComboSetId": 34128608,
+              "name": "H黑椒穀飼牛仔粒",
+              "desc": "",
+              "names": {
+                "tc": "H黑椒穀飼牛仔粒",
+                "en": "H黑椒穀飼牛仔粒",
+                "sc": "H黑椒穀飼牛仔粒"
+              },
+              "descs": {
+                "tc": "",
+                "en": "",
+                "sc": ""
+              },
+              "photoName": "845555",
+              "photoUrl": null,
+              "maxQuantity": 1,
+              "unitPrice": 0,
+              "referenceId": "ORI-409",
+              "createTime": "2024-11-01T12:51:45Z",
+              "modifyTime": null,
+              "publishTime": "2024-11-01T00:00:00Z",
+              "expireTime": "2024-11-01T23:59:59Z",
+              "quantity": 1,
+              "remainingStock": 0,
+              "modifierItems": [
+                {
+                  "modifierItemId": 16,
+                  "name": "不需要餐具",
+                  "names": {
+                    "tc": "不需要餐具",
+                    "en": "不需要餐具",
+                    "sc": "不需要餐具"
+                  },
+                  "unitPrice": 0
+                }
+              ]
+            },
+            {
+              "takeAwayOrderComboItemId": 38694773,
+              "comboItemId": 2531,
+              "itemId": 503,
+              "syncId": 9999000097123,
+              "takeAwayOrderId": 13653289,
+              "takeAwayOrderComboSetId": 34128609,
+              "name": "H日式茶碗蒸",
+              "desc": "",
+              "names": {
+                "tc": "H日式茶碗蒸",
+                "en": "H日式茶碗蒸",
+                "sc": "H日式茶碗蒸"
+              },
+              "descs": {
+                "tc": "",
+                "en": "",
+                "sc": ""
+              },
+              "photoName": "847440",
+              "photoUrl": null,
+              "maxQuantity": 1,
+              "unitPrice": 0,
+              "referenceId": "ORI-484",
+              "createTime": "2024-11-01T12:51:45Z",
+              "modifyTime": null,
+              "publishTime": "2024-11-01T00:00:00Z",
+              "expireTime": "2024-11-01T23:59:59Z",
+              "quantity": 1,
+              "remainingStock": 0,
+              "modifierItems": [
+                {
+                  "modifierItemId": 16,
+                  "name": "不需要餐具",
+                  "names": {
+                    "tc": "不需要餐具",
+                    "en": "不需要餐具",
+                    "sc": "不需要餐具"
+                  },
+                  "unitPrice": 0
+                }
+              ]
+            },
+            {
+              "takeAwayOrderComboItemId": 38694774,
+              "comboItemId": 2535,
+              "itemId": 503,
+              "syncId": 9999000097123,
+              "takeAwayOrderId": 13653289,
+              "takeAwayOrderComboSetId": 34128610,
+              "name": "H金蒜西蘭花",
+              "desc": "",
+              "names": {
+                "tc": "H金蒜西蘭花",
+                "en": "H金蒜西蘭花",
+                "sc": "H金蒜西蘭花"
+              },
+              "descs": {
+                "tc": "",
+                "en": "",
+                "sc": ""
+              },
+              "photoName": "847442",
+              "photoUrl": null,
+              "maxQuantity": 1,
+              "unitPrice": 2,
+              "referenceId": "ORI-486",
+              "createTime": "2024-11-01T12:51:45Z",
+              "modifyTime": null,
+              "publishTime": "2024-11-01T00:00:00Z",
+              "expireTime": "2024-11-01T23:59:59Z",
+              "quantity": 1,
+              "remainingStock": 0,
+              "modifierItems": [
+                {
+                  "modifierItemId": 16,
+                  "name": "不需要餐具",
+                  "names": {
+                    "tc": "不需要餐具",
+                    "en": "不需要餐具",
+                    "sc": "不需要餐具"
+                  },
+                  "unitPrice": 0
+                }
+              ]
+            },
+            {
+              "takeAwayOrderComboItemId": 38694775,
+              "comboItemId": 2257,
+              "itemId": 503,
+              "syncId": 9999000097123,
+              "takeAwayOrderId": 13653289,
+              "takeAwayOrderComboSetId": 34128611,
+              "name": "H雜糧飯",
+              "desc": "",
+              "names": {
+                "tc": "H雜糧飯",
+                "en": "H雜糧飯",
+                "sc": "H雜糧飯"
+              },
+              "descs": {
+                "tc": "",
+                "en": "",
+                "sc": ""
+              },
+              "photoName": "845984",
+              "photoUrl": null,
+              "maxQuantity": 1,
+              "unitPrice": 0,
+              "referenceId": "ORI-400",
+              "createTime": "2024-11-01T12:51:45Z",
+              "modifyTime": null,
+              "publishTime": "2024-07-08T00:00:00Z",
+              "expireTime": null,
+              "quantity": 1,
+              "remainingStock": 0,
+              "modifierItems": [
+                {
+                  "modifierItemId": 16,
+                  "name": "不需要餐具",
+                  "names": {
+                    "tc": "不需要餐具",
+                    "en": "不需要餐具",
+                    "sc": "不需要餐具"
+                  },
+                  "unitPrice": 0
+                }
+              ]
+            },
+            {
+              "takeAwayOrderComboItemId": 38694776,
+              "comboItemId": 2266,
+              "itemId": 503,
+              "syncId": 9999000097123,
+              "takeAwayOrderId": 13653289,
+              "takeAwayOrderComboSetId": 34128612,
+              "name": "茉莉茶咖（大杯）",
+              "desc": "",
+              "names": {
+                "tc": "茉莉茶咖（大杯）",
+                "en": "茉莉茶咖（大杯）",
+                "sc": "茉莉茶咖（大杯）"
+              },
+              "descs": {
+                "tc": "",
+                "en": "",
+                "sc": ""
+              },
+              "photoName": null,
+              "photoUrl": null,
+              "maxQuantity": 1,
+              "unitPrice": 14,
+              "referenceId": "ORI-441",
+              "createTime": "2024-11-01T12:51:45Z",
+              "modifyTime": null,
+              "publishTime": "2024-07-15T00:00:00Z",
+              "expireTime": null,
+              "quantity": 1,
+              "remainingStock": 0,
+              "modifierItems": [
+                {
+                  "modifierItemId": 5,
+                  "name": "熱",
+                  "names": {
+                    "tc": "熱",
+                    "en": "熱",
+                    "sc": "熱"
+                  },
+                  "unitPrice": 0
+                },
+                {
+                  "modifierItemId": 11,
+                  "name": "無糖",
+                  "names": {
+                    "tc": "無糖",
+                    "en": "無糖",
+                    "sc": "無糖"
+                  },
+                  "unitPrice": 0
+                }
+              ]
+            }
+          ],
+          "quantity": 1,
+          "price": 84,
+          "modifierItems": []
+        }
+      ],
+      "editStatus": 0,
+      "merchantFinalPrice": 84,
+      "orderRefId": "O2024110113780681861", //订单编号
+      "currency": "HKD",
+      "isRemarked": false,
+      "isRead": true,
+      "contactName": "Wang",
+      "contactPhone": "95211229",
+      "contactPhoneAreaCodeId": 1,
+      "totalDishesQty": 1,
+      "corpUserId": null,
+      "messageId": null,
+      "commissionCharge": 6.72,
+      "netTotalAmount": 77.28,
+      "isRequiredPacking": null,
+      "serviceType": 0,
+      "pickupNumber": "T0006",
+      "autoAcceptOrder": null,
+      "isDeliveryCodeOrder": false,
+      "isDeliveryOrder": false,
+      "orPoiId": 847979,
+      "poiName": "WeBite Space", //门店名称
+      "shopCode": null,
+      "districtName": "中環",
+      "restaurantAddress": "皇后大道中99號中環中心1樓3號舖",
+      "deliveryOrderType": "外賣自取",
+      "isUrgentOrder": null,
+      "isPartyFood": false
+    },
+    {
+      "takeAwayOrderId": 13653216,
+      "status": 10,
+      "oldStatus": null,
+      "customerInfo": {
+        "name": "Cheng",
+        "title": 0,
+        "email": null,
+        "phone": "93801913",
+        "phoneAreaCode": 1,
+        "tmUserId": null,
+        "regionName": null
+      },
+      "pickupTime": "2024-11-01T05:18:00Z",
+      "startDeliverytime": null,
+      "createTime": "2024-11-01T04:48:54Z",
+      "paymentTime": "2024-11-01T04:48:57Z",
+      "completedTime": "2024-11-01T07:19:05Z",
+      "remark": "",
+      "cancelDetail": null,
+      "takeAwayOrderItems": [
+        {
+          "itemId": 416,
+          "syncId": 9999000097123,
+          "takeAwayOrderItemId": 27089654,
+          "takeAwayOrderId": 13653216,
+          "name": "H手工原味豆腐",
+          "desc": "",
+          "names": {
+            "tc": "H手工原味豆腐",
+            "en": "H手工原味豆腐",
+            "sc": "H手工原味豆腐"
+          },
+          "descs": {
+            "tc": "",
+            "en": "",
+            "sc": ""
+          },
+          "photoName": "846080",
+          "photoUrl": null,
+          "unitPrice": 18,
+          "categoryId": 28,
+          "isRecommended": false,
+          "referenceId": "ORI-416",
+          "remainingStock": 0,
+          "createTime": "2024-11-01T12:48:54Z",
+          "modifyTime": null,
+          "publishTime": "2024-11-01T00:00:00Z",
+          "expireTime": "2024-11-01T23:59:59Z",
+          "comboItems": [],
+          "quantity": 1,
+          "price": 18,
+          "modifierItems": []
+        },
+        {
+          "itemId": 404,
+          "syncId": 9999000097123,
+          "takeAwayOrderItemId": 27089655,
+          "takeAwayOrderId": 13653216,
+          "name": "H淮山蒸南瓜",
+          "desc": "",
+          "names": {
+            "tc": "H淮山蒸南瓜",
+            "en": "H淮山蒸南瓜",
+            "sc": "H淮山蒸南瓜"
+          },
+          "descs": {
+            "tc": "",
+            "en": "",
+            "sc": ""
+          },
+          "photoName": "845989",
+          "photoUrl": null,
+          "unitPrice": 15,
+          "categoryId": 28,
+          "isRecommended": false,
+          "referenceId": "ORI-404",
+          "remainingStock": 0,
+          "createTime": "2024-11-01T12:48:54Z",
+          "modifyTime": null,
+          "publishTime": "2024-11-01T00:00:00Z",
+          "expireTime": "2024-11-01T23:59:59Z",
+          "comboItems": [],
+          "quantity": 1,
+          "price": 15,
+          "modifierItems": []
+        },
+        {
+          "itemId": 418,
+          "syncId": 9999000097123,
+          "takeAwayOrderItemId": 27089656,
+          "takeAwayOrderId": 13653216,
+          "name": "H素炒雲南小瓜",
+          "desc": "",
+          "names": {
+            "tc": "H素炒雲南小瓜",
+            "en": "H素炒雲南小瓜",
+            "sc": "H素炒雲南小瓜"
+          },
+          "descs": {
+            "tc": "",
+            "en": "",
+            "sc": ""
+          },
+          "photoName": "845982",
+          "photoUrl": null,
+          "unitPrice": 15,
+          "categoryId": 28,
+          "isRecommended": false,
+          "referenceId": "ORI-418",
+          "remainingStock": 0,
+          "createTime": "2024-11-01T12:48:54Z",
+          "modifyTime": null,
+          "publishTime": "2024-11-01T00:00:00Z",
+          "expireTime": "2024-11-01T23:59:59Z",
+          "comboItems": [],
+          "quantity": 1,
+          "price": 15,
+          "modifierItems": []
+        }
+      ],
+      "editStatus": 0,
+      "merchantFinalPrice": 48,
+      "orderRefId": "O2024110113780608844",
+      "currency": "HKD",
+      "isRemarked": false,
+      "isRead": true,
+      "contactName": "Cheng",
+      "contactPhone": "93801913",
+      "contactPhoneAreaCodeId": 1,
+      "totalDishesQty": 3,
+      "corpUserId": null,
+      "messageId": null,
+      "commissionCharge": 3.84,
+      "netTotalAmount": 44.16,
+      "isRequiredPacking": null,
+      "serviceType": 0,
+      "pickupNumber": "T0005",
+      "autoAcceptOrder": null,
+      "isDeliveryCodeOrder": false,
+      "isDeliveryOrder": false,
+      "orPoiId": 847979,
+      "poiName": "WeBite Space",
+      "shopCode": null,
+      "districtName": "中環",
+      "restaurantAddress": "皇后大道中99號中環中心1樓3號舖",
+      "deliveryOrderType": "外賣自取",
+      "isUrgentOrder": null,
+      "isPartyFood": false
+    },
+    {
+      "takeAwayOrderId": 13652106,
+      "status": 10,
+      "oldStatus": null,
+      "customerInfo": {
+        "name": "Ms Ip",
+        "title": 0,
+        "email": null,
+        "phone": "66800892",
+        "phoneAreaCode": 1,
+        "tmUserId": null,
+        "regionName": null
+      },
+      "pickupTime": "2024-11-01T05:15:00Z",
+      "startDeliverytime": null,
+      "createTime": "2024-11-01T04:06:53Z",
+      "paymentTime": "2024-11-01T04:06:58Z",
+      "completedTime": "2024-11-01T07:16:05Z",
+      "remark": "",
+      "cancelDetail": null,
+      "takeAwayOrderItems": [
+        {
+          "itemId": 506,
+          "syncId": 9999000097123,
+          "takeAwayOrderItemId": 27088088,
+          "takeAwayOrderId": 13652106,
+          "name": "10-C4雞肉套餐",
+          "desc": "",
+          "names": {
+            "tc": "10-C4雞肉套餐",
+            "en": "10-C4雞肉套餐",
+            "sc": "10-C4雞肉套餐"
+          },
+          "descs": {
+            "tc": "",
+            "en": "",
+            "sc": ""
+          },
+          "photoName": "855738",
+          "photoUrl": null,
+          "unitPrice": 59,
+          "categoryId": 28,
+          "isRecommended": false,
+          "referenceId": "ORI-506",
+          "remainingStock": 0,
+          "createTime": "2024-11-01T12:06:53Z",
+          "modifyTime": null,
+          "publishTime": "2024-11-01T00:00:00Z",
+          "expireTime": "2024-11-01T23:59:59Z",
+          "comboItems": [
+            {
+              "takeAwayOrderComboItemId": 38690369,
+              "comboItemId": 2589,
+              "itemId": 506,
+              "syncId": 9999000097123,
+              "takeAwayOrderId": 13652106,
+              "takeAwayOrderComboSetId": 34124805,
+              "name": "不需要餐具",
+              "desc": "",
+              "names": {
+                "tc": "不需要餐具",
+                "en": "不需要餐具",
+                "sc": "不需要餐具"
+              },
+              "descs": {
+                "tc": "",
+                "en": "",
+                "sc": ""
+              },
+              "photoName": null,
+              "photoUrl": null,
+              "maxQuantity": 1,
+              "unitPrice": 0,
+              "referenceId": "ORI-243",
+              "createTime": "2024-11-01T12:06:53Z",
+              "modifyTime": null,
+              "publishTime": "2024-04-25T00:00:00Z",
+              "expireTime": null,
+              "quantity": 1,
+              "remainingStock": 0,
+              "modifierItems": []
+            },
+            {
+              "takeAwayOrderComboItemId": 38690370,
+              "comboItemId": 2591,
+              "itemId": 506,
+              "syncId": 9999000097123,
+              "takeAwayOrderId": 13652106,
+              "takeAwayOrderComboSetId": 34124806,
+              "name": "H照燒雞翼",
+              "desc": "",
+              "names": {
+                "tc": "H照燒雞翼",
+                "en": "H照燒雞翼",
+                "sc": "H照燒雞翼"
+              },
+              "descs": {
+                "tc": "",
+                "en": "",
+                "sc": ""
+              },
+              "photoName": "855724",
+              "photoUrl": null,
+              "maxQuantity": 1,
+              "unitPrice": 0,
+              "referenceId": "ORI-508",
+              "createTime": "2024-11-01T12:06:53Z",
+              "modifyTime": null,
+              "publishTime": "2024-11-01T00:00:00Z",
+              "expireTime": "2024-11-01T23:59:59Z",
+              "quantity": 1,
+              "remainingStock": 0,
+              "modifierItems": [
+                {
+                  "modifierItemId": 16,
+                  "name": "不需要餐具",
+                  "names": {
+                    "tc": "不需要餐具",
+                    "en": "不需要餐具",
+                    "sc": "不需要餐具"
+                  },
+                  "unitPrice": 0
+                }
+              ]
+            },
+            {
+              "takeAwayOrderComboItemId": 38690371,
+              "comboItemId": 2593,
+              "itemId": 506,
+              "syncId": 9999000097123,
+              "takeAwayOrderId": 13652106,
+              "takeAwayOrderComboSetId": 34124807,
+              "name": "H手工原味豆腐",
+              "desc": "",
+              "names": {
+                "tc": "H手工原味豆腐",
+                "en": "H手工原味豆腐",
+                "sc": "H手工原味豆腐"
+              },
+              "descs": {
+                "tc": "",
+                "en": "",
+                "sc": ""
+              },
+              "photoName": "846080",
+              "photoUrl": null,
+              "maxQuantity": 1,
+              "unitPrice": 2,
+              "referenceId": "ORI-416",
+              "createTime": "2024-11-01T12:06:53Z",
+              "modifyTime": null,
+              "publishTime": "2024-11-01T00:00:00Z",
+              "expireTime": "2024-11-01T23:59:59Z",
+              "quantity": 1,
+              "remainingStock": 0,
+              "modifierItems": [
+                {
+                  "modifierItemId": 16,
+                  "name": "不需要餐具",
+                  "names": {
+                    "tc": "不需要餐具",
+                    "en": "不需要餐具",
+                    "sc": "不需要餐具"
+                  },
+                  "unitPrice": 0
+                }
+              ]
+            },
+            {
+              "takeAwayOrderComboItemId": 38690372,
+              "comboItemId": 2595,
+              "itemId": 506,
+              "syncId": 9999000097123,
+              "takeAwayOrderId": 13652106,
+              "takeAwayOrderComboSetId": 34124808,
+              "name": "H素炒雲南小瓜",
+              "desc": "",
+              "names": {
+                "tc": "H素炒雲南小瓜",
+                "en": "H素炒雲南小瓜",
+                "sc": "H素炒雲南小瓜"
+              },
+              "descs": {
+                "tc": "",
+                "en": "",
+                "sc": ""
+              },
+              "photoName": "845982",
+              "photoUrl": null,
+              "maxQuantity": 1,
+              "unitPrice": 0,
+              "referenceId": "ORI-418",
+              "createTime": "2024-11-01T12:06:53Z",
+              "modifyTime": null,
+              "publishTime": "2024-11-01T00:00:00Z",
+              "expireTime": "2024-11-01T23:59:59Z",
+              "quantity": 1,
+              "remainingStock": 0,
+              "modifierItems": [
+                {
+                  "modifierItemId": 16,
+                  "name": "不需要餐具",
+                  "names": {
+                    "tc": "不需要餐具",
+                    "en": "不需要餐具",
+                    "sc": "不需要餐具"
+                  },
+                  "unitPrice": 0
+                }
+              ]
+            },
+            {
+              "takeAwayOrderComboItemId": 38690373,
+              "comboItemId": 2599,
+              "itemId": 506,
+              "syncId": 9999000097123,
+              "takeAwayOrderId": 13652106,
+              "takeAwayOrderComboSetId": 34124809,
+              "name": "H蒸高纖番薯",
+              "desc": "",
+              "names": {
+                "tc": "H蒸高纖番薯",
+                "en": "H蒸高纖番薯",
+                "sc": "H蒸高纖番薯"
+              },
+              "descs": {
+                "tc": "",
+                "en": "",
+                "sc": ""
+              },
+              "photoName": "845988",
+              "photoUrl": null,
+              "maxQuantity": 1,
+              "unitPrice": 2,
+              "referenceId": "ORI-422",
+              "createTime": "2024-11-01T12:06:53Z",
+              "modifyTime": null,
+              "publishTime": "2024-09-02T00:00:00Z",
+              "expireTime": "2024-11-30T23:59:59Z",
+              "quantity": 1,
+              "remainingStock": 0,
+              "modifierItems": [
+                {
+                  "modifierItemId": 16,
+                  "name": "不需要餐具",
+                  "names": {
+                    "tc": "不需要餐具",
+                    "en": "不需要餐具",
+                    "sc": "不需要餐具"
+                  },
+                  "unitPrice": 0
+                }
+              ]
+            }
+          ],
+          "quantity": 1,
+          "price": 63,
+          "modifierItems": []
+        },
+        {
+          "itemId": 505,
+          "syncId": 9999000097123,
+          "takeAwayOrderItemId": 27088089,
+          "takeAwayOrderId": 13652106,
+          "name": "10-C3豚肉套餐",
+          "desc": "",
+          "names": {
+            "tc": "10-C3豚肉套餐",
+            "en": "10-C3豚肉套餐",
+            "sc": "10-C3豚肉套餐"
+          },
+          "descs": {
+            "tc": "",
+            "en": "",
+            "sc": ""
+          },
+          "photoName": "855737",
+          "photoUrl": null,
+          "unitPrice": 68,
+          "categoryId": 28,
+          "isRecommended": false,
+          "referenceId": "ORI-505",
+          "remainingStock": 0,
+          "createTime": "2024-11-01T12:06:53Z",
+          "modifyTime": null,
+          "publishTime": "2024-11-01T00:00:00Z",
+          "expireTime": "2024-11-01T23:59:59Z",
+          "comboItems": [
+            {
+              "takeAwayOrderComboItemId": 38690374,
+              "comboItemId": 2721,
+              "itemId": 505,
+              "syncId": 9999000097123,
+              "takeAwayOrderId": 13652106,
+              "takeAwayOrderComboSetId": 34124810,
+              "name": "不需要餐具",
+              "desc": "",
+              "names": {
+                "tc": "不需要餐具",
+                "en": "不需要餐具",
+                "sc": "不需要餐具"
+              },
+              "descs": {
+                "tc": "",
+                "en": "",
+                "sc": ""
+              },
+              "photoName": null,
+              "photoUrl": null,
+              "maxQuantity": 1,
+              "unitPrice": 0,
+              "referenceId": "ORI-243",
+              "createTime": "2024-11-01T12:06:53Z",
+              "modifyTime": null,
+              "publishTime": "2024-04-25T00:00:00Z",
+              "expireTime": null,
+              "quantity": 1,
+              "remainingStock": 0,
+              "modifierItems": []
+            },
+            {
+              "takeAwayOrderComboItemId": 38690375,
+              "comboItemId": 2722,
+              "itemId": 505,
+              "syncId": 9999000097123,
+              "takeAwayOrderId": 13652106,
+              "takeAwayOrderComboSetId": 34124811,
+              "name": "H糖醋櫻桃肉",
+              "desc": "",
+              "names": {
+                "tc": "H糖醋櫻桃肉",
+                "en": "H糖醋櫻桃肉",
+                "sc": "H糖醋櫻桃肉"
+              },
+              "descs": {
+                "tc": "",
+                "en": "",
+                "sc": ""
+              },
+              "photoName": "846071",
+              "photoUrl": null,
+              "maxQuantity": 1,
+              "unitPrice": 0,
+              "referenceId": "ORI-412",
+              "createTime": "2024-11-01T12:06:53Z",
+              "modifyTime": null,
+              "publishTime": "2024-11-01T00:00:00Z",
+              "expireTime": "2024-11-01T23:59:59Z",
+              "quantity": 1,
+              "remainingStock": 0,
+              "modifierItems": [
+                {
+                  "modifierItemId": 16,
+                  "name": "不需要餐具",
+                  "names": {
+                    "tc": "不需要餐具",
+                    "en": "不需要餐具",
+                    "sc": "不需要餐具"
+                  },
+                  "unitPrice": 0
+                }
+              ]
+            },
+            {
+              "takeAwayOrderComboItemId": 38690376,
+              "comboItemId": 2724,
+              "itemId": 505,
+              "syncId": 9999000097123,
+              "takeAwayOrderId": 13652106,
+              "takeAwayOrderComboSetId": 34124812,
+              "name": "H手工原味豆腐",
+              "desc": "",
+              "names": {
+                "tc": "H手工原味豆腐",
+                "en": "H手工原味豆腐",
+                "sc": "H手工原味豆腐"
+              },
+              "descs": {
+                "tc": "",
+                "en": "",
+                "sc": ""
+              },
+              "photoName": "846080",
+              "photoUrl": null,
+              "maxQuantity": 1,
+              "unitPrice": 2,
+              "referenceId": "ORI-416",
+              "createTime": "2024-11-01T12:06:53Z",
+              "modifyTime": null,
+              "publishTime": "2024-11-01T00:00:00Z",
+              "expireTime": "2024-11-01T23:59:59Z",
+              "quantity": 1,
+              "remainingStock": 0,
+              "modifierItems": [
+                {
+                  "modifierItemId": 16,
+                  "name": "不需要餐具",
+                  "names": {
+                    "tc": "不需要餐具",
+                    "en": "不需要餐具",
+                    "sc": "不需要餐具"
+                  },
+                  "unitPrice": 0
+                }
+              ]
+            },
+            {
+              "takeAwayOrderComboItemId": 38690377,
+              "comboItemId": 2727,
+              "itemId": 505,
+              "syncId": 9999000097123,
+              "takeAwayOrderId": 13652106,
+              "takeAwayOrderComboSetId": 34124813,
+              "name": "H金蒜西蘭花",
+              "desc": "",
+              "names": {
+                "tc": "H金蒜西蘭花",
+                "en": "H金蒜西蘭花",
+                "sc": "H金蒜西蘭花"
+              },
+              "descs": {
+                "tc": "",
+                "en": "",
+                "sc": ""
+              },
+              "photoName": "847442",
+              "photoUrl": null,
+              "maxQuantity": 1,
+              "unitPrice": 2,
+              "referenceId": "ORI-486",
+              "createTime": "2024-11-01T12:06:53Z",
+              "modifyTime": null,
+              "publishTime": "2024-11-01T00:00:00Z",
+              "expireTime": "2024-11-01T23:59:59Z",
+              "quantity": 1,
+              "remainingStock": 0,
+              "modifierItems": [
+                {
+                  "modifierItemId": 16,
+                  "name": "不需要餐具",
+                  "names": {
+                    "tc": "不需要餐具",
+                    "en": "不需要餐具",
+                    "sc": "不需要餐具"
+                  },
+                  "unitPrice": 0
+                }
+              ]
+            },
+            {
+              "takeAwayOrderComboItemId": 38690378,
+              "comboItemId": 2731,
+              "itemId": 505,
+              "syncId": 9999000097123,
+              "takeAwayOrderId": 13652106,
+              "takeAwayOrderComboSetId": 34124814,
+              "name": "H牛肉燜飯",
+              "desc": "",
+              "names": {
+                "tc": "H牛肉燜飯",
+                "en": "H牛肉燜飯",
+                "sc": "H牛肉燜飯"
+              },
+              "descs": {
+                "tc": "",
+                "en": "",
+                "sc": ""
+              },
+              "photoName": "845987",
+              "photoUrl": null,
+              "maxQuantity": 1,
+              "unitPrice": 3,
+              "referenceId": "ORI-463",
+              "createTime": "2024-11-01T12:06:53Z",
+              "modifyTime": null,
+              "publishTime": "2024-11-01T00:00:00Z",
+              "expireTime": "2024-11-01T23:59:59Z",
+              "quantity": 1,
+              "remainingStock": 0,
+              "modifierItems": [
+                {
+                  "modifierItemId": 16,
+                  "name": "不需要餐具",
+                  "names": {
+                    "tc": "不需要餐具",
+                    "en": "不需要餐具",
+                    "sc": "不需要餐具"
+                  },
+                  "unitPrice": 0
+                }
+              ]
+            }
+          ],
+          "quantity": 1,
+          "price": 75,
+          "modifierItems": []
+        },
+        {
+          "itemId": 503,
+          "syncId": 9999000097123,
+          "takeAwayOrderItemId": 27088090,
+          "takeAwayOrderId": 13652106,
+          "name": "10-C1牛肉套餐",
+          "desc": "",
+          "names": {
+            "tc": "10-C1牛肉套餐",
+            "en": "10-C1牛肉套餐",
+            "sc": "10-C1牛肉套餐"
+          },
+          "descs": {
+            "tc": "",
+            "en": "",
+            "sc": ""
+          },
+          "photoName": "855735",
+          "photoUrl": null,
+          "unitPrice": 68,
+          "categoryId": 28,
+          "isRecommended": false,
+          "referenceId": "ORI-503",
+          "remainingStock": 0,
+          "createTime": "2024-11-01T12:06:53Z",
+          "modifyTime": null,
+          "publishTime": "2024-11-01T00:00:00Z",
+          "expireTime": "2024-11-01T23:59:59Z",
+          "comboItems": [
+            {
+              "takeAwayOrderComboItemId": 38690379,
+              "comboItemId": 2249,
+              "itemId": 503,
+              "syncId": 9999000097123,
+              "takeAwayOrderId": 13652106,
+              "takeAwayOrderComboSetId": 34124815,
+              "name": "不需要餐具",
+              "desc": "",
+              "names": {
+                "tc": "不需要餐具",
+                "en": "不需要餐具",
+                "sc": "不需要餐具"
+              },
+              "descs": {
+                "tc": "",
+                "en": "",
+                "sc": ""
+              },
+              "photoName": null,
+              "photoUrl": null,
+              "maxQuantity": 1,
+              "unitPrice": 0,
+              "referenceId": "ORI-243",
+              "createTime": "2024-11-01T12:06:53Z",
+              "modifyTime": null,
+              "publishTime": "2024-04-25T00:00:00Z",
+              "expireTime": null,
+              "quantity": 1,
+              "remainingStock": 0,
+              "modifierItems": []
+            },
+            {
+              "takeAwayOrderComboItemId": 38690380,
+              "comboItemId": 2529,
+              "itemId": 503,
+              "syncId": 9999000097123,
+              "takeAwayOrderId": 13652106,
+              "takeAwayOrderComboSetId": 34124816,
+              "name": "H番茄燉牛肋條",
+              "desc": "",
+              "names": {
+                "tc": "H番茄燉牛肋條",
+                "en": "H番茄燉牛肋條",
+                "sc": "H番茄燉牛肋條"
+              },
+              "descs": {
+                "tc": "",
+                "en": "",
+                "sc": ""
+              },
+              "photoName": "846269",
+              "photoUrl": null,
+              "maxQuantity": 1,
+              "unitPrice": 0,
+              "referenceId": "ORI-482",
+              "createTime": "2024-11-01T12:06:53Z",
+              "modifyTime": null,
+              "publishTime": "2024-11-01T00:00:00Z",
+              "expireTime": "2024-11-01T23:59:59Z",
+              "quantity": 1,
+              "remainingStock": 0,
+              "modifierItems": [
+                {
+                  "modifierItemId": 16,
+                  "name": "不需要餐具",
+                  "names": {
+                    "tc": "不需要餐具",
+                    "en": "不需要餐具",
+                    "sc": "不需要餐具"
+                  },
+                  "unitPrice": 0
+                }
+              ]
+            },
+            {
+              "takeAwayOrderComboItemId": 38690381,
+              "comboItemId": 2532,
+              "itemId": 503,
+              "syncId": 9999000097123,
+              "takeAwayOrderId": 13652106,
+              "takeAwayOrderComboSetId": 34124817,
+              "name": "H手工原味豆腐",
+              "desc": "",
+              "names": {
+                "tc": "H手工原味豆腐",
+                "en": "H手工原味豆腐",
+                "sc": "H手工原味豆腐"
+              },
+              "descs": {
+                "tc": "",
+                "en": "",
+                "sc": ""
+              },
+              "photoName": "846080",
+              "photoUrl": null,
+              "maxQuantity": 1,
+              "unitPrice": 2,
+              "referenceId": "ORI-416",
+              "createTime": "2024-11-01T12:06:53Z",
+              "modifyTime": null,
+              "publishTime": "2024-11-01T00:00:00Z",
+              "expireTime": "2024-11-01T23:59:59Z",
+              "quantity": 1,
+              "remainingStock": 0,
+              "modifierItems": [
+                {
+                  "modifierItemId": 16,
+                  "name": "不需要餐具",
+                  "names": {
+                    "tc": "不需要餐具",
+                    "en": "不需要餐具",
+                    "sc": "不需要餐具"
+                  },
+                  "unitPrice": 0
+                }
+              ]
+            },
+            {
+              "takeAwayOrderComboItemId": 38690382,
+              "comboItemId": 2533,
+              "itemId": 503,
+              "syncId": 9999000097123,
+              "takeAwayOrderId": 13652106,
+              "takeAwayOrderComboSetId": 34124818,
+              "name": "H金銀蒜蒸娃娃菜",
+              "desc": "",
+              "names": {
+                "tc": "H金銀蒜蒸娃娃菜",
+                "en": "H金銀蒜蒸娃娃菜",
+                "sc": "H金銀蒜蒸娃娃菜"
+              },
+              "descs": {
+                "tc": "",
+                "en": "",
+                "sc": ""
+              },
+              "photoName": "847444",
+              "photoUrl": null,
+              "maxQuantity": 1,
+              "unitPrice": 0,
+              "referenceId": "ORI-485",
+              "createTime": "2024-11-01T12:06:53Z",
+              "modifyTime": null,
+              "publishTime": "2024-11-01T00:00:00Z",
+              "expireTime": "2024-11-01T23:59:59Z",
+              "quantity": 1,
+              "remainingStock": 0,
+              "modifierItems": [
+                {
+                  "modifierItemId": 16,
+                  "name": "不需要餐具",
+                  "names": {
+                    "tc": "不需要餐具",
+                    "en": "不需要餐具",
+                    "sc": "不需要餐具"
+                  },
+                  "unitPrice": 0
+                }
+              ]
+            },
+            {
+              "takeAwayOrderComboItemId": 38690383,
+              "comboItemId": 2259,
+              "itemId": 503,
+              "syncId": 9999000097123,
+              "takeAwayOrderId": 13652106,
+              "takeAwayOrderComboSetId": 34124819,
+              "name": "H蒸高纖番薯",
+              "desc": "",
+              "names": {
+                "tc": "H蒸高纖番薯",
+                "en": "H蒸高纖番薯",
+                "sc": "H蒸高纖番薯"
+              },
+              "descs": {
+                "tc": "",
+                "en": "",
+                "sc": ""
+              },
+              "photoName": "845988",
+              "photoUrl": null,
+              "maxQuantity": 1,
+              "unitPrice": 2,
+              "referenceId": "ORI-422",
+              "createTime": "2024-11-01T12:06:53Z",
+              "modifyTime": null,
+              "publishTime": "2024-09-02T00:00:00Z",
+              "expireTime": "2024-11-30T23:59:59Z",
+              "quantity": 1,
+              "remainingStock": 0,
+              "modifierItems": [
+                {
+                  "modifierItemId": 16,
+                  "name": "不需要餐具",
+                  "names": {
+                    "tc": "不需要餐具",
+                    "en": "不需要餐具",
+                    "sc": "不需要餐具"
+                  },
+                  "unitPrice": 0
+                }
+              ]
+            }
+          ],
+          "quantity": 1,
+          "price": 72,
+          "modifierItems": []
+        }
+      ],
+      "editStatus": 0,
+      "merchantFinalPrice": 210,
+      "orderRefId": "O2024110113779498966",
+      "currency": "HKD",
+      "isRemarked": false,
+      "isRead": true,
+      "contactName": "Ms Ip",
+      "contactPhone": "66800892",
+      "contactPhoneAreaCodeId": 1,
+      "totalDishesQty": 3,
+      "corpUserId": null,
+      "messageId": null,
+      "commissionCharge": 16.8,
+      "netTotalAmount": 193.2,
+      "isRequiredPacking": null,
+      "serviceType": 0,
+      "pickupNumber": "T0004",
+      "autoAcceptOrder": null,
+      "isDeliveryCodeOrder": false,
+      "isDeliveryOrder": false,
+      "orPoiId": 847979,
+      "poiName": "WeBite Space",
+      "shopCode": null,
+      "districtName": "中環",
+      "restaurantAddress": "皇后大道中99號中環中心1樓3號舖",
+      "deliveryOrderType": "外賣自取",
+      "isUrgentOrder": null,
+      "isPartyFood": false
+    },
+    {
+      "takeAwayOrderId": 13651907,
+      "status": 10,
+      "oldStatus": null,
+      "customerInfo": {
+        "name": "AL",
+        "title": 0,
+        "email": null,
+        "phone": "51771209",
+        "phoneAreaCode": 1,
+        "tmUserId": null,
+        "regionName": null
+      },
+      "pickupTime": "2024-11-01T04:29:00Z",
+      "startDeliverytime": null,
+      "createTime": "2024-11-01T03:59:00Z",
+      "paymentTime": "2024-11-01T03:59:16Z",
+      "completedTime": "2024-11-01T06:30:01Z",
+      "remark": "",
+      "cancelDetail": null,
+      "takeAwayOrderItems": [
+        {
+          "itemId": 505,
+          "syncId": 9999000097123,
+          "takeAwayOrderItemId": 27087808,
+          "takeAwayOrderId": 13651907,
+          "name": "10-C3豚肉套餐",
+          "desc": "",
+          "names": {
+            "tc": "10-C3豚肉套餐",
+            "en": "10-C3豚肉套餐",
+            "sc": "10-C3豚肉套餐"
+          },
+          "descs": {
+            "tc": "",
+            "en": "",
+            "sc": ""
+          },
+          "photoName": "855737",
+          "photoUrl": null,
+          "unitPrice": 68,
+          "categoryId": 28,
+          "isRecommended": false,
+          "referenceId": "ORI-505",
+          "remainingStock": 0,
+          "createTime": "2024-11-01T11:59:00Z",
+          "modifyTime": null,
+          "publishTime": "2024-11-01T00:00:00Z",
+          "expireTime": "2024-11-01T23:59:59Z",
+          "comboItems": [
+            {
+              "takeAwayOrderComboItemId": 38689680,
+              "comboItemId": 2721,
+              "itemId": 505,
+              "syncId": 9999000097123,
+              "takeAwayOrderId": 13651907,
+              "takeAwayOrderComboSetId": 34124202,
+              "name": "不需要餐具",
+              "desc": "",
+              "names": {
+                "tc": "不需要餐具",
+                "en": "不需要餐具",
+                "sc": "不需要餐具"
+              },
+              "descs": {
+                "tc": "",
+                "en": "",
+                "sc": ""
+              },
+              "photoName": null,
+              "photoUrl": null,
+              "maxQuantity": 1,
+              "unitPrice": 0,
+              "referenceId": "ORI-243",
+              "createTime": "2024-11-01T11:59:00Z",
+              "modifyTime": null,
+              "publishTime": "2024-04-25T00:00:00Z",
+              "expireTime": null,
+              "quantity": 1,
+              "remainingStock": 0,
+              "modifierItems": []
+            },
+            {
+              "takeAwayOrderComboItemId": 38689681,
+              "comboItemId": 2722,
+              "itemId": 505,
+              "syncId": 9999000097123,
+              "takeAwayOrderId": 13651907,
+              "takeAwayOrderComboSetId": 34124203,
+              "name": "H糖醋櫻桃肉",
+              "desc": "",
+              "names": {
+                "tc": "H糖醋櫻桃肉",
+                "en": "H糖醋櫻桃肉",
+                "sc": "H糖醋櫻桃肉"
+              },
+              "descs": {
+                "tc": "",
+                "en": "",
+                "sc": ""
+              },
+              "photoName": "846071",
+              "photoUrl": null,
+              "maxQuantity": 1,
+              "unitPrice": 0,
+              "referenceId": "ORI-412",
+              "createTime": "2024-11-01T11:59:00Z",
+              "modifyTime": null,
+              "publishTime": "2024-11-01T00:00:00Z",
+              "expireTime": "2024-11-01T23:59:59Z",
+              "quantity": 1,
+              "remainingStock": 0,
+              "modifierItems": [
+                {
+                  "modifierItemId": 16,
+                  "name": "不需要餐具",
+                  "names": {
+                    "tc": "不需要餐具",
+                    "en": "不需要餐具",
+                    "sc": "不需要餐具"
+                  },
+                  "unitPrice": 0
+                }
+              ]
+            },
+            {
+              "takeAwayOrderComboItemId": 38689682,
+              "comboItemId": 2723,
+              "itemId": 505,
+              "syncId": 9999000097123,
+              "takeAwayOrderId": 13651907,
+              "takeAwayOrderComboSetId": 34124204,
+              "name": "H日式茶碗蒸",
+              "desc": "",
+              "names": {
+                "tc": "H日式茶碗蒸",
+                "en": "H日式茶碗蒸",
+                "sc": "H日式茶碗蒸"
+              },
+              "descs": {
+                "tc": "",
+                "en": "",
+                "sc": ""
+              },
+              "photoName": "847440",
+              "photoUrl": null,
+              "maxQuantity": 1,
+              "unitPrice": 0,
+              "referenceId": "ORI-484",
+              "createTime": "2024-11-01T11:59:00Z",
+              "modifyTime": null,
+              "publishTime": "2024-11-01T00:00:00Z",
+              "expireTime": "2024-11-01T23:59:59Z",
+              "quantity": 1,
+              "remainingStock": 0,
+              "modifierItems": [
+                {
+                  "modifierItemId": 16,
+                  "name": "不需要餐具",
+                  "names": {
+                    "tc": "不需要餐具",
+                    "en": "不需要餐具",
+                    "sc": "不需要餐具"
+                  },
+                  "unitPrice": 0
+                }
+              ]
+            },
+            {
+              "takeAwayOrderComboItemId": 38689683,
+              "comboItemId": 2726,
+              "itemId": 505,
+              "syncId": 9999000097123,
+              "takeAwayOrderId": 13651907,
+              "takeAwayOrderComboSetId": 34124205,
+              "name": "H素炒雲南小瓜",
+              "desc": "",
+              "names": {
+                "tc": "H素炒雲南小瓜",
+                "en": "H素炒雲南小瓜",
+                "sc": "H素炒雲南小瓜"
+              },
+              "descs": {
+                "tc": "",
+                "en": "",
+                "sc": ""
+              },
+              "photoName": "845982",
+              "photoUrl": null,
+              "maxQuantity": 1,
+              "unitPrice": 0,
+              "referenceId": "ORI-418",
+              "createTime": "2024-11-01T11:59:00Z",
+              "modifyTime": null,
+              "publishTime": "2024-11-01T00:00:00Z",
+              "expireTime": "2024-11-01T23:59:59Z",
+              "quantity": 1,
+              "remainingStock": 0,
+              "modifierItems": [
+                {
+                  "modifierItemId": 16,
+                  "name": "不需要餐具",
+                  "names": {
+                    "tc": "不需要餐具",
+                    "en": "不需要餐具",
+                    "sc": "不需要餐具"
+                  },
+                  "unitPrice": 0
+                }
+              ]
+            },
+            {
+              "takeAwayOrderComboItemId": 38689684,
+              "comboItemId": 2729,
+              "itemId": 505,
+              "syncId": 9999000097123,
+              "takeAwayOrderId": 13651907,
+              "takeAwayOrderComboSetId": 34124206,
+              "name": "H紅米飯",
+              "desc": "",
+              "names": {
+                "tc": "H紅米飯",
+                "en": "H紅米飯",
+                "sc": "H紅米飯"
+              },
+              "descs": {
+                "tc": "",
+                "en": "",
+                "sc": ""
+              },
+              "photoName": "845985",
+              "photoUrl": null,
+              "maxQuantity": 1,
+              "unitPrice": 0,
+              "referenceId": "ORI-401",
+              "createTime": "2024-11-01T11:59:00Z",
+              "modifyTime": null,
+              "publishTime": "2024-11-01T00:00:00Z",
+              "expireTime": "2024-11-01T23:59:59Z",
+              "quantity": 1,
+              "remainingStock": 0,
+              "modifierItems": [
+                {
+                  "modifierItemId": 16,
+                  "name": "不需要餐具",
+                  "names": {
+                    "tc": "不需要餐具",
+                    "en": "不需要餐具",
+                    "sc": "不需要餐具"
+                  },
+                  "unitPrice": 0
+                }
+              ]
+            }
+          ],
+          "quantity": 1,
+          "price": 68,
+          "modifierItems": []
+        }
+      ],
+      "editStatus": 0,
+      "merchantFinalPrice": 68,
+      "orderRefId": "O2024110113779297735",
+      "currency": "HKD",
+      "isRemarked": false,
+      "isRead": true,
+      "contactName": "AL",
+      "contactPhone": "51771209",
+      "contactPhoneAreaCodeId": 1,
+      "totalDishesQty": 1,
+      "corpUserId": null,
+      "messageId": null,
+      "commissionCharge": 5.44,
+      "netTotalAmount": 62.56,
+      "isRequiredPacking": null,
+      "serviceType": 0,
+      "pickupNumber": "T0003",
+      "autoAcceptOrder": null,
+      "isDeliveryCodeOrder": false,
+      "isDeliveryOrder": false,
+      "orPoiId": 847979,
+      "poiName": "WeBite Space",
+      "shopCode": null,
+      "districtName": "中環",
+      "restaurantAddress": "皇后大道中99號中環中心1樓3號舖",
+      "deliveryOrderType": "外賣自取",
+      "isUrgentOrder": null,
+      "isPartyFood": false
+    },
+    {
+      "takeAwayOrderId": 13651621,
+      "status": 10,
+      "oldStatus": null,
+      "customerInfo": {
+        "name": "56261379",
+        "title": 0,
+        "email": null,
+        "phone": "56261379",
+        "phoneAreaCode": 1,
+        "tmUserId": null,
+        "regionName": null
+      },
+      "pickupTime": "2024-11-01T04:09:00Z",
+      "startDeliverytime": null,
+      "createTime": "2024-11-01T03:39:15Z",
+      "paymentTime": "2024-11-01T03:39:19Z",
+      "completedTime": "2024-11-01T06:10:03Z",
+      "remark": "",
+      "cancelDetail": null,
+      "takeAwayOrderItems": [
+        {
+          "itemId": 508,
+          "syncId": 9999000097123,
+          "takeAwayOrderItemId": 27087383,
+          "takeAwayOrderId": 13651621,
+          "name": "H照燒雞翼",
+          "desc": "",
+          "names": {
+            "tc": "H照燒雞翼",
+            "en": "H照燒雞翼",
+            "sc": "H照燒雞翼"
+          },
+          "descs": {
+            "tc": "",
+            "en": "",
+            "sc": ""
+          },
+          "photoName": "855724",
+          "photoUrl": null,
+          "unitPrice": 30,
+          "categoryId": 28,
+          "isRecommended": false,
+          "referenceId": "ORI-508",
+          "remainingStock": 0,
+          "createTime": "2024-11-01T11:39:15Z",
+          "modifyTime": null,
+          "publishTime": "2024-11-01T00:00:00Z",
+          "expireTime": "2024-11-01T23:59:59Z",
+          "comboItems": [],
+          "quantity": 1,
+          "price": 30,
+          "modifierItems": []
+        },
+        {
+          "itemId": 463,
+          "syncId": 9999000097123,
+          "takeAwayOrderItemId": 27087384,
+          "takeAwayOrderId": 13651621,
+          "name": "H牛肉燜飯",
+          "desc": "",
+          "names": {
+            "tc": "H牛肉燜飯",
+            "en": "H牛肉燜飯",
+            "sc": "H牛肉燜飯"
+          },
+          "descs": {
+            "tc": "",
+            "en": "",
+            "sc": ""
+          },
+          "photoName": "845987",
+          "photoUrl": null,
+          "unitPrice": 15,
+          "categoryId": 28,
+          "isRecommended": false,
+          "referenceId": "ORI-463",
+          "remainingStock": 0,
+          "createTime": "2024-11-01T11:39:15Z",
+          "modifyTime": null,
+          "publishTime": "2024-11-01T00:00:00Z",
+          "expireTime": "2024-11-01T23:59:59Z",
+          "comboItems": [],
+          "quantity": 1,
+          "price": 15,
+          "modifierItems": []
+        },
+        {
+          "itemId": 422,
+          "syncId": 9999000097123,
+          "takeAwayOrderItemId": 27087385,
+          "takeAwayOrderId": 13651621,
+          "name": "H蒸高纖番薯",
+          "desc": "",
+          "names": {
+            "tc": "H蒸高纖番薯",
+            "en": "H蒸高纖番薯",
+            "sc": "H蒸高纖番薯"
+          },
+          "descs": {
+            "tc": "",
+            "en": "",
+            "sc": ""
+          },
+          "photoName": "845988",
+          "photoUrl": null,
+          "unitPrice": 12,
+          "categoryId": 28,
+          "isRecommended": false,
+          "referenceId": "ORI-422",
+          "remainingStock": 0,
+          "createTime": "2024-11-01T11:39:15Z",
+          "modifyTime": null,
+          "publishTime": "2024-09-02T00:00:00Z",
+          "expireTime": "2024-11-30T23:59:59Z",
+          "comboItems": [],
+          "quantity": 1,
+          "price": 12,
+          "modifierItems": []
+        },
+        {
+          "itemId": 485,
+          "syncId": 9999000097123,
+          "takeAwayOrderItemId": 27087386,
+          "takeAwayOrderId": 13651621,
+          "name": "H金銀蒜蒸娃娃菜",
+          "desc": "",
+          "names": {
+            "tc": "H金銀蒜蒸娃娃菜",
+            "en": "H金銀蒜蒸娃娃菜",
+            "sc": "H金銀蒜蒸娃娃菜"
+          },
+          "descs": {
+            "tc": "",
+            "en": "",
+            "sc": ""
+          },
+          "photoName": "847444",
+          "photoUrl": null,
+          "unitPrice": 15,
+          "categoryId": 28,
+          "isRecommended": false,
+          "referenceId": "ORI-485",
+          "remainingStock": 0,
+          "createTime": "2024-11-01T11:39:15Z",
+          "modifyTime": null,
+          "publishTime": "2024-11-01T00:00:00Z",
+          "expireTime": "2024-11-01T23:59:59Z",
+          "comboItems": [],
+          "quantity": 1,
+          "price": 15,
+          "modifierItems": []
+        }
+      ],
+      "editStatus": 0,
+      "merchantFinalPrice": 72,
+      "orderRefId": "O2024110113779010548",
+      "currency": "HKD",
+      "isRemarked": false,
+      "isRead": true,
+      "contactName": "56261379",
+      "contactPhone": "56261379",
+      "contactPhoneAreaCodeId": 1,
+      "totalDishesQty": 4,
+      "corpUserId": null,
+      "messageId": null,
+      "commissionCharge": 5.76,
+      "netTotalAmount": 66.24,
+      "isRequiredPacking": null,
+      "serviceType": 0,
+      "pickupNumber": "T0002",
+      "autoAcceptOrder": null,
+      "isDeliveryCodeOrder": false,
+      "isDeliveryOrder": false,
+      "orPoiId": 847979,
+      "poiName": "WeBite Space",
+      "shopCode": null,
+      "districtName": "中環",
+      "restaurantAddress": "皇后大道中99號中環中心1樓3號舖",
+      "deliveryOrderType": "外賣自取",
+      "isUrgentOrder": null,
+      "isPartyFood": false
+    },
+    {
+      "takeAwayOrderId": 13651271,
+      "status": 10,
+      "oldStatus": null,
+      "customerInfo": {
+        "name": "Nicole",
+        "title": 0,
+        "email": null,
+        "phone": "68169630",
+        "phoneAreaCode": 1,
+        "tmUserId": null,
+        "regionName": null
+      },
+      "pickupTime": "2024-11-01T03:30:00Z",
+      "startDeliverytime": null,
+      "createTime": "2024-11-01T01:54:53Z",
+      "paymentTime": "2024-11-01T01:54:56Z",
+      "completedTime": "2024-11-01T05:31:08Z",
+      "remark": "",
+      "cancelDetail": null,
+      "takeAwayOrderItems": [
+        {
+          "itemId": 400,
+          "syncId": 9999000097123,
+          "takeAwayOrderItemId": 27086835,
+          "takeAwayOrderId": 13651271,
+          "name": "H雜糧飯",
+          "desc": "",
+          "names": {
+            "tc": "H雜糧飯",
+            "en": "H雜糧飯",
+            "sc": "H雜糧飯"
+          },
+          "descs": {
+            "tc": "",
+            "en": "",
+            "sc": ""
+          },
+          "photoName": "845984",
+          "photoUrl": null,
+          "unitPrice": 12,
+          "categoryId": 28,
+          "isRecommended": false,
+          "referenceId": "ORI-400",
+          "remainingStock": 0,
+          "createTime": "2024-11-01T09:54:53Z",
+          "modifyTime": null,
+          "publishTime": "2024-07-08T00:00:00Z",
+          "expireTime": null,
+          "comboItems": [],
+          "quantity": 1,
+          "price": 12,
+          "modifierItems": [
+            {
+              "modifierItemId": 16,
+              "name": "不需要餐具",
+              "names": {
+                "tc": "不需要餐具",
+                "en": "不需要餐具",
+                "sc": "不需要餐具"
+              },
+              "unitPrice": 0
+            }
+          ]
+        },
+        {
+          "itemId": 503,
+          "syncId": 9999000097123,
+          "takeAwayOrderItemId": 27086836,
+          "takeAwayOrderId": 13651271,
+          "name": "10-C1牛肉套餐",
+          "desc": "",
+          "names": {
+            "tc": "10-C1牛肉套餐",
+            "en": "10-C1牛肉套餐",
+            "sc": "10-C1牛肉套餐"
+          },
+          "descs": {
+            "tc": "",
+            "en": "",
+            "sc": ""
+          },
+          "photoName": "855735",
+          "photoUrl": null,
+          "unitPrice": 68,
+          "categoryId": 28,
+          "isRecommended": false,
+          "referenceId": "ORI-503",
+          "remainingStock": 0,
+          "createTime": "2024-11-01T09:54:53Z",
+          "modifyTime": null,
+          "publishTime": "2024-11-01T00:00:00Z",
+          "expireTime": "2024-11-01T23:59:59Z",
+          "comboItems": [
+            {
+              "takeAwayOrderComboItemId": 38687090,
+              "comboItemId": 2249,
+              "itemId": 503,
+              "syncId": 9999000097123,
+              "takeAwayOrderId": 13651271,
+              "takeAwayOrderComboSetId": 34121989,
+              "name": "不需要餐具",
+              "desc": "",
+              "names": {
+                "tc": "不需要餐具",
+                "en": "不需要餐具",
+                "sc": "不需要餐具"
+              },
+              "descs": {
+                "tc": "",
+                "en": "",
+                "sc": ""
+              },
+              "photoName": null,
+              "photoUrl": null,
+              "maxQuantity": 1,
+              "unitPrice": 0,
+              "referenceId": "ORI-243",
+              "createTime": "2024-11-01T09:54:53Z",
+              "modifyTime": null,
+              "publishTime": "2024-04-25T00:00:00Z",
+              "expireTime": null,
+              "quantity": 1,
+              "remainingStock": 0,
+              "modifierItems": []
+            },
+            {
+              "takeAwayOrderComboItemId": 38687091,
+              "comboItemId": 2529,
+              "itemId": 503,
+              "syncId": 9999000097123,
+              "takeAwayOrderId": 13651271,
+              "takeAwayOrderComboSetId": 34121990,
+              "name": "H番茄燉牛肋條",
+              "desc": "",
+              "names": {
+                "tc": "H番茄燉牛肋條",
+                "en": "H番茄燉牛肋條",
+                "sc": "H番茄燉牛肋條"
+              },
+              "descs": {
+                "tc": "",
+                "en": "",
+                "sc": ""
+              },
+              "photoName": "846269",
+              "photoUrl": null,
+              "maxQuantity": 1,
+              "unitPrice": 0,
+              "referenceId": "ORI-482",
+              "createTime": "2024-11-01T09:54:53Z",
+              "modifyTime": null,
+              "publishTime": "2024-11-01T00:00:00Z",
+              "expireTime": "2024-11-01T23:59:59Z",
+              "quantity": 1,
+              "remainingStock": 0,
+              "modifierItems": [
+                {
+                  "modifierItemId": 16,
+                  "name": "不需要餐具",
+                  "names": {
+                    "tc": "不需要餐具",
+                    "en": "不需要餐具",
+                    "sc": "不需要餐具"
+                  },
+                  "unitPrice": 0
+                }
+              ]
+            },
+            {
+              "takeAwayOrderComboItemId": 38687092,
+              "comboItemId": 2532,
+              "itemId": 503,
+              "syncId": 9999000097123,
+              "takeAwayOrderId": 13651271,
+              "takeAwayOrderComboSetId": 34121991,
+              "name": "H手工原味豆腐",
+              "desc": "",
+              "names": {
+                "tc": "H手工原味豆腐",
+                "en": "H手工原味豆腐",
+                "sc": "H手工原味豆腐"
+              },
+              "descs": {
+                "tc": "",
+                "en": "",
+                "sc": ""
+              },
+              "photoName": "846080",
+              "photoUrl": null,
+              "maxQuantity": 1,
+              "unitPrice": 2,
+              "referenceId": "ORI-416",
+              "createTime": "2024-11-01T09:54:53Z",
+              "modifyTime": null,
+              "publishTime": "2024-11-01T00:00:00Z",
+              "expireTime": "2024-11-01T23:59:59Z",
+              "quantity": 1,
+              "remainingStock": 0,
+              "modifierItems": [
+                {
+                  "modifierItemId": 16,
+                  "name": "不需要餐具",
+                  "names": {
+                    "tc": "不需要餐具",
+                    "en": "不需要餐具",
+                    "sc": "不需要餐具"
+                  },
+                  "unitPrice": 0
+                }
+              ]
+            },
+            {
+              "takeAwayOrderComboItemId": 38687093,
+              "comboItemId": 2533,
+              "itemId": 503,
+              "syncId": 9999000097123,
+              "takeAwayOrderId": 13651271,
+              "takeAwayOrderComboSetId": 34121992,
+              "name": "H金銀蒜蒸娃娃菜",
+              "desc": "",
+              "names": {
+                "tc": "H金銀蒜蒸娃娃菜",
+                "en": "H金銀蒜蒸娃娃菜",
+                "sc": "H金銀蒜蒸娃娃菜"
+              },
+              "descs": {
+                "tc": "",
+                "en": "",
+                "sc": ""
+              },
+              "photoName": "847444",
+              "photoUrl": null,
+              "maxQuantity": 1,
+              "unitPrice": 0,
+              "referenceId": "ORI-485",
+              "createTime": "2024-11-01T09:54:53Z",
+              "modifyTime": null,
+              "publishTime": "2024-11-01T00:00:00Z",
+              "expireTime": "2024-11-01T23:59:59Z",
+              "quantity": 1,
+              "remainingStock": 0,
+              "modifierItems": [
+                {
+                  "modifierItemId": 16,
+                  "name": "不需要餐具",
+                  "names": {
+                    "tc": "不需要餐具",
+                    "en": "不需要餐具",
+                    "sc": "不需要餐具"
+                  },
+                  "unitPrice": 0
+                }
+              ]
+            },
+            {
+              "takeAwayOrderComboItemId": 38687094,
+              "comboItemId": 2257,
+              "itemId": 503,
+              "syncId": 9999000097123,
+              "takeAwayOrderId": 13651271,
+              "takeAwayOrderComboSetId": 34121993,
+              "name": "H雜糧飯",
+              "desc": "",
+              "names": {
+                "tc": "H雜糧飯",
+                "en": "H雜糧飯",
+                "sc": "H雜糧飯"
+              },
+              "descs": {
+                "tc": "",
+                "en": "",
+                "sc": ""
+              },
+              "photoName": "845984",
+              "photoUrl": null,
+              "maxQuantity": 1,
+              "unitPrice": 0,
+              "referenceId": "ORI-400",
+              "createTime": "2024-11-01T09:54:53Z",
+              "modifyTime": null,
+              "publishTime": "2024-07-08T00:00:00Z",
+              "expireTime": null,
+              "quantity": 1,
+              "remainingStock": 0,
+              "modifierItems": [
+                {
+                  "modifierItemId": 16,
+                  "name": "不需要餐具",
+                  "names": {
+                    "tc": "不需要餐具",
+                    "en": "不需要餐具",
+                    "sc": "不需要餐具"
+                  },
+                  "unitPrice": 0
+                }
+              ]
+            }
+          ],
+          "quantity": 1,
+          "price": 70,
+          "modifierItems": []
+        }
+      ],
+      "editStatus": 0,
+      "merchantFinalPrice": 82,
+      "orderRefId": "O2024110113778660161",
+      "currency": "HKD",
+      "isRemarked": false,
+      "isRead": true,
+      "contactName": "Nicole",
+      "contactPhone": "68169630",
+      "contactPhoneAreaCodeId": 1,
+      "totalDishesQty": 2,
+      "corpUserId": null,
+      "messageId": null,
+      "commissionCharge": 6.56,
+      "netTotalAmount": 75.44,
+      "isRequiredPacking": null,
+      "serviceType": 0,
+      "pickupNumber": "T0001",
+      "autoAcceptOrder": null,
+      "isDeliveryCodeOrder": false,
+      "isDeliveryOrder": false,
+      "orPoiId": 847979,
+      "poiName": "WeBite Space",
+      "shopCode": null,
+      "districtName": "中環",
+      "restaurantAddress": "皇后大道中99號中環中心1樓3號舖",
+      "deliveryOrderType": "外賣自取",
+      "isUrgentOrder": null,
+      "isPartyFood": false
+    },
+    {
+      "takeAwayOrderId": 13647990,
+      "status": 10,
+      "oldStatus": null,
+      "customerInfo": {
+        "name": "Emily",
+        "title": 0,
+        "email": null,
+        "phone": "95414622",
+        "phoneAreaCode": 1,
+        "tmUserId": null,
+        "regionName": null
+      },
+      "pickupTime": "2024-10-31T06:46:00Z",
+      "startDeliverytime": null,
+      "createTime": "2024-10-31T06:16:12Z",
+      "paymentTime": "2024-10-31T06:16:28Z",
+      "completedTime": "2024-10-31T08:47:02Z",
+      "remark": "",
+      "cancelDetail": null,
+      "takeAwayOrderItems": [
+        {
+          "itemId": 30,
+          "syncId": 9999000097123,
+          "takeAwayOrderItemId": 27081189,
+          "takeAwayOrderId": 13647990,
+          "name": "美式",
+          "desc": "",
+          "names": {
+            "tc": "美式",
+            "en": "Americano",
+            "sc": "美式"
+          },
+          "descs": {
+            "tc": "",
+            "en": "",
+            "sc": ""
+          },
+          "photoName": null,
+          "photoUrl": null,
+          "unitPrice": 12,
+          "categoryId": 9,
+          "isRecommended": false,
+          "referenceId": "ORI-30",
+          "remainingStock": 0,
+          "createTime": "2024-10-31T14:16:12Z",
+          "modifyTime": null,
+          "publishTime": "2024-01-22T00:00:00Z",
+          "expireTime": null,
+          "comboItems": [
+            {
+              "takeAwayOrderComboItemId": 38675926,
+              "comboItemId": 85,
+              "itemId": 30,
+              "syncId": 9999000097123,
+              "takeAwayOrderId": 13647990,
+              "takeAwayOrderComboSetId": 34112025,
+              "name": "中杯",
+              "desc": "",
+              "names": {
+                "tc": "中杯",
+                "en": "Medium",
+                "sc": "中杯"
+              },
+              "descs": {
+                "tc": "",
+                "en": "",
+                "sc": ""
+              },
+              "photoName": null,
+              "photoUrl": null,
+              "maxQuantity": 1,
+              "unitPrice": 0,
+              "referenceId": "ORI-49",
+              "createTime": "2024-10-31T14:16:12Z",
+              "modifyTime": null,
+              "publishTime": "2024-01-22T00:00:00Z",
+              "expireTime": null,
+              "quantity": 1,
+              "remainingStock": 0,
+              "modifierItems": []
+            },
+            {
+              "takeAwayOrderComboItemId": 38675927,
+              "comboItemId": 89,
+              "itemId": 30,
+              "syncId": 9999000097123,
+              "takeAwayOrderId": 13647990,
+              "takeAwayOrderComboSetId": 34112026,
+              "name": "熱",
+              "desc": "",
+              "names": {
+                "tc": "熱",
+                "en": "Hot",
+                "sc": "熱"
+              },
+              "descs": {
+                "tc": "",
+                "en": "",
+                "sc": ""
+              },
+              "photoName": null,
+              "photoUrl": null,
+              "maxQuantity": 1,
+              "unitPrice": 0,
+              "referenceId": "ORI-53",
+              "createTime": "2024-10-31T14:16:12Z",
+              "modifyTime": null,
+              "publishTime": "2024-01-22T00:00:00Z",
+              "expireTime": null,
+              "quantity": 1,
+              "remainingStock": 0,
+              "modifierItems": []
+            }
+          ],
+          "quantity": 1,
+          "price": 12,
+          "modifierItems": []
+        },
+        {
+          "itemId": 30,
+          "syncId": 9999000097123,
+          "takeAwayOrderItemId": 27081189,
+          "takeAwayOrderId": 13647990,
+          "name": "美式",
+          "desc": "",
+          "names": {
+            "tc": "美式",
+            "en": "Americano",
+            "sc": "美式"
+          },
+          "descs": {
+            "tc": "",
+            "en": "",
+            "sc": ""
+          },
+          "photoName": null,
+          "photoUrl": null,
+          "unitPrice": 12,
+          "categoryId": 9,
+          "isRecommended": false,
+          "referenceId": "ORI-30",
+          "remainingStock": 0,
+          "createTime": "2024-10-31T14:16:12Z",
+          "modifyTime": null,
+          "publishTime": "2024-01-22T00:00:00Z",
+          "expireTime": null,
+          "comboItems": [
+            {
+              "takeAwayOrderComboItemId": 38675926,
+              "comboItemId": 85,
+              "itemId": 30,
+              "syncId": 9999000097123,
+              "takeAwayOrderId": 13647990,
+              "takeAwayOrderComboSetId": 34112025,
+              "name": "中杯",
+              "desc": "",
+              "names": {
+                "tc": "中杯",
+                "en": "Medium",
+                "sc": "中杯"
+              },
+              "descs": {
+                "tc": "",
+                "en": "",
+                "sc": ""
+              },
+              "photoName": null,
+              "photoUrl": null,
+              "maxQuantity": 1,
+              "unitPrice": 0,
+              "referenceId": "ORI-49",
+              "createTime": "2024-10-31T14:16:12Z",
+              "modifyTime": null,
+              "publishTime": "2024-01-22T00:00:00Z",
+              "expireTime": null,
+              "quantity": 1,
+              "remainingStock": 0,
+              "modifierItems": []
+            },
+            {
+              "takeAwayOrderComboItemId": 38675927,
+              "comboItemId": 89,
+              "itemId": 30,
+              "syncId": 9999000097123,
+              "takeAwayOrderId": 13647990,
+              "takeAwayOrderComboSetId": 34112026,
+              "name": "熱",
+              "desc": "",
+              "names": {
+                "tc": "熱",
+                "en": "Hot",
+                "sc": "熱"
+              },
+              "descs": {
+                "tc": "",
+                "en": "",
+                "sc": ""
+              },
+              "photoName": null,
+              "photoUrl": null,
+              "maxQuantity": 1,
+              "unitPrice": 0,
+              "referenceId": "ORI-53",
+              "createTime": "2024-10-31T14:16:12Z",
+              "modifyTime": null,
+              "publishTime": "2024-01-22T00:00:00Z",
+              "expireTime": null,
+              "quantity": 1,
+              "remainingStock": 0,
+              "modifierItems": []
+            }
+          ],
+          "quantity": 1,
+          "price": 12,
+          "modifierItems": []
+        }
+      ],
+      "editStatus": 0,
+      "merchantFinalPrice": 24,
+      "orderRefId": "O2024103113775378881",
+      "currency": "HKD",
+      "isRemarked": false,
+      "isRead": true,
+      "contactName": "Emily",
+      "contactPhone": "95414622",
+      "contactPhoneAreaCodeId": 1,
+      "totalDishesQty": 2,
+      "corpUserId": null,
+      "messageId": null,
+      "commissionCharge": 1.92,
+      "netTotalAmount": 22.08,
+      "isRequiredPacking": null,
+      "serviceType": 0,
+      "pickupNumber": "T0004",
+      "autoAcceptOrder": null,
+      "isDeliveryCodeOrder": false,
+      "isDeliveryOrder": false,
+      "orPoiId": 847979,
+      "poiName": "WeBite Space",
+      "shopCode": null,
+      "districtName": "中環",
+      "restaurantAddress": "皇后大道中99號中環中心1樓3號舖",
+      "deliveryOrderType": "外賣自取",
+      "isUrgentOrder": null,
+      "isPartyFood": false
+    },
+    {
+      "takeAwayOrderId": 13647721,
+      "status": 10,
+      "oldStatus": null,
+      "customerInfo": {
+        "name": "Taojiang Liu",
+        "title": 0,
+        "email": null,
+        "phone": "66810151",
+        "phoneAreaCode": 1,
+        "tmUserId": null,
+        "regionName": null
+      },
+      "pickupTime": "2024-10-31T06:05:00Z",
+      "startDeliverytime": null,
+      "createTime": "2024-10-31T05:34:42Z",
+      "paymentTime": "2024-10-31T05:35:13Z",
+      "completedTime": "2024-10-31T08:05:59Z",
+      "remark": "",
+      "cancelDetail": null,
+      "takeAwayOrderItems": [
+        {
+          "itemId": 31,
+          "syncId": 9999000097123,
+          "takeAwayOrderItemId": 27080812,
+          "takeAwayOrderId": 13647721,
+          "name": "拿鐵",
+          "desc": "",
+          "names": {
+            "tc": "拿鐵",
+            "en": "Latte",
+            "sc": "拿鐵"
+          },
+          "descs": {
+            "tc": "",
+            "en": "",
+            "sc": ""
+          },
+          "photoName": null,
+          "photoUrl": null,
+          "unitPrice": 23,
+          "categoryId": 9,
+          "isRecommended": false,
+          "referenceId": "ORI-31",
+          "remainingStock": 0,
+          "createTime": "2024-10-31T13:34:42Z",
+          "modifyTime": null,
+          "publishTime": "2024-01-22T00:00:00Z",
+          "expireTime": null,
+          "comboItems": [
+            {
+              "takeAwayOrderComboItemId": 38675025,
+              "comboItemId": 82,
+              "itemId": 31,
+              "syncId": 9999000097123,
+              "takeAwayOrderId": 13647721,
+              "takeAwayOrderComboSetId": 34111222,
+              "name": "大杯",
+              "desc": "",
+              "names": {
+                "tc": "大杯",
+                "en": "Large",
+                "sc": "大杯"
+              },
+              "descs": {
+                "tc": "",
+                "en": "",
+                "sc": ""
+              },
+              "photoName": null,
+              "photoUrl": null,
+              "maxQuantity": 1,
+              "unitPrice": 3,
+              "referenceId": "ORI-52",
+              "createTime": "2024-10-31T13:34:42Z",
+              "modifyTime": null,
+              "publishTime": "2024-01-22T00:00:00Z",
+              "expireTime": null,
+              "quantity": 1,
+              "remainingStock": 0,
+              "modifierItems": []
+            },
+            {
+              "takeAwayOrderComboItemId": 38675026,
+              "comboItemId": 84,
+              "itemId": 31,
+              "syncId": 9999000097123,
+              "takeAwayOrderId": 13647721,
+              "takeAwayOrderComboSetId": 34111223,
+              "name": "冰（正常冰）",
+              "desc": "",
+              "names": {
+                "tc": "冰（正常冰）",
+                "en": "Iced",
+                "sc": "冰（正常冰）"
+              },
+              "descs": {
+                "tc": "",
+                "en": "",
+                "sc": ""
+              },
+              "photoName": null,
+              "photoUrl": null,
+              "maxQuantity": 1,
+              "unitPrice": 0,
+              "referenceId": "ORI-54",
+              "createTime": "2024-10-31T13:34:42Z",
+              "modifyTime": null,
+              "publishTime": "2024-01-22T00:00:00Z",
+              "expireTime": null,
+              "quantity": 1,
+              "remainingStock": 0,
+              "modifierItems": []
+            }
+          ],
+          "quantity": 1,
+          "price": 26,
+          "modifierItems": []
+        }
+      ],
+      "editStatus": 0,
+      "merchantFinalPrice": 26,
+      "orderRefId": "O2024103113775109850",
+      "currency": "HKD",
+      "isRemarked": false,
+      "isRead": true,
+      "contactName": "Taojiang Liu",
+      "contactPhone": "66810151",
+      "contactPhoneAreaCodeId": 1,
+      "totalDishesQty": 1,
+      "corpUserId": null,
+      "messageId": null,
+      "commissionCharge": 2.08,
+      "netTotalAmount": 23.92,
+      "isRequiredPacking": null,
+      "serviceType": 0,
+      "pickupNumber": "T0003",
+      "autoAcceptOrder": null,
+      "isDeliveryCodeOrder": false,
+      "isDeliveryOrder": false,
+      "orPoiId": 847979,
+      "poiName": "WeBite Space",
+      "shopCode": null,
+      "districtName": "中環",
+      "restaurantAddress": "皇后大道中99號中環中心1樓3號舖",
+      "deliveryOrderType": "外賣自取",
+      "isUrgentOrder": null,
+      "isPartyFood": false
+    },
+    {
+      "takeAwayOrderId": 13647724,
+      "status": 10,
+      "oldStatus": null,
+      "customerInfo": {
+        "name": "Yuen",
+        "title": 0,
+        "email": null,
+        "phone": "54013661",
+        "phoneAreaCode": 1,
+        "tmUserId": null,
+        "regionName": null
+      },
+      "pickupTime": "2024-10-31T06:04:00Z",
+      "startDeliverytime": null,
+      "createTime": "2024-10-31T05:34:51Z",
+      "paymentTime": "2024-10-31T05:34:55Z",
+      "completedTime": "2024-10-31T08:05:01Z",
+      "remark": "",
+      "cancelDetail": null,
+      "takeAwayOrderItems": [
+        {
+          "itemId": 30,
+          "syncId": 9999000097123,
+          "takeAwayOrderItemId": 27080815,
+          "takeAwayOrderId": 13647724,
+          "name": "美式",
+          "desc": "",
+          "names": {
+            "tc": "美式",
+            "en": "Americano",
+            "sc": "美式"
+          },
+          "descs": {
+            "tc": "",
+            "en": "",
+            "sc": ""
+          },
+          "photoName": null,
+          "photoUrl": null,
+          "unitPrice": 12,
+          "categoryId": 9,
+          "isRecommended": false,
+          "referenceId": "ORI-30",
+          "remainingStock": 0,
+          "createTime": "2024-10-31T13:34:51Z",
+          "modifyTime": null,
+          "publishTime": "2024-01-22T00:00:00Z",
+          "expireTime": null,
+          "comboItems": [
+            {
+              "takeAwayOrderComboItemId": 38675035,
+              "comboItemId": 85,
+              "itemId": 30,
+              "syncId": 9999000097123,
+              "takeAwayOrderId": 13647724,
+              "takeAwayOrderComboSetId": 34111230,
+              "name": "中杯",
+              "desc": "",
+              "names": {
+                "tc": "中杯",
+                "en": "Medium",
+                "sc": "中杯"
+              },
+              "descs": {
+                "tc": "",
+                "en": "",
+                "sc": ""
+              },
+              "photoName": null,
+              "photoUrl": null,
+              "maxQuantity": 1,
+              "unitPrice": 0,
+              "referenceId": "ORI-49",
+              "createTime": "2024-10-31T13:34:51Z",
+              "modifyTime": null,
+              "publishTime": "2024-01-22T00:00:00Z",
+              "expireTime": null,
+              "quantity": 1,
+              "remainingStock": 0,
+              "modifierItems": []
+            },
+            {
+              "takeAwayOrderComboItemId": 38675036,
+              "comboItemId": 493,
+              "itemId": 30,
+              "syncId": 9999000097123,
+              "takeAwayOrderId": 13647724,
+              "takeAwayOrderComboSetId": 34111231,
+              "name": "冰（少冰）",
+              "desc": "",
+              "names": {
+                "tc": "冰（少冰）",
+                "en": "Iced",
+                "sc": "冰（少冰）"
+              },
+              "descs": {
+                "tc": "",
+                "en": "",
+                "sc": ""
+              },
+              "photoName": null,
+              "photoUrl": null,
+              "maxQuantity": 1,
+              "unitPrice": 0,
+              "referenceId": "ORI-229",
+              "createTime": "2024-10-31T13:34:51Z",
+              "modifyTime": null,
+              "publishTime": "2024-01-22T00:00:00Z",
+              "expireTime": null,
+              "quantity": 1,
+              "remainingStock": 0,
+              "modifierItems": []
+            }
+          ],
+          "quantity": 1,
+          "price": 12,
+          "modifierItems": []
+        },
+        {
+          "itemId": 30,
+          "syncId": 9999000097123,
+          "takeAwayOrderItemId": 27080815,
+          "takeAwayOrderId": 13647724,
+          "name": "美式",
+          "desc": "",
+          "names": {
+            "tc": "美式",
+            "en": "Americano",
+            "sc": "美式"
+          },
+          "descs": {
+            "tc": "",
+            "en": "",
+            "sc": ""
+          },
+          "photoName": null,
+          "photoUrl": null,
+          "unitPrice": 12,
+          "categoryId": 9,
+          "isRecommended": false,
+          "referenceId": "ORI-30",
+          "remainingStock": 0,
+          "createTime": "2024-10-31T13:34:51Z",
+          "modifyTime": null,
+          "publishTime": "2024-01-22T00:00:00Z",
+          "expireTime": null,
+          "comboItems": [
+            {
+              "takeAwayOrderComboItemId": 38675035,
+              "comboItemId": 85,
+              "itemId": 30,
+              "syncId": 9999000097123,
+              "takeAwayOrderId": 13647724,
+              "takeAwayOrderComboSetId": 34111230,
+              "name": "中杯",
+              "desc": "",
+              "names": {
+                "tc": "中杯",
+                "en": "Medium",
+                "sc": "中杯"
+              },
+              "descs": {
+                "tc": "",
+                "en": "",
+                "sc": ""
+              },
+              "photoName": null,
+              "photoUrl": null,
+              "maxQuantity": 1,
+              "unitPrice": 0,
+              "referenceId": "ORI-49",
+              "createTime": "2024-10-31T13:34:51Z",
+              "modifyTime": null,
+              "publishTime": "2024-01-22T00:00:00Z",
+              "expireTime": null,
+              "quantity": 1,
+              "remainingStock": 0,
+              "modifierItems": []
+            },
+            {
+              "takeAwayOrderComboItemId": 38675036,
+              "comboItemId": 493,
+              "itemId": 30,
+              "syncId": 9999000097123,
+              "takeAwayOrderId": 13647724,
+              "takeAwayOrderComboSetId": 34111231,
+              "name": "冰（少冰）",
+              "desc": "",
+              "names": {
+                "tc": "冰（少冰）",
+                "en": "Iced",
+                "sc": "冰（少冰）"
+              },
+              "descs": {
+                "tc": "",
+                "en": "",
+                "sc": ""
+              },
+              "photoName": null,
+              "photoUrl": null,
+              "maxQuantity": 1,
+              "unitPrice": 0,
+              "referenceId": "ORI-229",
+              "createTime": "2024-10-31T13:34:51Z",
+              "modifyTime": null,
+              "publishTime": "2024-01-22T00:00:00Z",
+              "expireTime": null,
+              "quantity": 1,
+              "remainingStock": 0,
+              "modifierItems": []
+            }
+          ],
+          "quantity": 1,
+          "price": 12,
+          "modifierItems": []
+        }
+      ],
+      "editStatus": 0,
+      "merchantFinalPrice": 24,
+      "orderRefId": "O2024103113775112784",
+      "currency": "HKD",
+      "isRemarked": false,
+      "isRead": true,
+      "contactName": "Yuen",
+      "contactPhone": "54013661",
+      "contactPhoneAreaCodeId": 1,
+      "totalDishesQty": 2,
+      "corpUserId": null,
+      "messageId": null,
+      "commissionCharge": 1.92,
+      "netTotalAmount": 22.08,
+      "isRequiredPacking": null,
+      "serviceType": 0,
+      "pickupNumber": "T0002",
+      "autoAcceptOrder": null,
+      "isDeliveryCodeOrder": false,
+      "isDeliveryOrder": false,
+      "orPoiId": 847979,
+      "poiName": "WeBite Space",
+      "shopCode": null,
+      "districtName": "中環",
+      "restaurantAddress": "皇后大道中99號中環中心1樓3號舖",
+      "deliveryOrderType": "外賣自取",
+      "isUrgentOrder": null,
+      "isPartyFood": false
+    },
+    {
+      "takeAwayOrderId": 13646361,
+      "status": 10,
+      "oldStatus": null,
+      "customerInfo": {
+        "name": "黃海澄",
+        "title": 0,
+        "email": null,
+        "phone": "91587481",
+        "phoneAreaCode": 1,
+        "tmUserId": null,
+        "regionName": null
+      },
+      "pickupTime": "2024-10-31T04:54:00Z",
+      "startDeliverytime": null,
+      "createTime": "2024-10-31T04:24:02Z",
+      "paymentTime": "2024-10-31T04:24:16Z",
+      "completedTime": "2024-10-31T06:55:13Z",
+      "remark": "無需餐具",
+      "cancelDetail": null,
+      "takeAwayOrderItems": [
+        {
+          "itemId": 501,
+          "syncId": 9999000097123,
+          "takeAwayOrderItemId": 27078986,
+          "takeAwayOrderId": 13646361,
+          "name": "H陳醋小排",
+          "desc": "",
+          "names": {
+            "tc": "H陳醋小排",
+            "en": "H陳醋小排",
+            "sc": "H陳醋小排"
+          },
+          "descs": {
+            "tc": "",
+            "en": "",
+            "sc": ""
+          },
+          "photoName": "847344",
+          "photoUrl": null,
+          "unitPrice": 38,
+          "categoryId": 28,
+          "isRecommended": false,
+          "referenceId": "ORI-501",
+          "remainingStock": 0,
+          "createTime": "2024-10-31T12:24:02Z",
+          "modifyTime": null,
+          "publishTime": "2024-10-30T00:00:00Z",
+          "expireTime": "2024-10-31T23:59:59Z",
+          "comboItems": [],
+          "quantity": 1,
+          "price": 38,
+          "modifierItems": [
+            {
+              "modifierItemId": 16,
+              "name": "不需要餐具",
+              "names": {
+                "tc": "不需要餐具",
+                "en": "不需要餐具",
+                "sc": "不需要餐具"
+              },
+              "unitPrice": 0
+            }
+          ]
+        },
+        {
+          "itemId": 463,
+          "syncId": 9999000097123,
+          "takeAwayOrderItemId": 27078987,
+          "takeAwayOrderId": 13646361,
+          "name": "H牛肉燜飯",
+          "desc": "",
+          "names": {
+            "tc": "H牛肉燜飯",
+            "en": "H牛肉燜飯",
+            "sc": "H牛肉燜飯"
+          },
+          "descs": {
+            "tc": "",
+            "en": "",
+            "sc": ""
+          },
+          "photoName": "845987",
+          "photoUrl": null,
+          "unitPrice": 15,
+          "categoryId": 28,
+          "isRecommended": false,
+          "referenceId": "ORI-463",
+          "remainingStock": 0,
+          "createTime": "2024-10-31T12:24:02Z",
+          "modifyTime": null,
+          "publishTime": "2024-10-30T00:00:00Z",
+          "expireTime": "2024-10-31T23:59:59Z",
+          "comboItems": [],
+          "quantity": 1,
+          "price": 15,
+          "modifierItems": []
+        },
+        {
+          "itemId": 498,
+          "syncId": 9999000097123,
+          "takeAwayOrderItemId": 27078988,
+          "takeAwayOrderId": 13646361,
+          "name": "10-B3豚肉套餐",
+          "desc": "",
+          "names": {
+            "tc": "10-B3豚肉套餐",
+            "en": "10-B3豚肉套餐",
+            "sc": "10-B3豚肉套餐"
+          },
+          "descs": {
+            "tc": "",
+            "en": "",
+            "sc": ""
+          },
+          "photoName": "855733",
+          "photoUrl": null,
+          "unitPrice": 68,
+          "categoryId": 28,
+          "isRecommended": false,
+          "referenceId": "ORI-498",
+          "remainingStock": 0,
+          "createTime": "2024-10-31T12:24:02Z",
+          "modifyTime": null,
+          "publishTime": "2024-10-30T00:00:00Z",
+          "expireTime": "2024-10-31T23:59:59Z",
+          "comboItems": [
+            {
+              "takeAwayOrderComboItemId": 38670297,
+              "comboItemId": 2642,
+              "itemId": 498,
+              "syncId": 9999000097123,
+              "takeAwayOrderId": 13646361,
+              "takeAwayOrderComboSetId": 34107081,
+              "name": "不需要餐具",
+              "desc": "",
+              "names": {
+                "tc": "不需要餐具",
+                "en": "不需要餐具",
+                "sc": "不需要餐具"
+              },
+              "descs": {
+                "tc": "",
+                "en": "",
+                "sc": ""
+              },
+              "photoName": null,
+              "photoUrl": null,
+              "maxQuantity": 1,
+              "unitPrice": 0,
+              "referenceId": "ORI-243",
+              "createTime": "2024-10-31T12:24:02Z",
+              "modifyTime": null,
+              "publishTime": "2024-04-25T00:00:00Z",
+              "expireTime": null,
+              "quantity": 1,
+              "remainingStock": 0,
+              "modifierItems": []
+            },
+            {
+              "takeAwayOrderComboItemId": 38670298,
+              "comboItemId": 2643,
+              "itemId": 498,
+              "syncId": 9999000097123,
+              "takeAwayOrderId": 13646361,
+              "takeAwayOrderComboSetId": 34107082,
+              "name": "H陳醋小排",
+              "desc": "",
+              "names": {
+                "tc": "H陳醋小排",
+                "en": "H陳醋小排",
+                "sc": "H陳醋小排"
+              },
+              "descs": {
+                "tc": "",
+                "en": "",
+                "sc": ""
+              },
+              "photoName": "847344",
+              "photoUrl": null,
+              "maxQuantity": 1,
+              "unitPrice": 0,
+              "referenceId": "ORI-501",
+              "createTime": "2024-10-31T12:24:02Z",
+              "modifyTime": null,
+              "publishTime": "2024-10-30T00:00:00Z",
+              "expireTime": "2024-10-31T23:59:59Z",
+              "quantity": 1,
+              "remainingStock": 0,
+              "modifierItems": [
+                {
+                  "modifierItemId": 16,
+                  "name": "不需要餐具",
+                  "names": {
+                    "tc": "不需要餐具",
+                    "en": "不需要餐具",
+                    "sc": "不需要餐具"
+                  },
+                  "unitPrice": 0
+                }
+              ]
+            },
+            {
+              "takeAwayOrderComboItemId": 38670299,
+              "comboItemId": 2644,
+              "itemId": 498,
+              "syncId": 9999000097123,
+              "takeAwayOrderId": 13646361,
+              "takeAwayOrderComboSetId": 34107083,
+              "name": "H醬燒豆腐",
+              "desc": "",
+              "names": {
+                "tc": "H醬燒豆腐",
+                "en": "H醬燒豆腐",
+                "sc": "H醬燒豆腐"
+              },
+              "descs": {
+                "tc": "",
+                "en": "",
+                "sc": ""
+              },
+              "photoName": "847359",
+              "photoUrl": null,
+              "maxQuantity": 1,
+              "unitPrice": 0,
+              "referenceId": "ORI-396",
+              "createTime": "2024-10-31T12:24:02Z",
+              "modifyTime": null,
+              "publishTime": "2024-10-30T00:00:00Z",
+              "expireTime": "2024-10-31T23:59:59Z",
+              "quantity": 1,
+              "remainingStock": 0,
+              "modifierItems": [
+                {
+                  "modifierItemId": 16,
+                  "name": "不需要餐具",
+                  "names": {
+                    "tc": "不需要餐具",
+                    "en": "不需要餐具",
+                    "sc": "不需要餐具"
+                  },
+                  "unitPrice": 0
+                }
+              ]
+            },
+            {
+              "takeAwayOrderComboItemId": 38670300,
+              "comboItemId": 2646,
+              "itemId": 498,
+              "syncId": 9999000097123,
+              "takeAwayOrderId": 13646361,
+              "takeAwayOrderComboSetId": 34107084,
+              "name": "H清炒白菜苗",
+              "desc": "",
+              "names": {
+                "tc": "H清炒白菜苗",
+                "en": "H清炒白菜苗",
+                "sc": "H清炒白菜苗"
+              },
+              "descs": {
+                "tc": "",
+                "en": "",
+                "sc": ""
+              },
+              "photoName": "847399",
+              "photoUrl": null,
+              "maxQuantity": 1,
+              "unitPrice": 0,
+              "referenceId": "ORI-397",
+              "createTime": "2024-10-31T12:24:03Z",
+              "modifyTime": null,
+              "publishTime": "2024-10-30T00:00:00Z",
+              "expireTime": "2024-10-31T23:59:59Z",
+              "quantity": 1,
+              "remainingStock": 0,
+              "modifierItems": []
+            },
+            {
+              "takeAwayOrderComboItemId": 38670301,
+              "comboItemId": 2650,
+              "itemId": 498,
+              "syncId": 9999000097123,
+              "takeAwayOrderId": 13646361,
+              "takeAwayOrderComboSetId": 34107085,
+              "name": "H紫米飯",
+              "desc": "",
+              "names": {
+                "tc": "H紫米飯",
+                "en": "H紫米飯",
+                "sc": "H紫米飯"
+              },
+              "descs": {
+                "tc": "",
+                "en": "",
+                "sc": ""
+              },
+              "photoName": "847405",
+              "photoUrl": null,
+              "maxQuantity": 1,
+              "unitPrice": 0,
+              "referenceId": "ORI-487",
+              "createTime": "2024-10-31T12:24:03Z",
+              "modifyTime": null,
+              "publishTime": "2024-10-30T00:00:00Z",
+              "expireTime": "2024-10-31T23:59:59Z",
+              "quantity": 1,
+              "remainingStock": 0,
+              "modifierItems": [
+                {
+                  "modifierItemId": 16,
+                  "name": "不需要餐具",
+                  "names": {
+                    "tc": "不需要餐具",
+                    "en": "不需要餐具",
+                    "sc": "不需要餐具"
+                  },
+                  "unitPrice": 0
+                }
+              ]
+            }
+          ],
+          "quantity": 1,
+          "price": 68,
+          "modifierItems": []
+        },
+        {
+          "itemId": 462,
+          "syncId": 9999000097123,
+          "takeAwayOrderItemId": 27078989,
+          "takeAwayOrderId": 13646361,
+          "name": "10-B1牛肉套餐",
+          "desc": "",
+          "names": {
+            "tc": "10-B1牛肉套餐",
+            "en": "10-B1牛肉套餐",
+            "sc": "10-B1牛肉套餐"
+          },
+          "descs": {
+            "tc": "",
+            "en": "",
+            "sc": ""
+          },
+          "photoName": "855730",
+          "photoUrl": null,
+          "unitPrice": 68,
+          "categoryId": 28,
+          "isRecommended": false,
+          "referenceId": "ORI-462",
+          "remainingStock": 0,
+          "createTime": "2024-10-31T12:24:03Z",
+          "modifyTime": null,
+          "publishTime": "2024-10-30T00:00:00Z",
+          "expireTime": "2024-10-31T23:59:59Z",
+          "comboItems": [
+            {
+              "takeAwayOrderComboItemId": 38670302,
+              "comboItemId": 1714,
+              "itemId": 462,
+              "syncId": 9999000097123,
+              "takeAwayOrderId": 13646361,
+              "takeAwayOrderComboSetId": 34107086,
+              "name": "不需要餐具",
+              "desc": "",
+              "names": {
+                "tc": "不需要餐具",
+                "en": "不需要餐具",
+                "sc": "不需要餐具"
+              },
+              "descs": {
+                "tc": "",
+                "en": "",
+                "sc": ""
+              },
+              "photoName": null,
+              "photoUrl": null,
+              "maxQuantity": 1,
+              "unitPrice": 0,
+              "referenceId": "ORI-243",
+              "createTime": "2024-10-31T12:24:03Z",
+              "modifyTime": null,
+              "publishTime": "2024-04-25T00:00:00Z",
+              "expireTime": null,
+              "quantity": 1,
+              "remainingStock": 0,
+              "modifierItems": []
+            },
+            {
+              "takeAwayOrderComboItemId": 38670303,
+              "comboItemId": 2443,
+              "itemId": 462,
+              "syncId": 9999000097123,
+              "takeAwayOrderId": 13646361,
+              "takeAwayOrderComboSetId": 34107087,
+              "name": "H川香孜然牛肉",
+              "desc": "",
+              "names": {
+                "tc": "H川香孜然牛肉",
+                "en": "H川香孜然牛肉",
+                "sc": "H川香孜然牛肉"
+              },
+              "descs": {
+                "tc": "",
+                "en": "",
+                "sc": ""
+              },
+              "photoName": "847147",
+              "photoUrl": null,
+              "maxQuantity": 1,
+              "unitPrice": 0,
+              "referenceId": "ORI-390",
+              "createTime": "2024-10-31T12:24:03Z",
+              "modifyTime": null,
+              "publishTime": "2024-10-30T00:00:00Z",
+              "expireTime": "2024-10-31T23:59:59Z",
+              "quantity": 1,
+              "remainingStock": 0,
+              "modifierItems": [
+                {
+                  "modifierItemId": 16,
+                  "name": "不需要餐具",
+                  "names": {
+                    "tc": "不需要餐具",
+                    "en": "不需要餐具",
+                    "sc": "不需要餐具"
+                  },
+                  "unitPrice": 0
+                }
+              ]
+            },
+            {
+              "takeAwayOrderComboItemId": 38670304,
+              "comboItemId": 2444,
+              "itemId": 462,
+              "syncId": 9999000097123,
+              "takeAwayOrderId": 13646361,
+              "takeAwayOrderComboSetId": 34107088,
+              "name": "H醬燒豆腐",
+              "desc": "",
+              "names": {
+                "tc": "H醬燒豆腐",
+                "en": "H醬燒豆腐",
+                "sc": "H醬燒豆腐"
+              },
+              "descs": {
+                "tc": "",
+                "en": "",
+                "sc": ""
+              },
+              "photoName": "847359",
+              "photoUrl": null,
+              "maxQuantity": 1,
+              "unitPrice": 0,
+              "referenceId": "ORI-396",
+              "createTime": "2024-10-31T12:24:03Z",
+              "modifyTime": null,
+              "publishTime": "2024-10-30T00:00:00Z",
+              "expireTime": "2024-10-31T23:59:59Z",
+              "quantity": 1,
+              "remainingStock": 0,
+              "modifierItems": [
+                {
+                  "modifierItemId": 16,
+                  "name": "不需要餐具",
+                  "names": {
+                    "tc": "不需要餐具",
+                    "en": "不需要餐具",
+                    "sc": "不需要餐具"
+                  },
+                  "unitPrice": 0
+                }
+              ]
+            },
+            {
+              "takeAwayOrderComboItemId": 38670305,
+              "comboItemId": 2446,
+              "itemId": 462,
+              "syncId": 9999000097123,
+              "takeAwayOrderId": 13646361,
+              "takeAwayOrderComboSetId": 34107089,
+              "name": "H清炒白菜苗",
+              "desc": "",
+              "names": {
+                "tc": "H清炒白菜苗",
+                "en": "H清炒白菜苗",
+                "sc": "H清炒白菜苗"
+              },
+              "descs": {
+                "tc": "",
+                "en": "",
+                "sc": ""
+              },
+              "photoName": "847399",
+              "photoUrl": null,
+              "maxQuantity": 1,
+              "unitPrice": 0,
+              "referenceId": "ORI-397",
+              "createTime": "2024-10-31T12:24:03Z",
+              "modifyTime": null,
+              "publishTime": "2024-10-30T00:00:00Z",
+              "expireTime": "2024-10-31T23:59:59Z",
+              "quantity": 1,
+              "remainingStock": 0,
+              "modifierItems": [
+                {
+                  "modifierItemId": 16,
+                  "name": "不需要餐具",
+                  "names": {
+                    "tc": "不需要餐具",
+                    "en": "不需要餐具",
+                    "sc": "不需要餐具"
+                  },
+                  "unitPrice": 0
+                }
+              ]
+            },
+            {
+              "takeAwayOrderComboItemId": 38670306,
+              "comboItemId": 2449,
+              "itemId": 462,
+              "syncId": 9999000097123,
+              "takeAwayOrderId": 13646361,
+              "takeAwayOrderComboSetId": 34107090,
+              "name": "H紫米飯",
+              "desc": "",
+              "names": {
+                "tc": "H紫米飯",
+                "en": "H紫米飯",
+                "sc": "H紫米飯"
+              },
+              "descs": {
+                "tc": "",
+                "en": "",
+                "sc": ""
+              },
+              "photoName": "847405",
+              "photoUrl": null,
+              "maxQuantity": 1,
+              "unitPrice": 0,
+              "referenceId": "ORI-487",
+              "createTime": "2024-10-31T12:24:03Z",
+              "modifyTime": null,
+              "publishTime": "2024-10-30T00:00:00Z",
+              "expireTime": "2024-10-31T23:59:59Z",
+              "quantity": 1,
+              "remainingStock": 0,
+              "modifierItems": [
+                {
+                  "modifierItemId": 16,
+                  "name": "不需要餐具",
+                  "names": {
+                    "tc": "不需要餐具",
+                    "en": "不需要餐具",
+                    "sc": "不需要餐具"
+                  },
+                  "unitPrice": 0
+                }
+              ]
+            }
+          ],
+          "quantity": 1,
+          "price": 68,
+          "modifierItems": []
+        },
+        {
+          "itemId": 20,
+          "syncId": 9999000097123,
+          "takeAwayOrderItemId": 27078990,
+          "takeAwayOrderId": 13646361,
+          "name": "千層吐司",
+          "desc": "",
+          "names": {
+            "tc": "千層吐司",
+            "en": "Puff Pastry Butter Toast",
+            "sc": "千層吐司"
+          },
+          "descs": {
+            "tc": "",
+            "en": "",
+            "sc": ""
+          },
+          "photoName": "813667",
+          "photoUrl": null,
+          "unitPrice": 36,
+          "categoryId": 6,
+          "isRecommended": false,
+          "referenceId": "ORI-20",
+          "remainingStock": 0,
+          "createTime": "2024-10-31T12:24:03Z",
+          "modifyTime": null,
+          "publishTime": "2024-01-22T00:00:00Z",
+          "expireTime": null,
+          "comboItems": [
+            {
+              "takeAwayOrderComboItemId": 38670307,
+              "comboItemId": 674,
+              "itemId": 20,
+              "syncId": 9999000097123,
+              "takeAwayOrderId": 13646361,
+              "takeAwayOrderComboSetId": 34107091,
+              "name": "不需要餐具",
+              "desc": "",
+              "names": {
+                "tc": "不需要餐具",
+                "en": "不需要餐具",
+                "sc": "不需要餐具"
+              },
+              "descs": {
+                "tc": "",
+                "en": "",
+                "sc": ""
+              },
+              "photoName": null,
+              "photoUrl": null,
+              "maxQuantity": 1,
+              "unitPrice": 0,
+              "referenceId": "ORI-243",
+              "createTime": "2024-10-31T12:24:03Z",
+              "modifyTime": null,
+              "publishTime": "2024-04-25T00:00:00Z",
+              "expireTime": null,
+              "quantity": 1,
+              "remainingStock": 0,
+              "modifierItems": []
+            }
+          ],
+          "quantity": 1,
+          "price": 36,
+          "modifierItems": []
+        }
+      ],
+      "editStatus": 0,
+      "merchantFinalPrice": 225,
+      "orderRefId": "O2024103113773747014",
+      "currency": "HKD",
+      "isRemarked": false,
+      "isRead": true,
+      "contactName": "黃海澄",
+      "contactPhone": "91587481",
+      "contactPhoneAreaCodeId": 1,
+      "totalDishesQty": 5,
+      "corpUserId": null,
+      "messageId": null,
+      "commissionCharge": 18,
+      "netTotalAmount": 207,
+      "isRequiredPacking": null,
+      "serviceType": 0,
+      "pickupNumber": "T0001",
+      "autoAcceptOrder": null,
+      "isDeliveryCodeOrder": false,
+      "isDeliveryOrder": false,
+      "orPoiId": 847979,
+      "poiName": "WeBite Space",
+      "shopCode": null,
+      "districtName": "中環",
+      "restaurantAddress": "皇后大道中99號中環中心1樓3號舖",
+      "deliveryOrderType": "外賣自取",
+      "isUrgentOrder": null,
+      "isPartyFood": false
+    }
+  ],
+  "paging": {
+    "previous": null,
+    "next": "2024-10-31 12:54:00.000_13646361",
+    "count": 22,
+    "rows": 10
+  },
+  "bboActionResponse": null
+}

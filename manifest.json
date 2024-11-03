@@ -1,0 +1,65 @@
+{
+  "manifest_version": 3,
+  "name": "AOMI API Request Listener",
+  "version": "1.0",
+  "permissions": [
+    "tabs",
+    "storage",
+    "activeTab",
+    "scripting",
+    "webRequest",
+    "downloads",
+    "declarativeNetRequest",
+    "declarativeNetRequestFeedback",
+    "declarativeNetRequestWithHostAccess",
+    "scripting"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icon.png",
+      "48": "icon.png",
+      "128": "icon.png"
+    }
+  },
+  "icons": {
+    "48": "icon.png",
+    "128": "icon.png"
+  },
+  "host_permissions": [
+    "https://merchant.mykeeta.com/*",
+    "https://merchant.openrice.com/*",
+    "https://uat-admin.aomiapp.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://merchant.mykeeta.com/*",
+        "https://merchant.openrice.com/*",
+        "https://uat-admin.aomiapp.com/*"
+      ],
+      "js": [
+        "libs/xlsx.full.min.js",
+        "content.js"
+      ],
+      "run_at": "document_start",
+      "all_frames": true
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "libs/xlsx.full.min.js",
+        "injected.js"
+      ],
+      "matches": [
+        "https://merchant.mykeeta.com/*",
+        "https://merchant.openrice.com/*",
+        "https://uat-admin.aomiapp.com/*"
+      ]
+    }
+  ]
+}
