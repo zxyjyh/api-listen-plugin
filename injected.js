@@ -76,22 +76,17 @@ window.ajax_interceptor_qoweifjqon_zxy = {
 
   startInterceptor: function () {
     console.log('开始拦截');
-    window.ajax_interceptor_qoweifjqon_zxy.settings.ajaxInterceptor_switchOn = true;
-
-    window.XMLHttpRequest = window.ajax_interceptor_qoweifjqon_zxy.myXHR.bind(window.ajax_interceptor_qoweifjqon_zxy);
-    window.fetch = window.ajax_interceptor_qoweifjqon_zxy.myFetch.bind(window.ajax_interceptor_qoweifjqon_zxy);
+    ajax_interceptor_qoweifjqon_zxy.settings.ajaxInterceptor_switchOn = true;
   },
 
   stopInterceptor: function () {
     console.log('停止拦截');
-    window.ajax_interceptor_qoweifjqon_zxy.settings.ajaxInterceptor_switchOn = false;
-    window.XMLHttpRequest = window.ajax_interceptor_qoweifjqon_zxy.originalXHR.bind(window.ajax_interceptor_qoweifjqon_zxy);
-    window.fetch = window.ajax_interceptor_qoweifjqon_zxy.originalFetch.bind(window.ajax_interceptor_qoweifjqon_zxy);
+    ajax_interceptor_qoweifjqon_zxy.settings.ajaxInterceptor_switchOn = false;
   },
 
   clearInterceptedResponses: function () {
     console.log('清除拦截响应');
-    window.ajax_interceptor_qoweifjqon_zxy.settings.interceptedResponses = {};
+    ajax_interceptor_qoweifjqon_zxy.settings.interceptedResponses = {};
   }
 }
 
@@ -100,11 +95,11 @@ window.addEventListener("message", function (event) {
   const data = event.data;
   if (data.type === 'ajaxInterceptor' && data.to === 'injectedScript') {
     if (data.action === 'start') {
-      window.ajax_interceptor_qoweifjqon_zxy.startInterceptor();
+      ajax_interceptor_qoweifjqon_zxy.startInterceptor();
     } else if (data.action === 'stop') {
-      window.ajax_interceptor_qoweifjqon_zxy.stopInterceptor();
+      ajax_interceptor_qoweifjqon_zxy.stopInterceptor();
     } else if (data.action === 'clear') {
-      window.ajax_interceptor_qoweifjqon_zxy.clearInterceptedResponses();
+      ajax_interceptor_qoweifjqon_zxy.clearInterceptedResponses();
     }
   }
 }, false);
@@ -112,20 +107,20 @@ window.addEventListener("message", function (event) {
 // 通知 content.js 脚本已准备就绪
 document.dispatchEvent(new Event('ajaxInterceptorReady'));
 
-// 重置 XMLHttpRequest 和 fetch
+// 使用动态 `getter` 设置 `XMLHttpRequest` 和 `fetch`
 Object.defineProperty(window, 'XMLHttpRequest', {
   get: function () {
-    return window.ajax_interceptor_qoweifjqon_zxy.settings.ajaxInterceptor_switchOn ?
-      window.ajax_interceptor_qoweifjqon_zxy.myXHR.bind(window.ajax_interceptor_qoweifjqon_zxy) :
-      window.ajax_interceptor_qoweifjqon_zxy.originalXHR;
+    return ajax_interceptor_qoweifjqon_zxy.settings.ajaxInterceptor_switchOn ?
+      ajax_interceptor_qoweifjqon_zxy.myXHR.bind(ajax_interceptor_qoweifjqon_zxy) :
+      ajax_interceptor_qoweifjqon_zxy.originalXHR;
   }
 });
 
 Object.defineProperty(window, 'fetch', {
   get: function () {
-    return window.ajax_interceptor_qoweifjqon_zxy.settings.ajaxInterceptor_switchOn ?
-      window.ajax_interceptor_qoweifjqon_zxy.myFetch.bind(window.ajax_interceptor_qoweifjqon_zxy) :
-      window.ajax_interceptor_qoweifjqon_zxy.originalFetch;
+    return ajax_interceptor_qoweifjqon_zxy.settings.ajaxInterceptor_switchOn ?
+      ajax_interceptor_qoweifjqon_zxy.myFetch.bind(ajax_interceptor_qoweifjqon_zxy) :
+      ajax_interceptor_qoweifjqon_zxy.originalFetch;
   }
 });
 
