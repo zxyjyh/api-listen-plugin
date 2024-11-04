@@ -6,7 +6,7 @@
 
   console.log('正在注入拦截器脚本');
 
-  var script = document.createElement('script');
+  const script = document.createElement('script');
   script.setAttribute('data-ajax-interceptor-zxy', 'true');
   script.src = chrome.runtime.getURL('injected.js');
   script.onload = function () {
@@ -31,18 +31,16 @@
     // );
 
 
-
-
   };
   (document.head || document.documentElement).appendChild(script);
 })();
 
-
+// 监听来自 background.js 的消息
 chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
   console.log("content.js 收到消息:", request);
-  if (request.type === 'ajaxInterceptor' && request.to === 'pageScript') {
+  if (request.type === 'ajaxInterceptor' && request.to === 'pageScript' && request.action) {
     console.log("处理 ajaxInterceptor 消息:", request);
-    // to injected.js
+    // 转发给 injected.js
     window.postMessage({
       type: 'ajaxInterceptor',
       to: 'injectedScript',
@@ -53,29 +51,20 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
   return true;  // 保持消息通道开放
 });
 
-document.addEventListener('ajaxInterceptorReady', function () {
-  window.addEventListener("message", function (event) {
-    const data = event.data;
-    if (data.type === 'ajaxInterceptor' && data.to === 'pageScript') {
-      //  to injected.js
-      window.postMessage({
-        type: 'ajaxInterceptor',
-        to: 'injectedScript',
-        action: data.action
-      }, '*');
-    } else if (event.data.type === 'ajaxInterceptor' && event.data.to === 'background' && event.data.action === 'saveData') {
-      // to background.js
-      chrome.runtime.sendMessage({
-        type: 'ajaxInterceptor',
-        action: 'saveData',
-        url: event.data.url,
-        data: event.data.data
-      });
-    }
-  }, false);
+// 监听来自 injected.js 的消息
+window.addEventListener("message", function (event) {
+  const data = event.data;
+  if (data.type === 'ajaxInterceptor' && data.to === 'background' && data.action === 'saveData') {
+    // 转发到 background.js
+    chrome.runtime.sendMessage({
+      type: 'ajaxInterceptor',
+      action: 'saveData',
+      url: data.url,
+      data: data.data
+    });
+  }
 
-  console.log('Ajax 拦截器事件监听器已设置');
-});
+}, false);
 
 console.log("content.js 已加载，消息监听器已设置");
 

@@ -2,7 +2,7 @@
   "data": [
     {
       "takeAwayOrderId": 13653289,
-      "status": 10, //状态
+      "status": 10, ///订单状态
       "oldStatus": null,
       "customerInfo": {
         "name": "Wang",
@@ -13,20 +13,20 @@
         "tmUserId": null,
         "regionName": null
       },
-      "pickupTime": "2024-11-01T05:21:00Z", //取餐时间
+      "pickupTime": "2024-11-01T05:21:00Z", ///取餐时间
       "startDeliverytime": null,
-      "createTime": "2024-11-01T04:51:45Z", 
-      "paymentTime": "2024-11-01T04:51:56Z",//支付时间
-      "completedTime": "2024-11-01T07:22:00Z", //完成时间
+      "createTime": "2024-11-01T04:51:45Z", ///下单时间
+      "paymentTime": "2024-11-01T04:51:56Z", 
+      "completedTime": "2024-11-01T07:22:00Z", ///完成时间
       "remark": "",
       "cancelDetail": null,
-      "takeAwayOrderItems": [
+      "takeAwayOrderItems": [ ///商品信息
         {
           "itemId": 503,
           "syncId": 9999000097123,
           "takeAwayOrderItemId": 27089762,
           "takeAwayOrderId": 13653289,
-          "name": "10-C1牛肉套餐",
+          "name": "10-C1牛肉套餐", ///商品名称
           "desc": "",
           "names": {
             "tc": "10-C1牛肉套餐",
@@ -40,7 +40,7 @@
           },
           "photoName": "855735",
           "photoUrl": null,
-          "unitPrice": 68,
+          "unitPrice": 68, ///商品价格
           "categoryId": 28,
           "isRecommended": false,
           "referenceId": "ORI-503",
@@ -49,7 +49,7 @@
           "modifyTime": null,
           "publishTime": "2024-11-01T00:00:00Z",
           "expireTime": "2024-11-01T23:59:59Z",
-          "comboItems": [
+          "comboItems": [ ///group信息
             {
               "takeAwayOrderComboItemId": 38694771,
               "comboItemId": 2249,
@@ -57,7 +57,7 @@
               "syncId": 9999000097123,
               "takeAwayOrderId": 13653289,
               "takeAwayOrderComboSetId": 34128607,
-              "name": "不需要餐具",
+              "name": "不需要餐具", ///group名称
               "desc": "",
               "names": {
                 "tc": "不需要餐具",
@@ -72,13 +72,13 @@
               "photoName": null,
               "photoUrl": null,
               "maxQuantity": 1,
-              "unitPrice": 0,
+              "unitPrice": 0, ///group价格
               "referenceId": "ORI-243",
               "createTime": "2024-11-01T12:51:45Z",
               "modifyTime": null,
               "publishTime": "2024-04-25T00:00:00Z",
               "expireTime": null,
-              "quantity": 1,
+              "quantity": 1, ///group数量
               "remainingStock": 0,
               "modifierItems": []
             },
@@ -89,7 +89,7 @@
               "syncId": 9999000097123,
               "takeAwayOrderId": 13653289,
               "takeAwayOrderComboSetId": 34128608,
-              "name": "H黑椒穀飼牛仔粒",
+              "name": "H黑椒穀飼牛仔粒",///group名称
               "desc": "",
               "names": {
                 "tc": "H黑椒穀飼牛仔粒",
@@ -104,13 +104,13 @@
               "photoName": "845555",
               "photoUrl": null,
               "maxQuantity": 1,
-              "unitPrice": 0,
+              "unitPrice": 0, ///group价格
               "referenceId": "ORI-409",
               "createTime": "2024-11-01T12:51:45Z",
               "modifyTime": null,
               "publishTime": "2024-11-01T00:00:00Z",
               "expireTime": "2024-11-01T23:59:59Z",
-              "quantity": 1,
+              "quantity": 1, ///group数量
               "remainingStock": 0,
               "modifierItems": [
                 {
@@ -308,14 +308,14 @@
               ]
             }
           ],
-          "quantity": 1,
-          "price": 84,
+          "quantity": 1, ///商品数量
+          "price": 84, ///商品价格
           "modifierItems": []
         }
       ],
       "editStatus": 0,
-      "merchantFinalPrice": 84,
-      "orderRefId": "O2024110113780681861", //订单编号
+      "merchantFinalPrice": 84,///订单金额
+      "orderRefId": "O2024110113780681861", ///订单编号
       "currency": "HKD",
       "isRemarked": false,
       "isRead": true,
@@ -325,20 +325,20 @@
       "totalDishesQty": 1,
       "corpUserId": null,
       "messageId": null,
-      "commissionCharge": 6.72,
-      "netTotalAmount": 77.28,
+      "commissionCharge": 6.72, ///交易成本 佣金
+      "netTotalAmount": 77.28, ///净收入
       "isRequiredPacking": null,
       "serviceType": 0,
-      "pickupNumber": "T0006",
+      "pickupNumber": "T0006", ///取餐号
       "autoAcceptOrder": null,
       "isDeliveryCodeOrder": false,
       "isDeliveryOrder": false,
-      "orPoiId": 847979,
-      "poiName": "WeBite Space", //门店名称
+      "orPoiId": 847979, ///poiId
+      "poiName": "WeBite Space", ///poi名称
       "shopCode": null,
       "districtName": "中環",
       "restaurantAddress": "皇后大道中99號中環中心1樓3號舖",
-      "deliveryOrderType": "外賣自取",
+      "deliveryOrderType": "外賣自取", ///订单类型
       "isUrgentOrder": null,
       "isPartyFood": false
     },
