@@ -3,16 +3,19 @@ importScripts('libs/xlsx.full.min.js');
 
 let isListening = false;
 
-// 初始化 IndexedDB
 const dbName = "APIInterceptorDB";
 const storeName = "apiDataStore";
 let db;
 
 const interceptDomains = [
-  'https://merchant.mykeeta.com/api/order/getOrderDtl',
-  'https://uat-manager-gateway.aomiapp.com/aomi-base-info-manager/authres/getResList',
-  'https://merchant.openrice.com/api/takeaway/takeawaylist'
+  "https://merchant.mykeeta.com",
+  "https://merchant.openrice.com",
+  "https://uat-admin.aomiapp.com"
 ]
+
+const isDomain = (url)=>{
+  return interceptDomains.some(domain=>url.startsWith(domain))
+}
 
 function openDatabase() {
   return new Promise((resolve, reject) => {
@@ -56,7 +59,6 @@ function saveToDatabase(data, type) {
         requests.push(request);
       }
 
-      // 用于跟踪所有请求的成功和失败
       let successCount = 0;
       let errorOccurred = false;
 
@@ -141,47 +143,65 @@ function startListening() {
   isListening = true;
   console.log("Listening for API requests...");
 
-  // 查询所有标签页
-  // chrome.tabs.query({}, function (tabs) {
-  //   tabs.forEach(tab => {
-  //     if (tab.url && tab.url.startsWith('http')) {
-  //       chrome.scripting.executeScript({
-  //         target: { tabId: tab.id },
-  //         files: ['content.js']
-  //       }, () => {
-  //         // 向每个标签页发送消息
-  //         chrome.tabs.sendMessage(tab.id, {
-  //           type: 'ajaxInterceptor',
-  //           to: 'pageScript',
-  //           action: 'start'
-  //         }, response => {
-  //           if (chrome.runtime.lastError) {
-  //             console.warn(`无法向标签页 ${tab.id} 发送消息: `, chrome.runtime.lastError.message);
-  //           } else {
-  //             console.log(`已通知标签页 ${tab.id} 开始监听`);
-  //           }
-  //         });
-  //       })
-  //     }
-
-  //   });
-  // });
-
-  // 当前激活的标签页
-  chrome.windows.getCurrent({ populate: true }, function (window) {
-    const activeTab = window.tabs.find(tab => tab.active);
-    chrome.tabs.sendMessage(activeTab.id, {
-      type: 'ajaxInterceptor',
-      to: 'pageScript',
-      action: 'start'
-    }, response => {
-      if (chrome.runtime.lastError) {
-        console.warn(`无法向标签页 ${activeTab.id} 发送消息: `, chrome.runtime.lastError.message);
-      } else {
-        console.log(`已通知标签页 ${activeTab.id} 开始监听`);
+  // 通知所有的tab
+  chrome.tabs.query({}, function (tabs) {
+    tabs.forEach(tab => {
+      if (tab.url && isDomain(tab.url)) {
+        // 向每個標籤頁發送檢查注入狀態的消息
+        chrome.tabs.sendMessage(tab.id, { type: 'checkInjection' }, response => {
+          if (chrome.runtime.lastError || !response || !response.isInjected) {
+            // 只有當 content.js 未被注入時才注入
+            chrome.scripting.executeScript({
+              target: { tabId: tab.id },
+              files: ['content.js']
+            }, () => {
+              // 注入完成後發送 start 消息
+              chrome.tabs.sendMessage(tab.id, {
+                type: 'ajaxInterceptor',
+                to: 'pageScript',
+                action: 'start'
+              }, response => {
+                if (chrome.runtime.lastError) {
+                  console.warn(`無法向標籤頁 ${tab.id} 發送消息: `, chrome.runtime.lastError.message);
+                } else {
+                  console.log(`已通知標籤頁 ${tab.id} 開始監聽 (注入後)`);
+                }
+              });
+            });
+          } else {
+            // 直接發送 start 消息
+            chrome.tabs.sendMessage(tab.id, {
+              type: 'ajaxInterceptor',
+              to: 'pageScript',
+              action: 'start'
+            }, response => {
+              if (chrome.runtime.lastError) {
+                console.warn(`無法向標籤頁 ${tab.id} 發送消息: `, chrome.runtime.lastError.message);
+              } else {
+                console.log(`已通知標籤頁 ${tab.id} 開始監聽 (已注入)`);
+              }
+            });
+          }
+        });
       }
     });
   });
+
+  // 只通知當前激活的標籤頁
+  // chrome.windows.getCurrent({ populate: true }, function (window) {
+  //   const activeTab = window.tabs.find(tab => tab.active);
+  //   chrome.tabs.sendMessage(activeTab.id, {
+  //     type: 'ajaxInterceptor',
+  //     to: 'pageScript',
+  //     action: 'start'
+  //   }, response => {
+  //     if (chrome.runtime.lastError) {
+  //       console.warn(`無法向標籤頁 ${activeTab.id} 發送消息: `, chrome.runtime.lastError.message);
+  //     } else {
+  //       console.log(`已通知標籤頁 ${activeTab.id} 開始監聽`);
+  //     }
+  //   });
+  // });
 }
 
 function stopListening() {
@@ -190,48 +210,65 @@ function stopListening() {
   isListening = false;
   console.log("Stopped listening for API requests.");
 
-  // 查询所有标签页
-  // chrome.tabs.query({}, function (tabs) {
-  //   console.log(tabs, 'tabs_______')
-  //   tabs.forEach(tab => {
-  //     // 先检查标签页的 URL，确保是符合条件的页面（如非 Chrome 内部页面）
-  //     if (tab.url && tab.url.startsWith('http')) {
-  //       // 尝试注入 content.js 确保内容脚本已存在
-  //       chrome.scripting.executeScript({
-  //         target: { tabId: tab.id },
-  //         files: ['content.js']
-  //       }, () => {
-  //         // 注入完成后发送停止监听的消息
-  //         chrome.tabs.sendMessage(tab.id, {
-  //           type: 'ajaxInterceptor',
-  //           to: 'pageScript',
-  //           action: 'stop'
-  //         }, response => {
-  //           if (chrome.runtime.lastError) {
-  //             console.warn(`无法向标签页 ${tab.id} 发送消息: `, chrome.runtime.lastError.message);
-  //           } else {
-  //             console.log(`已通知标签页 ${tab.id} 停止监听`);
-  //           }
-  //         });
-  //       });
-  //     }
-  //   });
-  // });
-
-  chrome.windows.getCurrent({ populate: true }, function (window) {
-    var activeTab = window.tabs.find(tab => tab.active);
-    chrome.tabs.sendMessage(activeTab.id, {
-      type: 'ajaxInterceptor',
-      to: 'pageScript',
-      action: 'stop'
-    }, response => {
-      if (chrome.runtime.lastError) {
-        console.warn(`无法向标签页 ${activeTab.id} 发送消息: `, chrome.runtime.lastError.message);
-      } else {
-        console.log(`已通知标签页 ${activeTab.id} 开始监听`);
+  // 通知所有的tab
+  chrome.tabs.query({}, function (tabs) {
+    tabs.forEach(tab => {
+      if (tab.url && isDomain(tab.url)) {
+        // 向每個標籤頁發送檢查注入狀態的消息
+        chrome.tabs.sendMessage(tab.id, { type: 'checkInjection' }, response => {
+          if (chrome.runtime.lastError || !response || !response.isInjected) {
+            // 只有當 content.js 未被注入時才注入
+            chrome.scripting.executeScript({
+              target: { tabId: tab.id },
+              files: ['content.js']
+            }, () => {
+              // 注入完成後發送 stop 消息
+              chrome.tabs.sendMessage(tab.id, {
+                type: 'ajaxInterceptor',
+                to: 'pageScript',
+                action: 'stop'
+              }, response => {
+                if (chrome.runtime.lastError) {
+                  console.warn(`無法向標籤頁 ${tab.id} 發送消息: `, chrome.runtime.lastError.message);
+                } else {
+                  console.log(`已通知標籤頁 ${tab.id} 停止监听`);
+                }
+              });
+            });
+          } else {
+            // 直接發送 start 消息
+            chrome.tabs.sendMessage(tab.id, {
+              type: 'ajaxInterceptor',
+              to: 'pageScript',
+              action: 'stop'
+            }, response => {
+              if (chrome.runtime.lastError) {
+                console.warn(`無法向標籤頁 ${tab.id} 發送消息: `, chrome.runtime.lastError.message);
+              } else {
+                console.log(`已通知標籤頁 ${tab.id} 停止监听`);
+              }
+            });
+          }
+        });
       }
     });
   });
+
+  // 只通知當前激活的tab
+  // chrome.windows.getCurrent({ populate: true }, function (window) {
+  //   var activeTab = window.tabs.find(tab => tab.active);
+  //   chrome.tabs.sendMessage(activeTab.id, {
+  //     type: 'ajaxInterceptor',
+  //     to: 'pageScript',
+  //     action: 'stop'
+  //   }, response => {
+  //     if (chrome.runtime.lastError) {
+  //       console.warn(`無法向標籤頁 ${activeTab.id} 發送消息: `, chrome.runtime.lastError.message);
+  //     } else {
+  //       console.log(`已通知標籤頁 ${activeTab.id} 開始監聽`);
+  //     }
+  //   });
+  // });
 }
 
 function handleApiData(url, data) {
@@ -267,15 +304,16 @@ function handleApiData(url, data) {
         }
       }),//商品信息
       brokerage: value.data.orderInfo.feeDtl.merchantFee.brokerage, ///佣金
-      activityFee: value.data.orderInfo.feeDtl.merchantFee.activityFee, ///商家承担活动费用
-      total: value.data.orderInfo.feeDtl.merchantFee.total, ///预计收入
-      diffPrice: value.data.orderInfo.feeDtl.merchantFee.diffPrice, ///最低消费金额补差价
-      productPrice: value.data.orderInfo.feeDtl.customerFee.productPrice, ///菜品总价
-      shippingFee: value.data.orderInfo.feeDtl.customerFee.shippingFee, ///配送费
-      platformFee: value.data.orderInfo.feeDtl.customerFee.platformFee, ///平台费
-      discounts: value.data.orderInfo.feeDtl.customerFee.discounts, ///优惠金额
-      actTotal: value.data.orderInfo.feeDtl.customerFee.actTotal, ///顾客实际支付
-      orderType: '', ///订单类型
+      activityFee: value.data.orderInfo.feeDtl.merchantFee.activityFee, ///商家承擔活動費用
+      total: value.data.orderInfo.feeDtl.merchantFee.total, ///預計收入
+      diffPrice: value.data.orderInfo.feeDtl.merchantFee.diffPrice, ///最低消費金額補差價
+      productPrice: value.data.orderInfo.feeDtl.customerFee.productPrice, ///菜品總價
+      shippingFee: value.data.orderInfo.feeDtl.customerFee.shippingFee, ///配送費
+      platformFee: value.data.orderInfo.feeDtl.customerFee.platformFee, ///平臺費
+      discounts: value.data.orderInfo.feeDtl.customerFee.discounts, ///優惠金額
+      actTotal: value.data.orderInfo.feeDtl.customerFee.actTotal, ///顧客實際支付
+      deliveryOrderType: '', ///配送類型
+      remark: value.data.orderInfo.merchantOrder.remark, ///備註
     }
   } else if (url.startsWith('https://merchant.openrice.com')) {
     const orderInfos = value.data.map((el,idx)=>{
@@ -283,15 +321,15 @@ function handleApiData(url, data) {
         url,
         timestamp: new Date().toISOString() + idx,
         platform: 'openrice',
-        seqNo: el.pickupNumber,/////取餐号
-        status: el.status,///订单状态
-        orderViewId: el.orderRefId,///订单号
-        shopId: el.orPoiId, ///门店id
-        shopName: el.poiName,///门店名称
-        unconfirmedStatusTime: el.createTime,///顾客下单时间
-        confirmedStatusTime: '',///商家接单时间
-        readiedStatusTime: '',///商家出餐时间
-        completedStatusTime: el.completedTime,///订单送达时间
+        seqNo: el.pickupNumber,/////取餐號
+        status: el.status,///訂單狀態
+        orderViewId: el.orderRefId,///訂單號
+        shopId: el.orPoiId, ///門店id
+        shopName: el.poiName,///門店名稱
+        unconfirmedStatusTime: el.createTime,///顧客下單時間
+        confirmedStatusTime: '',///商家接單時間
+        readiedStatusTime: '',///商家出餐時間
+        completedStatusTime: el.completedTime,///訂單送達時間
         products: el.takeAwayOrderItems.map(product=>{
           return {
             count: product.quantity,
@@ -309,15 +347,16 @@ function handleApiData(url, data) {
           }
         }),//商品信息
         brokerage: el.commissionCharge, ///佣金
-        activityFee: '', ///商家承担活动费用
-        total: el.netTotalAmount, ///预计收入
-        diffPrice: '', ///最低消费金额补差价
-        productPrice: el.merchantFinalPrice, ///菜品总价
-        shippingFee: '', ///配送费
-        platformFee: '', ///平台费
-        discounts: '', ///优惠金额
-        actTotal: '', ///顾客实际支付
-        orderType:el.deliveryOrderType, ///订单类型
+        activityFee: '', ///商家承擔活動費用
+        total: el.netTotalAmount, ///預計收入
+        diffPrice: '', ///最低消費金額補差價
+        productPrice: el.merchantFinalPrice, ///菜品總價
+        shippingFee: '', ///運費
+        platformFee: '', ///平臺費
+        discounts: '', ///優惠金額
+        actTotal: '', ///顧客實際支付
+        deliveryOrderType:el.deliveryOrderType, ///訂單類型
+        remark:el.remark, ///備註
       }
     })
 
@@ -331,81 +370,99 @@ function handleApiData(url, data) {
 function saveData(url, data) {
   if (!isListening) return;
 
-  // 添加新的数据
+  // 添加新的數據
   const apiData = handleApiData(url, data)
 
   if(url.startsWith('https://merchant.mykeeta.com')){
     saveToDatabase(apiData).catch((error) => {
-      console.error("保存数据到 IndexedDB 时出错:", error);
+      console.error("保存數據到 IndexedDB 時出錯:", error);
     });
   }else{
     saveToDatabase(apiData, 'arr').catch((error) => {
-      console.error("保存数据到 IndexedDB 时出错:", error);
+      console.error("保存數據到 IndexedDB 時出錯:", error);
     });
   }
+}
+
+
+function filterData(arr){
+  const seen = new Set();
+  const uniqueArr = arr.filter(item => {
+    if (!seen.has(item.orderViewId)) {
+      seen.add(item.orderViewId);
+      return true;
+    }
+    return false;
+  });
+  return uniqueArr
 }
 
 function exportData() {
   getDataFromDatabase()
     .then(data => {
       console.log(data, 'data_______')
+
+      const uniqueData = filterData(data)
+
+
       const worksheetData1 = [
-        ...data.map(item => {
+        ...uniqueData.map(item => {
           return {
             '平台': item.platform,
-            '门店': item.shopName,
-            '门店ID': item.shopId,
-            '取餐号': item.seqNo,
-            '订单号': item.orderViewId,
-            '订单状态': item.status,
-            '配送类型': item.orderType,
-            '下单时间': item.unconfirmedStatusTime,
-            '出餐时间': item.readiedStatusTime,
-            '送达时间': item.completedStatusTime,
-            "餐点总价": item.productPrice,
+            '門店': item.shopName,
+            '門店ID': item.shopId,
+            '取餐號': item.seqNo,
+            '訂單號': item.orderViewId,
+            '訂單狀態': item.status,
+            '配送類型': item.deliveryOrderType,
+            '下單時間': item.unconfirmedStatusTime,
+            '出餐時間': item.readiedStatusTime,
+            '送達時間': item.completedStatusTime,
+            "餐點總價": item.productPrice,
             "佣金": item.brokerage,
-            "商家承担活动费用": item.activityFee,
-            "最低消费金额补差价": item.diffPrice,
-            "预计收入": item.total,
-            "配送费": item.shippingFee,
-            "平台费": item.platformFee,
-            "优惠金额": item.discounts,
-            "顾客实际支付": item.actTotal
+            "商家承擔活動費用": item.activityFee,
+            "與最低消費的差價": item.diffPrice,
+            "預計收入": item.total,
+            "顧客實付": item.actTotal,
+            "運費": item.shippingFee,
+            "平台服務費": item.platformFee,
+            "優惠": item.discounts,
+            "貼士": item.remark
           }
         })
       ];
 
 
       let worksheetData2 = []
-      for (const item of data) {
+      for (const item of uniqueData) {
         if (item.products.length) {
           for (const product of item.products) {
             worksheetData2.push({
               '平台': item.platform,
-              '门店': item.shopName,
-              '门店ID': item.shopId,
-              '订单号': item.orderViewId,
-              '订单状态': item.status,
-              "商品类型": '商品',
-              '商品名称': product.name,
-              '商品数量': product.count,
-              '商品划线价': product.originPrice,
-              "商品价格": product.price
+              '門店': item.shopName,
+              '門店ID': item.shopId,
+              '訂單號': item.orderViewId,
+              '訂單狀態': item.status,
+              "商品類型": '商品',
+              '商品名稱': product.name,
+              '商品數量': product.count,
+              "成交價": product.price,
+              '劃線價': product.originPrice,
             })
 
             if (product.groups.length) {
               for (const group of product.groups) {
                 worksheetData2.push({
                   '平台': item.platform,
-                  '门店': item.shopName,
-                  '门店ID': item.shopId,
-                  '订单号': item.orderViewId,
-                  '订单状态': item.status,
-                  "商品类型": 'group',
-                  '商品名称': group.name,
-                  '商品数量': group.count,
-                  '商品划线价': group.originPrice,
-                  "商品价格": group.price
+                  '門店': item.shopName,
+                  '門店ID': item.shopId,
+                  '訂單號': item.orderViewId,
+                  '訂單狀態': item.status,
+                  "商品類型": 'group',
+                  '商品名稱': group.name,
+                  '商品數量': group.count,
+                  "成交價": group.price,
+                  '劃線價': group.originPrice,
                 })
               }
             }
@@ -417,13 +474,13 @@ function exportData() {
       const workbook = XLSX.utils.book_new();
       const worksheet1 = XLSX.utils.json_to_sheet(worksheetData1);
       const worksheet2 = XLSX.utils.json_to_sheet(worksheetData2);
-      XLSX.utils.book_append_sheet(workbook, worksheet1, "订单表");
+      XLSX.utils.book_append_sheet(workbook, worksheet1, "訂單表");
       XLSX.utils.book_append_sheet(workbook, worksheet2, "商品表");
 
       const wbout = XLSX.write(workbook, { bookType: "xlsx", type: "array" });
       const blob = new Blob([wbout], { type: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" });
 
-      // 使用 FileReader 将 Blob 转换成 Base64 URL
+      // 使用 FileReader 將 Blob 轉換成 Base64 URL
       const reader = new FileReader();
       reader.onloadend = function () {
         const base64data = reader.result;
@@ -438,7 +495,7 @@ function exportData() {
       reader.readAsDataURL(blob);
     })
     .catch(error => {
-      console.error("从 IndexedDB 获取数据时出错:", error);
+      console.error("從 IndexedDB 獲取數據時出錯:", error);
     });
 }
 
