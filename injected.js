@@ -17,8 +17,7 @@ window.ajax_interceptor_qoweifjqon_zxy = {
   },
 
   myXHR: function () {
-    const originalXHR = window.ajax_interceptor_qoweifjqon_zxy.originalXHR; // 引用原始XHR
-    const xhr = new originalXHR(); // 使用原始XHR构造函数
+    const xhr = new ajax_interceptor_qoweifjqon.originalXHR;
 
     // 修改响应的逻辑
     const modifyResponse = () => {
