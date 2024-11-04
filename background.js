@@ -37,29 +37,46 @@ function openDatabase() {
   });
 }
 
-function saveToDatabase(data,type) {
+function saveToDatabase(data, type) {
   return openDatabase().then((db) => {
     return new Promise((resolve, reject) => {
       const transaction = db.transaction([storeName], "readwrite");
       const store = transaction.objectStore(storeName);
-      let request = null
-      if(type ==='arr'){
+      console.log('Key path:', store.keyPath); // 显示主键字段
+      console.log('Auto increment:', store.autoIncrement); // 是否自增
+      let requests = [];
+
+      if (type === 'arr') {
         data.forEach(item => {
-         request = store.add(item)
-        })
-      }else{
-        request = store.add(data);
+          const request = store.add(item);
+          requests.push(request);
+        });
+      } else {
+        const request = store.add(data);
+        requests.push(request);
       }
 
-      request.onsuccess = () => {
-        console.log("数据已成功保存到 IndexedDB");
-        resolve();
-      };
+      // 用于跟踪所有请求的成功和失败
+      let successCount = 0;
+      let errorOccurred = false;
 
-      request.onerror = () => {
-        console.error("保存数据到 IndexedDB 时出错:", request.error);
-        reject(request.error);
-      };
+      requests.forEach(request => {
+        request.onsuccess = () => {
+          successCount++;
+          if (successCount === requests.length && !errorOccurred) {
+            console.log("所有数据已成功保存到 IndexedDB");
+            resolve();
+          }
+        };
+
+        request.onerror = () => {
+          if (!errorOccurred) {
+            console.error("保存数据到 IndexedDB 时出错:", request.error);
+            errorOccurred = true;
+            reject(request.error);
+          }
+        };
+      });
     });
   });
 }
@@ -261,10 +278,10 @@ function handleApiData(url, data) {
       orderType: '', ///订单类型
     }
   } else if (url.startsWith('https://merchant.openrice.com')) {
-    const orderInfos = value.data.map(el=>{
+    const orderInfos = value.data.map((el,idx)=>{
       return {
         url,
-        timestamp: new Date().toISOString(),
+        timestamp: new Date().toISOString() + idx,
         platform: 'openrice',
         seqNo: el.pickupNumber,/////取餐号
         status: el.status,///订单状态

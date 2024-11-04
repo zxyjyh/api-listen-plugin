@@ -40,27 +40,27 @@ window.ajax_interceptor_qoweifjqon_zxy = {
 
 
     // 使用 addEventListener 替代直接修改 onload
-    // xhr.addEventListener('load', function (...args) {
-    //   if (window.ajax_interceptor_qoweifjqon_zxy.settings.ajaxInterceptor_switchOn) {
-    //     modifyResponse();
-    //   }
+    xhr.addEventListener('load', function (...args) {
+      if (window.ajax_interceptor_qoweifjqon_zxy.settings.ajaxInterceptor_switchOn) {
+        modifyResponse();
+      }
 
-    //   // 如果原始的 onload 存在，则调用它
-    //   if (typeof xhr.onload === 'function') {
-    //     xhr.onload.apply(this, args);
-    //   }
-    // });
-
-
-    ['onload'].forEach(prop => {
-      const original = xhr[prop];
-      xhr[prop] = function (...args) {
-        if (window.ajax_interceptor_qoweifjqon_zxy.settings.ajaxInterceptor_switchOn) {
-          modifyResponse();
-        }
-        return original && original.apply(this, args);
-      };
+      // 如果原始的 onload 存在，则调用它
+      if (typeof xhr.onload === 'function') {
+        xhr.onload.apply(this, args);
+      }
     });
+
+
+    // ['onload'].forEach(prop => {
+    //   const original = xhr[prop];
+    //   xhr[prop] = function (...args) {
+    //     if (window.ajax_interceptor_qoweifjqon_zxy.settings.ajaxInterceptor_switchOn) {
+    //       modifyResponse();
+    //     }
+    //     return original && original.apply(this, args);
+    //   };
+    // });
 
     return xhr;
   },
