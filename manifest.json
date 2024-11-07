@@ -29,7 +29,8 @@
   "host_permissions": [
     "https://merchant.mykeeta.com/*",
     "https://merchant.openrice.com/*",
-    "https://uat-admin.aomiapp.com/*"
+    "https://partner.foodpanda.com/*",
+    "https://partner-hub.deliveroo.com/*"
   ],
   "background": {
     "service_worker": "background.js"
@@ -39,7 +40,8 @@
       "matches": [
         "https://merchant.mykeeta.com/*",
         "https://merchant.openrice.com/*",
-        "https://uat-admin.aomiapp.com/*"
+        "https://partner.foodpanda.com/*",
+        "https://partner-hub.deliveroo.com/*"
       ],
       "js": [
         "libs/xlsx.full.min.js",
@@ -58,7 +60,8 @@
       "matches": [
         "https://merchant.mykeeta.com/*",
         "https://merchant.openrice.com/*",
-        "https://uat-admin.aomiapp.com/*"
+        "https://partner.foodpanda.com/*",
+        "https://partner-hub.deliveroo.com/*"
       ]
     }
   ]

@@ -1,0 +1,65 @@
+{
+  "id": "094b4304-d85b-3239-8e34-bca5101da356",
+  "items": [
+    {
+      "name": "11-B4雞肉套餐", ///商品名称
+      "quantity": 1, ///商品数量
+      "unit_price": { ///商品单价
+        "fractional": 9100,
+        "formatted": "$91.00"
+      },
+      "total_price": { ///商品总价
+        "fractional": 10600,
+        "formatted": "$106.00"
+      },
+      "total_unit_price": { ///商品单价
+        "fractional": 10600,
+        "formatted": "$106.00"
+      },
+      "modifiers": [ ///属性
+        {
+          "name": "H白蘑菇雞髀肉"
+        },
+        {
+          "name": "一次性餐具"
+        },
+        {
+          "name": "H手工原味豆腐"
+        },
+        {
+          "name": "H金蒜西蘭花"
+        },
+        {
+          "name": "H淮山蒸南瓜"
+        }
+      ],
+      "category_name": "健康餐-Healthy Meal"
+    }
+  ],
+  "restaurant_id": "608619",
+  "amount": {
+    "fractional": 10600, ///总价
+    "formatted": "$106.00",
+    "currency_code": "HKD"
+  },
+  "status": "delivered", ///配送状态 订单状态
+  "rejection_reason": null,
+  "order_number": "9382", ///订单编号
+  "timeline": {
+    "placed_at": "2024-11-06T12:54:24+08:00", ///下单时间
+    "accepted_at": "2024-11-06T12:57:48+08:00", ///接单时间
+    "confirmed_at": "2024-11-06T12:57:48+08:00", ///确认时间
+    "prepare_for": "2024-11-06T13:01:13+08:00", ///准备时间
+    "delivery_picked_up_at": "2024-11-06T13:05:56+08:00" ///配送时间
+  },
+  "customer": {
+    "id": 20858259
+  },
+  "paid_in_cash": {
+    "fractional": 0,
+    "formatted": "$0.00",
+    "currency_code": "HKD"
+  },
+  "short_drn": "hk:852627",
+  "drn_id": "e01c5baa-4730-4338-ab99-f05e637d7daf"
+}

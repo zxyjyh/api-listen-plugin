@@ -1,0 +1,521 @@
+{
+  "baseOrder": {
+    "orderViewId": 6750069868114,
+    "status": 40,
+    "remark": "需要餐具",
+    "chooseTableware": 1,
+    "deliveryTime": 1730871885367,
+    "estimatedTimeStart": 1730871765367,
+    "estimatedTimeEnd": 1730872185367,
+    "ctime": 1730870855857,
+    "payType": "applepay",
+    "payTypeDesc": "paytype_ApplePay",
+    "deliveryInstruction": {
+      "deliveryType": 1,
+      "deliveryLocationType": 4,
+      "remark": "60楼门口"
+    },
+    "openPrivacyNumber": 1
+  },
+  "merchantOrder": {
+    "ctime": 1730870855883,
+    "seqNo": 6039,///取餐号
+    "status": 40,///订单状态
+    "pushOrderResult": 0,
+    "orderViewId": 6750069868114,///订单号
+    "shopId": 462111,///门店id
+    "shopName": "WeBite Space OL健康餐（中環店）",///门店名称
+    "syncStatusResult": 0,
+    "unconfirmedStatusTime": 1730870865392,///顾客下单时间
+    "confirmedStatusTime": 1730870866153,///商家接单时间
+    "readiedStatusTime": 1730871189751,///商家出餐时间
+    "completedStatusTime": 1730871800661,//订单送达时间
+    "userId": 10000000154363,
+    "refundTag": 0,
+    "etp": 1730871766153,
+    "etpl": 15,
+    "partRefundTag": 0,
+    "shopNameI18n": {
+      "en": "Webite space",
+      "default": "WeBite Space OL健康餐（中環店）",
+      "zh-HK": "WeBite Space OL健康餐（中環店）"
+    },
+    "allowedCancelEndTime": 1731044600661,
+    "seqNoStr": "6039",
+    "accId": [
+      4611686018427476000,
+      4611686018427476000
+    ],
+    "userGetMode": "delivery",
+    "shopCityId": 810001,
+    "userChooseCityId": 810001,
+    "shopRegion": "HK"
+  },
+  "merchantOrderDeliveries": [
+    {
+      "id": 35371275,
+      "waybillId": 1730870866380529,
+      "subimitDeliveryResult": 0,
+      "deliveryStatus": 50,
+      "deliveryStatusTime": 1730871800493,
+      "deliveryMode": "[1001]",
+      "courierName": "车手",
+      "courierPhone": "92237861",
+      "courierPrivacyPhone": "",
+      "orderViewId": 6750069868114,
+      "arrivedStatusTime": 1730871800493,
+      "merchantOrderDeliveryHisList": [
+        {
+          "orderViewId": 6750069868114,
+          "deliveryStatus": 50,
+          "ctime": 1730871800652,
+          "opTime": 1730871800493,
+          "shopId": 462111,
+          "waybillId": 1730870866380529,
+          "opScene": 10,
+          "courierId": 1723619595206125,
+          "courierName": "车手",
+          "courierPhone": "92237861",
+          "utime": 1730871800652,
+          "courierPhoneInterCode": "852",
+          "deliveryId": 35371275
+        },
+        {
+          "orderViewId": 6750069868114,
+          "deliveryStatus": 30,
+          "ctime": 1730871206496,
+          "opTime": 1730871206467,
+          "shopId": 462111,
+          "waybillId": 1730870866380529,
+          "opScene": 10,
+          "courierId": 1723619595206125,
+          "courierName": "车手",
+          "courierPhone": "92237861",
+          "utime": 1730871206496,
+          "courierPhoneInterCode": "852",
+          "deliveryId": 35371275
+        },
+        {
+          "orderViewId": 6750069868114,
+          "deliveryStatus": 25,
+          "ctime": 1730870993486,
+          "opTime": 1730870993458,
+          "shopId": 462111,
+          "waybillId": 1730870866380529,
+          "opScene": 10,
+          "courierId": 1723619595206125,
+          "courierName": "车手",
+          "courierPhone": "92237861",
+          "utime": 1730870993486,
+          "courierPhoneInterCode": "852",
+          "deliveryId": 35371275
+        },
+        {
+          "orderViewId": 6750069868114,
+          "deliveryStatus": 20,
+          "ctime": 1730870877367,
+          "opTime": 1730870877193,
+          "shopId": 462111,
+          "waybillId": 1730870866380529,
+          "opScene": 10,
+          "courierId": 1723619595206125,
+          "courierName": "车手",
+          "courierPhone": "92237861",
+          "utime": 1730870877367,
+          "courierPhoneInterCode": "852",
+          "deliveryId": 35371275
+        },
+        {
+          "orderViewId": 6750069868114,
+          "deliveryStatus": 10,
+          "ctime": 1730870871369,
+          "opTime": 1730870871351,
+          "shopId": 462111,
+          "waybillId": 1730870866380529,
+          "opScene": 10,
+          "courierName": "车手",
+          "utime": 1730870871369,
+          "deliveryId": 35371275
+        },
+        {
+          "orderViewId": 6750069868114,
+          "deliveryStatus": 0,
+          "ctime": 1730870866242,
+          "opTime": 1730870866238,
+          "shopId": 462111,
+          "waybillId": 1730870866380529,
+          "opScene": 10,
+          "courierName": "车手",
+          "utime": 1730870866242,
+          "deliveryId": 35371275
+        }
+      ],
+      "createdStatusTime": 1730870866238,
+      "dispatchedStatusTime": 1730870871351,
+      "receivedStatusTime": 1730870877193,
+      "toStoreStatusTime": 1730870993458,
+      "tookStatusTime": 1730871206467,
+      "ctime": 1730870866209,
+      "redesign": 0,
+      "courierId": 1723619595206125,
+      "courierPhoneInterCode": "852",
+      "privacyPhone": "",
+      "extensionNumber": "",
+      "privacyInterCode": "",
+      "courierInfoDesensitizePrivacy": false,
+      "showPrivacyPhone": false,
+      "commonExt": {
+        "courierVehicle": 1,
+        "vehiclePlateNumber": ""
+      }
+    }
+  ],
+  "deliveryInfos": [],
+  "recipientInfo": {
+    "name": "Afra",
+    "phone": "67036665",
+    "interCode": "852",
+    "phoneType": 1,
+    "addressName": "***",
+    "houseNumber": "***",
+    "point": {
+      "latitude": 22.285232,
+      "longitude": 114.1592596
+    },
+    "addressLocation": "8 金融街,中環,香港",
+    "unitNumber": "60楼 BNP Paribas",
+    "buildingNumber": "",
+    "addressViewInfo": "***",
+    "structType": 0,
+    "privacyPhone": "",
+    "extensionNumber": "",
+    "privacyInterCode": "",
+    "recipientInfoDesensitizePrivacy": false,
+    "showPrivacyPhone": false
+  },
+  "feeDtls": [ //顾客支付详情
+    {
+      "code": "productPrice",
+      "name": "菜品总价",
+      "value": "$93.00",
+      "nameI18nEnum": "PRODUCT_PRICE",
+      "price": 9300,
+      "currency": "HKD"
+    },
+    {
+      "code": "shippingFee",
+      "name": "配送费",
+      "value": "$17.00",
+      "nameI18nEnum": "SHIPPING_FEE",
+      "price": 1700,
+      "currency": "HKD"
+    },
+    {
+      "code": "platformFee",
+      "name": "平台费",
+      "value": "$2.00",
+      "nameI18nEnum": "PLATFORM_FEE",
+      "price": 200,
+      "currency": "HKD"
+    },
+    {
+      "code": "discounts",
+      "name": "优惠",
+      "value": "-$16.00",
+      "nameI18nEnum": "DISCOUNTS",
+      "price": 1600,
+      "currency": "HKD"
+    },
+    {
+      "code": "payTotal",
+      "name": "顾客支付",
+      "value": "$96.00",
+      "nameI18nEnum": "CUSTOMER_FEE",
+      "price": 9600,
+      "currency": "HKD"
+    }
+  ],
+  "products": [ ///商品信息
+    {
+      "spuId": 11170434,
+      "skuId": 10083995,
+      "count": 1, ///商品数量
+      "price": 9300, ///商品价格
+      "priceStr": "$93.00",
+      "orderViewId": 6750069868114,
+      "originPrice": 9300,///商品原价
+      "originPriceStr": "$93.00",
+      "name": "11-B4雞肉套餐", ///商品名称
+      "id": 88021209,
+      "currency": "HKD",
+      "spuPvList": [
+        {}
+      ],
+      "groups": [ ///商品组
+        {
+          "groupId": 3821526,
+          "groupName": "餐具",
+          "shopProductGroupSkuList": [
+            {
+              "groupSkuId": 20245291,
+              "spuId": 7379554,
+              "spuName": "需要外賣餐具", ///属性名称
+              "price": 200, ///属性价格
+              "priceStr": "$2.00",
+              "currency": "HKD",
+              "spuPvList": [],
+              "spuNameI18n": {
+                "en": "Takeaway utensils required.",
+                "default": "需要外賣餐具",
+                "zh-HK": "需要外賣餐具"
+              },
+              "groupSkuCount": 1,///属性数量
+              "count": 1,///属性数量
+              "groupSkuExtra": {}
+            }
+          ],
+          "groupNameI18n": {
+            "en": "Cutlery",
+            "default": "餐具",
+            "zh-HK": "餐具"
+          },
+          "groupExtra": {}
+        },
+        {
+          "groupId": 4676834,
+          "groupName": "11-B4雞肉套餐-主菜",
+          "shopProductGroupSkuList": [
+            {
+              "groupSkuId": 26256418,
+              "spuId": 9488089,
+              "spuName": "H欖菜雞髀肉",
+              "price": 0,
+              "priceStr": "$0.00",
+              "currency": "HKD",
+              "spuPvList": [
+                {}
+              ],
+              "spuNameI18n": {
+                "en": "Olives and Preserved Vegetable Chicken Thigh Meat",
+                "default": "H欖菜雞髀肉",
+                "zh-HK": "H欖菜雞髀肉"
+              },
+              "groupSkuCount": 1,
+              "count": 1,
+              "groupSkuExtra": {}
+            }
+          ],
+          "groupNameI18n": {
+            "en": "11-B4 Chicken Set - Main Course",
+            "default": "11-B4雞肉套餐-主菜",
+            "zh-HK": "11-B4雞肉套餐-主菜"
+          },
+          "groupExtra": {}
+        },
+        {
+          "groupId": 4673934,
+          "groupName": "11-B套餐-搭配1",
+          "shopProductGroupSkuList": [
+            {
+              "groupSkuId": 26257328,
+              "spuId": 9486083,
+              "spuName": "H日式茶碗蒸",
+              "price": 0,
+              "priceStr": "$0.00",
+              "currency": "HKD",
+              "spuPvList": [
+                {}
+              ],
+              "spuNameI18n": {
+                "en": "Japanese Steamed Egg Custard",
+                "default": "H日式茶碗蒸",
+                "zh-HK": "H日式茶碗蒸"
+              },
+              "groupSkuCount": 1,
+              "count": 1,
+              "groupSkuExtra": {}
+            }
+          ],
+          "groupNameI18n": {
+            "zh-HK": "11-B套餐-搭配1",
+            "default": "11-B套餐-搭配1"
+          },
+          "groupExtra": {}
+        },
+        {
+          "groupId": 4664364,
+          "groupName": "11-B套餐-搭配2",
+          "shopProductGroupSkuList": [
+            {
+              "groupSkuId": 26257331,
+              "spuId": 7400065,
+              "spuName": "H素炒雲南小瓜",
+              "price": 0,
+              "priceStr": "$0.00",
+              "currency": "HKD",
+              "spuPvList": [
+                {}
+              ],
+              "spuNameI18n": {
+                "en": "Stir-fried Yunnan Small Melon with Vegetables",
+                "default": "H素炒雲南小瓜",
+                "zh-HK": "H素炒雲南小瓜"
+              },
+              "groupSkuCount": 1,
+              "count": 1,
+              "groupSkuExtra": {}
+            }
+          ],
+          "groupNameI18n": {
+            "en": "11-B Set Menu - Combo 2",
+            "default": "11-B套餐-搭配2",
+            "zh-HK": "11-B套餐-搭配2"
+          },
+          "groupExtra": {}
+        },
+        {
+          "groupId": 4239893,
+          "groupName": "主食*",
+          "shopProductGroupSkuList": [
+            {
+              "groupSkuId": 23232045,
+              "spuId": 9495851,
+              "spuName": "H雜糧飯",
+              "price": 0,
+              "priceStr": "$0.00",
+              "currency": "HKD",
+              "spuPvList": [
+                {}
+              ],
+              "spuNameI18n": {
+                "en": "Mixed Grain Rice",
+                "default": "H雜糧飯",
+                "zh-HK": "H雜糧飯"
+              },
+              "groupSkuCount": 1,
+              "count": 1,
+              "groupSkuExtra": {}
+            }
+          ],
+          "groupNameI18n": {
+            "en": "9-C Set Meal - Main Course",
+            "default": "主食*",
+            "zh-HK": "主食*"
+          },
+          "groupExtra": {}
+        }
+      ],
+      "remark": "",
+      "desc": "需要外賣餐具,H欖菜雞髀肉,H日式茶碗蒸,H素炒雲南小瓜,H雜糧飯",
+      "picList": [
+        "http://img-ap-hongkong.mykeeta.net/sailorproduct/eaa03a9df0f8cc9b33b274632385b87c138005.jpg"
+      ],
+      "spec": "",
+      "priceWithoutGroup": {
+        "amount": 9100,
+        "amountStr": "$91.00",
+        "originAmount": 9100,
+        "originAmountStr": "$91.00",
+        "unitPrice": 9100,
+        "originUnitPrice": 9100
+      },
+      "priceWithGroup": {
+        "amount": 9300,
+        "amountStr": "$93.00",
+        "originAmount": 9300,
+        "originAmountStr": "$93.00",
+        "unitPrice": 9300,
+        "originUnitPrice": 9300
+      },
+      "nameI18n": {
+        "en": "11-B4 Chicken Set Meal",
+        "default": "11-B4雞肉套餐",
+        "zh-HK": "11-B4雞肉套餐"
+      },
+      "descI18n": {
+        "zh-HK": "需要外賣餐具,H欖菜雞髀肉,H日式茶碗蒸,H素炒雲南小瓜,H雜糧飯",
+        "default": "需要外賣餐具,H欖菜雞髀肉,H日式茶碗蒸,H素炒雲南小瓜,H雜糧飯"
+      },
+      "specI18n": {
+        "zh-HK": "",
+        "default": ""
+      },
+      "promotions": [],
+      "tags": [],
+      "notLast": false,
+      "spuExtra": {},
+      "skuExtra": {}
+    }
+  ],
+  "refundInfos": [],
+  "feeDtl": {
+    "merchantFee": {///商户费用
+      "i18n": {
+        "currency": "HKD"
+      },
+      "productPrice": 9300,///菜品总价
+      "brokerage": 2125,///佣金
+      "activityFee": 800,///商家承担活动费用
+      "total": 6375,///预计收入
+      "platformServiceFee": 200,///平台服务费
+      "diffPrice": 0,///最低消费金额补差价
+      "productPriceStr": "$93.00",
+      "brokerageStr": "-$21.25",
+      "activityFeeStr": "-$8.00",
+      "platformServiceFeeStr": "$2.00",
+      "diffPriceStr": "$0.00",
+      "totalStr": "$63.75"
+    },
+    "customerFee": { ///顾客支付明细
+      "i18n": {
+        "currency": "HKD"
+      },
+      "productPrice": 9300,///菜品总价
+      "shippingFee": 1700,///配送费
+      "platformFee": 200,///平台费
+      "discounts": 1600,///优惠金额
+      "tip": 0,
+      "diffPrice": 0,
+      "payTotal": 9600,
+      "productPriceStr": "$93.00",
+      "shippingFeeStr": "$17.00",
+      "platformFeeStr": "$2.00",
+      "discountsStr": "-$16.00",
+      "tipStr": "$0.00",
+      "diffPriceStr": "$0.00",
+      "payTotalStr": "$96.00",
+      "originPrice": 11200,
+      "originPriceStr": "$112.00",
+      "productPriceSubTotal": 9300,
+      "productPriceSubTotalStr": "$93.00",
+      "showDiscounts": 1600,
+      "showDiscountsStr": "-$16.00",
+      "actTotal": 9600,
+      "actTotalStr": "$96.00"
+    }
+  },
+  "privacy": false,
+  "rebatesTag": false,
+  "userInfo": {
+    "email": "***",
+    "userName": "***",
+    "phone": "852*****6665",
+    "newUser": false,
+    "userPhone": "67****65",
+    "interCode": "852",
+    "phoneType": 1
+  },
+  "bigOrderTag": false,
+  "tagCodes": [
+    101000,
+    103002
+  ],
+  "refundInfo": {
+    "refundNodeList": [],
+    "appealRefundNums": 0,
+    "appealInfoList": []
+  },
+  "partRefundOrderTag": false,
+  "groupChoiceCompensationTag": false,
+  "printTemplateType": 1
+}

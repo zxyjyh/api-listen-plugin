@@ -1,5 +1,5 @@
 chrome.storage.local.get("isListening", (result) => {
-    const isListening = result.isListening || false;
+    const isListening = result && result.isListening || false;
     updateButtonStates(isListening);
 });
 
@@ -18,11 +18,16 @@ document.getElementById("exportButton").addEventListener("click", () => {
 });
 
 document.getElementById('closeButton').addEventListener('click', function () {
-    window.close(); // 关闭popup.html
+    window.close();
+});
+
+document.getElementById('clearButton').addEventListener('click', function () {
+    chrome.runtime.sendMessage({ action: "clearData" });
 });
 
 function updateButtonStates(isListening) {
     document.getElementById("startButton").disabled = isListening;
     document.getElementById("stopButton").disabled = !isListening;
+    document.getElementById("exportButton").disabled = isListening;
     chrome.storage.local.set({ "isListening": isListening });
 }

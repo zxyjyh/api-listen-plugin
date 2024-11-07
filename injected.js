@@ -2,10 +2,12 @@ window.ajax_interceptor_qoweifjqon_zxy = {
   settings: {
     ajaxInterceptor_switchOn: false,
     interceptDomains: [
-      'https://merchant.mykeeta.com/api/order/getOrderDtl',
-      'https://uat-manager-gateway.aomiapp.com/aomi-base-info-manager/authres/getResList',
+      // 'https://merchant.mykeeta.com/api/order/getOrderDtl',
       'https://merchant.openrice.com/api/takeaway/takeawaylist',
-      'https://merchant.openrice.com/api/delivery/deliveryorders'
+      // 'https://merchant.openrice.com/api/delivery/deliveryorders',
+      'https://merchant.mykeeta.com/api/order/history/getOrders',
+      'https://vagw-api.ap.prd.portal.restaurant/query',
+      'https://restaurant-hub-data-api.deliveroo.net/api/orders',
     ],
     interceptedResponses: {},
   },
@@ -39,7 +41,6 @@ window.ajax_interceptor_qoweifjqon_zxy = {
     };
 
 
-    // 使用 addEventListener 替代直接修改 onload
     xhr.addEventListener('load', function (...args) {
       if (window.ajax_interceptor_qoweifjqon_zxy.settings.ajaxInterceptor_switchOn) {
         modifyResponse();
@@ -90,11 +91,38 @@ window.ajax_interceptor_qoweifjqon_zxy = {
   startInterceptor: function () {
     console.log('开始拦截');
     ajax_interceptor_qoweifjqon_zxy.settings.ajaxInterceptor_switchOn = true;
+
+    window.fetch = new Proxy(window.fetch, {
+      apply: (target, thisArg, args) => {
+        const url = args[0];
+        if (ajax_interceptor_qoweifjqon_zxy.settings.ajaxInterceptor_switchOn && ajax_interceptor_qoweifjqon_zxy.isListenDomain(url)) {
+          return target.apply(thisArg, args).then(response => {
+            return response.clone().text().then(text => {
+              // 拦截并保存响应数据
+              ajax_interceptor_qoweifjqon_zxy.settings.interceptedResponses[url] = text;
+
+              // 通知 content.js
+              window.postMessage({
+                type: 'ajaxInterceptor',
+                to: 'background',
+                action: 'saveData',
+                url: url,
+                data: text
+              }, '*');
+              return response;
+            });
+          });
+        }
+        return target.apply(thisArg, args);
+      }
+    });
   },
 
   stopInterceptor: function () {
     console.log('停止拦截');
     ajax_interceptor_qoweifjqon_zxy.settings.ajaxInterceptor_switchOn = false;
+    window.fetch = ajax_interceptor_qoweifjqon_zxy.originalFetch;
+    window.XMLHttpRequest = ajax_interceptor_qoweifjqon_zxy.originalXHR;
   },
 
   clearInterceptedResponses: function () {
@@ -120,21 +148,23 @@ window.addEventListener("message", function (event) {
 // 通知 content.js 脚本已准备就绪
 document.dispatchEvent(new Event('ajaxInterceptorReady'));
 
-// 使用动态 `getter` 设置 `XMLHttpRequest` 和 `fetch`
-Object.defineProperty(window, 'XMLHttpRequest', {
-  get: function () {
-    return ajax_interceptor_qoweifjqon_zxy.settings.ajaxInterceptor_switchOn ?
-      ajax_interceptor_qoweifjqon_zxy.myXHR.bind(ajax_interceptor_qoweifjqon_zxy) :
-      ajax_interceptor_qoweifjqon_zxy.originalXHR;
-  }
-});
 
-Object.defineProperty(window, 'fetch', {
-  get: function () {
-    return ajax_interceptor_qoweifjqon_zxy.settings.ajaxInterceptor_switchOn ?
-      ajax_interceptor_qoweifjqon_zxy.myFetch.bind(ajax_interceptor_qoweifjqon_zxy) :
-      ajax_interceptor_qoweifjqon_zxy.originalFetch;
-  }
-});
+
+// 使用动态 `getter` 设置 `XMLHttpRequest` 和 `fetch`
+// Object.defineProperty(window, 'XMLHttpRequest', {
+//   get: function () {
+//     return ajax_interceptor_qoweifjqon_zxy.settings.ajaxInterceptor_switchOn ?
+//       ajax_interceptor_qoweifjqon_zxy.myXHR.bind(ajax_interceptor_qoweifjqon_zxy) :
+//       ajax_interceptor_qoweifjqon_zxy.originalXHR;
+//   }
+// });
+
+// Object.defineProperty(window, 'fetch', {
+//   get: function () {
+//     return ajax_interceptor_qoweifjqon_zxy.settings.ajaxInterceptor_switchOn ?
+//       handleMyFetch():
+//       ajax_interceptor_qoweifjqon_zxy.originalFetch;
+//   }
+// });
 
 console.log('injected.js 执行完毕');

@@ -1,0 +1,106 @@
+{ /// value.data.orders.order
+  "hasBillingData": false,
+  "order": {
+    "orderId": "cggw-2445-4iuf",
+    "placedTimestamp": "2024-11-07T05:15:08Z",
+    "status": "ACCEPTED",
+    "globalEntityId": "FP_HK",
+    "vendorId": "cggw",
+    "vendorName": "WeBite Space",
+    "orderValue": 20,
+    "billableStatus": "UNKNOWN",
+    "waitTimeFee": null,
+    "delivery": {
+      "provider": "pickup",
+      "location": {
+        "AddressText": "",
+        "city": "",
+        "district": "",
+        "postCode": "",
+        "__typename": "Location"
+      },
+      "__typename": "Delivery"
+    },
+    "items": [
+      {
+        "id": "169480871",
+        "name": "大杯 | 熱",
+        "parentName": "美式咖啡",
+        "quantity": 1,
+        "unitPrice": 20,
+        "customerNotes": "",
+        "options": null,
+        "__typename": "Item"
+      }
+    ],
+    "__typename": "OrderDetail"
+  },
+  "pin": null,
+  "orderReceipt": null,
+  "orderStatuses": [
+    {
+      "status": "SENDING_TO_VENDOR",
+      "timestamp": "2024-11-07T05:15:10.776Z",
+      "detail": {
+        "__typename": "NoDetail"
+      },
+      "__typename": "Status"
+    },
+    {
+      "status": "DISPLAYED_AT_VENDOR",
+      "timestamp": "2024-11-07T05:15:11.253Z",
+      "detail": {
+        "__typename": "NoDetail"
+      },
+      "__typename": "Status"
+    },
+    {
+      "status": "ACCEPTED",
+      "timestamp": "2024-11-07T05:15:17.025Z",
+      "detail": {
+        "estimatedDeliveryTime": "2024-11-07T05:22:08Z",
+        "__typename": "Accepted",
+        "__typename": "Accepted"
+      },
+      "__typename": "Status"
+    }
+  ],
+  "billing": {
+    "billingStatus": "NOT_PAID",
+    "estimatedVendorNetRevenue": null,
+    "taxTotalAmount": null,
+    "inputTax": null,
+    "outputTax": null,
+    "vendorPayout": null,
+    "payment": null,
+    "expense": {
+      "totalDiscountGross": 4,
+      "totalDiscount": 4,
+      "totalVoucher": null,
+      "totalVendorDiscount": null,
+      "totalVendorVoucher": null,
+      "jokerFeeGross": null,
+      "commissionAmountGross": null,
+      "commissions": null,
+      "vendorCharges": null,
+      "discounts": null,
+      "__typename": "Expense"
+    },
+    "revenue": {
+      "totalPlatformDiscount": null,
+      "totalPlatformVoucher": null,
+      "totalPartnerDiscount": null,
+      "totalPartnerVoucher": null,
+      "containerChargesGross": null,
+      "minimumOrderValueGross": null,
+      "deliveryFeeGross": null,
+      "tipGross": null,
+      "taxCharge": null,
+      "vendorRefunds": null,
+      "__typename": "Revenue"
+    },
+    "__typename": "Billing"
+  },
+  "previousVersions": null,
+  "__typename": "GetOrderRes"
+}

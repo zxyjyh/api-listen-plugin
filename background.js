@@ -3,6 +3,11 @@ importScripts('libs/xlsx.full.min.js');
 
 let isListening = false;
 
+chrome.storage.local.get(['isListening'], (result) => {
+  isListening = result && result.isListening || false;
+  console.log("初始状态:", isListening);
+});
+
 const dbName = "APIInterceptorDB";
 const storeName = "apiDataStore";
 let db;
@@ -10,11 +15,18 @@ let db;
 const interceptDomains = [
   "https://merchant.mykeeta.com",
   "https://merchant.openrice.com",
-  "https://uat-admin.aomiapp.com"
+  "https://partner.foodpanda.com",
+  "https://partner-hub.deliveroo.com"
+]
+const apiDomains = [
+  'https://merchant.openrice.com/api/takeaway/takeawaylist',
+  'https://merchant.mykeeta.com/api/order/history/getOrders',
+  'https://vagw-api.ap.prd.portal.restaurant/query',
+  'https://restaurant-hub-data-api.deliveroo.net/api/orders',
 ]
 
-const isDomain = (url)=>{
-  return interceptDomains.some(domain=>url.startsWith(domain))
+const isDomain = (url) => {
+  return interceptDomains.some(domain => url.startsWith(domain))
 }
 
 function openDatabase() {
@@ -130,6 +142,8 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
     stopListening();
   } else if (message.action === "export") {
     exportData();
+  } else if (message.action === "clearData") {
+    clearDatabase()
   } else if (message.type === 'ajaxInterceptor' && message.action === 'saveData') {
     saveData(message.url, message.data);
   } else if (message.type === 'ajaxInterceptor' && message.action === 'checkListening') {
@@ -274,49 +288,55 @@ function stopListening() {
 function handleApiData(url, data) {
   const value = JSON.parse(data)
   if (url.startsWith('https://merchant.mykeeta.com')) {
-    return {
-      url,
-      timestamp: new Date().toISOString(),
-      platform: 'keeta',
-      seqNo: value.data.orderInfo.merchantOrder.seqNo,/////取餐号
-      status: value.data.orderInfo.merchantOrder.status,///订单状态
-      orderViewId: value.data.orderInfo.merchantOrder.orderViewId,///订单号
-      shopId: value.data.orderInfo.merchantOrder.shopId, ///门店id
-      shopName: value.data.orderInfo.merchantOrder.shopName,///门店名称
-      unconfirmedStatusTime: value.data.orderInfo.merchantOrder.unconfirmedStatusTime,///顾客下单时间
-      confirmedStatusTime: value.data.orderInfo.merchantOrder.confirmedStatusTime,///商家接单时间
-      readiedStatusTime: value.data.orderInfo.merchantOrder.readiedStatusTime,///商家出餐时间
-      completedStatusTime: value.data.orderInfo.merchantOrder.completedStatusTime,///订单送达时间
-      products: value.data.orderInfo.products.map(item => {
-        return {
-          count: item.count,
-          originPrice: item.originPrice,
-          name: item.name,
-          price: item.price,
-          groups: item.groups.map(group => {
-            return {
-              name: group.shopProductGroupSkuList[0].spuName,
-              price: group.shopProductGroupSkuList[0].price,
-              count: group.shopProductGroupSkuList[0].count,
-              groupSkuCount: group.shopProductGroupSkuList[0].groupSkuCount
-            }
-          })
-        }
-      }),//商品信息
-      brokerage: value.data.orderInfo.feeDtl.merchantFee.brokerage, ///佣金
-      activityFee: value.data.orderInfo.feeDtl.merchantFee.activityFee, ///商家承擔活動費用
-      total: value.data.orderInfo.feeDtl.merchantFee.total, ///預計收入
-      diffPrice: value.data.orderInfo.feeDtl.merchantFee.diffPrice, ///最低消費金額補差價
-      productPrice: value.data.orderInfo.feeDtl.customerFee.productPrice, ///菜品總價
-      shippingFee: value.data.orderInfo.feeDtl.customerFee.shippingFee, ///配送費
-      platformFee: value.data.orderInfo.feeDtl.customerFee.platformFee, ///平臺費
-      discounts: value.data.orderInfo.feeDtl.customerFee.discounts, ///優惠金額
-      actTotal: value.data.orderInfo.feeDtl.customerFee.actTotal, ///顧客實際支付
-      deliveryOrderType: '', ///配送類型
-      remark: value.data.orderInfo.merchantOrder.remark, ///備註
-    }
+    // keeta
+    const orderInfos = value.data.data.list.filter(el=>el.merchantOrder.status === 40).map((el,idx)=>{
+      return {
+        url,
+        timestamp: new Date().toISOString()+ idx,
+        platform: 'keeta',
+        seqNo: el.merchantOrder.seqNo,/////取餐号
+        status: el.merchantOrder.status,///订单状态
+        orderViewId: el.merchantOrder.orderViewId,///订单号
+        shopId: el.merchantOrder.shopId, ///门店id
+        shopName: el.merchantOrder.shopName,///门店名称
+        unconfirmedStatusTime: el.merchantOrder.unconfirmedStatusTime,///顾客下单时间
+        confirmedStatusTime: el.merchantOrder.confirmedStatusTime,///商家接单时间
+        readiedStatusTime: el.merchantOrder.readiedStatusTime,///商家出餐时间
+        completedStatusTime: el.merchantOrder.completedStatusTime,///订单送达时间
+        products: el.products.map(item => {
+          return {
+            count: item.count,
+            originPrice: item.originPrice,
+            name: item.name,
+            price: item.price,
+            groups: item.groups.map(group => {
+              return {
+                name: group.shopProductGroupSkuList[0].spuName,
+                price: group.shopProductGroupSkuList[0].price,
+                count: group.shopProductGroupSkuList[0].count,
+                groupSkuCount: group.shopProductGroupSkuList[0].groupSkuCount
+              }
+            })
+          }
+        }),//商品信息
+        brokerage: el.feeDtl.merchantFee.brokerage, ///佣金
+        activityFee: el.feeDtl.merchantFee.activityFee, ///商家承擔活動費用
+        total: el.feeDtl.merchantFee.total, ///預計收入
+        diffPrice: el.feeDtl.merchantFee.diffPrice, ///最低消費金額補差價
+        productPrice: el.feeDtl.customerFee.productPrice, ///菜品總價
+        shippingFee: el.feeDtl.customerFee.shippingFee, ///配送費
+        platformFee: el.feeDtl.customerFee.platformFee, ///平臺費
+        discounts: el.feeDtl.customerFee.discounts, ///優惠金額
+        actTotal: el.feeDtl.customerFee.actTotal, ///顧客實際支付
+        deliveryOrderType: el.merchantOrder.userGetMode, ///配送類型
+        remark: el.merchantOrder.remark, ///備註
+      }
+    })
+
+    return orderInfos
   } else if (url.startsWith('https://merchant.openrice.com')) {
-    const orderInfos = value.data.map((el,idx)=>{
+    // openrice
+    const orderInfos = value.data.map((el, idx) => {
       return {
         url,
         timestamp: new Date().toISOString() + idx,
@@ -330,13 +350,13 @@ function handleApiData(url, data) {
         confirmedStatusTime: '',///商家接單時間
         readiedStatusTime: '',///商家出餐時間
         completedStatusTime: el.completedTime,///訂單送達時間
-        products: el.takeAwayOrderItems.map(product=>{
+        products: el.takeAwayOrderItems.map(product => {
           return {
             count: product.quantity,
             originPrice: product.unitPrice,
             name: product.name,
             price: product.unitPrice,
-            groups:product.comboItems.map(group=>{
+            groups: product.comboItems.map(group => {
               return {
                 count: group.quantity,
                 originPrice: group.unitPrice,
@@ -355,16 +375,107 @@ function handleApiData(url, data) {
         platformFee: '', ///平臺費
         discounts: '', ///優惠金額
         actTotal: '', ///顧客實際支付
-        deliveryOrderType:el.deliveryOrderType, ///訂單類型
-        remark:el.remark, ///備註
+        deliveryOrderType: el.deliveryOrderType, ///訂單類型
+        remark: el.remark, ///備註
       }
     })
 
-    console.log(orderInfos, 'orderInfos_____')
-
     return orderInfos
+  } else if (url.startsWith('https://vagw-api.ap.prd.portal.restaurant/query') && value.data.orders && value.data.orders.order && value.data.orders.order.order && value.data.orders.order.order.status === 'DELIVERED') {
+    // foodpanda
+    const orderData = value.data.orders.order
+    const getStatusTime = (val)=>{
+      const status = orderData.orderStatuses.find(el => el.status === val)
+      if (status && status.timestamp) {
+        return status.timestamp
+      }
+      return ''
+    }
+    return {
+      url,
+      timestamp: new Date().toISOString(),
+      platform: 'foodpanda',
+      seqNo: '',///取餐号
+      status: orderData.order.status,///订单状态
+      orderViewId: orderData.order.orderId,///订单号
+      shopId: orderData.order.vendorId, ///门店id
+      shopName: orderData.order.vendorName,///门店名称
+      unconfirmedStatusTime:getStatusTime('SENDING_TO_VENDOR'),///顾客下单时间
+      confirmedStatusTime: getStatusTime('ACCEPTED'),///商家接单时间
+      readiedStatusTime: getStatusTime('ORDER_PREPARED'),///商家出餐时间
+      completedStatusTime: getStatusTime('DELIVERED'),///订单送达时间
+      products: orderData.order.items && orderData.order.items.map(product => {
+        return {
+          count: product.quantity,
+          originPrice: product.unitPrice,
+          name:product.parentName !== product.name ? `${product.parentName}(${product.name})`:product.name,
+          price: product.unitPrice,
+          groups: product.options && product.options.map(group=>{
+            return {
+              count: group.quantity,
+              originPrice: group.unitPrice,
+              name: group.name,
+              price: group.unitPrice,
+            }
+          })
+        }
+      }),//商品信息
+      brokerage: '', ///佣金
+      activityFee: '', ///商家承擔活動費用
+      total: '', ///預計收入
+      diffPrice: '', ///最低消費金額補差價
+      productPrice: orderData.order.orderValue, ///菜品總價
+      shippingFee: '', ///配送費
+      platformFee: '', ///平臺費
+      discounts: '', ///優惠金額
+      actTotal: orderData.order.orderValue, ///顧客實際支付
+      deliveryOrderType: orderData.order.devlivery.provider, ///配送類型
+      remark: '', ///備註
+    }
+  } else if (url.startsWith('https://restaurant-hub-data-api.deliveroo.net/api/orders')) {
+    // deliveroo
+    return {
+      url,
+      timestamp: new Date().toISOString(),
+      platform: 'deliveroo',
+      seqNo: '',///取餐号
+      status: value.data.status,///订单状态
+      orderViewId: value.data.order_number,///订单号
+      shopId: '', ///门店id
+      shopName: '',///门店名称
+      unconfirmedStatusTime: value.data.timeline.placed_at,///顾客下单时间
+      confirmedStatusTime: value.data.timeline.accepted_at,///商家接单时间
+      readiedStatusTime: value.data.timeline.prepare_for,///商家出餐时间
+      completedStatusTime: value.data.timeline.delivery_picked_up_at,///订单送达时间
+      products: value.data.items.map(product => {
+        return {
+          count: product.quantity,
+          originPrice: product.unit_price.fractional,
+          name: product.name,
+          price: product.unit_price.fractional,
+          groups: product.modifiers.map(group => {
+            return {
+              count: product.quantity,
+              originPrice: '',
+              name: group.name,
+              price: '',
+            }
+          })
+        }
+      }),///商品信息
+      brokerage: '', ///佣金
+      activityFee: '', ///商家承擔活動費用
+      total: '', ///預計收入
+      diffPrice: '', ///最低消費金額補差價
+      productPrice: value.data.amount.fractional, ///菜品總價
+      shippingFee: '', ///配送費
+      platformFee: '', ///平臺費
+      discounts: '', ///優惠金額
+      actTotal: value.data.amount.fractional, ///顧客實際支付
+      deliveryOrderType: value.data.status, ///配送類型
+      remark: '', ///備註
+    }
   }
-
 }
 
 function saveData(url, data) {
@@ -373,11 +484,11 @@ function saveData(url, data) {
   // 添加新的數據
   const apiData = handleApiData(url, data)
 
-  if(url.startsWith('https://merchant.mykeeta.com')){
+  if (url.startsWith('https://vagw-api.ap.prd.portal.restaurant/query') || url.startsWith('https://restaurant-hub-data-api.deliveroo.net/api/orders')) {
     saveToDatabase(apiData).catch((error) => {
       console.error("保存數據到 IndexedDB 時出錯:", error);
     });
-  }else{
+  } else {
     saveToDatabase(apiData, 'arr').catch((error) => {
       console.error("保存數據到 IndexedDB 時出錯:", error);
     });
@@ -385,7 +496,7 @@ function saveData(url, data) {
 }
 
 
-function filterData(arr){
+function filterData(arr) {
   const seen = new Set();
   const uniqueArr = arr.filter(item => {
     if (!seen.has(item.orderViewId)) {
@@ -400,7 +511,6 @@ function filterData(arr){
 function exportData() {
   getDataFromDatabase()
     .then(data => {
-      console.log(data, 'data_______')
 
       const uniqueData = filterData(data)
 
@@ -450,7 +560,7 @@ function exportData() {
               '劃線價': product.originPrice,
             })
 
-            if (product.groups.length) {
+            if (product.groups && product.groups.length) {
               for (const group of product.groups) {
                 worksheetData2.push({
                   '平台': item.platform,
