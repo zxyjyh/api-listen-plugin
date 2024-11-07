@@ -19,7 +19,7 @@ window.ajax_interceptor_qoweifjqon_zxy = {
   },
 
   myXHR: function () {
-    const xhr = new ajax_interceptor_qoweifjqon.originalXHR;
+    const xhr = new ajax_interceptor_qoweifjqon_zxy.originalXHR;
 
     // 修改响应的逻辑
     const modifyResponse = () => {
@@ -91,6 +91,7 @@ window.ajax_interceptor_qoweifjqon_zxy = {
   startInterceptor: function () {
     console.log('开始拦截');
     ajax_interceptor_qoweifjqon_zxy.settings.ajaxInterceptor_switchOn = true;
+    window.XMLHttpRequest = ajax_interceptor_qoweifjqon_zxy.myXHR.bind(ajax_interceptor_qoweifjqon_zxy);
 
     window.fetch = new Proxy(window.fetch, {
       apply: (target, thisArg, args) => {

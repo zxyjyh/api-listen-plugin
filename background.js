@@ -287,48 +287,60 @@ function stopListening() {
 
 function handleApiData(url, data) {
   const value = JSON.parse(data)
+  // 时间戳转成东八区时间 2024-11-06 00:00:00
+  const getDateTime = (val) => {
+    const date = new Date(val)
+    date.setHours(date.getHours() + 8)
+    return date.toISOString().replace('T', ' ').substring(0, 19)
+  }
+
+
+  const centToYuan = (val) => {
+    return (val / 100).toFixed(2)
+  }
   if (url.startsWith('https://merchant.mykeeta.com')) {
     // keeta
-    const orderInfos = value.data.data.list.filter(el=>el.merchantOrder.status === 40).map((el,idx)=>{
+    const orderInfos = value.data.list.filter(el => el.merchantOrder.status === 40).map((el, idx) => {
       return {
         url,
-        timestamp: new Date().toISOString()+ idx,
+        timestamp: new Date().toISOString() + idx,
         platform: 'keeta',
         seqNo: el.merchantOrder.seqNo,/////取餐号
-        status: el.merchantOrder.status,///订单状态
-        orderViewId: el.merchantOrder.orderViewId,///订单号
+        status: el.merchantOrder.status === 40 ? '已完成' : '未完成',///订单状态
+        orderViewId: String(el.merchantOrder.orderViewId),///订单号
         shopId: el.merchantOrder.shopId, ///门店id
         shopName: el.merchantOrder.shopName,///门店名称
-        unconfirmedStatusTime: el.merchantOrder.unconfirmedStatusTime,///顾客下单时间
-        confirmedStatusTime: el.merchantOrder.confirmedStatusTime,///商家接单时间
-        readiedStatusTime: el.merchantOrder.readiedStatusTime,///商家出餐时间
-        completedStatusTime: el.merchantOrder.completedStatusTime,///订单送达时间
+        unconfirmedStatusTime: getDateTime(el.merchantOrder.unconfirmedStatusTime),///顾客下单时间
+        confirmedStatusTime: getDateTime(el.merchantOrder.confirmedStatusTime),///商家接单时间
+        readiedStatusTime: getDateTime(el.merchantOrder.readiedStatusTime),///商家出餐时间
+        completedStatusTime: getDateTime(el.merchantOrder.completedStatusTime),///订单送达时间
         products: el.products.map(item => {
           return {
             count: item.count,
-            originPrice: item.originPrice,
+            originPrice: centToYuan(item.originPrice),
             name: item.name,
-            price: item.price,
+            price: centToYuan(item.price),
             groups: item.groups.map(group => {
               return {
                 name: group.shopProductGroupSkuList[0].spuName,
-                price: group.shopProductGroupSkuList[0].price,
+                price: centToYuan(group.shopProductGroupSkuList[0].price),
+                originPrice: centToYuan(group.shopProductGroupSkuList[0].price),
                 count: group.shopProductGroupSkuList[0].count,
                 groupSkuCount: group.shopProductGroupSkuList[0].groupSkuCount
               }
             })
           }
         }),//商品信息
-        brokerage: el.feeDtl.merchantFee.brokerage, ///佣金
-        activityFee: el.feeDtl.merchantFee.activityFee, ///商家承擔活動費用
-        total: el.feeDtl.merchantFee.total, ///預計收入
-        diffPrice: el.feeDtl.merchantFee.diffPrice, ///最低消費金額補差價
-        productPrice: el.feeDtl.customerFee.productPrice, ///菜品總價
-        shippingFee: el.feeDtl.customerFee.shippingFee, ///配送費
-        platformFee: el.feeDtl.customerFee.platformFee, ///平臺費
-        discounts: el.feeDtl.customerFee.discounts, ///優惠金額
-        actTotal: el.feeDtl.customerFee.actTotal, ///顧客實際支付
-        deliveryOrderType: el.merchantOrder.userGetMode, ///配送類型
+        brokerage: centToYuan(el.feeDtl.merchantFee.brokerage), ///佣金
+        activityFee: centToYuan(el.feeDtl.merchantFee.activityFee), ///商家承擔活動費用
+        total: centToYuan(el.feeDtl.merchantFee.total), ///預計收入
+        diffPrice: centToYuan(el.feeDtl.merchantFee.diffPrice), ///最低消費金額補差價
+        productPrice: centToYuan(el.feeDtl.customerFee.productPrice), ///菜品總價
+        shippingFee: centToYuan(el.feeDtl.customerFee.shippingFee), ///配送費
+        platformFee: centToYuan(el.feeDtl.customerFee.platformFee), ///平臺費
+        discounts: centToYuan(el.feeDtl.customerFee.discounts), ///優惠金額
+        actTotal: centToYuan(el.feeDtl.customerFee.actTotal), ///顧客實際支付
+        deliveryOrderType: el.merchantOrder.userGetMode === 'pickup' ? '自取' : '外送', ///配送類型
         remark: el.merchantOrder.remark, ///備註
       }
     })
@@ -336,20 +348,20 @@ function handleApiData(url, data) {
     return orderInfos
   } else if (url.startsWith('https://merchant.openrice.com')) {
     // openrice
-    const orderInfos = value.data.map((el, idx) => {
+    const orderInfos = value.data.filter(el => el.status === 10).map((el, idx) => {
       return {
         url,
         timestamp: new Date().toISOString() + idx,
         platform: 'openrice',
         seqNo: el.pickupNumber,/////取餐號
-        status: el.status,///訂單狀態
+        status: el.status === 10 ? '已完成' : '未完成',///訂單狀態
         orderViewId: el.orderRefId,///訂單號
         shopId: el.orPoiId, ///門店id
         shopName: el.poiName,///門店名稱
-        unconfirmedStatusTime: el.createTime,///顧客下單時間
+        unconfirmedStatusTime: getDateTime(el.createTime),///顧客下單時間
         confirmedStatusTime: '',///商家接單時間
-        readiedStatusTime: '',///商家出餐時間
-        completedStatusTime: el.completedTime,///訂單送達時間
+        readiedStatusTime: getDateTime(el.pickupTime),///商家出餐時間
+        completedStatusTime: getDateTime(el.completedTime),///訂單送達時間
         products: el.takeAwayOrderItems.map(product => {
           return {
             count: product.quantity,
@@ -384,7 +396,7 @@ function handleApiData(url, data) {
   } else if (url.startsWith('https://vagw-api.ap.prd.portal.restaurant/query') && value.data.orders && value.data.orders.order && value.data.orders.order.order && value.data.orders.order.order.status === 'DELIVERED') {
     // foodpanda
     const orderData = value.data.orders.order
-    const getStatusTime = (val)=>{
+    const getStatusTime = (val) => {
       const status = orderData.orderStatuses.find(el => el.status === val)
       if (status && status.timestamp) {
         return status.timestamp
@@ -400,7 +412,7 @@ function handleApiData(url, data) {
       orderViewId: orderData.order.orderId,///订单号
       shopId: orderData.order.vendorId, ///门店id
       shopName: orderData.order.vendorName,///门店名称
-      unconfirmedStatusTime:getStatusTime('SENDING_TO_VENDOR'),///顾客下单时间
+      unconfirmedStatusTime: getStatusTime('SENDING_TO_VENDOR'),///顾客下单时间
       confirmedStatusTime: getStatusTime('ACCEPTED'),///商家接单时间
       readiedStatusTime: getStatusTime('ORDER_PREPARED'),///商家出餐时间
       completedStatusTime: getStatusTime('DELIVERED'),///订单送达时间
@@ -408,9 +420,9 @@ function handleApiData(url, data) {
         return {
           count: product.quantity,
           originPrice: product.unitPrice,
-          name:product.parentName !== product.name ? `${product.parentName}(${product.name})`:product.name,
+          name: product.parentName !== product.name ? `${product.parentName}(${product.name})` : product.name,
           price: product.unitPrice,
-          groups: product.options && product.options.map(group=>{
+          groups: product.options && product.options.map(group => {
             return {
               count: group.quantity,
               originPrice: group.unitPrice,
