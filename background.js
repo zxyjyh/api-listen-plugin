@@ -1,6 +1,15 @@
 
 importScripts('libs/xlsx.full.min.js');
 
+console.log("background.js 运行");
+
+chrome.runtime.onInstalled.addListener(() => {
+  console.log("扩展已安装");
+});
+// chrome.action.onClicked.addListener(() => {
+//   console.log("扩展图标点击，Service Worker 启动");
+// });
+
 let isListening = false;
 
 chrome.storage.local.get(['isListening'], (result) => {
@@ -150,6 +159,7 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
   } else if (message.type === 'ajaxInterceptor' && message.action === 'checkListening') {
     sendResponse({ isListening });
   }
+  return true
 });
 
 function startListening() {
@@ -299,10 +309,10 @@ function handleApiData(url, data) {
   const centToYuan = (val) => {
     return (val / 100).toFixed(2)
   }
-  
+
   if (url.startsWith('https://merchant.mykeeta.com')) {
     // keeta
-    const orderInfos = value.data.list.filter(el => el.merchantOrder.status === 40).map((el, idx) => {
+    const orderInfos = value.data && value.data.list && value.data.list.filter(el => el.merchantOrder.status === 40).map((el, idx) => {
       return {
         url,
         timestamp: new Date().toISOString() + idx,
@@ -350,7 +360,7 @@ function handleApiData(url, data) {
     return orderInfos
   } else if (url.startsWith('https://merchant.openrice.com')) {
     // openrice
-    const orderInfos = value.data.filter(el => el.status === 10).map((el, idx) => {
+    const orderInfos = value.data && value.data && value.data.filter(el => el.status === 10).map((el, idx) => {
       return {
         url,
         timestamp: new Date().toISOString() + idx,

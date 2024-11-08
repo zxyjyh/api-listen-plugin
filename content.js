@@ -79,6 +79,7 @@ if (typeof window.ajaxInterceptorZxyInjected === 'undefined') {
         action: 'saveData',
         url: data.url,
         data: data.data
+      }, (response) => {
       });
     }
 
