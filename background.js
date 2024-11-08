@@ -6,6 +6,7 @@ let isListening = false;
 chrome.storage.local.get(['isListening'], (result) => {
   isListening = result && result.isListening || false;
   console.log("初始状态:", isListening);
+  chrome.storage.local.set({ "isListening": isListening });
 });
 
 const dbName = "APIInterceptorDB";
@@ -298,6 +299,7 @@ function handleApiData(url, data) {
   const centToYuan = (val) => {
     return (val / 100).toFixed(2)
   }
+  
   if (url.startsWith('https://merchant.mykeeta.com')) {
     // keeta
     const orderInfos = value.data.list.filter(el => el.merchantOrder.status === 40).map((el, idx) => {
@@ -305,7 +307,7 @@ function handleApiData(url, data) {
         url,
         timestamp: new Date().toISOString() + idx,
         platform: 'keeta',
-        seqNo: el.merchantOrder.seqNo,/////取餐号
+        seqNo: el.merchantOrder.userGetMode === 'pickup' ? `PU${el.merchantOrder.seqNo}` : el.merchantOrder.seqNo,/////取餐号
         status: el.merchantOrder.status === 40 ? '已完成' : '未完成',///订单状态
         orderViewId: String(el.merchantOrder.orderViewId),///订单号
         shopId: el.merchantOrder.shopId, ///门店id
@@ -399,7 +401,7 @@ function handleApiData(url, data) {
     const getStatusTime = (val) => {
       const status = orderData.orderStatuses.find(el => el.status === val)
       if (status && status.timestamp) {
-        return status.timestamp
+        return getDateTime(status.timestamp)
       }
       return ''
     }
@@ -408,7 +410,7 @@ function handleApiData(url, data) {
       timestamp: new Date().toISOString(),
       platform: 'foodpanda',
       seqNo: '',///取餐号
-      status: orderData.order.status,///订单状态
+      status: orderData.order.status ==='DELIVERED'?'已完成':'未完成',///订单状态
       orderViewId: orderData.order.orderId,///订单号
       shopId: orderData.order.vendorId, ///门店id
       shopName: orderData.order.vendorName,///门店名称
@@ -441,7 +443,7 @@ function handleApiData(url, data) {
       platformFee: '', ///平臺費
       discounts: '', ///優惠金額
       actTotal: orderData.order.orderValue, ///顧客實際支付
-      deliveryOrderType: orderData.order.devlivery.provider, ///配送類型
+      deliveryOrderType: orderData.order.devlivery.provider==='pickup'?'自取':'配送', ///配送類型
       remark: '', ///備註
     }
   } else if (url.startsWith('https://restaurant-hub-data-api.deliveroo.net/api/orders')) {
@@ -451,21 +453,21 @@ function handleApiData(url, data) {
       timestamp: new Date().toISOString(),
       platform: 'deliveroo',
       seqNo: '',///取餐号
-      status: value.data.status,///订单状态
-      orderViewId: value.data.order_number,///订单号
+      status: '已完成',///订单状态
+      orderViewId: value.order_number,///订单号
       shopId: '', ///门店id
       shopName: '',///门店名称
-      unconfirmedStatusTime: value.data.timeline.placed_at,///顾客下单时间
-      confirmedStatusTime: value.data.timeline.accepted_at,///商家接单时间
-      readiedStatusTime: value.data.timeline.prepare_for,///商家出餐时间
-      completedStatusTime: value.data.timeline.delivery_picked_up_at,///订单送达时间
-      products: value.data.items.map(product => {
+      unconfirmedStatusTime: getDateTime(value.timeline.placed_at),///顾客下单时间
+      confirmedStatusTime: getDateTime(value.timeline.accepted_at),///商家接单时间
+      readiedStatusTime: getDateTime(value.timeline.prepare_for),///商家出餐时间
+      completedStatusTime: value.timeline.delivery_picked_up_at ? getDateTime(value.timeline.delivery_picked_up_at) : '',///订单送达时间
+      products: value.items.map(product => {
         return {
           count: product.quantity,
-          originPrice: product.unit_price.fractional,
+          originPrice: centToYuan(product.unit_price.fractional),
           name: product.name,
-          price: product.unit_price.fractional,
-          groups: product.modifiers.map(group => {
+          price: centToYuan(product.unit_price.fractional),
+          groups: product.modifiers.length && product.modifiers.map(group => {
             return {
               count: product.quantity,
               originPrice: '',
@@ -479,12 +481,12 @@ function handleApiData(url, data) {
       activityFee: '', ///商家承擔活動費用
       total: '', ///預計收入
       diffPrice: '', ///最低消費金額補差價
-      productPrice: value.data.amount.fractional, ///菜品總價
+      productPrice: centToYuan(value.amount.fractional), ///菜品總價
       shippingFee: '', ///配送費
       platformFee: '', ///平臺費
       discounts: '', ///優惠金額
-      actTotal: value.data.amount.fractional, ///顧客實際支付
-      deliveryOrderType: value.data.status, ///配送類型
+      actTotal: centToYuan(value.amount.fractional), ///顧客實際支付
+      deliveryOrderType: value.status === 'delivered' ? '配送' : '自取', ///配送類型
       remark: '', ///備註
     }
   }
