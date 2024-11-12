@@ -6,9 +6,6 @@ console.log("background.js 运行");
 chrome.runtime.onInstalled.addListener(() => {
   console.log("扩展已安装");
 });
-// chrome.action.onClicked.addListener(() => {
-//   console.log("扩展图标点击，Service Worker 启动");
-// });
 
 let isListening = false;
 
@@ -16,6 +13,13 @@ chrome.storage.local.get(['isListening'], (result) => {
   isListening = result && result.isListening || false;
   console.log("初始状态:", isListening);
   chrome.storage.local.set({ "isListening": isListening });
+});
+
+
+chrome.tabs.onActivated.addListener(() => {
+  if (isListening) {
+    stopListening();
+  }
 });
 
 const dbName = "APIInterceptorDB";
@@ -190,6 +194,7 @@ function startListening() {
                   console.warn(`無法向標籤頁 ${tab.id} 發送消息: `, chrome.runtime.lastError.message);
                 } else {
                   console.log(`已通知標籤頁 ${tab.id} 開始監聽 (注入後)`);
+                  chrome.storage.local.set({ "isListening": true });
                 }
               });
             });
@@ -204,6 +209,7 @@ function startListening() {
                 console.warn(`無法向標籤頁 ${tab.id} 發送消息: `, chrome.runtime.lastError.message);
               } else {
                 console.log(`已通知標籤頁 ${tab.id} 開始監聽 (已注入)`);
+                chrome.storage.local.set({ "isListening": true });
               }
             });
           }
@@ -257,6 +263,7 @@ function stopListening() {
                   console.warn(`無法向標籤頁 ${tab.id} 發送消息: `, chrome.runtime.lastError.message);
                 } else {
                   console.log(`已通知標籤頁 ${tab.id} 停止监听`);
+                  chrome.storage.local.set({ "isListening": false });
                 }
               });
             });
@@ -271,6 +278,7 @@ function stopListening() {
                 console.warn(`無法向標籤頁 ${tab.id} 發送消息: `, chrome.runtime.lastError.message);
               } else {
                 console.log(`已通知標籤頁 ${tab.id} 停止监听`);
+                chrome.storage.local.set({ "isListening": false });
               }
             });
           }
