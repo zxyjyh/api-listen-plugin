@@ -128,7 +128,7 @@ function getDataFromDatabase() {
   });
 }
 
-function clearDatabase() {
+function clearDatabase(sendResponse) {
   return openDatabase().then((db) => {
     return new Promise((resolve, reject) => {
       const transaction = db.transaction([storeName], "readwrite");
@@ -137,11 +137,13 @@ function clearDatabase() {
 
       request.onsuccess = () => {
         console.log("IndexedDB 数据已成功清除");
+        sendResponse({success:true})
         resolve();
       };
 
       request.onerror = () => {
         console.error("清除 IndexedDB 数据时出错:", request.error);
+        sendResponse({ success: false })
         reject(request.error);
       };
     });
@@ -151,22 +153,22 @@ function clearDatabase() {
 // 监听来自 popup 和 content.js的消息
 chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
   if (message.action === "start") {
-    startListening();
+    startListening(sendResponse);
   } else if (message.action === "stop") {
-    stopListening();
+    stopListening(sendResponse);
   } else if (message.action === "export") {
-    exportData();
+    exportData(sendResponse);
   } else if (message.action === "clearData") {
-    clearDatabase()
+    clearDatabase(sendResponse)
   } else if (message.type === 'ajaxInterceptor' && message.action === 'saveData') {
-    saveData(message.url, message.data);
+    saveData(message.url, message.data, sendResponse);
   } else if (message.type === 'ajaxInterceptor' && message.action === 'checkListening') {
     sendResponse({ isListening });
   }
   return true
 });
 
-function startListening() {
+function startListening(sendResponse) {
   if (isListening) return;
 
   isListening = true;
@@ -190,6 +192,7 @@ function startListening() {
                 to: 'pageScript',
                 action: 'start'
               }, response => {
+                sendResponse({ success: true });
                 if (chrome.runtime.lastError) {
                   console.warn(`無法向標籤頁 ${tab.id} 發送消息: `, chrome.runtime.lastError.message);
                 } else {
@@ -205,6 +208,7 @@ function startListening() {
               to: 'pageScript',
               action: 'start'
             }, response => {
+              sendResponse({ success: true });
               if (chrome.runtime.lastError) {
                 console.warn(`無法向標籤頁 ${tab.id} 發送消息: `, chrome.runtime.lastError.message);
               } else {
@@ -233,9 +237,11 @@ function startListening() {
   //     }
   //   });
   // });
+
+  return sendResponse({success:true})
 }
 
-function stopListening() {
+function stopListening(sendResponse) {
   if (!isListening) return;
 
   isListening = false;
@@ -261,9 +267,11 @@ function stopListening() {
               }, response => {
                 if (chrome.runtime.lastError) {
                   console.warn(`無法向標籤頁 ${tab.id} 發送消息: `, chrome.runtime.lastError.message);
+                  sendResponse({ success: false });
                 } else {
                   console.log(`已通知標籤頁 ${tab.id} 停止监听`);
                   chrome.storage.local.set({ "isListening": false });
+                  sendResponse({ success: true });
                 }
               });
             });
@@ -276,9 +284,11 @@ function stopListening() {
             }, response => {
               if (chrome.runtime.lastError) {
                 console.warn(`無法向標籤頁 ${tab.id} 發送消息: `, chrome.runtime.lastError.message);
+                sendResponse({ success: false });
               } else {
                 console.log(`已通知標籤頁 ${tab.id} 停止监听`);
                 chrome.storage.local.set({ "isListening": false });
+                sendResponse({ success: true });
               }
             });
           }
@@ -302,6 +312,8 @@ function stopListening() {
   //     }
   //   });
   // });
+
+  return sendResponse({ success: true });
 }
 
 function handleApiData(url, data) {
@@ -325,7 +337,7 @@ function handleApiData(url, data) {
         url,
         timestamp: new Date().toISOString() + idx,
         platform: 'keeta',
-        seqNo: el.merchantOrder.userGetMode === 'pickup' ? `PU${el.merchantOrder.seqNo}` : el.merchantOrder.seqNo,/////取餐号
+        seqNo: el.merchantOrder.userGetMode === 'pickup' ? `PU${el.merchantOrder.seqNo}` : el.merchantOrder.seqNo,///取餐号
         status: el.merchantOrder.status === 40 ? '已完成' : '未完成',///订单状态
         orderViewId: String(el.merchantOrder.orderViewId),///订单号
         shopId: el.merchantOrder.shopId, ///门店id
@@ -334,12 +346,12 @@ function handleApiData(url, data) {
         confirmedStatusTime: getDateTime(el.merchantOrder.confirmedStatusTime),///商家接单时间
         readiedStatusTime: getDateTime(el.merchantOrder.readiedStatusTime),///商家出餐时间
         completedStatusTime: getDateTime(el.merchantOrder.completedStatusTime),///订单送达时间
-        products: el.products.map(item => {
+        products: (el.rebates && el.rebates.residueProducts && el.rebates.residueProducts.length ? el.rebates.residueProducts : el.products).map(item => {
           return {
             count: item.count,
-            originPrice: centToYuan(item.originPrice),
+            originPrice: centToYuan(item.priceWithoutGroup.originAmount),
             name: item.name,
-            price: centToYuan(item.price),
+            price: centToYuan(item.priceWithoutGroup.amount),
             groups: item.groups.map(group => {
               return {
                 name: group.shopProductGroupSkuList[0].spuName,
@@ -351,15 +363,15 @@ function handleApiData(url, data) {
             })
           }
         }),//商品信息
-        brokerage: centToYuan(el.feeDtl.merchantFee.brokerage), ///佣金
-        activityFee: centToYuan(el.feeDtl.merchantFee.activityFee), ///商家承擔活動費用
-        total: centToYuan(el.feeDtl.merchantFee.total), ///預計收入
-        diffPrice: centToYuan(el.feeDtl.merchantFee.diffPrice), ///最低消費金額補差價
-        productPrice: centToYuan(el.feeDtl.customerFee.productPrice), ///菜品總價
-        shippingFee: centToYuan(el.feeDtl.customerFee.shippingFee), ///配送費
-        platformFee: centToYuan(el.feeDtl.customerFee.platformFee), ///平臺費
-        discounts: centToYuan(el.feeDtl.customerFee.discounts), ///優惠金額
-        actTotal: centToYuan(el.feeDtl.customerFee.actTotal), ///顧客實際支付
+        brokerage: centToYuan(el.feeDtl.merchantFee.rebatesBrokerage ? el.feeDtl.merchantFee.rebatesBrokerage : el.feeDtl.merchantFee.brokerage), ///佣金
+        activityFee: centToYuan(el.feeDtl.merchantFee.rebatesActivityFee ? el.feeDtl.merchantFee.rebatesActivityFee : el.feeDtl.merchantFee.activityFee), ///商家承擔活動費用
+        total: centToYuan(el.feeDtl.merchantFee.rebatesTotal ? el.feeDtl.merchantFee.rebatesTotal : el.feeDtl.merchantFee.total), ///預計收入
+        diffPrice: centToYuan(el.feeDtl.merchantFee.rebatesDiffPrice ? el.feeDtl.merchantFee.rebatesDiffPrice : el.feeDtl.merchantFee.diffPrice), ///最低消費金額補差價
+        productPrice: centToYuan(el.feeDtl.customerFee.rebatesProductPrice ? el.feeDtl.customerFee.rebatesProductPrice : el.feeDtl.customerFee.productPrice), ///菜品總價
+        shippingFee: centToYuan(el.feeDtl.customerFee.rebatesShippingFee ? el.feeDtl.customerFee.rebatesShippingFee : el.feeDtl.customerFee.shippingFee), ///配送費
+        platformFee: centToYuan(el.feeDtl.customerFee.rebatesPlatformFee ? el.feeDtl.customerFee.rebatesPlatformFee :  el.feeDtl.customerFee.platformFee), ///平臺費
+        discounts: centToYuan(el.feeDtl.customerFee.rebatesDiscounts ? el.feeDtl.customerFee.rebatesDiscounts : el.feeDtl.customerFee.discounts), ///優惠金額
+        actTotal: centToYuan(el.feeDtl.customerFee.rebatesPayTotal ? el.feeDtl.customerFee.rebatesPayTotal : el.feeDtl.customerFee.actTotal), ///顧客實際支付
         deliveryOrderType: el.merchantOrder.userGetMode === 'pickup' ? '自取' : '外送', ///配送類型
         remark: el.merchantOrder.remark, ///備註
       }
@@ -473,8 +485,8 @@ function handleApiData(url, data) {
       seqNo: '',///取餐号
       status: '已完成',///订单状态
       orderViewId: value.order_number,///订单号
-      shopId: '', ///门店id
-      shopName: '',///门店名称
+      shopId: value.restaurant_id, ///门店id
+      shopName: value.restaurant_id === '608619'? 'WeBite Space':'',///门店名称
       unconfirmedStatusTime: getDateTime(value.timeline.placed_at),///顾客下单时间
       confirmedStatusTime: getDateTime(value.timeline.accepted_at),///商家接单时间
       readiedStatusTime: getDateTime(value.timeline.prepare_for),///商家出餐时间
@@ -510,19 +522,25 @@ function handleApiData(url, data) {
   }
 }
 
-function saveData(url, data) {
+function saveData(url, data,sendResponse) {
   if (!isListening) return;
 
   // 添加新的數據
   const apiData = handleApiData(url, data)
 
   if (url.startsWith('https://vagw-api.ap.prd.portal.restaurant/query') || url.startsWith('https://restaurant-hub-data-api.deliveroo.net/api/orders')) {
-    saveToDatabase(apiData).catch((error) => {
+    saveToDatabase(apiData).then(()=>{
+      sendResponse({success:true})
+    }).catch((error) => {
       console.error("保存數據到 IndexedDB 時出錯:", error);
+      sendResponse({ success: false })
     });
   } else {
-    saveToDatabase(apiData, 'arr').catch((error) => {
+    saveToDatabase(apiData, 'arr').then(()=>{
+      sendResponse({ success: true })
+    }).catch((error) => {
       console.error("保存數據到 IndexedDB 時出錯:", error);
+      sendResponse({ success: false })
     });
   }
 }
@@ -531,8 +549,8 @@ function saveData(url, data) {
 function filterData(arr) {
   const seen = new Set();
   const uniqueArr = arr.filter(item => {
-    if (!seen.has(item.orderViewId)) {
-      seen.add(item.orderViewId);
+    if (!seen.has(String(item.orderViewId) + item.platform)) {
+      seen.add(String(item.orderViewId) + item.platform);
       return true;
     }
     return false;
@@ -540,7 +558,7 @@ function filterData(arr) {
   return uniqueArr
 }
 
-function exportData() {
+function exportData(sendResponse) {
   getDataFromDatabase()
     .then(data => {
 
@@ -632,11 +650,13 @@ function exportData() {
           saveAs: true
         });
 
-        clearDatabase()
+        clearDatabase(sendResponse)
       };
       reader.readAsDataURL(blob);
+
     })
     .catch(error => {
+      sendResponse({ success: false })
       console.error("從 IndexedDB 獲取數據時出錯:", error);
     });
 }

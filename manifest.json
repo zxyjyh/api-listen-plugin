@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "name": "AOMI API Request Listener",
+  "name": "AOMI API REQUEST LISTENER",
   "version": "1.0",
   "permissions": [
     "tabs",
