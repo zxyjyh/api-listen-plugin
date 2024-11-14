@@ -357,7 +357,7 @@ function handleApiData(url, data) {
                 name: group.shopProductGroupSkuList[0].spuName,
                 price: centToYuan(group.shopProductGroupSkuList[0].price),
                 originPrice: centToYuan(group.shopProductGroupSkuList[0].price),
-                count: group.shopProductGroupSkuList[0].count,
+                count: item.count,
                 groupSkuCount: group.shopProductGroupSkuList[0].groupSkuCount
               }
             })
@@ -402,7 +402,7 @@ function handleApiData(url, data) {
             price: product.unitPrice,
             groups: product.comboItems.map(group => {
               return {
-                count: group.quantity,
+                count: product.quantity,
                 originPrice: group.unitPrice,
                 name: group.name,
                 price: group.unitPrice,
@@ -456,7 +456,7 @@ function handleApiData(url, data) {
           price: product.unitPrice,
           groups: product.options && product.options.map(group => {
             return {
-              count: group.quantity,
+              count: product.quantity,
               originPrice: group.unitPrice,
               name: group.name,
               price: group.unitPrice,
