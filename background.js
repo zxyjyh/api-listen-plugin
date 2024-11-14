@@ -330,6 +330,28 @@ function handleApiData(url, data) {
     return (val / 100).toFixed(2)
   }
 
+
+  const  mul = (a, b)=> {
+    if (!a) a = 0;
+    if (!b) b = 0;
+    let c = 0;
+    const d = String(a);
+    const e = String(b);
+    try {
+      c += d.split(".")[1].length;
+    } catch (f) {
+      //
+    }
+    try {
+      c += e.split(".")[1].length;
+    } catch (f) {
+      //
+    }
+    return (
+      (Number(d.replace(".", "")) * Number(e.replace(".", ""))) / Math.pow(10, c)
+    );
+  }
+
   if (url.startsWith('https://merchant.mykeeta.com')) {
     // keeta
     const orderInfos = value.data && value.data.list && value.data.list.filter(el => el.merchantOrder.status === 40).map((el, idx) => {
@@ -357,7 +379,7 @@ function handleApiData(url, data) {
                 name: group.shopProductGroupSkuList[0].spuName,
                 price: centToYuan(group.shopProductGroupSkuList[0].price),
                 originPrice: centToYuan(group.shopProductGroupSkuList[0].price),
-                count: item.count,
+                count: group.shopProductGroupSkuList[0].count,
                 groupSkuCount: group.shopProductGroupSkuList[0].groupSkuCount
               }
             })
@@ -402,7 +424,7 @@ function handleApiData(url, data) {
             price: product.unitPrice,
             groups: product.comboItems.map(group => {
               return {
-                count: product.quantity,
+                count: group.quantity,
                 originPrice: group.unitPrice,
                 name: group.name,
                 price: group.unitPrice,
@@ -456,7 +478,7 @@ function handleApiData(url, data) {
           price: product.unitPrice,
           groups: product.options && product.options.map(group => {
             return {
-              count: product.quantity,
+              count: mul(product.quantity, group.quantity),
               originPrice: group.unitPrice,
               name: group.name,
               price: group.unitPrice,
