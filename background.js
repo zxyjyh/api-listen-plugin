@@ -76,7 +76,7 @@ function saveToDatabase(data, type) {
       let requests = [];
 
       if (type === 'arr') {
-        data.forEach(item => {
+          data && data.length && data.forEach(item => {
           const request = store.add(item);
           requests.push(request);
         });
@@ -109,6 +109,7 @@ function saveToDatabase(data, type) {
   });
 }
 
+
 function getDataFromDatabase() {
   return openDatabase().then((db) => {
     return new Promise((resolve, reject) => {
@@ -117,7 +118,8 @@ function getDataFromDatabase() {
       const request = store.getAll();
 
       request.onsuccess = () => {
-        resolve(request.result);
+        const data = request.result;
+        resolve(data);
       };
 
       request.onerror = () => {
@@ -267,11 +269,11 @@ function stopListening(sendResponse) {
               }, response => {
                 if (chrome.runtime.lastError) {
                   console.warn(`無法向標籤頁 ${tab.id} 發送消息: `, chrome.runtime.lastError.message);
-                  sendResponse({ success: false });
+                  sendResponse && sendResponse({ success: false });
                 } else {
                   console.log(`已通知標籤頁 ${tab.id} 停止监听`);
                   chrome.storage.local.set({ "isListening": false });
-                  sendResponse({ success: true });
+                  sendResponse && sendResponse({ success: true });
                 }
               });
             });
@@ -284,11 +286,11 @@ function stopListening(sendResponse) {
             }, response => {
               if (chrome.runtime.lastError) {
                 console.warn(`無法向標籤頁 ${tab.id} 發送消息: `, chrome.runtime.lastError.message);
-                sendResponse({ success: false });
+                sendResponse && sendResponse({ success: false });
               } else {
                 console.log(`已通知標籤頁 ${tab.id} 停止监听`);
                 chrome.storage.local.set({ "isListening": false });
-                sendResponse({ success: true });
+                sendResponse && sendResponse({ success: true });
               }
             });
           }
@@ -313,7 +315,7 @@ function stopListening(sendResponse) {
   //   });
   // });
 
-  return sendResponse({ success: true });
+  return sendResponse && sendResponse({ success: true });
 }
 
 function handleApiData(url, data) {
@@ -324,6 +326,7 @@ function handleApiData(url, data) {
     date.setHours(date.getHours() + 8)
     return date.toISOString().replace('T', ' ').substring(0, 19)
   }
+
 
 
   const centToYuan = (val) => {
@@ -357,29 +360,29 @@ function handleApiData(url, data) {
     const orderInfos = value.data && value.data.list && value.data.list.filter(el => el.merchantOrder.status === 40).map((el, idx) => {
       return {
         url,
-        timestamp: new Date().toISOString() + idx,
+        timestamp: new Date().getTime()+idx,
         platform: 'keeta',
         seqNo: el.merchantOrder.userGetMode === 'pickup' ? `PU${el.merchantOrder.seqNo}` : el.merchantOrder.seqNo,///取餐号
         status: el.merchantOrder.status === 40 ? '已完成' : '未完成',///订单状态
         orderViewId: String(el.merchantOrder.orderViewId),///订单号
         shopId: el.merchantOrder.shopId, ///门店id
         shopName: el.merchantOrder.shopName,///门店名称
-        unconfirmedStatusTime: getDateTime(el.merchantOrder.unconfirmedStatusTime),///顾客下单时间
+        unconfirmedStatusTime: getDateTime(el.merchantOrder.ctime),///顾客下单时间
         confirmedStatusTime: getDateTime(el.merchantOrder.confirmedStatusTime),///商家接单时间
         readiedStatusTime: getDateTime(el.merchantOrder.readiedStatusTime),///商家出餐时间
         completedStatusTime: getDateTime(el.merchantOrder.completedStatusTime),///订单送达时间
         products: (el.rebates && el.rebates.residueProducts && el.rebates.residueProducts.length ? el.rebates.residueProducts : el.products).map(item => {
           return {
             count: item.count,
-            originPrice: centToYuan(item.priceWithoutGroup.originAmount),
+            originPrice: centToYuan(item.originPrice),
             name: item.name,
-            price: centToYuan(item.priceWithoutGroup.amount),
+            price: centToYuan(item.price),
             groups: item.groups.map(group => {
               return {
                 name: group.shopProductGroupSkuList[0].spuName,
                 price: centToYuan(group.shopProductGroupSkuList[0].price),
                 originPrice: centToYuan(group.shopProductGroupSkuList[0].price),
-                count: group.shopProductGroupSkuList[0].count,
+                count: group.shopProductGroupSkuList[0].groupSkuCount,
                 groupSkuCount: group.shopProductGroupSkuList[0].groupSkuCount
               }
             })
@@ -395,7 +398,7 @@ function handleApiData(url, data) {
         discounts: centToYuan(el.feeDtl.customerFee.rebatesDiscounts ? el.feeDtl.customerFee.rebatesDiscounts : el.feeDtl.customerFee.discounts), ///優惠金額
         actTotal: centToYuan(el.feeDtl.customerFee.rebatesPayTotal ? el.feeDtl.customerFee.rebatesPayTotal : el.feeDtl.customerFee.payTotal), ///顧客實際支付
         deliveryOrderType: el.merchantOrder.userGetMode === 'pickup' ? '自取' : '外送', ///配送類型
-        remark: el.merchantOrder.remark, ///備註
+        remark: centToYuan(el.feeDtl.customerFee.tip ? el.feeDtl.customerFee.tip : 0), ///備註
       }
     })
 
@@ -405,7 +408,7 @@ function handleApiData(url, data) {
     const orderInfos = value.data && value.data && value.data.filter(el => el.status === 10).map((el, idx) => {
       return {
         url,
-        timestamp: new Date().toISOString() + idx,
+        timestamp: new Date().getTime()+idx,
         platform: 'openrice',
         seqNo: el.pickupNumber,/////取餐號
         status: el.status === 10 ? '已完成' : '未完成',///訂單狀態
@@ -459,7 +462,7 @@ function handleApiData(url, data) {
     }
     return {
       url,
-      timestamp: new Date().toISOString(),
+      timestamp: new Date().getTime(),
       platform: 'foodpanda',
       seqNo: '',///取餐号
       status: orderData.order.status ==='DELIVERED'?'已完成':'未完成',///订单状态
@@ -502,7 +505,7 @@ function handleApiData(url, data) {
     // deliveroo
     return {
       url,
-      timestamp: new Date().toISOString(),
+      timestamp: new Date().getTime(),
       platform: 'deliveroo',
       seqNo: '',///取餐号
       status: '已完成',///订单状态
@@ -519,7 +522,7 @@ function handleApiData(url, data) {
           originPrice: centToYuan(product.unit_price.fractional),
           name: product.name,
           price: centToYuan(product.unit_price.fractional),
-          groups: product.modifiers.length && product.modifiers.map(group => {
+          groups: product.modifiers && product.modifiers.length && product.modifiers.map(group => {
             return {
               count: product.quantity,
               originPrice: '',
@@ -617,7 +620,7 @@ function exportData(sendResponse) {
 
       let worksheetData2 = []
       for (const item of uniqueData) {
-        if (item.products.length) {
+        if (item.products && item.products.length) {
           for (const product of item.products) {
             worksheetData2.push({
               '平台': item.platform,

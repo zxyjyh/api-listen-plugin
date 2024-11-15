@@ -20,28 +20,28 @@ if (typeof window.ajaxInterceptorZxyInjected === 'undefined') {
 
 
       // 检查 background.js 是否处于监听状态
-      chrome.runtime.sendMessage(
-        { type: 'ajaxInterceptor', action: 'checkListening' },
-        (response) => {
-          if (response.isListening) {
-            // 通知 injected.js 开始拦截
-            window.postMessage({
-              type: 'ajaxInterceptor',
-              to: 'injectedScript',
-              action: 'start'
-            }, '*');
-            console.log('监听已开启，通知 injected.js 开始拦截');
-          }else {
-            // 通知 injected.js 开始拦截
-            window.postMessage({
-              type: 'ajaxInterceptor',
-              to: 'injectedScript',
-              action: 'stop'
-            }, '*');
-            console.log('监听已取消，通知 injected.js 停止拦截');
-          }
-        }
-      );
+      // chrome.runtime.sendMessage(
+      //   { type: 'ajaxInterceptor', action: 'checkListening' },
+      //   (response) => {
+      //     if (response.isListening) {
+      //       // 通知 injected.js 开始拦截
+      //       window.postMessage({
+      //         type: 'ajaxInterceptor',
+      //         to: 'injectedScript',
+      //         action: 'start'
+      //       }, '*');
+      //       console.log('监听已开启，通知 injected.js 开始拦截');
+      //     }else {
+      //       // 通知 injected.js 开始拦截
+      //       window.postMessage({
+      //         type: 'ajaxInterceptor',
+      //         to: 'injectedScript',
+      //         action: 'stop'
+      //       }, '*');
+      //       console.log('监听已取消，通知 injected.js 停止拦截');
+      //     }
+      //   }
+      // );
 
 
     };
