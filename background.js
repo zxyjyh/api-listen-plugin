@@ -231,36 +231,36 @@ function startListening(sendResponse) {
       if (chrome.runtime.lastError || !response || !response.isInjected) {
         // 只有當 content.js 未被注入時才注入
         chrome.scripting.executeScript({
-          target: { tabId: tab.id },
+          target: { tabId: activeTab.id },
           files: ['content.js']
         }, () => {
           // 注入完成後發送 start 消息
-          chrome.tabs.sendMessage(tab.id, {
+          chrome.tabs.sendMessage(activeTab.id, {
             type: 'ajaxInterceptor',
             to: 'pageScript',
             action: 'start'
           }, response => {
             sendResponse({ success: true });
             if (chrome.runtime.lastError) {
-              console.warn(`無法向標籤頁 ${tab.id} 發送消息: `, chrome.runtime.lastError.message);
+              console.warn(`無法向標籤頁 ${activeTab.id} 發送消息: `, chrome.runtime.lastError.message);
             } else {
-              console.log(`已通知標籤頁 ${tab.id} 開始監聽 (注入後)`);
+              console.log(`已通知標籤頁 ${activeTab.id} 開始監聽 (注入後)`);
               chrome.storage.local.set({ "isListening": true });
             }
           });
         });
       } else {
         // 直接發送 start 消息
-        chrome.tabs.sendMessage(tab.id, {
+        chrome.tabs.sendMessage(activeTab.id, {
           type: 'ajaxInterceptor',
           to: 'pageScript',
           action: 'start'
         }, response => {
           sendResponse({ success: true });
           if (chrome.runtime.lastError) {
-            console.warn(`無法向標籤頁 ${tab.id} 發送消息: `, chrome.runtime.lastError.message);
+            console.warn(`無法向標籤頁 ${activeTab.id} 發送消息: `, chrome.runtime.lastError.message);
           } else {
-            console.log(`已通知標籤頁 ${tab.id} 開始監聽 (已注入)`);
+            console.log(`已通知標籤頁 ${activeTab.id} 開始監聽 (已注入)`);
             chrome.storage.local.set({ "isListening": true });
           }
         });
@@ -330,24 +330,24 @@ function stopListening(sendResponse) {
   // 只通知當前激活的tab
   chrome.windows.getCurrent({ populate: true }, function (window) {
     var activeTab = window.tabs.find(tab => tab.active);
-    chrome.tabs.sendMessage(tab.id, { type: 'checkInjection' }, response => {
+    chrome.tabs.sendMessage(activeTab.id, { type: 'checkInjection' }, response => {
       if (chrome.runtime.lastError || !response || !response.isInjected) {
         // 只有當 content.js 未被注入時才注入
         chrome.scripting.executeScript({
-          target: { tabId: tab.id },
+          target: { tabId: activeTab.id },
           files: ['content.js']
         }, () => {
           // 注入完成後發送 stop 消息
-          chrome.tabs.sendMessage(tab.id, {
+          chrome.tabs.sendMessage(activeTab.id, {
             type: 'ajaxInterceptor',
             to: 'pageScript',
             action: 'stop'
           }, response => {
             if (chrome.runtime.lastError) {
-              console.warn(`無法向標籤頁 ${tab.id} 發送消息: `, chrome.runtime.lastError.message);
+              console.warn(`無法向標籤頁 ${activeTab.id} 發送消息: `, chrome.runtime.lastError.message);
               sendResponse && sendResponse({ success: false });
             } else {
-              console.log(`已通知標籤頁 ${tab.id} 停止監聽`);
+              console.log(`已通知標籤頁 ${activeTab.id} 停止監聽`);
               chrome.storage.local.set({ "isListening": false });
               sendResponse && sendResponse({ success: true });
             }
@@ -355,16 +355,16 @@ function stopListening(sendResponse) {
         });
       } else {
         // 直接發送 start 消息
-        chrome.tabs.sendMessage(tab.id, {
+        chrome.tabs.sendMessage(activeTab.id, {
           type: 'ajaxInterceptor',
           to: 'pageScript',
           action: 'stop'
         }, response => {
           if (chrome.runtime.lastError) {
-            console.warn(`無法向標籤頁 ${tab.id} 發送消息: `, chrome.runtime.lastError.message);
+            console.warn(`無法向標籤頁 ${activeTab.id} 發送消息: `, chrome.runtime.lastError.message);
             sendResponse && sendResponse({ success: false });
           } else {
-            console.log(`已通知標籤頁 ${tab.id} 停止監聽`);
+            console.log(`已通知標籤頁 ${activeTab.id} 停止監聽`);
             chrome.storage.local.set({ "isListening": false });
             sendResponse && sendResponse({ success: true });
           }
@@ -413,6 +413,49 @@ function handleApiData(url, data) {
     );
   }
 
+  const getProductsKeeta = (el)=>{
+    if (el.rebates && el.rebates.residueProducts && el.rebates.residueProducts.length){
+      //部分退款
+      return  el.rebates.residueProducts.map(item => {
+        return {
+          count: Number(item.count),
+          originPrice: Number(centToYuan(mul(item.priceWithoutGroup.originAmount,item.count))),
+          name: item.name,
+          price: Number(centToYuan(mul(item.priceWithoutGroup.amount,item.count))),
+          groups: item.groups.map(group => {
+            return {
+              name: group.shopProductGroupSkuList[0].spuName,
+              price: Number(centToYuan(group.shopProductGroupSkuList[0].price)),
+              originPrice: Number(centToYuan(group.shopProductGroupSkuList[0].price)),
+              count: Number(group.shopProductGroupSkuList[0].groupSkuCount),
+              groupSkuCount: Number(group.shopProductGroupSkuList[0].groupSkuCount)
+            }
+          })
+        }
+      })
+    }else {
+      //无退款
+     return el.products.map(item => {
+        return {
+          count: Number(item.count),
+          originPrice: Number(centToYuan(item.priceWithoutGroup.amount)),
+          name: item.name,
+          price: Number(centToYuan(item.priceWithoutGroup.originAmount)),
+          groups: item.groups.map(group => {
+            return {
+              name: group.shopProductGroupSkuList[0].spuName,
+              price: Number(centToYuan(group.shopProductGroupSkuList[0].price)),
+              originPrice: Number(centToYuan(group.shopProductGroupSkuList[0].price)),
+              count: Number(group.shopProductGroupSkuList[0].groupSkuCount),
+              groupSkuCount: Number(group.shopProductGroupSkuList[0].groupSkuCount)
+            }
+          })
+        }
+      })
+    }
+
+  }
+
   if (url.startsWith('https://merchant.mykeeta.com')) {
     // keeta
     const orderInfos = value.data && value.data.list && value.data.list.filter(el => el.merchantOrder.status === 40).map((el, idx) => {
@@ -429,23 +472,7 @@ function handleApiData(url, data) {
         confirmedStatusTime: getDateTime(el.merchantOrder.confirmedStatusTime),///商家接單時間
         readiedStatusTime: getDateTime(el.merchantOrder.readiedStatusTime),///商家出餐時間
         completedStatusTime: getDateTime(el.merchantOrder.completedStatusTime),///訂單送達時間
-        products: (el.rebates && el.rebates.residueProducts && el.rebates.residueProducts.length ? el.rebates.residueProducts : el.products).map(item => {
-          return {
-            count: item.count,
-            originPrice: centToYuan(item.priceWithoutGroup.originAmount),
-            name: item.name,
-            price: centToYuan(item.priceWithoutGroup.amount),
-            groups: item.groups.map(group => {
-              return {
-                name: group.shopProductGroupSkuList[0].spuName,
-                price: centToYuan(group.shopProductGroupSkuList[0].price),
-                originPrice: centToYuan(group.shopProductGroupSkuList[0].price),
-                count: group.shopProductGroupSkuList[0].groupSkuCount,
-                groupSkuCount: group.shopProductGroupSkuList[0].groupSkuCount
-              }
-            })
-          }
-        }),//商品信息
+        products: getProductsKeeta(el),//商品信息
         brokerage: centToYuan(el.feeDtl.merchantFee.rebatesBrokerage ? el.feeDtl.merchantFee.rebatesBrokerage : el.feeDtl.merchantFee.brokerage), ///佣金
         activityFee: centToYuan(el.feeDtl.merchantFee.rebatesActivityFee ? el.feeDtl.merchantFee.rebatesActivityFee : el.feeDtl.merchantFee.activityFee), ///商家承擔活動費用
         total: centToYuan(el.feeDtl.merchantFee.rebatesTotal ? el.feeDtl.merchantFee.rebatesTotal : el.feeDtl.merchantFee.total), ///預計收入

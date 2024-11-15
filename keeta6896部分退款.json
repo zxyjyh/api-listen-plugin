@@ -1,0 +1,2108 @@
+{
+  "orderInfo": {
+    "baseOrder": {
+      "orderViewId": 6531341794210,
+      "status": 40,
+      "remark": "需要餐具",
+      "chooseTableware": 1,
+      "deliveryTime": 1728988228990,
+      "estimatedTimeStart": 1728987928990,
+      "estimatedTimeEnd": 1728988528990,
+      "ctime": 1728986719207,
+      "payType": "bindpay",
+      "payTypeDesc": "網上付款",
+      "deliveryInstruction": {
+        "remark": "Please leave in the security room"
+      },
+      "openPrivacyNumber": 1
+    },
+    "merchantOrder": {
+      "ctime": 1728986719238,
+      "seqNo": 6896,
+      "status": 40,
+      "pushOrderResult": 0,
+      "orderViewId": 6531341794210,
+      "shopId": 462111,
+      "shopName": "WeBite Space OL健康餐（中環店）",
+      "syncStatusResult": 0,
+      "unconfirmedStatusTime": 1728986722013,
+      "confirmedStatusTime": 1728986722538,
+      "readiedStatusTime": 1728987019488,
+      "completedStatusTime": 1728988096394,
+      "userId": 10000000606287,
+      "refundTag": 0,
+      "merchantOrderTraces": [
+        {
+          "orderViewId": 6531341794210,
+          "merchantOrderStatus": 40,
+          "shopId": 462111,
+          "userId": 10000000606287,
+          "opScene": 4010,
+          "opType": 20,
+          "opTime": 1728988096394,
+          "merchantOpType": 25,
+          "opId": 462111,
+          "ctime": 1728988096428,
+          "utime": 1728988096428
+        },
+        {
+          "orderViewId": 6531341794210,
+          "merchantOrderStatus": 35,
+          "shopId": 462111,
+          "userId": 10000000606287,
+          "opScene": 3500,
+          "opType": 20,
+          "opTime": 1728987019488,
+          "merchantOpType": 21,
+          "uuid": "0000000000000172D85DC2E2044C2B40AEEB8EC466284A169963556300943534",
+          "opId": 462111,
+          "ctime": 1728987019509,
+          "utime": 1728987019509
+        },
+        {
+          "orderViewId": 6531341794210,
+          "merchantOrderStatus": 30,
+          "shopId": 462111,
+          "userId": 10000000606287,
+          "opScene": 3000,
+          "opType": 20,
+          "opTime": 1728986722538,
+          "merchantOpType": 21,
+          "uuid": "0000000000000172D85DC2E2044C2B40AEEB8EC466284A169963556300943534",
+          "opId": 462111,
+          "ctime": 1728986722574,
+          "utime": 1728986722574
+        },
+        {
+          "orderViewId": 6531341794210,
+          "merchantOrderStatus": 20,
+          "shopId": 462111,
+          "userId": 10000000606287,
+          "opScene": 2000,
+          "opType": 20,
+          "opTime": 1728986722022,
+          "opId": 462111,
+          "ctime": 1728986722022,
+          "utime": 1728986722022
+        },
+        {
+          "orderViewId": 6531341794210,
+          "merchantOrderStatus": 10,
+          "shopId": 462111,
+          "userId": 10000000606287,
+          "opScene": 1000,
+          "opType": 10,
+          "opTime": 1728986719238,
+          "opId": 10000000606287,
+          "ctime": 1728986719239,
+          "utime": 1728986719239
+        }
+      ],
+      "etp": 1728987622538,
+      "etpl": 15,
+      "partRefundTag": 1,
+      "shopNameI18n": {
+        "en": "Webite space",
+        "default": "WeBite Space OL健康餐（中環店）",
+        "zh-HK": "WeBite Space OL健康餐（中環店）"
+      },
+      "allowedCancelEndTime": 1729160896394,
+      "seqNoStr": "6896",
+      "userGetMode": "delivery",
+      "shopCityId": 810001,
+      "userChooseCityId": 810001,
+      "shopRegion": "HK"
+    },
+    "merchantOrderDeliveries": [
+      {
+        "id": 31385898,
+        "waybillId": 1728986722128919,
+        "subimitDeliveryResult": 0,
+        "deliveryStatus": 50,
+        "deliveryStatusTime": 1728988096349,
+        "deliveryMode": "[1001]",
+        "courierName": "車手",
+        "courierPhone": "95****84",
+        "courierPrivacyPhone": "",
+        "orderViewId": 6531341794210,
+        "arrivedStatusTime": 1728988096349,
+        "merchantOrderDeliveryHisList": [
+          {
+            "orderViewId": 6531341794210,
+            "deliveryStatus": 50,
+            "ctime": 1728988096381,
+            "opTime": 1728988096349,
+            "shopId": 462111,
+            "waybillId": 1728986722128919,
+            "opScene": 10,
+            "courierId": 1677002471295214,
+            "courierName": "車手",
+            "courierPhone": "95****84",
+            "utime": 1728988096381,
+            "courierPhoneInterCode": "852",
+            "deliveryId": 31385898
+          },
+          {
+            "orderViewId": 6531341794210,
+            "deliveryStatus": 30,
+            "ctime": 1728987233315,
+            "opTime": 1728987233286,
+            "shopId": 462111,
+            "waybillId": 1728986722128919,
+            "opScene": 10,
+            "courierId": 1677002471295214,
+            "courierName": "車手",
+            "courierPhone": "95****84",
+            "utime": 1728987233315,
+            "courierPhoneInterCode": "852",
+            "deliveryId": 31385898
+          },
+          {
+            "orderViewId": 6531341794210,
+            "deliveryStatus": 25,
+            "ctime": 1728986905055,
+            "opTime": 1728986905025,
+            "shopId": 462111,
+            "waybillId": 1728986722128919,
+            "opScene": 10,
+            "courierId": 1677002471295214,
+            "courierName": "車手",
+            "courierPhone": "95****84",
+            "utime": 1728986905055,
+            "courierPhoneInterCode": "852",
+            "deliveryId": 31385898
+          },
+          {
+            "orderViewId": 6531341794210,
+            "deliveryStatus": 20,
+            "ctime": 1728986902329,
+            "opTime": 1728986902162,
+            "shopId": 462111,
+            "waybillId": 1728986722128919,
+            "opScene": 10,
+            "courierId": 1677002471295214,
+            "courierName": "車手",
+            "courierPhone": "95****84",
+            "utime": 1728986902329,
+            "courierPhoneInterCode": "852",
+            "deliveryId": 31385898
+          },
+          {
+            "orderViewId": 6531341794210,
+            "deliveryStatus": 10,
+            "ctime": 1728986838699,
+            "opTime": 1728986838678,
+            "shopId": 462111,
+            "waybillId": 1728986722128919,
+            "opScene": 10,
+            "courierName": "車手",
+            "courierPhone": "",
+            "utime": 1728986838699,
+            "deliveryId": 31385898
+          },
+          {
+            "orderViewId": 6531341794210,
+            "deliveryStatus": 10,
+            "ctime": 1728986748894,
+            "opTime": 1728986748825,
+            "shopId": 462111,
+            "waybillId": 1728986722128919,
+            "opScene": 10,
+            "courierName": "車手",
+            "courierPhone": "",
+            "utime": 1728986748894,
+            "deliveryId": 31385898
+          },
+          {
+            "orderViewId": 6531341794210,
+            "deliveryStatus": 0,
+            "ctime": 1728986722634,
+            "opTime": 1728986722626,
+            "shopId": 462111,
+            "waybillId": 1728986722128919,
+            "opScene": 10,
+            "courierName": "車手",
+            "courierPhone": "",
+            "utime": 1728986722634,
+            "deliveryId": 31385898
+          }
+        ],
+        "createdStatusTime": 1728986722626,
+        "dispatchedStatusTime": 1728986838678,
+        "receivedStatusTime": 1728986902162,
+        "toStoreStatusTime": 1728986905025,
+        "tookStatusTime": 1728987233286,
+        "ctime": 1728986722597,
+        "redesign": 0,
+        "courierId": 1677002471295214,
+        "courierPhoneInterCode": "852",
+        "privacyPhone": "",
+        "extensionNumber": "",
+        "privacyInterCode": "",
+        "courierInfoDesensitizePrivacy": true,
+        "showPrivacyPhone": false,
+        "commonExt": {
+          "courierVehicle": 1,
+          "vehiclePlateNumber": ""
+        }
+      }
+    ],
+    "deliveryInfos": [],
+    "recipientInfo": {
+      "name": "***",
+      "phone": "69****45",
+      "interCode": "852",
+      "phoneType": 1,
+      "addressName": "***",
+      "houseNumber": "***",
+      "point": {
+        "latitude": 22.279625,
+        "longitude": 114.160563
+      },
+      "addressLocation": "2 皇后大道中,中環,香港",
+      "unitNumber": "67",
+      "buildingNumber": "",
+      "addressViewInfo": "***",
+      "structType": 0,
+      "privacyPhone": "",
+      "extensionNumber": "",
+      "privacyInterCode": "",
+      "recipientInfoDesensitizePrivacy": true,
+      "showPrivacyPhone": false
+    },
+    "feeDtls": [
+      {
+        "code": "productPrice",
+        "name": "餐點總價",
+        "value": "$144.00",
+        "nameI18nEnum": "PRODUCT_PRICE",
+        "price": 14400,
+        "currency": "HKD"
+      },
+      {
+        "code": "platformFee",
+        "name": "平台服務費",
+        "value": "$2.00",
+        "nameI18nEnum": "PLATFORM_FEE",
+        "price": 200,
+        "currency": "HKD"
+      },
+      {
+        "code": "shippingFee",
+        "name": "運費",
+        "value": "$25.00",
+        "nameI18nEnum": "SHIPPING_FEE",
+        "price": 2500,
+        "currency": "HKD"
+      },
+      {
+        "code": "3",
+        "name": "滿$200享8折",
+        "value": "-$28.80",
+        "nameI18n": {},
+        "price": 2880,
+        "currency": "HKD"
+      },
+      {
+        "code": "4",
+        "name": "滿$0減運費$25",
+        "value": "-$25.00",
+        "nameI18n": {},
+        "price": 2500,
+        "currency": "HKD"
+      },
+      {
+        "code": "tip",
+        "name": "貼士",
+        "value": "$5.00",
+        "nameI18nEnum": "TIP",
+        "price": 500,
+        "currency": "HKD"
+      },
+      {
+        "code": "payTotal",
+        "name": "顧客實付",
+        "value": "$122.20",
+        "nameI18nEnum": "CUSTOMER_FEE",
+        "price": 12220,
+        "currency": "HKD"
+      }
+    ],
+    "products": [
+      {
+        "spuId": 7796287,
+        "skuId": 6969765,
+        "count": 1,
+        "price": 5440,
+        "priceStr": "$54.40",
+        "orderViewId": 6531341794210,
+        "originPrice": 6800,
+        "originPriceStr": "$68.00",
+        "name": "H三杯汁大蝦",
+        "id": 77250476,
+        "currency": "HKD",
+        "spuPvList": [
+          {}
+        ],
+        "groups": [
+          {
+            "groupId": 3821526,
+            "groupName": "餐具",
+            "shopProductGroupSkuList": [
+              {
+                "groupSkuId": 20245292,
+                "spuId": 7382389,
+                "spuName": "不需要外賣餐具",
+                "price": 0,
+                "priceStr": "$0.00",
+                "currency": "HKD",
+                "spuPvList": [],
+                "spuNameI18n": {
+                  "en": "No cutlery please",
+                  "default": "不需要外賣餐具",
+                  "zh-HK": "不需要外賣餐具"
+                },
+                "groupSkuCount": 1,
+                "count": 1,
+                "groupSkuExtra": {}
+              }
+            ],
+            "groupNameI18n": {
+              "en": "Cutlery",
+              "default": "餐具",
+              "zh-HK": "餐具"
+            },
+            "groupExtra": {}
+          }
+        ],
+        "remark": "",
+        "desc": "不需要外賣餐具",
+        "picList": [
+          "http://img-ap-hongkong.mykeeta.net/sailorbanmore/4000d271f736b8e949025391a60839e6170545.jpg"
+        ],
+        "spec": "",
+        "priceWithoutGroup": {
+          "amount": 6800,
+          "amountStr": "$68.00",
+          "originAmount": 6800,
+          "originAmountStr": "$68.00",
+          "unitPrice": 6800,
+          "originUnitPrice": 6800
+        },
+        "priceWithGroup": {
+          "amount": 6800,
+          "amountStr": "$68.00",
+          "originAmount": 6800,
+          "originAmountStr": "$68.00",
+          "unitPrice": 6800,
+          "originUnitPrice": 6800
+        },
+        "nameI18n": {
+          "en": "H Three Cups Juice Big Shrimp",
+          "default": "H三杯汁大蝦",
+          "zh-HK": "H三杯汁大蝦"
+        },
+        "descI18n": {
+          "zh-HK": "不需要外賣餐具",
+          "default": "不需要外賣餐具"
+        },
+        "specI18n": {
+          "zh-HK": "",
+          "default": ""
+        },
+        "promotions": [],
+        "tags": [],
+        "notLast": false,
+        "spuExtra": {},
+        "skuExtra": {}
+      },
+      {
+        "spuId": 9495851,
+        "skuId": 8558686,
+        "count": 1,
+        "price": 1680,
+        "priceStr": "$16.80",
+        "orderViewId": 6531341794210,
+        "originPrice": 2100,
+        "originPriceStr": "$21.00",
+        "name": "H雜糧飯",
+        "id": 77250477,
+        "currency": "HKD",
+        "spuPvList": [
+          {}
+        ],
+        "groups": [
+          {
+            "groupId": 3821526,
+            "groupName": "餐具",
+            "shopProductGroupSkuList": [
+              {
+                "groupSkuId": 20245291,
+                "spuId": 7379554,
+                "spuName": "需要外賣餐具",
+                "price": 200,
+                "priceStr": "$2.00",
+                "currency": "HKD",
+                "spuPvList": [],
+                "spuNameI18n": {
+                  "en": "Takeaway utensils required.",
+                  "default": "需要外賣餐具",
+                  "zh-HK": "需要外賣餐具"
+                },
+                "groupSkuCount": 1,
+                "count": 1,
+                "groupSkuExtra": {}
+              }
+            ],
+            "groupNameI18n": {
+              "en": "Cutlery",
+              "default": "餐具",
+              "zh-HK": "餐具"
+            },
+            "groupExtra": {}
+          }
+        ],
+        "remark": "",
+        "desc": "需要外賣餐具",
+        "picList": [
+          "http://img-ap-hongkong.mykeeta.net/sailorbanmore/def77160e8162f5363a24b782481bfca122496.jpg"
+        ],
+        "spec": "",
+        "priceWithoutGroup": {
+          "amount": 1900,
+          "amountStr": "$19.00",
+          "originAmount": 1900,
+          "originAmountStr": "$19.00",
+          "unitPrice": 1900,
+          "originUnitPrice": 1900
+        },
+        "priceWithGroup": {
+          "amount": 2100,
+          "amountStr": "$21.00",
+          "originAmount": 2100,
+          "originAmountStr": "$21.00",
+          "unitPrice": 2100,
+          "originUnitPrice": 2100
+        },
+        "nameI18n": {
+          "en": "Mixed Grain Rice",
+          "default": "H雜糧飯",
+          "zh-HK": "H雜糧飯"
+        },
+        "descI18n": {
+          "zh-HK": "需要外賣餐具",
+          "default": "需要外賣餐具"
+        },
+        "specI18n": {
+          "zh-HK": "",
+          "default": ""
+        },
+        "promotions": [],
+        "tags": [],
+        "notLast": false,
+        "spuExtra": {},
+        "skuExtra": {}
+      },
+      {
+        "spuId": 4561987,
+        "skuId": 4071032,
+        "count": 1,
+        "price": 3840,
+        "priceStr": "$38.40",
+        "orderViewId": 6531341794210,
+        "originPrice": 4800,
+        "originPriceStr": "$48.00",
+        "name": "千层吐司 (210g)",
+        "id": 77250478,
+        "currency": "HKD",
+        "spuPvList": [
+          {}
+        ],
+        "groups": [],
+        "remark": "",
+        "desc": "",
+        "picList": [
+          "http://img-ap-hongkong.mykeeta.net/sailorproduct/943730b0fdd26e1d64bc5450d7d419df35360.jpg"
+        ],
+        "spec": "",
+        "priceWithoutGroup": {
+          "amount": 4800,
+          "amountStr": "$48.00",
+          "originAmount": 4800,
+          "originAmountStr": "$48.00",
+          "unitPrice": 4800,
+          "originUnitPrice": 4800
+        },
+        "priceWithGroup": {
+          "amount": 4800,
+          "amountStr": "$48.00",
+          "originAmount": 4800,
+          "originAmountStr": "$48.00",
+          "unitPrice": 4800,
+          "originUnitPrice": 4800
+        },
+        "nameI18n": {
+          "en": "Puff Pastry Butter Toast",
+          "default": "千层吐司 (210g)",
+          "zh-HK": "千层吐司 (210g)"
+        },
+        "descI18n": {
+          "zh-HK": "",
+          "default": ""
+        },
+        "specI18n": {
+          "zh-HK": "",
+          "default": ""
+        },
+        "promotions": [],
+        "tags": [],
+        "notLast": false,
+        "spuExtra": {},
+        "skuExtra": {}
+      },
+      {
+        "spuId": 9918091,
+        "skuId": 8976731,
+        "count": 2,
+        "price": 3680,
+        "priceStr": "$36.80",
+        "orderViewId": 6531341794210,
+        "originPrice": 4600,
+        "originPriceStr": "$46.00",
+        "name": "H三色素小炒",
+        "id": 77250479,
+        "currency": "HKD",
+        "spuPvList": [
+          {}
+        ],
+        "groups": [
+          {
+            "groupId": 3821526,
+            "groupName": "餐具",
+            "shopProductGroupSkuList": [
+              {
+                "groupSkuId": 20245292,
+                "spuId": 7382389,
+                "spuName": "不需要外賣餐具",
+                "price": 0,
+                "priceStr": "$0.00",
+                "currency": "HKD",
+                "spuPvList": [],
+                "spuNameI18n": {
+                  "en": "No cutlery please",
+                  "default": "不需要外賣餐具",
+                  "zh-HK": "不需要外賣餐具"
+                },
+                "groupSkuCount": 2,
+                "count": 1,
+                "groupSkuExtra": {}
+              }
+            ],
+            "groupNameI18n": {
+              "en": "Cutlery",
+              "default": "餐具",
+              "zh-HK": "餐具"
+            },
+            "groupExtra": {}
+          }
+        ],
+        "remark": "",
+        "desc": "不需要外賣餐具",
+        "picList": [
+          "http://img-ap-hongkong.mykeeta.net/sailorbanmore/021069b99df0e1b893208c4b6e1e05e2171213.jpg"
+        ],
+        "spec": "",
+        "priceWithoutGroup": {
+          "amount": 4600,
+          "amountStr": "$23.00",
+          "originAmount": 4600,
+          "originAmountStr": "$23.00",
+          "unitPrice": 2300,
+          "originUnitPrice": 2300
+        },
+        "priceWithGroup": {
+          "amount": 4600,
+          "amountStr": "$23.00",
+          "originAmount": 4600,
+          "originAmountStr": "$23.00",
+          "unitPrice": 2300,
+          "originUnitPrice": 2300
+        },
+        "nameI18n": {
+          "zh-HK": "H三色素小炒",
+          "default": "H三色素小炒"
+        },
+        "descI18n": {
+          "zh-HK": "不需要外賣餐具",
+          "default": "不需要外賣餐具"
+        },
+        "specI18n": {
+          "zh-HK": "",
+          "default": ""
+        },
+        "promotions": [],
+        "tags": [],
+        "notLast": false,
+        "spuExtra": {},
+        "skuExtra": {}
+      },
+      {
+        "spuId": 5628525,
+        "skuId": 4960421,
+        "count": 1,
+        "price": 720,
+        "priceStr": "$7.20",
+        "orderViewId": 6531341794210,
+        "originPrice": 900,
+        "originPriceStr": "$9.00",
+        "name": "小菜-椒麻鮮竹筍",
+        "id": 77250480,
+        "currency": "HKD",
+        "spuPvList": [
+          {}
+        ],
+        "groups": [
+          {
+            "groupId": 3821526,
+            "groupName": "餐具",
+            "shopProductGroupSkuList": [
+              {
+                "groupSkuId": 20245292,
+                "spuId": 7382389,
+                "spuName": "不需要外賣餐具",
+                "price": 0,
+                "priceStr": "$0.00",
+                "currency": "HKD",
+                "spuPvList": [],
+                "spuNameI18n": {
+                  "en": "No cutlery please",
+                  "default": "不需要外賣餐具",
+                  "zh-HK": "不需要外賣餐具"
+                },
+                "groupSkuCount": 1,
+                "count": 1,
+                "groupSkuExtra": {}
+              }
+            ],
+            "groupNameI18n": {
+              "en": "Cutlery",
+              "default": "餐具",
+              "zh-HK": "餐具"
+            },
+            "groupExtra": {}
+          }
+        ],
+        "remark": "",
+        "desc": "不需要外賣餐具",
+        "picList": [
+          "http://img-ap-hongkong.mykeeta.net/sailorproduct/8f3087d055bfe40398743fa63cc10250712574.png"
+        ],
+        "spec": "",
+        "priceWithoutGroup": {
+          "amount": 900,
+          "amountStr": "$9.00",
+          "originAmount": 900,
+          "originAmountStr": "$9.00",
+          "unitPrice": 900,
+          "originUnitPrice": 900
+        },
+        "priceWithGroup": {
+          "amount": 900,
+          "amountStr": "$9.00",
+          "originAmount": 900,
+          "originAmountStr": "$9.00",
+          "unitPrice": 900,
+          "originUnitPrice": 900
+        },
+        "nameI18n": {
+          "zh-HK": "小菜-椒麻鮮竹筍",
+          "default": "小菜-椒麻鮮竹筍"
+        },
+        "descI18n": {
+          "zh-HK": "不需要外賣餐具",
+          "default": "不需要外賣餐具"
+        },
+        "specI18n": {
+          "zh-HK": "",
+          "default": ""
+        },
+        "promotions": [],
+        "tags": [],
+        "notLast": false,
+        "spuExtra": {},
+        "skuExtra": {}
+      },
+      {
+        "spuId": 9490015,
+        "skuId": 8532348,
+        "count": 1,
+        "price": 4720,
+        "priceStr": "$47.20",
+        "orderViewId": 6531341794210,
+        "originPrice": 5900,
+        "originPriceStr": "$59.00",
+        "name": "H紅酒汁燴牛肉",
+        "id": 77250481,
+        "currency": "HKD",
+        "spuPvList": [
+          {}
+        ],
+        "groups": [
+          {
+            "groupId": 3821526,
+            "groupName": "餐具",
+            "shopProductGroupSkuList": [
+              {
+                "groupSkuId": 20245292,
+                "spuId": 7382389,
+                "spuName": "不需要外賣餐具",
+                "price": 0,
+                "priceStr": "$0.00",
+                "currency": "HKD",
+                "spuPvList": [],
+                "spuNameI18n": {
+                  "en": "No cutlery please",
+                  "default": "不需要外賣餐具",
+                  "zh-HK": "不需要外賣餐具"
+                },
+                "groupSkuCount": 1,
+                "count": 1,
+                "groupSkuExtra": {}
+              }
+            ],
+            "groupNameI18n": {
+              "en": "Cutlery",
+              "default": "餐具",
+              "zh-HK": "餐具"
+            },
+            "groupExtra": {}
+          }
+        ],
+        "remark": "",
+        "desc": "不需要外賣餐具",
+        "picList": [
+          "http://img-ap-hongkong.mykeeta.net/sailorproduct/f00fb1de664b4b8fb907a2fcbe5ac823157604.jpg"
+        ],
+        "spec": "",
+        "priceWithoutGroup": {
+          "amount": 5900,
+          "amountStr": "$59.00",
+          "originAmount": 5900,
+          "originAmountStr": "$59.00",
+          "unitPrice": 5900,
+          "originUnitPrice": 5900
+        },
+        "priceWithGroup": {
+          "amount": 5900,
+          "amountStr": "$59.00",
+          "originAmount": 5900,
+          "originAmountStr": "$59.00",
+          "unitPrice": 5900,
+          "originUnitPrice": 5900
+        },
+        "nameI18n": {
+          "en": "Braised Beef in Red Wine Sauce",
+          "default": "H紅酒汁燴牛肉",
+          "zh-HK": "H紅酒汁燴牛肉"
+        },
+        "descI18n": {
+          "zh-HK": "不需要外賣餐具",
+          "default": "不需要外賣餐具"
+        },
+        "specI18n": {
+          "zh-HK": "",
+          "default": ""
+        },
+        "promotions": [],
+        "tags": [],
+        "notLast": false,
+        "spuExtra": {},
+        "skuExtra": {}
+      }
+    ],
+    "refundInfos": [
+      {
+        "applyType": 4001,
+        "refundMoney": 8560,
+        "status": 5002,
+        "refundType": 0,
+        "applyReason": "菜品不足",
+        "refundStatusHisList": [
+          {
+            "utime": 1728986842234,
+            "toStatus": 5002,
+            "opTime": 1728986842207,
+            "opUserType": 0
+          },
+          {
+            "utime": 1728986787805,
+            "toStatus": 5001,
+            "opTime": 1728986787797,
+            "opUserType": 0
+          },
+          {
+            "utime": 1728986787773,
+            "toStatus": 2001,
+            "opTime": 1728986787703,
+            "opUserType": 0
+          },
+          {
+            "utime": 1728986787757,
+            "toStatus": 2000,
+            "opReason": "菜品不足",
+            "opTime": 1728986787703,
+            "opUserType": 20
+          }
+        ],
+        "orderViewId": 6531341794210,
+        "i18n": {
+          "currency": "HKD"
+        },
+        "opTime": 1728986842207,
+        "applyOpType": 20,
+        "handleOpType": 0,
+        "commonExt": "{\"actRefundMoney\":8560,\"bigOrderTag\":false,\"cancelType\":200002,\"groupProducts\":[],\"i18n\":{\"cityId\":\"810001\",\"currency\":\"HKD\",\"locale\":\"zh-HK\",\"platform\":\"5\",\"region\":\"HK\"},\"products\":[{\"associatedChoiceGroupIds\":[],\"orderProductId\":77250476,\"refundCount\":0,\"refundPrice\":0,\"refundPriceWithoutRound\":0,\"unavailableEndTime\":0,\"unavailableType\":0},{\"associatedChoiceGroupIds\":[],\"orderProductId\":77250477,\"refundCount\":0,\"refundPrice\":0,\"refundPriceWithoutRound\":0,\"unavailableEndTime\":0,\"unavailableType\":0},{\"associatedChoiceGroupIds\":[],\"orderProductId\":77250478,\"refundCount\":1,\"refundPrice\":3840,\"refundPriceWithoutRound\":3840,\"unavailableEndTime\":0,\"unavailableType\":0},{\"associatedChoiceGroupIds\":[],\"orderProductId\":77250479,\"refundCount\":0,\"refundPrice\":0,\"refundPriceWithoutRound\":0,\"unavailableEndTime\":0,\"unavailableType\":0},{\"associatedChoiceGroupIds\":[],\"orderProductId\":77250480,\"refundCount\":0,\"refundPrice\":0,\"refundPriceWithoutRound\":0,\"unavailableEndTime\":0,\"unavailableType\":0},{\"associatedChoiceGroupIds\":[],\"orderProductId\":77250481,\"refundCount\":1,\"refundPrice\":4720,\"refundPriceWithoutRound\":4720,\"unavailableEndTime\":1729007999000,\"unavailableType\":1}],\"refundMoneyDetails\":[{\"total\":8560,\"type\":2}],\"refundMoneyWithoutRound\":8560,\"specialRemind\":false}",
+        "rebates": {
+          "rebatesInfos": [
+            {
+              "rebatesProducts": [
+                {
+                  "spuId": 4561987,
+                  "skuId": 4071032,
+                  "count": 1,
+                  "price": 3840,
+                  "priceStr": "$38.40",
+                  "originPrice": 4800,
+                  "originPriceStr": "$48.00",
+                  "name": "千层吐司 (210g)",
+                  "id": 77250478,
+                  "currency": "HKD",
+                  "spuPvList": [
+                    {}
+                  ],
+                  "groups": [],
+                  "remark": "",
+                  "picList": [
+                    "http://img-ap-hongkong.mykeeta.net/sailorproduct/943730b0fdd26e1d64bc5450d7d419df35360.jpg"
+                  ],
+                  "spec": "",
+                  "priceWithoutGroup": {
+                    "amount": 3840,
+                    "amountStr": "$38.40",
+                    "originAmount": 4800,
+                    "originAmountStr": "$48.00"
+                  },
+                  "refundPrice": 3840,
+                  "refundPriceStr": "$38.40",
+                  "priceWithGroup": {
+                    "amount": 3840,
+                    "amountStr": "$38.40",
+                    "originAmount": 4800,
+                    "originAmountStr": "$48.00"
+                  },
+                  "nameI18n": {
+                    "en": "Puff Pastry Butter Toast",
+                    "default": "千层吐司 (210g)",
+                    "zh-HK": "千层吐司 (210g)"
+                  },
+                  "specI18n": {
+                    "zh-HK": "",
+                    "default": ""
+                  },
+                  "productTags": [],
+                  "tags": [],
+                  "notLast": false
+                },
+                {
+                  "spuId": 9490015,
+                  "skuId": 8532348,
+                  "count": 1,
+                  "price": 4720,
+                  "priceStr": "$47.20",
+                  "originPrice": 5900,
+                  "originPriceStr": "$59.00",
+                  "name": "H紅酒汁燴牛肉",
+                  "id": 77250481,
+                  "currency": "HKD",
+                  "spuPvList": [
+                    {}
+                  ],
+                  "groups": [
+                    {
+                      "groupId": 3821526,
+                      "groupName": "餐具",
+                      "shopProductGroupSkuList": [
+                        {
+                          "groupSkuId": 20245292,
+                          "spuId": 7382389,
+                          "spuName": "不需要外賣餐具",
+                          "price": 0,
+                          "priceStr": "$0.00",
+                          "currency": "HKD",
+                          "spuPvList": [],
+                          "refundPrice": 0,
+                          "refundPriceStr": "$0.00",
+                          "spuNameI18n": {
+                            "en": "No cutlery please",
+                            "default": "不需要外賣餐具",
+                            "zh-HK": "不需要外賣餐具"
+                          },
+                          "groupSkuCount": 1,
+                          "count": 1
+                        }
+                      ],
+                      "groupNameI18n": {
+                        "en": "Cutlery",
+                        "default": "餐具",
+                        "zh-HK": "餐具"
+                      }
+                    }
+                  ],
+                  "remark": "",
+                  "picList": [
+                    "http://img-ap-hongkong.mykeeta.net/sailorproduct/f00fb1de664b4b8fb907a2fcbe5ac823157604.jpg"
+                  ],
+                  "spec": "",
+                  "priceWithoutGroup": {
+                    "amount": 4720,
+                    "amountStr": "$47.20",
+                    "originAmount": 5900,
+                    "originAmountStr": "$59.00"
+                  },
+                  "refundPrice": 4720,
+                  "refundPriceStr": "$47.20",
+                  "priceWithGroup": {
+                    "amount": 4720,
+                    "amountStr": "$47.20",
+                    "originAmount": 5900,
+                    "originAmountStr": "$59.00"
+                  },
+                  "nameI18n": {
+                    "en": "Braised Beef in Red Wine Sauce",
+                    "default": "H紅酒汁燴牛肉",
+                    "zh-HK": "H紅酒汁燴牛肉"
+                  },
+                  "specI18n": {
+                    "zh-HK": "",
+                    "default": ""
+                  },
+                  "productTags": [],
+                  "tags": [],
+                  "notLast": false
+                }
+              ],
+              "customerRefundPriceStr": "$85.60",
+              "merchantRefundPriceStr": "$85.60"
+            }
+          ],
+          "valuationRule": "退款公式：[退款商品價格 / （總訂單價格 + 最低消費金額補差價）] × [實際支付金額 - 貼士 - 平台費 - 配送費]",
+          "applyOpType": 20
+        },
+        "partRefund": 1,
+        "duty": 0,
+        "dutyNoticeTitle": "用戶申請退款",
+        "dutyNotice": "建議優先和用戶溝通。",
+        "refundMoneyStr": "$85.60",
+        "transferType": 0,
+        "id": 902758,
+        "commonExtDTO": {
+          "cancelType": 200002
+        },
+        "ctime": 1728986787726,
+        "actRefundMoney": 8560,
+        "actRefundMoneyStr": "$85.60"
+      }
+    ],
+    "feeDtl": {
+      "merchantFee": {
+        "i18n": {
+          "currency": "HKD"
+        },
+        "productPrice": 25100,
+        "brokerage": 4820,
+        "activityFee": 5820,
+        "total": 14460,
+        "platformServiceFee": 200,
+        "diffPrice": 0,
+        "productPriceStr": "$251.00",
+        "brokerageStr": "-$48.20",
+        "activityFeeStr": "-$58.20",
+        "platformServiceFeeStr": "$2.00",
+        "diffPriceStr": "$0.00",
+        "totalStr": "$144.60",
+        "refundPrice": 8560,
+        "refundPriceStr": "$85.60",
+        "rebatesProductPrice": 14400,
+        "rebatesProductPriceStr": "$144.00",
+        "rebatesBrokerage": 2680,
+        "rebatesBrokerageStr": "-$26.80",
+        "rebatesActivityFee": 3680,
+        "rebatesActivityFeeStr": "-$36.80",
+        "rebatesDiffPrice": 0,
+        "rebatesDiffPriceStr": "$0.00",
+        "rebatesTotal": 8040,
+        "rebatesTotalStr": "$80.40",
+        "merchantActivityFeeDtls": [
+          {
+            "i18n": {
+              "currency": "HKD"
+            },
+            "type": 3,
+            "typeName": "满折",
+            "activityId": "721506",
+            "reduceFee": 2880,
+            "sillAmount": 20000,
+            "merchantActivityFee": 2880,
+            "merchantActivityFeeStr": "$28.80"
+          },
+          {
+            "i18n": {
+              "currency": "HKD"
+            },
+            "type": 4,
+            "typeName": "減配送費",
+            "activityId": "600364",
+            "reduceFee": 2500,
+            "sillAmount": 0,
+            "merchantActivityFee": 800,
+            "platformActivityFee": 1700,
+            "merchantActivityFeeStr": "$8.00",
+            "platformActivityFeeStr": "$17.00"
+          }
+        ],
+        "actRefundPrice": 8560,
+        "actRefundPriceStr": "$85.60"
+      },
+      "customerFee": {
+        "i18n": {
+          "currency": "HKD"
+        },
+        "productPrice": 25100,
+        "shippingFee": 2500,
+        "platformFee": 200,
+        "discounts": 7520,
+        "tip": 500,
+        "diffPrice": 0,
+        "payTotal": 20780,
+        "productPriceStr": "$251.00",
+        "shippingFeeStr": "$25.00",
+        "platformFeeStr": "$2.00",
+        "discountsStr": "-$75.20",
+        "tipStr": "$5.00",
+        "diffPriceStr": "$0.00",
+        "payTotalStr": "$207.80",
+        "refundPrice": 8560,
+        "refundPriceStr": "$85.60",
+        "rebatesProductPrice": 14400,
+        "rebatesProductPriceStr": "$144.00",
+        "rebatesShippingFee": 2500,
+        "rebatesShippingFeeStr": "$25.00",
+        "rebatesPlatformFee": 200,
+        "rebatesPlatformFeeStr": "$2.00",
+        "rebatesDiscounts": 5380,
+        "rebatesDiscountsStr": "-$53.80",
+        "rebatesTip": 500,
+        "rebatesTipStr": "$5.00",
+        "rebatesDiffPriceStr": "$0.00",
+        "rebatesPayTotal": 12220,
+        "rebatesPayTotalStr": "$122.20",
+        "originPrice": 28300,
+        "originPriceStr": "$283.00",
+        "productPriceSubTotal": 20080,
+        "productPriceSubTotalStr": "$200.80",
+        "showDiscounts": 7520,
+        "showDiscountsStr": "-$75.20",
+        "productDiscountWithoutDiffPrice": 8560,
+        "actTotalStr": "$207.80",
+        "rebatesFinBenStr": "",
+        "rebatesActPayTotal": 12220,
+        "rebatesActPayTotalStr": "$122.20",
+        "actRefundPrice": 8560,
+        "actRefundPriceStr": "$85.60"
+      }
+    },
+    "orderPromotionDtlList": [
+      {
+        "i18n": {
+          "currency": "HKD"
+        },
+        "type": 3,
+        "typeName": "满折",
+        "promotionRuleDesc": "滿$200享8折",
+        "activityId": "721506",
+        "reduceFee": 5020,
+        "sillAmount": 20000,
+        "merchantActivityFee": 5020,
+        "remark": "{\"actName\":\"excel导入满折活动-20240307234116\",\"templateId\":3,\"sillAmount\":20000,\"reduceAmount\":5020,\"originalReduceAmount\":5020,\"actualDiscount\":0.8,\"mainCategory\":0,\"subCategory\":0,\"couponConfigId\":0,\"actSchemeId\":0,\"actReportId\":0}",
+        "merchantActivityFeeStr": "$50.20"
+      },
+      {
+        "i18n": {
+          "currency": "HKD"
+        },
+        "type": 4,
+        "typeName": "減配送費",
+        "promotionRuleDesc": "滿$0減運費$25",
+        "activityId": "600364",
+        "reduceFee": 2500,
+        "sillAmount": 0,
+        "merchantActivityFee": 800,
+        "platformActivityFee": 1700,
+        "remark": "{\"actName\":\"202402全民免運-港島\",\"templateId\":4,\"sillAmount\":0,\"reduceAmount\":2500,\"originalReduceAmount\":2500,\"actualDiscount\":0.0,\"mainCategory\":0,\"subCategory\":0,\"couponConfigId\":0,\"actSchemeId\":0,\"actReportId\":0}",
+        "merchantActivityFeeStr": "$8.00",
+        "platformActivityFeeStr": "$17.00"
+      }
+    ],
+    "privacy": true,
+    "rebates": {
+      "rebatesInfos": [
+        {
+          "rebatesProducts": [
+            {
+              "spuId": 4561987,
+              "skuId": 4071032,
+              "count": 1,
+              "price": 3840,
+              "priceStr": "$38.40",
+              "originPrice": 4800,
+              "originPriceStr": "$48.00",
+              "name": "千层吐司 (210g)",
+              "id": 77250478,
+              "currency": "HKD",
+              "spuPvList": [
+                {}
+              ],
+              "groups": [],
+              "remark": "",
+              "picList": [
+                "http://img-ap-hongkong.mykeeta.net/sailorproduct/943730b0fdd26e1d64bc5450d7d419df35360.jpg"
+              ],
+              "spec": "",
+              "priceWithoutGroup": {
+                "amount": 3840,
+                "amountStr": "$38.40",
+                "originAmount": 4800,
+                "originAmountStr": "$48.00"
+              },
+              "refundPrice": 3840,
+              "refundPriceStr": "$38.40",
+              "priceWithGroup": {
+                "amount": 3840,
+                "amountStr": "$38.40",
+                "originAmount": 4800,
+                "originAmountStr": "$48.00"
+              },
+              "nameI18n": {
+                "en": "Puff Pastry Butter Toast",
+                "default": "千层吐司 (210g)",
+                "zh-HK": "千层吐司 (210g)"
+              },
+              "specI18n": {
+                "zh-HK": "",
+                "default": ""
+              },
+              "productTags": [],
+              "tags": [],
+              "notLast": false
+            },
+            {
+              "spuId": 9490015,
+              "skuId": 8532348,
+              "count": 1,
+              "price": 4720,
+              "priceStr": "$47.20",
+              "originPrice": 5900,
+              "originPriceStr": "$59.00",
+              "name": "H紅酒汁燴牛肉",
+              "id": 77250481,
+              "currency": "HKD",
+              "spuPvList": [
+                {}
+              ],
+              "groups": [
+                {
+                  "groupId": 3821526,
+                  "groupName": "餐具",
+                  "shopProductGroupSkuList": [
+                    {
+                      "groupSkuId": 20245292,
+                      "spuId": 7382389,
+                      "spuName": "不需要外賣餐具",
+                      "price": 0,
+                      "priceStr": "$0.00",
+                      "currency": "HKD",
+                      "spuPvList": [],
+                      "refundPrice": 0,
+                      "refundPriceStr": "$0.00",
+                      "spuNameI18n": {
+                        "en": "No cutlery please",
+                        "default": "不需要外賣餐具",
+                        "zh-HK": "不需要外賣餐具"
+                      },
+                      "groupSkuCount": 1,
+                      "count": 1
+                    }
+                  ],
+                  "groupNameI18n": {
+                    "en": "Cutlery",
+                    "default": "餐具",
+                    "zh-HK": "餐具"
+                  }
+                }
+              ],
+              "remark": "",
+              "picList": [
+                "http://img-ap-hongkong.mykeeta.net/sailorproduct/f00fb1de664b4b8fb907a2fcbe5ac823157604.jpg"
+              ],
+              "spec": "",
+              "priceWithoutGroup": {
+                "amount": 4720,
+                "amountStr": "$47.20",
+                "originAmount": 5900,
+                "originAmountStr": "$59.00"
+              },
+              "refundPrice": 4720,
+              "refundPriceStr": "$47.20",
+              "priceWithGroup": {
+                "amount": 4720,
+                "amountStr": "$47.20",
+                "originAmount": 5900,
+                "originAmountStr": "$59.00"
+              },
+              "nameI18n": {
+                "en": "Braised Beef in Red Wine Sauce",
+                "default": "H紅酒汁燴牛肉",
+                "zh-HK": "H紅酒汁燴牛肉"
+              },
+              "specI18n": {
+                "zh-HK": "",
+                "default": ""
+              },
+              "productTags": [],
+              "tags": [],
+              "notLast": false
+            }
+          ],
+          "customerRefundPriceStr": "$85.60",
+          "merchantRefundPriceStr": "$85.60",
+          "merchantActivityFeeStr": "$21.40",
+          "merchantProductPriceStr": "$107.00",
+          "merchantActRefundPriceStr": "$85.60",
+          "customerActRefundPriceStr": "$85.60"
+        }
+      ],
+      "residueProducts": [
+        {
+          "spuId": 7796287,
+          "skuId": 6969765,
+          "count": 1,
+          "price": 5440,
+          "priceStr": "$54.40",
+          "originPrice": 6800,
+          "originPriceStr": "$68.00",
+          "name": "H三杯汁大蝦",
+          "id": 77250476,
+          "currency": "HKD",
+          "spuPvList": [
+            {}
+          ],
+          "groups": [
+            {
+              "groupId": 3821526,
+              "groupName": "餐具",
+              "shopProductGroupSkuList": [
+                {
+                  "groupSkuId": 20245292,
+                  "spuId": 7382389,
+                  "spuName": "不需要外賣餐具",
+                  "price": 0,
+                  "priceStr": "$0.00",
+                  "currency": "HKD",
+                  "spuPvList": [],
+                  "refundPrice": 0,
+                  "refundPriceStr": "$0.00",
+                  "spuNameI18n": {
+                    "en": "No cutlery please",
+                    "default": "不需要外賣餐具",
+                    "zh-HK": "不需要外賣餐具"
+                  },
+                  "groupSkuCount": 1,
+                  "count": 1
+                }
+              ],
+              "groupNameI18n": {
+                "en": "Cutlery",
+                "default": "餐具",
+                "zh-HK": "餐具"
+              }
+            }
+          ],
+          "remark": "",
+          "picList": [
+            "http://img-ap-hongkong.mykeeta.net/sailorbanmore/4000d271f736b8e949025391a60839e6170545.jpg"
+          ],
+          "spec": "",
+          "priceWithoutGroup": {
+            "amount": 5440,
+            "amountStr": "$54.40",
+            "originAmount": 6800,
+            "originAmountStr": "$68.00"
+          },
+          "refundPrice": 0,
+          "refundPriceStr": "$0.00",
+          "priceWithGroup": {
+            "amount": 5440,
+            "amountStr": "$54.40",
+            "originAmount": 6800,
+            "originAmountStr": "$68.00"
+          },
+          "nameI18n": {
+            "en": "H Three Cups Juice Big Shrimp",
+            "default": "H三杯汁大蝦",
+            "zh-HK": "H三杯汁大蝦"
+          },
+          "specI18n": {
+            "zh-HK": "",
+            "default": ""
+          },
+          "productTags": [],
+          "tags": [],
+          "notLast": false
+        },
+        {
+          "spuId": 9495851,
+          "skuId": 8558686,
+          "count": 1,
+          "price": 1680,
+          "priceStr": "$16.80",
+          "originPrice": 2100,
+          "originPriceStr": "$21.00",
+          "name": "H雜糧飯",
+          "id": 77250477,
+          "currency": "HKD",
+          "spuPvList": [
+            {}
+          ],
+          "groups": [
+            {
+              "groupId": 3821526,
+              "groupName": "餐具",
+              "shopProductGroupSkuList": [
+                {
+                  "groupSkuId": 20245291,
+                  "spuId": 7379554,
+                  "spuName": "需要外賣餐具",
+                  "price": 200,
+                  "priceStr": "$2.00",
+                  "currency": "HKD",
+                  "spuPvList": [],
+                  "refundPrice": 0,
+                  "refundPriceStr": "$0.00",
+                  "spuNameI18n": {
+                    "en": "Takeaway utensils required.",
+                    "default": "需要外賣餐具",
+                    "zh-HK": "需要外賣餐具"
+                  },
+                  "groupSkuCount": 1,
+                  "count": 1
+                }
+              ],
+              "groupNameI18n": {
+                "en": "Cutlery",
+                "default": "餐具",
+                "zh-HK": "餐具"
+              }
+            }
+          ],
+          "remark": "",
+          "picList": [
+            "http://img-ap-hongkong.mykeeta.net/sailorbanmore/def77160e8162f5363a24b782481bfca122496.jpg"
+          ],
+          "spec": "",
+          "priceWithoutGroup": {
+            "amount": 1480,
+            "amountStr": "$14.80",
+            "originAmount": 1900,
+            "originAmountStr": "$19.00"
+          },
+          "refundPrice": 0,
+          "refundPriceStr": "$0.00",
+          "priceWithGroup": {
+            "amount": 1680,
+            "amountStr": "$16.80",
+            "originAmount": 2100,
+            "originAmountStr": "$21.00"
+          },
+          "nameI18n": {
+            "en": "Mixed Grain Rice",
+            "default": "H雜糧飯",
+            "zh-HK": "H雜糧飯"
+          },
+          "specI18n": {
+            "zh-HK": "",
+            "default": ""
+          },
+          "productTags": [],
+          "tags": [],
+          "notLast": false
+        },
+        {
+          "spuId": 9918091,
+          "skuId": 8976731,
+          "count": 2,
+          "price": 3680,
+          "priceStr": "$36.80",
+          "originPrice": 4600,
+          "originPriceStr": "$46.00",
+          "name": "H三色素小炒",
+          "id": 77250479,
+          "currency": "HKD",
+          "spuPvList": [
+            {}
+          ],
+          "groups": [
+            {
+              "groupId": 3821526,
+              "groupName": "餐具",
+              "shopProductGroupSkuList": [
+                {
+                  "groupSkuId": 20245292,
+                  "spuId": 7382389,
+                  "spuName": "不需要外賣餐具",
+                  "price": 0,
+                  "priceStr": "$0.00",
+                  "currency": "HKD",
+                  "spuPvList": [],
+                  "refundPrice": 0,
+                  "refundPriceStr": "$0.00",
+                  "spuNameI18n": {
+                    "en": "No cutlery please",
+                    "default": "不需要外賣餐具",
+                    "zh-HK": "不需要外賣餐具"
+                  },
+                  "groupSkuCount": 2,
+                  "count": 1
+                }
+              ],
+              "groupNameI18n": {
+                "en": "Cutlery",
+                "default": "餐具",
+                "zh-HK": "餐具"
+              }
+            }
+          ],
+          "remark": "",
+          "picList": [
+            "http://img-ap-hongkong.mykeeta.net/sailorbanmore/021069b99df0e1b893208c4b6e1e05e2171213.jpg"
+          ],
+          "spec": "",
+          "priceWithoutGroup": {
+            "amount": 1840,
+            "amountStr": "$18.40",
+            "originAmount": 2300,
+            "originAmountStr": "$23.00"
+          },
+          "refundPrice": 0,
+          "refundPriceStr": "$0.00",
+          "priceWithGroup": {
+            "amount": 1840,
+            "amountStr": "$18.40",
+            "originAmount": 2300,
+            "originAmountStr": "$23.00"
+          },
+          "nameI18n": {
+            "zh-HK": "H三色素小炒",
+            "default": "H三色素小炒"
+          },
+          "specI18n": {
+            "zh-HK": "",
+            "default": ""
+          },
+          "productTags": [],
+          "tags": [],
+          "notLast": false
+        },
+        {
+          "spuId": 5628525,
+          "skuId": 4960421,
+          "count": 1,
+          "price": 720,
+          "priceStr": "$7.20",
+          "originPrice": 900,
+          "originPriceStr": "$9.00",
+          "name": "小菜-椒麻鮮竹筍",
+          "id": 77250480,
+          "currency": "HKD",
+          "spuPvList": [
+            {}
+          ],
+          "groups": [
+            {
+              "groupId": 3821526,
+              "groupName": "餐具",
+              "shopProductGroupSkuList": [
+                {
+                  "groupSkuId": 20245292,
+                  "spuId": 7382389,
+                  "spuName": "不需要外賣餐具",
+                  "price": 0,
+                  "priceStr": "$0.00",
+                  "currency": "HKD",
+                  "spuPvList": [],
+                  "refundPrice": 0,
+                  "refundPriceStr": "$0.00",
+                  "spuNameI18n": {
+                    "en": "No cutlery please",
+                    "default": "不需要外賣餐具",
+                    "zh-HK": "不需要外賣餐具"
+                  },
+                  "groupSkuCount": 1,
+                  "count": 1
+                }
+              ],
+              "groupNameI18n": {
+                "en": "Cutlery",
+                "default": "餐具",
+                "zh-HK": "餐具"
+              }
+            }
+          ],
+          "remark": "",
+          "picList": [
+            "http://img-ap-hongkong.mykeeta.net/sailorproduct/8f3087d055bfe40398743fa63cc10250712574.png"
+          ],
+          "spec": "",
+          "priceWithoutGroup": {
+            "amount": 720,
+            "amountStr": "$7.20",
+            "originAmount": 900,
+            "originAmountStr": "$9.00"
+          },
+          "refundPrice": 0,
+          "refundPriceStr": "$0.00",
+          "priceWithGroup": {
+            "amount": 720,
+            "amountStr": "$7.20",
+            "originAmount": 900,
+            "originAmountStr": "$9.00"
+          },
+          "nameI18n": {
+            "zh-HK": "小菜-椒麻鮮竹筍",
+            "default": "小菜-椒麻鮮竹筍"
+          },
+          "specI18n": {
+            "zh-HK": "",
+            "default": ""
+          },
+          "productTags": [],
+          "tags": [],
+          "notLast": false
+        }
+      ],
+      "valuationRule": "退款公式：[退款商品價格 / （總訂單價格 + 最低消費金額補差價）] × [實際支付金額 - 貼士 - 平台費 - 配送費]",
+      "applyOpType": 20,
+      "rebatesPrintWarnTitle": "*更新後的餐品",
+      "rebatesPrintWarnInfo": "以下是需要準備的餐品",
+      "updatedPrintTitle": "*已更新*",
+      "updatedPrintWarnInfo": "該訂單已部分退款",
+      "refundedItems": "*已退餐品",
+      "refundedReminderInfo": "以下餐品您無需準備",
+      "refundedProducts": [
+        {
+          "spuId": 4561987,
+          "skuId": 4071032,
+          "count": 1,
+          "price": 3840,
+          "priceStr": "$38.40",
+          "originPrice": 4800,
+          "originPriceStr": "$48.00",
+          "name": "千层吐司 (210g)",
+          "id": 77250478,
+          "currency": "HKD",
+          "spuPvList": [
+            {}
+          ],
+          "groups": [],
+          "remark": "",
+          "picList": [
+            "http://img-ap-hongkong.mykeeta.net/sailorproduct/943730b0fdd26e1d64bc5450d7d419df35360.jpg"
+          ],
+          "spec": "",
+          "priceWithoutGroup": {
+            "amount": 3840,
+            "amountStr": "$38.40",
+            "originAmount": 4800,
+            "originAmountStr": "$48.00"
+          },
+          "refundPrice": 3840,
+          "refundPriceStr": "$38.40",
+          "priceWithGroup": {
+            "amount": 3840,
+            "amountStr": "$38.40",
+            "originAmount": 4800,
+            "originAmountStr": "$48.00"
+          },
+          "nameI18n": {
+            "en": "Puff Pastry Butter Toast",
+            "default": "千层吐司 (210g)",
+            "zh-HK": "千层吐司 (210g)"
+          },
+          "specI18n": {
+            "zh-HK": "",
+            "default": ""
+          },
+          "productTags": [],
+          "tags": [],
+          "notLast": false
+        },
+        {
+          "spuId": 9490015,
+          "skuId": 8532348,
+          "count": 1,
+          "price": 4720,
+          "priceStr": "$47.20",
+          "originPrice": 5900,
+          "originPriceStr": "$59.00",
+          "name": "H紅酒汁燴牛肉",
+          "id": 77250481,
+          "currency": "HKD",
+          "spuPvList": [
+            {}
+          ],
+          "groups": [
+            {
+              "groupId": 3821526,
+              "groupName": "餐具",
+              "shopProductGroupSkuList": [
+                {
+                  "groupSkuId": 20245292,
+                  "spuId": 7382389,
+                  "spuName": "不需要外賣餐具",
+                  "price": 0,
+                  "priceStr": "$0.00",
+                  "currency": "HKD",
+                  "spuPvList": [],
+                  "refundPrice": 0,
+                  "refundPriceStr": "$0.00",
+                  "spuNameI18n": {
+                    "en": "No cutlery please",
+                    "default": "不需要外賣餐具",
+                    "zh-HK": "不需要外賣餐具"
+                  },
+                  "groupSkuCount": 1,
+                  "count": 1
+                }
+              ],
+              "groupNameI18n": {
+                "en": "Cutlery",
+                "default": "餐具",
+                "zh-HK": "餐具"
+              }
+            }
+          ],
+          "remark": "",
+          "picList": [
+            "http://img-ap-hongkong.mykeeta.net/sailorproduct/f00fb1de664b4b8fb907a2fcbe5ac823157604.jpg"
+          ],
+          "spec": "",
+          "priceWithoutGroup": {
+            "amount": 4720,
+            "amountStr": "$47.20",
+            "originAmount": 5900,
+            "originAmountStr": "$59.00"
+          },
+          "refundPrice": 4720,
+          "refundPriceStr": "$47.20",
+          "priceWithGroup": {
+            "amount": 4720,
+            "amountStr": "$47.20",
+            "originAmount": 5900,
+            "originAmountStr": "$59.00"
+          },
+          "nameI18n": {
+            "en": "Braised Beef in Red Wine Sauce",
+            "default": "H紅酒汁燴牛肉",
+            "zh-HK": "H紅酒汁燴牛肉"
+          },
+          "specI18n": {
+            "zh-HK": "",
+            "default": ""
+          },
+          "productTags": [],
+          "tags": [],
+          "notLast": false
+        }
+      ],
+      "partRefundPriceStr": "$85.60",
+      "rebatesPrintWarnTitleI18nEnum": "PARTIAL_REFUND_UPDATED_RECEIPT",
+      "rebatesPrintWarnInfoI18nEnum": "PARTIAL_REFUND_MEAL_PREPARE_REMIND",
+      "updatedPrintTitleI18nEnum": "PARTIAL_REFUND_RECEIPT_NOTICE",
+      "updatedPrintWarnInfoI18nEnum": "PARTIAL_REFUND_RECEIPT_NOTICE_TEXT",
+      "refundedItemsI18nEnum": "PARTIAL_REFUND_REFUNDED_RECEIPT",
+      "partActRefundPriceStr": "$85.60"
+    },
+    "rebatesTag": true,
+    "userInfo": {
+      "email": "***",
+      "userName": "***",
+      "phone": "852*****1845",
+      "newUser": false,
+      "userPhone": "69****45",
+      "interCode": "852",
+      "phoneType": 1
+    },
+    "bigOrderTag": false,
+    "tagCodes": [
+      101000,
+      110000
+    ],
+    "refundInfo": {
+      "status": 5002,
+      "statusDesc": "部分退款成功",
+      "partRefund": 1,
+      "valuationRule": "退款公式：[退款商品價格 / （總訂單價格 + 最低消費金額補差價）] × [實際支付金額 - 貼士 - 平台費 - 配送費]",
+      "refundInfos": [
+        {
+          "applyType": 4001,
+          "refundMoney": 8560,
+          "status": 5002,
+          "refundType": 0,
+          "applyReason": "菜品不足",
+          "refundStatusHisList": [
+            {
+              "utime": 1728986842234,
+              "toStatus": 5002,
+              "opTime": 1728986842207,
+              "opUserType": 0
+            },
+            {
+              "utime": 1728986787805,
+              "toStatus": 5001,
+              "opTime": 1728986787797,
+              "opUserType": 0
+            },
+            {
+              "utime": 1728986787773,
+              "toStatus": 2001,
+              "opTime": 1728986787703,
+              "opUserType": 0
+            },
+            {
+              "utime": 1728986787757,
+              "toStatus": 2000,
+              "opReason": "菜品不足",
+              "opTime": 1728986787703,
+              "opUserType": 20
+            }
+          ],
+          "orderViewId": 6531341794210,
+          "i18n": {
+            "currency": "HKD"
+          },
+          "opTime": 1728986842207,
+          "applyOpType": 20,
+          "handleOpType": 0,
+          "commonExt": "{\"actRefundMoney\":8560,\"bigOrderTag\":false,\"cancelType\":200002,\"groupProducts\":[],\"i18n\":{\"cityId\":\"810001\",\"currency\":\"HKD\",\"locale\":\"zh-HK\",\"platform\":\"5\",\"region\":\"HK\"},\"products\":[{\"associatedChoiceGroupIds\":[],\"orderProductId\":77250476,\"refundCount\":0,\"refundPrice\":0,\"refundPriceWithoutRound\":0,\"unavailableEndTime\":0,\"unavailableType\":0},{\"associatedChoiceGroupIds\":[],\"orderProductId\":77250477,\"refundCount\":0,\"refundPrice\":0,\"refundPriceWithoutRound\":0,\"unavailableEndTime\":0,\"unavailableType\":0},{\"associatedChoiceGroupIds\":[],\"orderProductId\":77250478,\"refundCount\":1,\"refundPrice\":3840,\"refundPriceWithoutRound\":3840,\"unavailableEndTime\":0,\"unavailableType\":0},{\"associatedChoiceGroupIds\":[],\"orderProductId\":77250479,\"refundCount\":0,\"refundPrice\":0,\"refundPriceWithoutRound\":0,\"unavailableEndTime\":0,\"unavailableType\":0},{\"associatedChoiceGroupIds\":[],\"orderProductId\":77250480,\"refundCount\":0,\"refundPrice\":0,\"refundPriceWithoutRound\":0,\"unavailableEndTime\":0,\"unavailableType\":0},{\"associatedChoiceGroupIds\":[],\"orderProductId\":77250481,\"refundCount\":1,\"refundPrice\":4720,\"refundPriceWithoutRound\":4720,\"unavailableEndTime\":1729007999000,\"unavailableType\":1}],\"refundMoneyDetails\":[{\"total\":8560,\"type\":2}],\"refundMoneyWithoutRound\":8560,\"specialRemind\":false}",
+          "rebates": {
+            "rebatesInfos": [
+              {
+                "rebatesProducts": [
+                  {
+                    "spuId": 4561987,
+                    "skuId": 4071032,
+                    "count": 1,
+                    "price": 3840,
+                    "priceStr": "$38.40",
+                    "originPrice": 4800,
+                    "originPriceStr": "$48.00",
+                    "name": "千层吐司 (210g)",
+                    "id": 77250478,
+                    "currency": "HKD",
+                    "spuPvList": [
+                      {}
+                    ],
+                    "groups": [],
+                    "remark": "",
+                    "picList": [
+                      "http://img-ap-hongkong.mykeeta.net/sailorproduct/943730b0fdd26e1d64bc5450d7d419df35360.jpg"
+                    ],
+                    "spec": "",
+                    "priceWithoutGroup": {
+                      "amount": 3840,
+                      "amountStr": "$38.40",
+                      "originAmount": 4800,
+                      "originAmountStr": "$48.00"
+                    },
+                    "refundPrice": 3840,
+                    "refundPriceStr": "$38.40",
+                    "priceWithGroup": {
+                      "amount": 3840,
+                      "amountStr": "$38.40",
+                      "originAmount": 4800,
+                      "originAmountStr": "$48.00"
+                    },
+                    "nameI18n": {
+                      "en": "Puff Pastry Butter Toast",
+                      "default": "千层吐司 (210g)",
+                      "zh-HK": "千层吐司 (210g)"
+                    },
+                    "specI18n": {
+                      "zh-HK": "",
+                      "default": ""
+                    },
+                    "productTags": [],
+                    "tags": [],
+                    "notLast": false
+                  },
+                  {
+                    "spuId": 9490015,
+                    "skuId": 8532348,
+                    "count": 1,
+                    "price": 4720,
+                    "priceStr": "$47.20",
+                    "originPrice": 5900,
+                    "originPriceStr": "$59.00",
+                    "name": "H紅酒汁燴牛肉",
+                    "id": 77250481,
+                    "currency": "HKD",
+                    "spuPvList": [
+                      {}
+                    ],
+                    "groups": [
+                      {
+                        "groupId": 3821526,
+                        "groupName": "餐具",
+                        "shopProductGroupSkuList": [
+                          {
+                            "groupSkuId": 20245292,
+                            "spuId": 7382389,
+                            "spuName": "不需要外賣餐具",
+                            "price": 0,
+                            "priceStr": "$0.00",
+                            "currency": "HKD",
+                            "spuPvList": [],
+                            "refundPrice": 0,
+                            "refundPriceStr": "$0.00",
+                            "spuNameI18n": {
+                              "en": "No cutlery please",
+                              "default": "不需要外賣餐具",
+                              "zh-HK": "不需要外賣餐具"
+                            },
+                            "groupSkuCount": 1,
+                            "count": 1
+                          }
+                        ],
+                        "groupNameI18n": {
+                          "en": "Cutlery",
+                          "default": "餐具",
+                          "zh-HK": "餐具"
+                        }
+                      }
+                    ],
+                    "remark": "",
+                    "picList": [
+                      "http://img-ap-hongkong.mykeeta.net/sailorproduct/f00fb1de664b4b8fb907a2fcbe5ac823157604.jpg"
+                    ],
+                    "spec": "",
+                    "priceWithoutGroup": {
+                      "amount": 4720,
+                      "amountStr": "$47.20",
+                      "originAmount": 5900,
+                      "originAmountStr": "$59.00"
+                    },
+                    "refundPrice": 4720,
+                    "refundPriceStr": "$47.20",
+                    "priceWithGroup": {
+                      "amount": 4720,
+                      "amountStr": "$47.20",
+                      "originAmount": 5900,
+                      "originAmountStr": "$59.00"
+                    },
+                    "nameI18n": {
+                      "en": "Braised Beef in Red Wine Sauce",
+                      "default": "H紅酒汁燴牛肉",
+                      "zh-HK": "H紅酒汁燴牛肉"
+                    },
+                    "specI18n": {
+                      "zh-HK": "",
+                      "default": ""
+                    },
+                    "productTags": [],
+                    "tags": [],
+                    "notLast": false
+                  }
+                ],
+                "customerRefundPriceStr": "$85.60",
+                "merchantRefundPriceStr": "$85.60"
+              }
+            ],
+            "valuationRule": "退款公式：[退款商品價格 / （總訂單價格 + 最低消費金額補差價）] × [實際支付金額 - 貼士 - 平台費 - 配送費]",
+            "applyOpType": 20
+          },
+          "partRefund": 1,
+          "duty": 0,
+          "dutyNoticeTitle": "用戶申請退款",
+          "dutyNotice": "建議優先和用戶溝通。",
+          "refundMoneyStr": "$85.60",
+          "transferType": 0,
+          "id": 902758,
+          "commonExtDTO": {
+            "cancelType": 200002
+          },
+          "ctime": 1728986787726,
+          "actRefundMoney": 8560,
+          "actRefundMoneyStr": "$85.60"
+        }
+      ],
+      "refundNodeList": [
+        {
+          "title": "商戶發起部分退款, 部分退款成功",
+          "nodeType": 0,
+          "partRefund": 1,
+          "opReason": "菜品不足",
+          "opTime": 1728986842207,
+          "opUserType": 20,
+          "opUserTypeIcon": "https://s3-ap-hongkong.mykeeta.net/sailorfempcpublic/merchant/order/merchant.png",
+          "refundMoney": "$85.60",
+          "refundProductCount": 2,
+          "rebatesProducts": [
+            {
+              "spuId": 4561987,
+              "skuId": 4071032,
+              "count": 1,
+              "price": 3840,
+              "priceStr": "$38.40",
+              "originPrice": 4800,
+              "originPriceStr": "$48.00",
+              "name": "千层吐司 (210g)",
+              "id": 77250478,
+              "currency": "HKD",
+              "spuPvList": [
+                {}
+              ],
+              "groups": [],
+              "remark": "",
+              "picList": [
+                "http://img-ap-hongkong.mykeeta.net/sailorproduct/943730b0fdd26e1d64bc5450d7d419df35360.jpg"
+              ],
+              "spec": "",
+              "priceWithoutGroup": {
+                "amount": 3840,
+                "amountStr": "$38.40",
+                "originAmount": 4800,
+                "originAmountStr": "$48.00"
+              },
+              "refundPrice": 3840,
+              "refundPriceStr": "$38.40",
+              "priceWithGroup": {
+                "amount": 3840,
+                "amountStr": "$38.40",
+                "originAmount": 4800,
+                "originAmountStr": "$48.00"
+              },
+              "nameI18n": {
+                "en": "Puff Pastry Butter Toast",
+                "default": "千层吐司 (210g)",
+                "zh-HK": "千层吐司 (210g)"
+              },
+              "specI18n": {
+                "zh-HK": "",
+                "default": ""
+              },
+              "productTags": [],
+              "tags": [],
+              "notLast": false
+            },
+            {
+              "spuId": 9490015,
+              "skuId": 8532348,
+              "count": 1,
+              "price": 4720,
+              "priceStr": "$47.20",
+              "originPrice": 5900,
+              "originPriceStr": "$59.00",
+              "name": "H紅酒汁燴牛肉",
+              "id": 77250481,
+              "currency": "HKD",
+              "spuPvList": [
+                {}
+              ],
+              "groups": [
+                {
+                  "groupId": 3821526,
+                  "groupName": "餐具",
+                  "shopProductGroupSkuList": [
+                    {
+                      "groupSkuId": 20245292,
+                      "spuId": 7382389,
+                      "spuName": "不需要外賣餐具",
+                      "price": 0,
+                      "priceStr": "$0.00",
+                      "currency": "HKD",
+                      "spuPvList": [],
+                      "refundPrice": 0,
+                      "refundPriceStr": "$0.00",
+                      "spuNameI18n": {
+                        "en": "No cutlery please",
+                        "default": "不需要外賣餐具",
+                        "zh-HK": "不需要外賣餐具"
+                      },
+                      "groupSkuCount": 1,
+                      "count": 1
+                    }
+                  ],
+                  "groupNameI18n": {
+                    "en": "Cutlery",
+                    "default": "餐具",
+                    "zh-HK": "餐具"
+                  }
+                }
+              ],
+              "remark": "",
+              "picList": [
+                "http://img-ap-hongkong.mykeeta.net/sailorproduct/f00fb1de664b4b8fb907a2fcbe5ac823157604.jpg"
+              ],
+              "spec": "",
+              "priceWithoutGroup": {
+                "amount": 4720,
+                "amountStr": "$47.20",
+                "originAmount": 5900,
+                "originAmountStr": "$59.00"
+              },
+              "refundPrice": 4720,
+              "refundPriceStr": "$47.20",
+              "priceWithGroup": {
+                "amount": 4720,
+                "amountStr": "$47.20",
+                "originAmount": 5900,
+                "originAmountStr": "$59.00"
+              },
+              "nameI18n": {
+                "en": "Braised Beef in Red Wine Sauce",
+                "default": "H紅酒汁燴牛肉",
+                "zh-HK": "H紅酒汁燴牛肉"
+              },
+              "specI18n": {
+                "zh-HK": "",
+                "default": ""
+              },
+              "productTags": [],
+              "tags": [],
+              "notLast": false
+            }
+          ],
+          "status": 2000,
+          "bizId": 902758,
+          "allowedAppeal": 0,
+          "actRefundMoney": "$85.60"
+        }
+      ],
+      "appealRefundNums": 0,
+      "appealInfoList": [],
+      "opTime": 1728986842207
+    },
+    "partRefundOrderTag": true,
+    "groupChoiceCompensationTag": false,
+    "printTemplateType": 1
+  }
+}
