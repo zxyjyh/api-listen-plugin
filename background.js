@@ -393,7 +393,7 @@ function handleApiData(url, data) {
         shippingFee: centToYuan(el.feeDtl.customerFee.rebatesShippingFee ? el.feeDtl.customerFee.rebatesShippingFee : el.feeDtl.customerFee.shippingFee), ///配送費
         platformFee: centToYuan(el.feeDtl.customerFee.rebatesPlatformFee ? el.feeDtl.customerFee.rebatesPlatformFee :  el.feeDtl.customerFee.platformFee), ///平臺費
         discounts: centToYuan(el.feeDtl.customerFee.rebatesDiscounts ? el.feeDtl.customerFee.rebatesDiscounts : el.feeDtl.customerFee.discounts), ///優惠金額
-        actTotal: centToYuan(el.feeDtl.customerFee.rebatesPayTotal ? el.feeDtl.customerFee.rebatesPayTotal : el.feeDtl.customerFee.actTotal), ///顧客實際支付
+        actTotal: centToYuan(el.feeDtl.customerFee.rebatesPayTotal ? el.feeDtl.customerFee.rebatesPayTotal : el.feeDtl.customerFee.payTotal), ///顧客實際支付
         deliveryOrderType: el.merchantOrder.userGetMode === 'pickup' ? '自取' : '外送', ///配送類型
         remark: el.merchantOrder.remark, ///備註
       }
