@@ -1,0 +1,2048 @@
+{
+  "code": 0,
+  "message": "操作成功",
+  "data": {
+    "pageNum": 1,
+    "pageSize": 20,
+    "totalCount": 1,
+    "totalPage": null,
+    "list": [
+      {
+        "baseOrder": {
+          "orderViewId": 6811685393051,
+          "status": 40,
+          "remark": "需要餐具",
+          "chooseTableware": 1,
+          "deliveryTime": 1731384211245,
+          "estimatedTimeStart": 1731383911245,
+          "estimatedTimeEnd": 1731384511245,
+          "ctime": 1731380576409,
+          "payType": "applepay",
+          "payTypeDesc": "Apple Pay",
+          "deliveryInstruction": {
+            "deliveryType": 0,
+            "deliveryLocationType": 3,
+            "remark": ""
+          },
+          "openPrivacyNumber": 0
+        },
+        "merchantOrder": {
+          "ctime": 1731380576442,
+          "seqNo": 6775,
+          "status": 40,
+          "pushOrderResult": 0,
+          "orderViewId": 6811685393051,
+          "shopId": 580794,
+          "shopName": "WeBite Space OL 健康餐（九龍店）",
+          "syncStatusResult": 0,
+          "unconfirmedStatusTime": 1731380585271,
+          "confirmedStatusTime": 1731380585777,
+          "readiedStatusTime": 1731381492129,
+          "completedStatusTime": 1731383440254,
+          "userId": 10000000615590,
+          "refundTag": 0,
+          "etp": 1731381485777,
+          "etpl": 15,
+          "partRefundTag": 0,
+          "shopNameI18n": {
+            "en": "webite space",
+            "default": "WeBite Space OL 健康餐（九龍店）",
+            "zh-HK": "WeBite Space OL 健康餐（九龍店）"
+          },
+          "allowedCancelEndTime": 1731556240254,
+          "seqNoStr": "6775",
+          "accId": [
+            4611686018427434000,
+            4611686018427476000
+          ],
+          "userGetMode": "delivery",
+          "shopCityId": 810001,
+          "userChooseCityId": 810001,
+          "shopRegion": "HK"
+        },
+        "merchantOrderDeliveries": [
+          {
+            "id": 36542214,
+            "waybillId": 1731380585398372,
+            "subimitDeliveryResult": 0,
+            "deliveryStatus": 50,
+            "deliveryStatusTime": 1731382934342,
+            "deliveryMode": "[1001]",
+            "courierName": "車手 1",
+            "courierPhone": "96****79",
+            "courierPrivacyPhone": "",
+            "orderViewId": 6811685393051,
+            "arrivedStatusTime": 1731382934342,
+            "merchantOrderDeliveryHisList": [
+              {
+                "orderViewId": 6811685393051,
+                "deliveryStatus": 50,
+                "ctime": 1731382934369,
+                "opTime": 1731382934342,
+                "shopId": 580794,
+                "waybillId": 1731380585398372,
+                "opScene": 10,
+                "courierId": 1715662308088733,
+                "courierName": "車手 1",
+                "courierPhone": "96****79",
+                "utime": 1731382934369,
+                "courierPhoneInterCode": "852",
+                "merchantSubOrderId": 6813220245116,
+                "deliveryId": 36542214
+              },
+              {
+                "orderViewId": 6811685393051,
+                "deliveryStatus": 30,
+                "ctime": 1731382257812,
+                "opTime": 1731382257784,
+                "shopId": 580794,
+                "waybillId": 1731380585398372,
+                "opScene": 10,
+                "courierId": 1715662308088733,
+                "courierName": "車手 1",
+                "courierPhone": "96****79",
+                "utime": 1731382257812,
+                "courierPhoneInterCode": "852",
+                "merchantSubOrderId": 6813220245116,
+                "deliveryId": 36542214
+              },
+              {
+                "orderViewId": 6811685393051,
+                "deliveryStatus": 25,
+                "ctime": 1731382231249,
+                "opTime": 1731382231221,
+                "shopId": 580794,
+                "waybillId": 1731380585398372,
+                "opScene": 10,
+                "courierId": 1715662308088733,
+                "courierName": "車手 1",
+                "courierPhone": "96****79",
+                "utime": 1731382231249,
+                "courierPhoneInterCode": "852",
+                "merchantSubOrderId": 6813220245116,
+                "deliveryId": 36542214
+              },
+              {
+                "orderViewId": 6811685393051,
+                "deliveryStatus": 20,
+                "ctime": 1731381605120,
+                "opTime": 1731381605088,
+                "shopId": 580794,
+                "waybillId": 1731380585398372,
+                "opScene": 10,
+                "courierId": 1715662308088733,
+                "courierName": "車手 1",
+                "courierPhone": "96****79",
+                "utime": 1731381605120,
+                "courierPhoneInterCode": "852",
+                "merchantSubOrderId": 6813220245116,
+                "deliveryId": 36542214
+              },
+              {
+                "orderViewId": 6811685393051,
+                "deliveryStatus": 10,
+                "ctime": 1731381597900,
+                "opTime": 1731381597879,
+                "shopId": 580794,
+                "waybillId": 1731380585398372,
+                "opScene": 10,
+                "courierName": "車手 1",
+                "courierPhone": "",
+                "utime": 1731381597900,
+                "merchantSubOrderId": 6813220245116,
+                "deliveryId": 36542214
+              },
+              {
+                "orderViewId": 6811685393051,
+                "deliveryStatus": 10,
+                "ctime": 1731381567869,
+                "opTime": 1731381567802,
+                "shopId": 580794,
+                "waybillId": 1731380585398372,
+                "opScene": 10,
+                "courierName": "車手 1",
+                "courierPhone": "",
+                "utime": 1731381567869,
+                "merchantSubOrderId": 6813220245116,
+                "deliveryId": 36542214
+              },
+              {
+                "orderViewId": 6811685393051,
+                "deliveryStatus": 10,
+                "ctime": 1731381507814,
+                "opTime": 1731381507773,
+                "shopId": 580794,
+                "waybillId": 1731380585398372,
+                "opScene": 10,
+                "courierName": "車手 1",
+                "courierPhone": "",
+                "utime": 1731381507814,
+                "merchantSubOrderId": 6813220245116,
+                "deliveryId": 36542214
+              },
+              {
+                "orderViewId": 6811685393051,
+                "deliveryStatus": 0,
+                "ctime": 1731380585963,
+                "opTime": 1731380585954,
+                "shopId": 580794,
+                "waybillId": 1731380585398372,
+                "opScene": 10,
+                "courierName": "車手 1",
+                "courierPhone": "",
+                "utime": 1731380585963,
+                "merchantSubOrderId": 6813220245116,
+                "deliveryId": 36542214
+              }
+            ],
+            "createdStatusTime": 1731380585954,
+            "dispatchedStatusTime": 1731381597879,
+            "receivedStatusTime": 1731381605088,
+            "toStoreStatusTime": 1731382231221,
+            "tookStatusTime": 1731382257784,
+            "ctime": 1731380585845,
+            "redesign": 0,
+            "courierId": 1715662308088733,
+            "courierPhoneInterCode": "852",
+            "merchantSubOrderId": 6813220245116,
+            "bigOrderTag": true,
+            "privacyPhone": "",
+            "extensionNumber": "",
+            "privacyInterCode": "",
+            "courierInfoDesensitizePrivacy": true,
+            "showPrivacyPhone": false,
+            "commonExt": {
+              "courierVehicle": 3,
+              "vehiclePlateNumber": "XM8026"
+            }
+          },
+          {
+            "id": 36542215,
+            "waybillId": 1731380585398182,
+            "subimitDeliveryResult": 0,
+            "deliveryStatus": 50,
+            "deliveryStatusTime": 1731383440208,
+            "deliveryMode": "[1001]",
+            "courierName": "車手 2",
+            "courierPhone": "91****16",
+            "courierPrivacyPhone": "",
+            "orderViewId": 6811685393051,
+            "arrivedStatusTime": 1731383440208,
+            "merchantOrderDeliveryHisList": [
+              {
+                "orderViewId": 6811685393051,
+                "deliveryStatus": 50,
+                "ctime": 1731383440239,
+                "opTime": 1731383440208,
+                "shopId": 580794,
+                "waybillId": 1731380585398182,
+                "opScene": 10,
+                "courierId": 1722185960257983,
+                "courierName": "車手 2",
+                "courierPhone": "91****16",
+                "utime": 1731383440239,
+                "courierPhoneInterCode": "852",
+                "merchantSubOrderId": 6810411536619,
+                "deliveryId": 36542215
+              },
+              {
+                "orderViewId": 6811685393051,
+                "deliveryStatus": 30,
+                "ctime": 1731382789145,
+                "opTime": 1731382789116,
+                "shopId": 580794,
+                "waybillId": 1731380585398182,
+                "opScene": 10,
+                "courierId": 1722185960257983,
+                "courierName": "車手 2",
+                "courierPhone": "91****16",
+                "utime": 1731382789145,
+                "courierPhoneInterCode": "852",
+                "merchantSubOrderId": 6810411536619,
+                "deliveryId": 36542215
+              },
+              {
+                "orderViewId": 6811685393051,
+                "deliveryStatus": 25,
+                "ctime": 1731382670868,
+                "opTime": 1731382670841,
+                "shopId": 580794,
+                "waybillId": 1731380585398182,
+                "opScene": 10,
+                "courierId": 1722185960257983,
+                "courierName": "車手 2",
+                "courierPhone": "91****16",
+                "utime": 1731382670868,
+                "courierPhoneInterCode": "852",
+                "merchantSubOrderId": 6810411536619,
+                "deliveryId": 36542215
+              },
+              {
+                "orderViewId": 6811685393051,
+                "deliveryStatus": 20,
+                "ctime": 1731381514180,
+                "opTime": 1731381514145,
+                "shopId": 580794,
+                "waybillId": 1731380585398182,
+                "opScene": 10,
+                "courierId": 1722185960257983,
+                "courierName": "車手 2",
+                "courierPhone": "91****16",
+                "utime": 1731381514180,
+                "courierPhoneInterCode": "852",
+                "merchantSubOrderId": 6810411536619,
+                "deliveryId": 36542215
+              },
+              {
+                "orderViewId": 6811685393051,
+                "deliveryStatus": 10,
+                "ctime": 1731381507822,
+                "opTime": 1731381507775,
+                "shopId": 580794,
+                "waybillId": 1731380585398182,
+                "opScene": 10,
+                "courierName": "車手 2",
+                "courierPhone": "",
+                "utime": 1731381507822,
+                "merchantSubOrderId": 6810411536619,
+                "deliveryId": 36542215
+              },
+              {
+                "orderViewId": 6811685393051,
+                "deliveryStatus": 0,
+                "ctime": 1731380585963,
+                "opTime": 1731380585954,
+                "shopId": 580794,
+                "waybillId": 1731380585398182,
+                "opScene": 10,
+                "courierName": "車手 2",
+                "courierPhone": "",
+                "utime": 1731380585963,
+                "merchantSubOrderId": 6810411536619,
+                "deliveryId": 36542215
+              }
+            ],
+            "createdStatusTime": 1731380585954,
+            "dispatchedStatusTime": 1731381507775,
+            "receivedStatusTime": 1731381514145,
+            "toStoreStatusTime": 1731382670841,
+            "tookStatusTime": 1731382789116,
+            "ctime": 1731380585845,
+            "redesign": 0,
+            "courierId": 1722185960257983,
+            "courierPhoneInterCode": "852",
+            "merchantSubOrderId": 6810411536619,
+            "bigOrderTag": true,
+            "privacyPhone": "",
+            "extensionNumber": "",
+            "privacyInterCode": "",
+            "courierInfoDesensitizePrivacy": true,
+            "showPrivacyPhone": false,
+            "commonExt": {
+              "courierVehicle": 3,
+              "vehiclePlateNumber": "XL9685"
+            }
+          }
+        ],
+        "deliveryInfos": [],
+        "recipientInfo": {
+          "name": "***",
+          "phone": "51****71",
+          "interCode": "852",
+          "phoneType": 1,
+          "addressName": "***",
+          "houseNumber": "***",
+          "point": {
+            "latitude": 22.3007132,
+            "longitude": 114.172755
+          },
+          "addressLocation": "9 金巴利道,尖沙咀,香港",
+          "unitNumber": "2310",
+          "buildingNumber": "1",
+          "addressViewInfo": "***",
+          "structType": 0,
+          "privacyPhone": "",
+          "extensionNumber": "",
+          "privacyInterCode": "",
+          "recipientInfoDesensitizePrivacy": true,
+          "showPrivacyPhone": false
+        },
+        "feeDtls": [
+          {
+            "code": "productPrice",
+            "name": "餐點總價",
+            "value": "$1,176.00",
+            "nameI18nEnum": "PRODUCT_PRICE",
+            "price": 117600,
+            "currency": "HKD"
+          },
+          {
+            "code": "shippingFee",
+            "name": "運費",
+            "value": "$33.00",
+            "nameI18nEnum": "SHIPPING_FEE",
+            "price": 3300,
+            "currency": "HKD"
+          },
+          {
+            "code": "platformFee",
+            "name": "平台服務費",
+            "value": "$2.00",
+            "nameI18nEnum": "PLATFORM_FEE",
+            "price": 200,
+            "currency": "HKD"
+          },
+          {
+            "code": "discounts",
+            "name": "優惠",
+            "value": "-$257.20",
+            "nameI18nEnum": "DISCOUNTS",
+            "price": 25720,
+            "currency": "HKD"
+          },
+          {
+            "code": "payTotal",
+            "name": "顧客實付",
+            "value": "$953.80",
+            "nameI18nEnum": "CUSTOMER_FEE",
+            "price": 95380,
+            "currency": "HKD"
+          }
+        ],
+        "products": [
+          {
+            "spuId": 11160706,
+            "skuId": 10072236,
+            "count": 6,
+            "price": 43680,
+            "priceStr": "$436.80",
+            "orderViewId": 6811685393051,
+            "originPrice": 54600,
+            "originPriceStr": "$546.00",
+            "name": "11-A4雞肉套餐",
+            "id": 91196144,
+            "currency": "HKD",
+            "spuPvList": [
+              {}
+            ],
+            "groups": [
+              {
+                "groupId": 4010336,
+                "groupName": "餐具",
+                "shopProductGroupSkuList": [
+                  {
+                    "groupSkuId": 22049653,
+                    "spuId": 8061503,
+                    "spuName": "不需要外賣餐具",
+                    "price": 0,
+                    "priceStr": "$0.00",
+                    "currency": "HKD",
+                    "spuPvList": [],
+                    "spuNameI18n": {
+                      "en": "No cutlery please",
+                      "default": "不需要外賣餐具",
+                      "zh-HK": "不需要外賣餐具"
+                    },
+                    "groupSkuCount": 6,
+                    "count": 1,
+                    "groupSkuExtra": {}
+                  }
+                ],
+                "groupNameI18n": {
+                  "en": "Cutlery",
+                  "default": "餐具",
+                  "zh-HK": "餐具"
+                },
+                "groupExtra": {}
+              },
+              {
+                "groupId": 4674810,
+                "groupName": "11-A4雞肉套餐-主菜",
+                "shopProductGroupSkuList": [
+                  {
+                    "groupSkuId": 26237924,
+                    "spuId": 10097605,
+                    "spuName": "H法式香草烤雞腿",
+                    "price": 0,
+                    "priceStr": "$0.00",
+                    "currency": "HKD",
+                    "spuPvList": [
+                      {}
+                    ],
+                    "spuNameI18n": {
+                      "en": "H. French-style Herb Roasted Chicken Thigh",
+                      "default": "H法式香草烤雞腿",
+                      "zh-HK": "H法式香草烤雞腿"
+                    },
+                    "groupSkuCount": 6,
+                    "count": 1,
+                    "groupSkuExtra": {}
+                  }
+                ],
+                "groupNameI18n": {
+                  "en": "11-A4 Chicken Set Meal - Main Course",
+                  "default": "11-A4雞肉套餐-主菜",
+                  "zh-HK": "11-A4雞肉套餐-主菜"
+                },
+                "groupExtra": {}
+              },
+              {
+                "groupId": 4664355,
+                "groupName": "11-A套餐-搭配1",
+                "shopProductGroupSkuList": [
+                  {
+                    "groupSkuId": 26249281,
+                    "spuId": 11121041,
+                    "spuName": "H肉碎蒸水蛋",
+                    "price": 0,
+                    "priceStr": "$0.00",
+                    "currency": "HKD",
+                    "spuPvList": [
+                      {}
+                    ],
+                    "spuNameI18n": {
+                      "zh-HK": "H肉碎蒸水蛋",
+                      "default": "H肉碎蒸水蛋"
+                    },
+                    "groupSkuCount": 6,
+                    "count": 1,
+                    "groupSkuExtra": {}
+                  }
+                ],
+                "groupNameI18n": {
+                  "zh-HK": "11-A套餐-搭配1",
+                  "default": "11-A套餐-搭配1"
+                },
+                "groupExtra": {}
+              },
+              {
+                "groupId": 4663293,
+                "groupName": "11-A套餐-搭配2",
+                "shopProductGroupSkuList": [
+                  {
+                    "groupSkuId": 26231181,
+                    "spuId": 11141322,
+                    "spuName": "H清炒奶白菜",
+                    "price": 0,
+                    "priceStr": "$0.00",
+                    "currency": "HKD",
+                    "spuPvList": [
+                      {}
+                    ],
+                    "spuNameI18n": {
+                      "en": "H. Stir-Fried Baby Bok Choy",
+                      "default": "H清炒奶白菜",
+                      "zh-HK": "H清炒奶白菜"
+                    },
+                    "groupSkuCount": 6,
+                    "count": 1,
+                    "groupSkuExtra": {}
+                  }
+                ],
+                "groupNameI18n": {
+                  "zh-HK": "11-A套餐-搭配2",
+                  "default": "11-A套餐-搭配2"
+                },
+                "groupExtra": {}
+              },
+              {
+                "groupId": 4244807,
+                "groupName": "*主食",
+                "shopProductGroupSkuList": [
+                  {
+                    "groupSkuId": 23231017,
+                    "spuId": 9525472,
+                    "spuName": "H雜糧飯",
+                    "price": 0,
+                    "priceStr": "$0.00",
+                    "currency": "HKD",
+                    "spuPvList": [
+                      {}
+                    ],
+                    "spuNameI18n": {
+                      "en": "Mixed Grain Rice",
+                      "default": "H雜糧飯",
+                      "zh-HK": "H雜糧飯"
+                    },
+                    "groupSkuCount": 6,
+                    "count": 1,
+                    "groupSkuExtra": {}
+                  }
+                ],
+                "groupNameI18n": {
+                  "zh-HK": "*主食",
+                  "default": "*主食"
+                },
+                "groupExtra": {}
+              }
+            ],
+            "remark": "",
+            "desc": "不需要外賣餐具,H法式香草烤雞腿,H肉碎蒸水蛋,H清炒奶白菜,H雜糧飯",
+            "picList": [
+              "http://img-ap-hongkong.mykeeta.net/sailorproduct/32def19065591e2a01560f10e891077e149449.jpg"
+            ],
+            "spec": "",
+            "priceWithoutGroup": {
+              "amount": 54600,
+              "amountStr": "$91.00",
+              "originAmount": 54600,
+              "originAmountStr": "$91.00",
+              "unitPrice": 9100,
+              "originUnitPrice": 9100
+            },
+            "priceWithGroup": {
+              "amount": 54600,
+              "amountStr": "$91.00",
+              "originAmount": 54600,
+              "originAmountStr": "$91.00",
+              "unitPrice": 9100,
+              "originUnitPrice": 9100
+            },
+            "nameI18n": {
+              "en": "11-A4 Chicken Set Meal",
+              "default": "11-A4雞肉套餐",
+              "zh-HK": "11-A4雞肉套餐"
+            },
+            "descI18n": {
+              "zh-HK": "不需要外賣餐具,H法式香草烤雞腿,H肉碎蒸水蛋,H清炒奶白菜,H雜糧飯",
+              "default": "不需要外賣餐具,H法式香草烤雞腿,H肉碎蒸水蛋,H清炒奶白菜,H雜糧飯"
+            },
+            "specI18n": {
+              "zh-HK": "",
+              "default": ""
+            },
+            "promotions": [],
+            "tags": [],
+            "notLast": false,
+            "spuExtra": {},
+            "skuExtra": {}
+          },
+          {
+            "spuId": 11153734,
+            "skuId": 10090677,
+            "count": 6,
+            "price": 50400,
+            "priceStr": "$504.00",
+            "orderViewId": 6811685393051,
+            "originPrice": 63000,
+            "originPriceStr": "$630.00",
+            "name": "11-A1牛肉套餐",
+            "id": 91196145,
+            "currency": "HKD",
+            "spuPvList": [
+              {}
+            ],
+            "groups": [
+              {
+                "groupId": 4010336,
+                "groupName": "餐具",
+                "shopProductGroupSkuList": [
+                  {
+                    "groupSkuId": 22049653,
+                    "spuId": 8061503,
+                    "spuName": "不需要外賣餐具",
+                    "price": 0,
+                    "priceStr": "$0.00",
+                    "currency": "HKD",
+                    "spuPvList": [],
+                    "spuNameI18n": {
+                      "en": "No cutlery please",
+                      "default": "不需要外賣餐具",
+                      "zh-HK": "不需要外賣餐具"
+                    },
+                    "groupSkuCount": 6,
+                    "count": 1,
+                    "groupSkuExtra": {}
+                  }
+                ],
+                "groupNameI18n": {
+                  "en": "Cutlery",
+                  "default": "餐具",
+                  "zh-HK": "餐具"
+                },
+                "groupExtra": {}
+              },
+              {
+                "groupId": 4669111,
+                "groupName": "11-A1牛肉套餐-主菜",
+                "shopProductGroupSkuList": [
+                  {
+                    "groupSkuId": 26246567,
+                    "spuId": 9516821,
+                    "spuName": "H川香孜然牛肉",
+                    "price": 0,
+                    "priceStr": "$0.00",
+                    "currency": "HKD",
+                    "spuPvList": [
+                      {}
+                    ],
+                    "spuNameI18n": {
+                      "en": "Sichuan Cumin Beef",
+                      "default": "H川香孜然牛肉",
+                      "zh-HK": "H川香孜然牛肉"
+                    },
+                    "groupSkuCount": 6,
+                    "count": 1,
+                    "groupSkuExtra": {}
+                  }
+                ],
+                "groupNameI18n": {
+                  "en": "11-A1 Beef Set Meal - Main Course",
+                  "default": "11-A1牛肉套餐-主菜",
+                  "zh-HK": "11-A1牛肉套餐-主菜"
+                },
+                "groupExtra": {}
+              },
+              {
+                "groupId": 4664355,
+                "groupName": "11-A套餐-搭配1",
+                "shopProductGroupSkuList": [
+                  {
+                    "groupSkuId": 26249281,
+                    "spuId": 11121041,
+                    "spuName": "H肉碎蒸水蛋",
+                    "price": 0,
+                    "priceStr": "$0.00",
+                    "currency": "HKD",
+                    "spuPvList": [
+                      {}
+                    ],
+                    "spuNameI18n": {
+                      "zh-HK": "H肉碎蒸水蛋",
+                      "default": "H肉碎蒸水蛋"
+                    },
+                    "groupSkuCount": 6,
+                    "count": 1,
+                    "groupSkuExtra": {}
+                  }
+                ],
+                "groupNameI18n": {
+                  "zh-HK": "11-A套餐-搭配1",
+                  "default": "11-A套餐-搭配1"
+                },
+                "groupExtra": {}
+              },
+              {
+                "groupId": 4663293,
+                "groupName": "11-A套餐-搭配2",
+                "shopProductGroupSkuList": [
+                  {
+                    "groupSkuId": 26231181,
+                    "spuId": 11141322,
+                    "spuName": "H清炒奶白菜",
+                    "price": 0,
+                    "priceStr": "$0.00",
+                    "currency": "HKD",
+                    "spuPvList": [
+                      {}
+                    ],
+                    "spuNameI18n": {
+                      "en": "H. Stir-Fried Baby Bok Choy",
+                      "default": "H清炒奶白菜",
+                      "zh-HK": "H清炒奶白菜"
+                    },
+                    "groupSkuCount": 6,
+                    "count": 1,
+                    "groupSkuExtra": {}
+                  }
+                ],
+                "groupNameI18n": {
+                  "zh-HK": "11-A套餐-搭配2",
+                  "default": "11-A套餐-搭配2"
+                },
+                "groupExtra": {}
+              },
+              {
+                "groupId": 4244807,
+                "groupName": "*主食",
+                "shopProductGroupSkuList": [
+                  {
+                    "groupSkuId": 23231017,
+                    "spuId": 9525472,
+                    "spuName": "H雜糧飯",
+                    "price": 0,
+                    "priceStr": "$0.00",
+                    "currency": "HKD",
+                    "spuPvList": [
+                      {}
+                    ],
+                    "spuNameI18n": {
+                      "en": "Mixed Grain Rice",
+                      "default": "H雜糧飯",
+                      "zh-HK": "H雜糧飯"
+                    },
+                    "groupSkuCount": 6,
+                    "count": 1,
+                    "groupSkuExtra": {}
+                  }
+                ],
+                "groupNameI18n": {
+                  "zh-HK": "*主食",
+                  "default": "*主食"
+                },
+                "groupExtra": {}
+              }
+            ],
+            "remark": "",
+            "desc": "不需要外賣餐具,H川香孜然牛肉,H肉碎蒸水蛋,H清炒奶白菜,H雜糧飯",
+            "picList": [
+              "http://img-ap-hongkong.mykeeta.net/sailorproduct/7e20c08fff5d9938b1f9d3d6607af0a8142591.jpg"
+            ],
+            "spec": "",
+            "priceWithoutGroup": {
+              "amount": 63000,
+              "amountStr": "$105.00",
+              "originAmount": 63000,
+              "originAmountStr": "$105.00",
+              "unitPrice": 10500,
+              "originUnitPrice": 10500
+            },
+            "priceWithGroup": {
+              "amount": 63000,
+              "amountStr": "$105.00",
+              "originAmount": 63000,
+              "originAmountStr": "$105.00",
+              "unitPrice": 10500,
+              "originUnitPrice": 10500
+            },
+            "nameI18n": {
+              "en": "11-A1 Beef Set Meal",
+              "default": "11-A1牛肉套餐",
+              "zh-HK": "11-A1牛肉套餐"
+            },
+            "descI18n": {
+              "zh-HK": "不需要外賣餐具,H川香孜然牛肉,H肉碎蒸水蛋,H清炒奶白菜,H雜糧飯",
+              "default": "不需要外賣餐具,H川香孜然牛肉,H肉碎蒸水蛋,H清炒奶白菜,H雜糧飯"
+            },
+            "specI18n": {
+              "zh-HK": "",
+              "default": ""
+            },
+            "promotions": [],
+            "tags": [],
+            "notLast": false,
+            "spuExtra": {},
+            "skuExtra": {}
+          }
+        ],
+        "refundInfos": [],
+        "feeDtl": {
+          "merchantFee": {
+            "i18n": {
+              "currency": "HKD"
+            },
+            "productPrice": 117600,
+            "brokerage": 23270,
+            "activityFee": 24520,
+            "total": 69810,
+            "platformServiceFee": 200,
+            "diffPrice": 0,
+            "productPriceStr": "$1,176.00",
+            "brokerageStr": "-$232.70",
+            "activityFeeStr": "-$245.20",
+            "platformServiceFeeStr": "$2.00",
+            "diffPriceStr": "$0.00",
+            "totalStr": "$698.10"
+          },
+          "customerFee": {
+            "i18n": {
+              "currency": "HKD"
+            },
+            "productPrice": 117600,
+            "shippingFee": 3300,
+            "platformFee": 200,
+            "discounts": 25720,
+            "tip": 0,
+            "diffPrice": 0,
+            "payTotal": 95380,
+            "productPriceStr": "$1,176.00",
+            "shippingFeeStr": "$33.00",
+            "platformFeeStr": "$2.00",
+            "discountsStr": "-$257.20",
+            "tipStr": "$0.00",
+            "diffPriceStr": "$0.00",
+            "payTotalStr": "$953.80",
+            "originPrice": 121100,
+            "originPriceStr": "$1,211.00",
+            "productPriceSubTotal": 94080,
+            "productPriceSubTotalStr": "$940.80",
+            "showDiscounts": 25720,
+            "showDiscountsStr": "-$257.20",
+            "actTotal": 95380,
+            "actTotalStr": "$953.80"
+          }
+        },
+        "privacy": true,
+        "rebatesTag": false,
+        "userInfo": {
+          "email": "***",
+          "userName": "***",
+          "phone": "852*****6971",
+          "newUser": false,
+          "userPhone": "51****71",
+          "interCode": "852",
+          "phoneType": 1
+        },
+        "bigOrderTag": true,
+        "subOrderInfoList": [
+          {
+            "merchantSubOrder": {
+              "orderViewId": 6811685393051,
+              "merchantSubOrderId": 6813220245116,
+              "shopId": 580794,
+              "userId": 10000000615590,
+              "subOrderSeq": "6775-1/2",
+              "commonExt": {
+                "subOrderSeqNo": 1,
+                "subOrderCount": 2
+              },
+              "ctime": 1731380585297,
+              "utime": 1731380585297
+            },
+            "products": [
+              {
+                "spuId": 11153734,
+                "skuId": 10090677,
+                "count": 3,
+                "price": 50400,
+                "priceStr": "$504.00",
+                "orderViewId": 6811685393051,
+                "originPrice": 63000,
+                "originPriceStr": "$630.00",
+                "name": "11-A1牛肉套餐",
+                "id": 91196145,
+                "currency": "HKD",
+                "spuPvList": [
+                  {}
+                ],
+                "groups": [
+                  {
+                    "groupId": 4010336,
+                    "groupName": "餐具",
+                    "shopProductGroupSkuList": [
+                      {
+                        "groupSkuId": 22049653,
+                        "spuId": 8061503,
+                        "spuName": "不需要外賣餐具",
+                        "price": 0,
+                        "priceStr": "$0.00",
+                        "currency": "HKD",
+                        "spuPvList": [],
+                        "spuNameI18n": {
+                          "en": "No cutlery please",
+                          "default": "不需要外賣餐具",
+                          "zh-HK": "不需要外賣餐具"
+                        },
+                        "groupSkuCount": 3,
+                        "count": 1
+                      }
+                    ],
+                    "groupNameI18n": {
+                      "en": "Cutlery",
+                      "default": "餐具",
+                      "zh-HK": "餐具"
+                    }
+                  },
+                  {
+                    "groupId": 4669111,
+                    "groupName": "11-A1牛肉套餐-主菜",
+                    "shopProductGroupSkuList": [
+                      {
+                        "groupSkuId": 26246567,
+                        "spuId": 9516821,
+                        "spuName": "H川香孜然牛肉",
+                        "price": 0,
+                        "priceStr": "$0.00",
+                        "currency": "HKD",
+                        "spuPvList": [
+                          {}
+                        ],
+                        "spuNameI18n": {
+                          "en": "Sichuan Cumin Beef",
+                          "default": "H川香孜然牛肉",
+                          "zh-HK": "H川香孜然牛肉"
+                        },
+                        "groupSkuCount": 3,
+                        "count": 1
+                      }
+                    ],
+                    "groupNameI18n": {
+                      "en": "11-A1 Beef Set Meal - Main Course",
+                      "default": "11-A1牛肉套餐-主菜",
+                      "zh-HK": "11-A1牛肉套餐-主菜"
+                    }
+                  },
+                  {
+                    "groupId": 4664355,
+                    "groupName": "11-A套餐-搭配1",
+                    "shopProductGroupSkuList": [
+                      {
+                        "groupSkuId": 26249281,
+                        "spuId": 11121041,
+                        "spuName": "H肉碎蒸水蛋",
+                        "price": 0,
+                        "priceStr": "$0.00",
+                        "currency": "HKD",
+                        "spuPvList": [
+                          {}
+                        ],
+                        "spuNameI18n": {
+                          "zh-HK": "H肉碎蒸水蛋",
+                          "default": "H肉碎蒸水蛋"
+                        },
+                        "groupSkuCount": 3,
+                        "count": 1
+                      }
+                    ],
+                    "groupNameI18n": {
+                      "zh-HK": "11-A套餐-搭配1",
+                      "default": "11-A套餐-搭配1"
+                    }
+                  },
+                  {
+                    "groupId": 4663293,
+                    "groupName": "11-A套餐-搭配2",
+                    "shopProductGroupSkuList": [
+                      {
+                        "groupSkuId": 26231181,
+                        "spuId": 11141322,
+                        "spuName": "H清炒奶白菜",
+                        "price": 0,
+                        "priceStr": "$0.00",
+                        "currency": "HKD",
+                        "spuPvList": [
+                          {}
+                        ],
+                        "spuNameI18n": {
+                          "en": "H. Stir-Fried Baby Bok Choy",
+                          "default": "H清炒奶白菜",
+                          "zh-HK": "H清炒奶白菜"
+                        },
+                        "groupSkuCount": 3,
+                        "count": 1
+                      }
+                    ],
+                    "groupNameI18n": {
+                      "zh-HK": "11-A套餐-搭配2",
+                      "default": "11-A套餐-搭配2"
+                    }
+                  },
+                  {
+                    "groupId": 4244807,
+                    "groupName": "*主食",
+                    "shopProductGroupSkuList": [
+                      {
+                        "groupSkuId": 23231017,
+                        "spuId": 9525472,
+                        "spuName": "H雜糧飯",
+                        "price": 0,
+                        "priceStr": "$0.00",
+                        "currency": "HKD",
+                        "spuPvList": [
+                          {}
+                        ],
+                        "spuNameI18n": {
+                          "en": "Mixed Grain Rice",
+                          "default": "H雜糧飯",
+                          "zh-HK": "H雜糧飯"
+                        },
+                        "groupSkuCount": 3,
+                        "count": 1
+                      }
+                    ],
+                    "groupNameI18n": {
+                      "zh-HK": "*主食",
+                      "default": "*主食"
+                    }
+                  }
+                ],
+                "remark": "",
+                "desc": "不需要外賣餐具,H川香孜然牛肉,H肉碎蒸水蛋,H清炒奶白菜,H雜糧飯",
+                "picList": [
+                  "http://img-ap-hongkong.mykeeta.net/sailorproduct/7e20c08fff5d9938b1f9d3d6607af0a8142591.jpg"
+                ],
+                "spec": "",
+                "priceWithoutGroup": {
+                  "amount": 63000,
+                  "amountStr": "$105.00",
+                  "originAmount": 63000,
+                  "originAmountStr": "$105.00",
+                  "unitPrice": 10500,
+                  "originUnitPrice": 10500
+                },
+                "priceWithGroup": {
+                  "amount": 63000,
+                  "amountStr": "$105.00",
+                  "originAmount": 63000,
+                  "originAmountStr": "$105.00",
+                  "unitPrice": 10500,
+                  "originUnitPrice": 10500
+                },
+                "nameI18n": {
+                  "en": "11-A1 Beef Set Meal",
+                  "default": "11-A1牛肉套餐",
+                  "zh-HK": "11-A1牛肉套餐"
+                },
+                "descI18n": {
+                  "zh-HK": "不需要外賣餐具,H川香孜然牛肉,H肉碎蒸水蛋,H清炒奶白菜,H雜糧飯",
+                  "default": "不需要外賣餐具,H川香孜然牛肉,H肉碎蒸水蛋,H清炒奶白菜,H雜糧飯"
+                },
+                "specI18n": {
+                  "zh-HK": "",
+                  "default": ""
+                },
+                "merchantSubOrderId": 6813220245116,
+                "promotions": [],
+                "tags": [],
+                "notLast": false,
+                "totalCount": 6
+              },
+              {
+                "spuId": 11160706,
+                "skuId": 10072236,
+                "count": 3,
+                "price": 43680,
+                "priceStr": "$436.80",
+                "orderViewId": 6811685393051,
+                "originPrice": 54600,
+                "originPriceStr": "$546.00",
+                "name": "11-A4雞肉套餐",
+                "id": 91196144,
+                "currency": "HKD",
+                "spuPvList": [
+                  {}
+                ],
+                "groups": [
+                  {
+                    "groupId": 4010336,
+                    "groupName": "餐具",
+                    "shopProductGroupSkuList": [
+                      {
+                        "groupSkuId": 22049653,
+                        "spuId": 8061503,
+                        "spuName": "不需要外賣餐具",
+                        "price": 0,
+                        "priceStr": "$0.00",
+                        "currency": "HKD",
+                        "spuPvList": [],
+                        "spuNameI18n": {
+                          "en": "No cutlery please",
+                          "default": "不需要外賣餐具",
+                          "zh-HK": "不需要外賣餐具"
+                        },
+                        "groupSkuCount": 3,
+                        "count": 1
+                      }
+                    ],
+                    "groupNameI18n": {
+                      "en": "Cutlery",
+                      "default": "餐具",
+                      "zh-HK": "餐具"
+                    }
+                  },
+                  {
+                    "groupId": 4674810,
+                    "groupName": "11-A4雞肉套餐-主菜",
+                    "shopProductGroupSkuList": [
+                      {
+                        "groupSkuId": 26237924,
+                        "spuId": 10097605,
+                        "spuName": "H法式香草烤雞腿",
+                        "price": 0,
+                        "priceStr": "$0.00",
+                        "currency": "HKD",
+                        "spuPvList": [
+                          {}
+                        ],
+                        "spuNameI18n": {
+                          "en": "H. French-style Herb Roasted Chicken Thigh",
+                          "default": "H法式香草烤雞腿",
+                          "zh-HK": "H法式香草烤雞腿"
+                        },
+                        "groupSkuCount": 3,
+                        "count": 1
+                      }
+                    ],
+                    "groupNameI18n": {
+                      "en": "11-A4 Chicken Set Meal - Main Course",
+                      "default": "11-A4雞肉套餐-主菜",
+                      "zh-HK": "11-A4雞肉套餐-主菜"
+                    }
+                  },
+                  {
+                    "groupId": 4664355,
+                    "groupName": "11-A套餐-搭配1",
+                    "shopProductGroupSkuList": [
+                      {
+                        "groupSkuId": 26249281,
+                        "spuId": 11121041,
+                        "spuName": "H肉碎蒸水蛋",
+                        "price": 0,
+                        "priceStr": "$0.00",
+                        "currency": "HKD",
+                        "spuPvList": [
+                          {}
+                        ],
+                        "spuNameI18n": {
+                          "zh-HK": "H肉碎蒸水蛋",
+                          "default": "H肉碎蒸水蛋"
+                        },
+                        "groupSkuCount": 3,
+                        "count": 1
+                      }
+                    ],
+                    "groupNameI18n": {
+                      "zh-HK": "11-A套餐-搭配1",
+                      "default": "11-A套餐-搭配1"
+                    }
+                  },
+                  {
+                    "groupId": 4663293,
+                    "groupName": "11-A套餐-搭配2",
+                    "shopProductGroupSkuList": [
+                      {
+                        "groupSkuId": 26231181,
+                        "spuId": 11141322,
+                        "spuName": "H清炒奶白菜",
+                        "price": 0,
+                        "priceStr": "$0.00",
+                        "currency": "HKD",
+                        "spuPvList": [
+                          {}
+                        ],
+                        "spuNameI18n": {
+                          "en": "H. Stir-Fried Baby Bok Choy",
+                          "default": "H清炒奶白菜",
+                          "zh-HK": "H清炒奶白菜"
+                        },
+                        "groupSkuCount": 3,
+                        "count": 1
+                      }
+                    ],
+                    "groupNameI18n": {
+                      "zh-HK": "11-A套餐-搭配2",
+                      "default": "11-A套餐-搭配2"
+                    }
+                  },
+                  {
+                    "groupId": 4244807,
+                    "groupName": "*主食",
+                    "shopProductGroupSkuList": [
+                      {
+                        "groupSkuId": 23231017,
+                        "spuId": 9525472,
+                        "spuName": "H雜糧飯",
+                        "price": 0,
+                        "priceStr": "$0.00",
+                        "currency": "HKD",
+                        "spuPvList": [
+                          {}
+                        ],
+                        "spuNameI18n": {
+                          "en": "Mixed Grain Rice",
+                          "default": "H雜糧飯",
+                          "zh-HK": "H雜糧飯"
+                        },
+                        "groupSkuCount": 3,
+                        "count": 1
+                      }
+                    ],
+                    "groupNameI18n": {
+                      "zh-HK": "*主食",
+                      "default": "*主食"
+                    }
+                  }
+                ],
+                "remark": "",
+                "desc": "不需要外賣餐具,H法式香草烤雞腿,H肉碎蒸水蛋,H清炒奶白菜,H雜糧飯",
+                "picList": [
+                  "http://img-ap-hongkong.mykeeta.net/sailorproduct/32def19065591e2a01560f10e891077e149449.jpg"
+                ],
+                "spec": "",
+                "priceWithoutGroup": {
+                  "amount": 54600,
+                  "amountStr": "$91.00",
+                  "originAmount": 54600,
+                  "originAmountStr": "$91.00",
+                  "unitPrice": 9100,
+                  "originUnitPrice": 9100
+                },
+                "priceWithGroup": {
+                  "amount": 54600,
+                  "amountStr": "$91.00",
+                  "originAmount": 54600,
+                  "originAmountStr": "$91.00",
+                  "unitPrice": 9100,
+                  "originUnitPrice": 9100
+                },
+                "nameI18n": {
+                  "en": "11-A4 Chicken Set Meal",
+                  "default": "11-A4雞肉套餐",
+                  "zh-HK": "11-A4雞肉套餐"
+                },
+                "descI18n": {
+                  "zh-HK": "不需要外賣餐具,H法式香草烤雞腿,H肉碎蒸水蛋,H清炒奶白菜,H雜糧飯",
+                  "default": "不需要外賣餐具,H法式香草烤雞腿,H肉碎蒸水蛋,H清炒奶白菜,H雜糧飯"
+                },
+                "specI18n": {
+                  "zh-HK": "",
+                  "default": ""
+                },
+                "merchantSubOrderId": 6813220245116,
+                "promotions": [],
+                "tags": [],
+                "notLast": false,
+                "totalCount": 6
+              }
+            ],
+            "merchantOrderDeliveries": [
+              {
+                "id": 36542214,
+                "waybillId": 1731380585398372,
+                "subimitDeliveryResult": 0,
+                "deliveryStatus": 50,
+                "deliveryStatusTime": 1731382934342,
+                "deliveryMode": "[1001]",
+                "courierName": "車手 1",
+                "courierPhone": "96****79",
+                "courierPrivacyPhone": "",
+                "orderViewId": 6811685393051,
+                "arrivedStatusTime": 1731382934342,
+                "merchantOrderDeliveryHisList": [
+                  {
+                    "orderViewId": 6811685393051,
+                    "deliveryStatus": 50,
+                    "ctime": 1731382934369,
+                    "opTime": 1731382934342,
+                    "shopId": 580794,
+                    "waybillId": 1731380585398372,
+                    "opScene": 10,
+                    "courierId": 1715662308088733,
+                    "courierName": "車手 1",
+                    "courierPhone": "96****79",
+                    "utime": 1731382934369,
+                    "courierPhoneInterCode": "852",
+                    "merchantSubOrderId": 6813220245116,
+                    "deliveryId": 36542214
+                  },
+                  {
+                    "orderViewId": 6811685393051,
+                    "deliveryStatus": 30,
+                    "ctime": 1731382257812,
+                    "opTime": 1731382257784,
+                    "shopId": 580794,
+                    "waybillId": 1731380585398372,
+                    "opScene": 10,
+                    "courierId": 1715662308088733,
+                    "courierName": "車手 1",
+                    "courierPhone": "96****79",
+                    "utime": 1731382257812,
+                    "courierPhoneInterCode": "852",
+                    "merchantSubOrderId": 6813220245116,
+                    "deliveryId": 36542214
+                  },
+                  {
+                    "orderViewId": 6811685393051,
+                    "deliveryStatus": 25,
+                    "ctime": 1731382231249,
+                    "opTime": 1731382231221,
+                    "shopId": 580794,
+                    "waybillId": 1731380585398372,
+                    "opScene": 10,
+                    "courierId": 1715662308088733,
+                    "courierName": "車手 1",
+                    "courierPhone": "96****79",
+                    "utime": 1731382231249,
+                    "courierPhoneInterCode": "852",
+                    "merchantSubOrderId": 6813220245116,
+                    "deliveryId": 36542214
+                  },
+                  {
+                    "orderViewId": 6811685393051,
+                    "deliveryStatus": 20,
+                    "ctime": 1731381605120,
+                    "opTime": 1731381605088,
+                    "shopId": 580794,
+                    "waybillId": 1731380585398372,
+                    "opScene": 10,
+                    "courierId": 1715662308088733,
+                    "courierName": "車手 1",
+                    "courierPhone": "96****79",
+                    "utime": 1731381605120,
+                    "courierPhoneInterCode": "852",
+                    "merchantSubOrderId": 6813220245116,
+                    "deliveryId": 36542214
+                  },
+                  {
+                    "orderViewId": 6811685393051,
+                    "deliveryStatus": 10,
+                    "ctime": 1731381597900,
+                    "opTime": 1731381597879,
+                    "shopId": 580794,
+                    "waybillId": 1731380585398372,
+                    "opScene": 10,
+                    "courierName": "車手 1",
+                    "courierPhone": "",
+                    "utime": 1731381597900,
+                    "merchantSubOrderId": 6813220245116,
+                    "deliveryId": 36542214
+                  },
+                  {
+                    "orderViewId": 6811685393051,
+                    "deliveryStatus": 10,
+                    "ctime": 1731381567869,
+                    "opTime": 1731381567802,
+                    "shopId": 580794,
+                    "waybillId": 1731380585398372,
+                    "opScene": 10,
+                    "courierName": "車手 1",
+                    "courierPhone": "",
+                    "utime": 1731381567869,
+                    "merchantSubOrderId": 6813220245116,
+                    "deliveryId": 36542214
+                  },
+                  {
+                    "orderViewId": 6811685393051,
+                    "deliveryStatus": 10,
+                    "ctime": 1731381507814,
+                    "opTime": 1731381507773,
+                    "shopId": 580794,
+                    "waybillId": 1731380585398372,
+                    "opScene": 10,
+                    "courierName": "車手 1",
+                    "courierPhone": "",
+                    "utime": 1731381507814,
+                    "merchantSubOrderId": 6813220245116,
+                    "deliveryId": 36542214
+                  },
+                  {
+                    "orderViewId": 6811685393051,
+                    "deliveryStatus": 0,
+                    "ctime": 1731380585963,
+                    "opTime": 1731380585954,
+                    "shopId": 580794,
+                    "waybillId": 1731380585398372,
+                    "opScene": 10,
+                    "courierName": "車手 1",
+                    "courierPhone": "",
+                    "utime": 1731380585963,
+                    "merchantSubOrderId": 6813220245116,
+                    "deliveryId": 36542214
+                  }
+                ],
+                "createdStatusTime": 1731380585954,
+                "dispatchedStatusTime": 1731381597879,
+                "receivedStatusTime": 1731381605088,
+                "toStoreStatusTime": 1731382231221,
+                "tookStatusTime": 1731382257784,
+                "ctime": 1731380585845,
+                "redesign": 0,
+                "courierId": 1715662308088733,
+                "courierPhoneInterCode": "852",
+                "merchantSubOrderId": 6813220245116,
+                "bigOrderTag": true,
+                "privacyPhone": "",
+                "extensionNumber": "",
+                "privacyInterCode": "",
+                "courierInfoDesensitizePrivacy": true,
+                "showPrivacyPhone": false,
+                "commonExt": {
+                  "courierVehicle": 3,
+                  "vehiclePlateNumber": "XM8026"
+                }
+              }
+            ],
+            "deliveryInfos": []
+          },
+          {
+            "merchantSubOrder": {
+              "orderViewId": 6811685393051,
+              "merchantSubOrderId": 6810411536619,
+              "shopId": 580794,
+              "userId": 10000000615590,
+              "subOrderSeq": "6775-2/2",
+              "commonExt": {
+                "subOrderSeqNo": 2,
+                "subOrderCount": 2
+              },
+              "ctime": 1731380585297,
+              "utime": 1731380585297
+            },
+            "products": [
+              {
+                "spuId": 11153734,
+                "skuId": 10090677,
+                "count": 3,
+                "price": 50400,
+                "priceStr": "$504.00",
+                "orderViewId": 6811685393051,
+                "originPrice": 63000,
+                "originPriceStr": "$630.00",
+                "name": "11-A1牛肉套餐",
+                "id": 91196145,
+                "currency": "HKD",
+                "spuPvList": [
+                  {}
+                ],
+                "groups": [
+                  {
+                    "groupId": 4010336,
+                    "groupName": "餐具",
+                    "shopProductGroupSkuList": [
+                      {
+                        "groupSkuId": 22049653,
+                        "spuId": 8061503,
+                        "spuName": "不需要外賣餐具",
+                        "price": 0,
+                        "priceStr": "$0.00",
+                        "currency": "HKD",
+                        "spuPvList": [],
+                        "spuNameI18n": {
+                          "en": "No cutlery please",
+                          "default": "不需要外賣餐具",
+                          "zh-HK": "不需要外賣餐具"
+                        },
+                        "groupSkuCount": 3,
+                        "count": 1
+                      }
+                    ],
+                    "groupNameI18n": {
+                      "en": "Cutlery",
+                      "default": "餐具",
+                      "zh-HK": "餐具"
+                    }
+                  },
+                  {
+                    "groupId": 4669111,
+                    "groupName": "11-A1牛肉套餐-主菜",
+                    "shopProductGroupSkuList": [
+                      {
+                        "groupSkuId": 26246567,
+                        "spuId": 9516821,
+                        "spuName": "H川香孜然牛肉",
+                        "price": 0,
+                        "priceStr": "$0.00",
+                        "currency": "HKD",
+                        "spuPvList": [
+                          {}
+                        ],
+                        "spuNameI18n": {
+                          "en": "Sichuan Cumin Beef",
+                          "default": "H川香孜然牛肉",
+                          "zh-HK": "H川香孜然牛肉"
+                        },
+                        "groupSkuCount": 3,
+                        "count": 1
+                      }
+                    ],
+                    "groupNameI18n": {
+                      "en": "11-A1 Beef Set Meal - Main Course",
+                      "default": "11-A1牛肉套餐-主菜",
+                      "zh-HK": "11-A1牛肉套餐-主菜"
+                    }
+                  },
+                  {
+                    "groupId": 4664355,
+                    "groupName": "11-A套餐-搭配1",
+                    "shopProductGroupSkuList": [
+                      {
+                        "groupSkuId": 26249281,
+                        "spuId": 11121041,
+                        "spuName": "H肉碎蒸水蛋",
+                        "price": 0,
+                        "priceStr": "$0.00",
+                        "currency": "HKD",
+                        "spuPvList": [
+                          {}
+                        ],
+                        "spuNameI18n": {
+                          "zh-HK": "H肉碎蒸水蛋",
+                          "default": "H肉碎蒸水蛋"
+                        },
+                        "groupSkuCount": 3,
+                        "count": 1
+                      }
+                    ],
+                    "groupNameI18n": {
+                      "zh-HK": "11-A套餐-搭配1",
+                      "default": "11-A套餐-搭配1"
+                    }
+                  },
+                  {
+                    "groupId": 4663293,
+                    "groupName": "11-A套餐-搭配2",
+                    "shopProductGroupSkuList": [
+                      {
+                        "groupSkuId": 26231181,
+                        "spuId": 11141322,
+                        "spuName": "H清炒奶白菜",
+                        "price": 0,
+                        "priceStr": "$0.00",
+                        "currency": "HKD",
+                        "spuPvList": [
+                          {}
+                        ],
+                        "spuNameI18n": {
+                          "en": "H. Stir-Fried Baby Bok Choy",
+                          "default": "H清炒奶白菜",
+                          "zh-HK": "H清炒奶白菜"
+                        },
+                        "groupSkuCount": 3,
+                        "count": 1
+                      }
+                    ],
+                    "groupNameI18n": {
+                      "zh-HK": "11-A套餐-搭配2",
+                      "default": "11-A套餐-搭配2"
+                    }
+                  },
+                  {
+                    "groupId": 4244807,
+                    "groupName": "*主食",
+                    "shopProductGroupSkuList": [
+                      {
+                        "groupSkuId": 23231017,
+                        "spuId": 9525472,
+                        "spuName": "H雜糧飯",
+                        "price": 0,
+                        "priceStr": "$0.00",
+                        "currency": "HKD",
+                        "spuPvList": [
+                          {}
+                        ],
+                        "spuNameI18n": {
+                          "en": "Mixed Grain Rice",
+                          "default": "H雜糧飯",
+                          "zh-HK": "H雜糧飯"
+                        },
+                        "groupSkuCount": 3,
+                        "count": 1
+                      }
+                    ],
+                    "groupNameI18n": {
+                      "zh-HK": "*主食",
+                      "default": "*主食"
+                    }
+                  }
+                ],
+                "remark": "",
+                "desc": "不需要外賣餐具,H川香孜然牛肉,H肉碎蒸水蛋,H清炒奶白菜,H雜糧飯",
+                "picList": [
+                  "http://img-ap-hongkong.mykeeta.net/sailorproduct/7e20c08fff5d9938b1f9d3d6607af0a8142591.jpg"
+                ],
+                "spec": "",
+                "priceWithoutGroup": {
+                  "amount": 63000,
+                  "amountStr": "$105.00",
+                  "originAmount": 63000,
+                  "originAmountStr": "$105.00",
+                  "unitPrice": 10500,
+                  "originUnitPrice": 10500
+                },
+                "priceWithGroup": {
+                  "amount": 63000,
+                  "amountStr": "$105.00",
+                  "originAmount": 63000,
+                  "originAmountStr": "$105.00",
+                  "unitPrice": 10500,
+                  "originUnitPrice": 10500
+                },
+                "nameI18n": {
+                  "en": "11-A1 Beef Set Meal",
+                  "default": "11-A1牛肉套餐",
+                  "zh-HK": "11-A1牛肉套餐"
+                },
+                "descI18n": {
+                  "zh-HK": "不需要外賣餐具,H川香孜然牛肉,H肉碎蒸水蛋,H清炒奶白菜,H雜糧飯",
+                  "default": "不需要外賣餐具,H川香孜然牛肉,H肉碎蒸水蛋,H清炒奶白菜,H雜糧飯"
+                },
+                "specI18n": {
+                  "zh-HK": "",
+                  "default": ""
+                },
+                "merchantSubOrderId": 6810411536619,
+                "promotions": [],
+                "tags": [],
+                "notLast": false,
+                "totalCount": 6
+              },
+              {
+                "spuId": 11160706,
+                "skuId": 10072236,
+                "count": 3,
+                "price": 43680,
+                "priceStr": "$436.80",
+                "orderViewId": 6811685393051,
+                "originPrice": 54600,
+                "originPriceStr": "$546.00",
+                "name": "11-A4雞肉套餐",
+                "id": 91196144,
+                "currency": "HKD",
+                "spuPvList": [
+                  {}
+                ],
+                "groups": [
+                  {
+                    "groupId": 4010336,
+                    "groupName": "餐具",
+                    "shopProductGroupSkuList": [
+                      {
+                        "groupSkuId": 22049653,
+                        "spuId": 8061503,
+                        "spuName": "不需要外賣餐具",
+                        "price": 0,
+                        "priceStr": "$0.00",
+                        "currency": "HKD",
+                        "spuPvList": [],
+                        "spuNameI18n": {
+                          "en": "No cutlery please",
+                          "default": "不需要外賣餐具",
+                          "zh-HK": "不需要外賣餐具"
+                        },
+                        "groupSkuCount": 3,
+                        "count": 1
+                      }
+                    ],
+                    "groupNameI18n": {
+                      "en": "Cutlery",
+                      "default": "餐具",
+                      "zh-HK": "餐具"
+                    }
+                  },
+                  {
+                    "groupId": 4674810,
+                    "groupName": "11-A4雞肉套餐-主菜",
+                    "shopProductGroupSkuList": [
+                      {
+                        "groupSkuId": 26237924,
+                        "spuId": 10097605,
+                        "spuName": "H法式香草烤雞腿",
+                        "price": 0,
+                        "priceStr": "$0.00",
+                        "currency": "HKD",
+                        "spuPvList": [
+                          {}
+                        ],
+                        "spuNameI18n": {
+                          "en": "H. French-style Herb Roasted Chicken Thigh",
+                          "default": "H法式香草烤雞腿",
+                          "zh-HK": "H法式香草烤雞腿"
+                        },
+                        "groupSkuCount": 3,
+                        "count": 1
+                      }
+                    ],
+                    "groupNameI18n": {
+                      "en": "11-A4 Chicken Set Meal - Main Course",
+                      "default": "11-A4雞肉套餐-主菜",
+                      "zh-HK": "11-A4雞肉套餐-主菜"
+                    }
+                  },
+                  {
+                    "groupId": 4664355,
+                    "groupName": "11-A套餐-搭配1",
+                    "shopProductGroupSkuList": [
+                      {
+                        "groupSkuId": 26249281,
+                        "spuId": 11121041,
+                        "spuName": "H肉碎蒸水蛋",
+                        "price": 0,
+                        "priceStr": "$0.00",
+                        "currency": "HKD",
+                        "spuPvList": [
+                          {}
+                        ],
+                        "spuNameI18n": {
+                          "zh-HK": "H肉碎蒸水蛋",
+                          "default": "H肉碎蒸水蛋"
+                        },
+                        "groupSkuCount": 3,
+                        "count": 1
+                      }
+                    ],
+                    "groupNameI18n": {
+                      "zh-HK": "11-A套餐-搭配1",
+                      "default": "11-A套餐-搭配1"
+                    }
+                  },
+                  {
+                    "groupId": 4663293,
+                    "groupName": "11-A套餐-搭配2",
+                    "shopProductGroupSkuList": [
+                      {
+                        "groupSkuId": 26231181,
+                        "spuId": 11141322,
+                        "spuName": "H清炒奶白菜",
+                        "price": 0,
+                        "priceStr": "$0.00",
+                        "currency": "HKD",
+                        "spuPvList": [
+                          {}
+                        ],
+                        "spuNameI18n": {
+                          "en": "H. Stir-Fried Baby Bok Choy",
+                          "default": "H清炒奶白菜",
+                          "zh-HK": "H清炒奶白菜"
+                        },
+                        "groupSkuCount": 3,
+                        "count": 1
+                      }
+                    ],
+                    "groupNameI18n": {
+                      "zh-HK": "11-A套餐-搭配2",
+                      "default": "11-A套餐-搭配2"
+                    }
+                  },
+                  {
+                    "groupId": 4244807,
+                    "groupName": "*主食",
+                    "shopProductGroupSkuList": [
+                      {
+                        "groupSkuId": 23231017,
+                        "spuId": 9525472,
+                        "spuName": "H雜糧飯",
+                        "price": 0,
+                        "priceStr": "$0.00",
+                        "currency": "HKD",
+                        "spuPvList": [
+                          {}
+                        ],
+                        "spuNameI18n": {
+                          "en": "Mixed Grain Rice",
+                          "default": "H雜糧飯",
+                          "zh-HK": "H雜糧飯"
+                        },
+                        "groupSkuCount": 3,
+                        "count": 1
+                      }
+                    ],
+                    "groupNameI18n": {
+                      "zh-HK": "*主食",
+                      "default": "*主食"
+                    }
+                  }
+                ],
+                "remark": "",
+                "desc": "不需要外賣餐具,H法式香草烤雞腿,H肉碎蒸水蛋,H清炒奶白菜,H雜糧飯",
+                "picList": [
+                  "http://img-ap-hongkong.mykeeta.net/sailorproduct/32def19065591e2a01560f10e891077e149449.jpg"
+                ],
+                "spec": "",
+                "priceWithoutGroup": {
+                  "amount": 54600,
+                  "amountStr": "$91.00",
+                  "originAmount": 54600,
+                  "originAmountStr": "$91.00",
+                  "unitPrice": 9100,
+                  "originUnitPrice": 9100
+                },
+                "priceWithGroup": {
+                  "amount": 54600,
+                  "amountStr": "$91.00",
+                  "originAmount": 54600,
+                  "originAmountStr": "$91.00",
+                  "unitPrice": 9100,
+                  "originUnitPrice": 9100
+                },
+                "nameI18n": {
+                  "en": "11-A4 Chicken Set Meal",
+                  "default": "11-A4雞肉套餐",
+                  "zh-HK": "11-A4雞肉套餐"
+                },
+                "descI18n": {
+                  "zh-HK": "不需要外賣餐具,H法式香草烤雞腿,H肉碎蒸水蛋,H清炒奶白菜,H雜糧飯",
+                  "default": "不需要外賣餐具,H法式香草烤雞腿,H肉碎蒸水蛋,H清炒奶白菜,H雜糧飯"
+                },
+                "specI18n": {
+                  "zh-HK": "",
+                  "default": ""
+                },
+                "merchantSubOrderId": 6810411536619,
+                "promotions": [],
+                "tags": [],
+                "notLast": false,
+                "totalCount": 6
+              }
+            ],
+            "merchantOrderDeliveries": [
+              {
+                "id": 36542215,
+                "waybillId": 1731380585398182,
+                "subimitDeliveryResult": 0,
+                "deliveryStatus": 50,
+                "deliveryStatusTime": 1731383440208,
+                "deliveryMode": "[1001]",
+                "courierName": "車手 2",
+                "courierPhone": "91****16",
+                "courierPrivacyPhone": "",
+                "orderViewId": 6811685393051,
+                "arrivedStatusTime": 1731383440208,
+                "merchantOrderDeliveryHisList": [
+                  {
+                    "orderViewId": 6811685393051,
+                    "deliveryStatus": 50,
+                    "ctime": 1731383440239,
+                    "opTime": 1731383440208,
+                    "shopId": 580794,
+                    "waybillId": 1731380585398182,
+                    "opScene": 10,
+                    "courierId": 1722185960257983,
+                    "courierName": "車手 2",
+                    "courierPhone": "91****16",
+                    "utime": 1731383440239,
+                    "courierPhoneInterCode": "852",
+                    "merchantSubOrderId": 6810411536619,
+                    "deliveryId": 36542215
+                  },
+                  {
+                    "orderViewId": 6811685393051,
+                    "deliveryStatus": 30,
+                    "ctime": 1731382789145,
+                    "opTime": 1731382789116,
+                    "shopId": 580794,
+                    "waybillId": 1731380585398182,
+                    "opScene": 10,
+                    "courierId": 1722185960257983,
+                    "courierName": "車手 2",
+                    "courierPhone": "91****16",
+                    "utime": 1731382789145,
+                    "courierPhoneInterCode": "852",
+                    "merchantSubOrderId": 6810411536619,
+                    "deliveryId": 36542215
+                  },
+                  {
+                    "orderViewId": 6811685393051,
+                    "deliveryStatus": 25,
+                    "ctime": 1731382670868,
+                    "opTime": 1731382670841,
+                    "shopId": 580794,
+                    "waybillId": 1731380585398182,
+                    "opScene": 10,
+                    "courierId": 1722185960257983,
+                    "courierName": "車手 2",
+                    "courierPhone": "91****16",
+                    "utime": 1731382670868,
+                    "courierPhoneInterCode": "852",
+                    "merchantSubOrderId": 6810411536619,
+                    "deliveryId": 36542215
+                  },
+                  {
+                    "orderViewId": 6811685393051,
+                    "deliveryStatus": 20,
+                    "ctime": 1731381514180,
+                    "opTime": 1731381514145,
+                    "shopId": 580794,
+                    "waybillId": 1731380585398182,
+                    "opScene": 10,
+                    "courierId": 1722185960257983,
+                    "courierName": "車手 2",
+                    "courierPhone": "91****16",
+                    "utime": 1731381514180,
+                    "courierPhoneInterCode": "852",
+                    "merchantSubOrderId": 6810411536619,
+                    "deliveryId": 36542215
+                  },
+                  {
+                    "orderViewId": 6811685393051,
+                    "deliveryStatus": 10,
+                    "ctime": 1731381507822,
+                    "opTime": 1731381507775,
+                    "shopId": 580794,
+                    "waybillId": 1731380585398182,
+                    "opScene": 10,
+                    "courierName": "車手 2",
+                    "courierPhone": "",
+                    "utime": 1731381507822,
+                    "merchantSubOrderId": 6810411536619,
+                    "deliveryId": 36542215
+                  },
+                  {
+                    "orderViewId": 6811685393051,
+                    "deliveryStatus": 0,
+                    "ctime": 1731380585963,
+                    "opTime": 1731380585954,
+                    "shopId": 580794,
+                    "waybillId": 1731380585398182,
+                    "opScene": 10,
+                    "courierName": "車手 2",
+                    "courierPhone": "",
+                    "utime": 1731380585963,
+                    "merchantSubOrderId": 6810411536619,
+                    "deliveryId": 36542215
+                  }
+                ],
+                "createdStatusTime": 1731380585954,
+                "dispatchedStatusTime": 1731381507775,
+                "receivedStatusTime": 1731381514145,
+                "toStoreStatusTime": 1731382670841,
+                "tookStatusTime": 1731382789116,
+                "ctime": 1731380585845,
+                "redesign": 0,
+                "courierId": 1722185960257983,
+                "courierPhoneInterCode": "852",
+                "merchantSubOrderId": 6810411536619,
+                "bigOrderTag": true,
+                "privacyPhone": "",
+                "extensionNumber": "",
+                "privacyInterCode": "",
+                "courierInfoDesensitizePrivacy": true,
+                "showPrivacyPhone": false,
+                "commonExt": {
+                  "courierVehicle": 3,
+                  "vehiclePlateNumber": "XL9685"
+                }
+              }
+            ],
+            "deliveryInfos": []
+          }
+        ],
+        "tagCodes": [
+          101000,
+          106100,
+          103002,
+          108000,
+          109000
+        ],
+        "refundInfo": {
+          "refundNodeList": [],
+          "appealRefundNums": 0,
+          "appealInfoList": []
+        },
+        "partRefundOrderTag": false,
+        "groupChoiceCompensationTag": false,
+        "printTemplateType": 1
+      }
+    ],
+    "allTotalCount": 1,
+    "allTotalDeliveryCount": 1,
+    "allTotalPickupCount": 0,
+    "completedTotalCount": 1,
+    "completedTotalDeliveryCount": 1,
+    "completedTotalPickupCount": 0,
+    "refundTotalCount": null,
+    "underwayTotalCount": 0,
+    "underwayTotalDeliveryCount": 0,
+    "underwayTotalPickupCount": 0,
+    "canceledTotalCount": 0,
+    "canceledTotalDeliveryCount": 0,
+    "canceledTotalPickupCount": 0,
+    "totalCustomerPaid": null,
+    "completedCustomerPaid": null,
+    "inProgressCustomerPaid": null,
+    "cancelledCustomerPaid": null,
+    "totalProductPrice": null,
+    "completedProductPrice": null,
+    "inProgressProductPrice": null,
+    "cancelledProductPrice": null,
+    "totalSales": null,
+    "completedSales": null,
+    "inProgressSales": null,
+    "cancelledSales": null,
+    "totalCustomerActPaid": null,
+    "completedCustomerActPaid": null,
+    "inProgressCustomerActPaid": null,
+    "cancelledCustomerActPaid": null,
+    "total": 1
+  },
+  "success": true
+}

@@ -1,17 +1,17 @@
 
 importScripts('libs/xlsx.full.min.js');
 
-console.log("background.js 运行");
+console.log("background.js 運行");
 
 chrome.runtime.onInstalled.addListener(() => {
-  console.log("扩展已安装");
+  console.log("擴展已安裝");
 });
 
 let isListening = false;
 
 chrome.storage.local.get(['isListening'], (result) => {
   isListening = result && result.isListening || false;
-  console.log("初始状态:", isListening);
+  console.log("初始狀態:", isListening);
   chrome.storage.local.set({ "isListening": isListening });
 });
 
@@ -48,7 +48,7 @@ function openDatabase() {
     const request = indexedDB.open(dbName, 1);
 
     request.onerror = () => {
-      console.error("IndexedDB 打开失败");
+      console.error("IndexedDB 打開失敗");
       reject(request.error);
     };
 
@@ -71,7 +71,7 @@ function saveToDatabase(data, type) {
     return new Promise((resolve, reject) => {
       const transaction = db.transaction([storeName], "readwrite");
       const store = transaction.objectStore(storeName);
-      console.log('Key path:', store.keyPath); // 显示主键字段
+      console.log('Key path:', store.keyPath); // 顯示主鍵字段
       console.log('Auto increment:', store.autoIncrement); // 是否自增
       let requests = [];
 
@@ -92,14 +92,14 @@ function saveToDatabase(data, type) {
         request.onsuccess = () => {
           successCount++;
           if (successCount === requests.length && !errorOccurred) {
-            console.log("所有数据已成功保存到 IndexedDB");
+            console.log("所有數據已成功保存到 IndexedDB");
             resolve();
           }
         };
 
         request.onerror = () => {
           if (!errorOccurred) {
-            console.error("保存数据到 IndexedDB 时出错:", request.error);
+            console.error("保存數據到 IndexedDB 時出錯:", request.error);
             errorOccurred = true;
             reject(request.error);
           }
@@ -123,7 +123,7 @@ function getDataFromDatabase() {
       };
 
       request.onerror = () => {
-        console.error("从 IndexedDB 获取数据时出错:", request.error);
+        console.error("從 IndexedDB 獲取數據時出錯:", request.error);
         reject(request.error);
       };
     });
@@ -138,13 +138,13 @@ function clearDatabase(sendResponse) {
       const request = store.clear();
 
       request.onsuccess = () => {
-        console.log("IndexedDB 数据已成功清除");
+        console.log("IndexedDB 數據已成功清除");
         sendResponse({success:true})
         resolve();
       };
 
       request.onerror = () => {
-        console.error("清除 IndexedDB 数据时出错:", request.error);
+        console.error("清除 IndexedDB 數據時出錯:", request.error);
         sendResponse({ success: false })
         reject(request.error);
       };
@@ -152,7 +152,7 @@ function clearDatabase(sendResponse) {
   });
 }
 
-// 监听来自 popup 和 content.js的消息
+// 監聽來自 popup 和 content.js的消息
 chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
   if (message.action === "start") {
     startListening(sendResponse);
@@ -177,68 +177,96 @@ function startListening(sendResponse) {
   console.log("Listening for API requests...");
 
   // 通知所有的tab
-  chrome.tabs.query({}, function (tabs) {
-    tabs.forEach(tab => {
-      if (tab.url && isDomain(tab.url)) {
-        // 向每個標籤頁發送檢查注入狀態的消息
-        chrome.tabs.sendMessage(tab.id, { type: 'checkInjection' }, response => {
-          if (chrome.runtime.lastError || !response || !response.isInjected) {
-            // 只有當 content.js 未被注入時才注入
-            chrome.scripting.executeScript({
-              target: { tabId: tab.id },
-              files: ['content.js']
-            }, () => {
-              // 注入完成後發送 start 消息
-              chrome.tabs.sendMessage(tab.id, {
-                type: 'ajaxInterceptor',
-                to: 'pageScript',
-                action: 'start'
-              }, response => {
-                sendResponse({ success: true });
-                if (chrome.runtime.lastError) {
-                  console.warn(`無法向標籤頁 ${tab.id} 發送消息: `, chrome.runtime.lastError.message);
-                } else {
-                  console.log(`已通知標籤頁 ${tab.id} 開始監聽 (注入後)`);
-                  chrome.storage.local.set({ "isListening": true });
-                }
-              });
-            });
+  // chrome.tabs.query({}, function (tabs) {
+  //   tabs.forEach(tab => {
+  //     if (tab.url && isDomain(tab.url)) {
+  //       // 向每個標籤頁發送檢查注入狀態的消息
+  //       chrome.tabs.sendMessage(tab.id, { type: 'checkInjection' }, response => {
+  //         if (chrome.runtime.lastError || !response || !response.isInjected) {
+  //           // 只有當 content.js 未被注入時才注入
+  //           chrome.scripting.executeScript({
+  //             target: { tabId: tab.id },
+  //             files: ['content.js']
+  //           }, () => {
+  //             // 注入完成後發送 start 消息
+  //             chrome.tabs.sendMessage(tab.id, {
+  //               type: 'ajaxInterceptor',
+  //               to: 'pageScript',
+  //               action: 'start'
+  //             }, response => {
+  //               sendResponse({ success: true });
+  //               if (chrome.runtime.lastError) {
+  //                 console.warn(`無法向標籤頁 ${tab.id} 發送消息: `, chrome.runtime.lastError.message);
+  //               } else {
+  //                 console.log(`已通知標籤頁 ${tab.id} 開始監聽 (注入後)`);
+  //                 chrome.storage.local.set({ "isListening": true });
+  //               }
+  //             });
+  //           });
+  //         } else {
+  //           // 直接發送 start 消息
+  //           chrome.tabs.sendMessage(tab.id, {
+  //             type: 'ajaxInterceptor',
+  //             to: 'pageScript',
+  //             action: 'start'
+  //           }, response => {
+  //             sendResponse({ success: true });
+  //             if (chrome.runtime.lastError) {
+  //               console.warn(`無法向標籤頁 ${tab.id} 發送消息: `, chrome.runtime.lastError.message);
+  //             } else {
+  //               console.log(`已通知標籤頁 ${tab.id} 開始監聽 (已注入)`);
+  //               chrome.storage.local.set({ "isListening": true });
+  //             }
+  //           });
+  //         }
+  //       });
+  //     }
+  //   });
+  // });
+
+  // 只通知當前激活的標籤頁
+  chrome.windows.getCurrent({ populate: true }, function (window) {
+    const activeTab = window.tabs.find(tab => tab.active);
+    chrome.tabs.sendMessage(activeTab.id, { type: 'checkInjection' }, response => {
+      if (chrome.runtime.lastError || !response || !response.isInjected) {
+        // 只有當 content.js 未被注入時才注入
+        chrome.scripting.executeScript({
+          target: { tabId: tab.id },
+          files: ['content.js']
+        }, () => {
+          // 注入完成後發送 start 消息
+          chrome.tabs.sendMessage(tab.id, {
+            type: 'ajaxInterceptor',
+            to: 'pageScript',
+            action: 'start'
+          }, response => {
+            sendResponse({ success: true });
+            if (chrome.runtime.lastError) {
+              console.warn(`無法向標籤頁 ${tab.id} 發送消息: `, chrome.runtime.lastError.message);
+            } else {
+              console.log(`已通知標籤頁 ${tab.id} 開始監聽 (注入後)`);
+              chrome.storage.local.set({ "isListening": true });
+            }
+          });
+        });
+      } else {
+        // 直接發送 start 消息
+        chrome.tabs.sendMessage(tab.id, {
+          type: 'ajaxInterceptor',
+          to: 'pageScript',
+          action: 'start'
+        }, response => {
+          sendResponse({ success: true });
+          if (chrome.runtime.lastError) {
+            console.warn(`無法向標籤頁 ${tab.id} 發送消息: `, chrome.runtime.lastError.message);
           } else {
-            // 直接發送 start 消息
-            chrome.tabs.sendMessage(tab.id, {
-              type: 'ajaxInterceptor',
-              to: 'pageScript',
-              action: 'start'
-            }, response => {
-              sendResponse({ success: true });
-              if (chrome.runtime.lastError) {
-                console.warn(`無法向標籤頁 ${tab.id} 發送消息: `, chrome.runtime.lastError.message);
-              } else {
-                console.log(`已通知標籤頁 ${tab.id} 開始監聽 (已注入)`);
-                chrome.storage.local.set({ "isListening": true });
-              }
-            });
+            console.log(`已通知標籤頁 ${tab.id} 開始監聽 (已注入)`);
+            chrome.storage.local.set({ "isListening": true });
           }
         });
       }
     });
   });
-
-  // 只通知當前激活的標籤頁
-  // chrome.windows.getCurrent({ populate: true }, function (window) {
-  //   const activeTab = window.tabs.find(tab => tab.active);
-  //   chrome.tabs.sendMessage(activeTab.id, {
-  //     type: 'ajaxInterceptor',
-  //     to: 'pageScript',
-  //     action: 'start'
-  //   }, response => {
-  //     if (chrome.runtime.lastError) {
-  //       console.warn(`無法向標籤頁 ${activeTab.id} 發送消息: `, chrome.runtime.lastError.message);
-  //     } else {
-  //       console.log(`已通知標籤頁 ${activeTab.id} 開始監聽`);
-  //     }
-  //   });
-  // });
 
   return sendResponse({success:true})
 }
@@ -250,77 +278,107 @@ function stopListening(sendResponse) {
   console.log("Stopped listening for API requests.");
 
   // 通知所有的tab
-  chrome.tabs.query({}, function (tabs) {
-    tabs.forEach(tab => {
-      if (tab.url && isDomain(tab.url)) {
-        // 向每個標籤頁發送檢查注入狀態的消息
-        chrome.tabs.sendMessage(tab.id, { type: 'checkInjection' }, response => {
-          if (chrome.runtime.lastError || !response || !response.isInjected) {
-            // 只有當 content.js 未被注入時才注入
-            chrome.scripting.executeScript({
-              target: { tabId: tab.id },
-              files: ['content.js']
-            }, () => {
-              // 注入完成後發送 stop 消息
-              chrome.tabs.sendMessage(tab.id, {
-                type: 'ajaxInterceptor',
-                to: 'pageScript',
-                action: 'stop'
-              }, response => {
-                if (chrome.runtime.lastError) {
-                  console.warn(`無法向標籤頁 ${tab.id} 發送消息: `, chrome.runtime.lastError.message);
-                  sendResponse && sendResponse({ success: false });
-                } else {
-                  console.log(`已通知標籤頁 ${tab.id} 停止监听`);
-                  chrome.storage.local.set({ "isListening": false });
-                  sendResponse && sendResponse({ success: true });
-                }
-              });
-            });
+  // chrome.tabs.query({}, function (tabs) {
+  //   tabs.forEach(tab => {
+  //     if (tab.url && isDomain(tab.url)) {
+  //       // 向每個標籤頁發送檢查注入狀態的消息
+  //       chrome.tabs.sendMessage(tab.id, { type: 'checkInjection' }, response => {
+  //         if (chrome.runtime.lastError || !response || !response.isInjected) {
+  //           // 只有當 content.js 未被注入時才注入
+  //           chrome.scripting.executeScript({
+  //             target: { tabId: tab.id },
+  //             files: ['content.js']
+  //           }, () => {
+  //             // 注入完成後發送 stop 消息
+  //             chrome.tabs.sendMessage(tab.id, {
+  //               type: 'ajaxInterceptor',
+  //               to: 'pageScript',
+  //               action: 'stop'
+  //             }, response => {
+  //               if (chrome.runtime.lastError) {
+  //                 console.warn(`無法向標籤頁 ${tab.id} 發送消息: `, chrome.runtime.lastError.message);
+  //                 sendResponse && sendResponse({ success: false });
+  //               } else {
+  //                 console.log(`已通知標籤頁 ${tab.id} 停止監聽`);
+  //                 chrome.storage.local.set({ "isListening": false });
+  //                 sendResponse && sendResponse({ success: true });
+  //               }
+  //             });
+  //           });
+  //         } else {
+  //           // 直接發送 start 消息
+  //           chrome.tabs.sendMessage(tab.id, {
+  //             type: 'ajaxInterceptor',
+  //             to: 'pageScript',
+  //             action: 'stop'
+  //           }, response => {
+  //             if (chrome.runtime.lastError) {
+  //               console.warn(`無法向標籤頁 ${tab.id} 發送消息: `, chrome.runtime.lastError.message);
+  //               sendResponse && sendResponse({ success: false });
+  //             } else {
+  //               console.log(`已通知標籤頁 ${tab.id} 停止監聽`);
+  //               chrome.storage.local.set({ "isListening": false });
+  //               sendResponse && sendResponse({ success: true });
+  //             }
+  //           });
+  //         }
+  //       });
+  //     }
+  //   });
+  // });
+
+  // 只通知當前激活的tab
+  chrome.windows.getCurrent({ populate: true }, function (window) {
+    var activeTab = window.tabs.find(tab => tab.active);
+    chrome.tabs.sendMessage(tab.id, { type: 'checkInjection' }, response => {
+      if (chrome.runtime.lastError || !response || !response.isInjected) {
+        // 只有當 content.js 未被注入時才注入
+        chrome.scripting.executeScript({
+          target: { tabId: tab.id },
+          files: ['content.js']
+        }, () => {
+          // 注入完成後發送 stop 消息
+          chrome.tabs.sendMessage(tab.id, {
+            type: 'ajaxInterceptor',
+            to: 'pageScript',
+            action: 'stop'
+          }, response => {
+            if (chrome.runtime.lastError) {
+              console.warn(`無法向標籤頁 ${tab.id} 發送消息: `, chrome.runtime.lastError.message);
+              sendResponse && sendResponse({ success: false });
+            } else {
+              console.log(`已通知標籤頁 ${tab.id} 停止監聽`);
+              chrome.storage.local.set({ "isListening": false });
+              sendResponse && sendResponse({ success: true });
+            }
+          });
+        });
+      } else {
+        // 直接發送 start 消息
+        chrome.tabs.sendMessage(tab.id, {
+          type: 'ajaxInterceptor',
+          to: 'pageScript',
+          action: 'stop'
+        }, response => {
+          if (chrome.runtime.lastError) {
+            console.warn(`無法向標籤頁 ${tab.id} 發送消息: `, chrome.runtime.lastError.message);
+            sendResponse && sendResponse({ success: false });
           } else {
-            // 直接發送 start 消息
-            chrome.tabs.sendMessage(tab.id, {
-              type: 'ajaxInterceptor',
-              to: 'pageScript',
-              action: 'stop'
-            }, response => {
-              if (chrome.runtime.lastError) {
-                console.warn(`無法向標籤頁 ${tab.id} 發送消息: `, chrome.runtime.lastError.message);
-                sendResponse && sendResponse({ success: false });
-              } else {
-                console.log(`已通知標籤頁 ${tab.id} 停止监听`);
-                chrome.storage.local.set({ "isListening": false });
-                sendResponse && sendResponse({ success: true });
-              }
-            });
+            console.log(`已通知標籤頁 ${tab.id} 停止監聽`);
+            chrome.storage.local.set({ "isListening": false });
+            sendResponse && sendResponse({ success: true });
           }
         });
       }
     });
   });
 
-  // 只通知當前激活的tab
-  // chrome.windows.getCurrent({ populate: true }, function (window) {
-  //   var activeTab = window.tabs.find(tab => tab.active);
-  //   chrome.tabs.sendMessage(activeTab.id, {
-  //     type: 'ajaxInterceptor',
-  //     to: 'pageScript',
-  //     action: 'stop'
-  //   }, response => {
-  //     if (chrome.runtime.lastError) {
-  //       console.warn(`無法向標籤頁 ${activeTab.id} 發送消息: `, chrome.runtime.lastError.message);
-  //     } else {
-  //       console.log(`已通知標籤頁 ${activeTab.id} 開始監聽`);
-  //     }
-  //   });
-  // });
-
   return sendResponse && sendResponse({ success: true });
 }
 
 function handleApiData(url, data) {
   const value = JSON.parse(data)
-  // 时间戳转成东八区时间 2024-11-06 00:00:00
+  // 時間戳轉成東八區時間 2024-11-06 00:00:00
   const getDateTime = (val) => {
     const date = new Date(val)
     date.setHours(date.getHours() + 8)
@@ -362,21 +420,21 @@ function handleApiData(url, data) {
         url,
         timestamp: new Date().getTime()+idx,
         platform: 'keeta',
-        seqNo: el.merchantOrder.userGetMode === 'pickup' ? `PU${el.merchantOrder.seqNo}` : el.merchantOrder.seqNo,///取餐号
-        status: el.merchantOrder.status === 40 ? '已完成' : '未完成',///订单状态
-        orderViewId: String(el.merchantOrder.orderViewId),///订单号
-        shopId: el.merchantOrder.shopId, ///门店id
-        shopName: el.merchantOrder.shopName,///门店名称
-        unconfirmedStatusTime: getDateTime(el.merchantOrder.ctime),///顾客下单时间
-        confirmedStatusTime: getDateTime(el.merchantOrder.confirmedStatusTime),///商家接单时间
-        readiedStatusTime: getDateTime(el.merchantOrder.readiedStatusTime),///商家出餐时间
-        completedStatusTime: getDateTime(el.merchantOrder.completedStatusTime),///订单送达时间
+        seqNo: el.merchantOrder.userGetMode === 'pickup' ? `PU${el.merchantOrder.seqNo}` : String(el.merchantOrder.seqNo),///取餐號
+        status: el.merchantOrder.status === 40 ? '已完成' : '未完成',///訂單狀態
+        orderViewId: String(el.merchantOrder.orderViewId),///訂單號
+        shopId: el.merchantOrder.shopId, ///門店id
+        shopName: el.merchantOrder.shopName,///門店名稱
+        unconfirmedStatusTime: getDateTime(el.merchantOrder.ctime),///顧客下單時間
+        confirmedStatusTime: getDateTime(el.merchantOrder.confirmedStatusTime),///商家接單時間
+        readiedStatusTime: getDateTime(el.merchantOrder.readiedStatusTime),///商家出餐時間
+        completedStatusTime: getDateTime(el.merchantOrder.completedStatusTime),///訂單送達時間
         products: (el.rebates && el.rebates.residueProducts && el.rebates.residueProducts.length ? el.rebates.residueProducts : el.products).map(item => {
           return {
             count: item.count,
-            originPrice: centToYuan(item.originPrice),
+            originPrice: centToYuan(item.priceWithoutGroup.originAmount),
             name: item.name,
-            price: centToYuan(item.price),
+            price: centToYuan(item.priceWithoutGroup.amount),
             groups: item.groups.map(group => {
               return {
                 name: group.shopProductGroupSkuList[0].spuName,
@@ -397,8 +455,8 @@ function handleApiData(url, data) {
         platformFee: centToYuan(el.feeDtl.customerFee.rebatesPlatformFee ? el.feeDtl.customerFee.rebatesPlatformFee :  el.feeDtl.customerFee.platformFee), ///平臺費
         discounts: centToYuan(el.feeDtl.customerFee.rebatesDiscounts ? el.feeDtl.customerFee.rebatesDiscounts : el.feeDtl.customerFee.discounts), ///優惠金額
         actTotal: centToYuan(el.feeDtl.customerFee.rebatesPayTotal ? el.feeDtl.customerFee.rebatesPayTotal : el.feeDtl.customerFee.payTotal), ///顧客實際支付
-        deliveryOrderType: el.merchantOrder.userGetMode === 'pickup' ? '自取' : '外送', ///配送類型
-        remark: centToYuan(el.feeDtl.customerFee.tip ? el.feeDtl.customerFee.tip : 0), ///備註
+        deliveryOrderType: el.merchantOrder.userGetMode === 'pickup' ? '顧客自取' : '外送', ///配送類型
+        remark: centToYuan(el.feeDtl.customerFee.tip ? el.feeDtl.customerFee.tip : ''), ///備註
       }
     })
 
@@ -464,15 +522,15 @@ function handleApiData(url, data) {
       url,
       timestamp: new Date().getTime(),
       platform: 'foodpanda',
-      seqNo: '',///取餐号
-      status: orderData.order.status ==='DELIVERED'?'已完成':'未完成',///订单状态
-      orderViewId: orderData.order.orderId,///订单号
-      shopId: orderData.order.vendorId, ///门店id
-      shopName: orderData.order.vendorName,///门店名称
-      unconfirmedStatusTime: getStatusTime('SENDING_TO_VENDOR'),///顾客下单时间
-      confirmedStatusTime: getStatusTime('ACCEPTED'),///商家接单时间
-      readiedStatusTime: getStatusTime('ORDER_PREPARED'),///商家出餐时间
-      completedStatusTime: getStatusTime('DELIVERED'),///订单送达时间
+      seqNo: '',///取餐號
+      status: orderData.order.status ==='DELIVERED'?'已完成':'未完成',///訂單狀態
+      orderViewId: orderData.order.orderId,///訂單號
+      shopId: orderData.order.vendorId, ///門店id
+      shopName: orderData.order.vendorName,///門店名稱
+      unconfirmedStatusTime: getStatusTime('SENDING_TO_VENDOR'),///顧客下單時間
+      confirmedStatusTime: getStatusTime('ACCEPTED'),///商家接單時間
+      readiedStatusTime: getStatusTime('ORDER_PREPARED'),///商家出餐時間
+      completedStatusTime: getStatusTime('DELIVERED'),///訂單送達時間
       products: orderData.order.items && orderData.order.items.map(product => {
         return {
           count: product.quantity,
@@ -507,15 +565,15 @@ function handleApiData(url, data) {
       url,
       timestamp: new Date().getTime(),
       platform: 'deliveroo',
-      seqNo: '',///取餐号
-      status: '已完成',///订单状态
-      orderViewId: value.order_number,///订单号
-      shopId: value.restaurant_id, ///门店id
-      shopName: value.restaurant_id === '608619'? 'WeBite Space':'',///门店名称
-      unconfirmedStatusTime: getDateTime(value.timeline.placed_at),///顾客下单时间
-      confirmedStatusTime: getDateTime(value.timeline.accepted_at),///商家接单时间
-      readiedStatusTime: getDateTime(value.timeline.prepare_for),///商家出餐时间
-      completedStatusTime: value.timeline.delivery_picked_up_at ? getDateTime(value.timeline.delivery_picked_up_at) : '',///订单送达时间
+      seqNo: '',///取餐號
+      status: '已完成',///訂單狀態
+      orderViewId: value.order_number,///訂單號
+      shopId: value.restaurant_id, ///門店id
+      shopName: value.restaurant_id === '608619'? 'WeBite Space':'',///門店名稱
+      unconfirmedStatusTime: getDateTime(value.timeline.placed_at),///顧客下單時間
+      confirmedStatusTime: getDateTime(value.timeline.accepted_at),///商家接單時間
+      readiedStatusTime: getDateTime(value.timeline.prepare_for),///商家出餐時間
+      completedStatusTime: value.timeline.delivery_picked_up_at ? getDateTime(value.timeline.delivery_picked_up_at) : '',///訂單送達時間
       products: value.items.map(product => {
         return {
           count: product.quantity,
