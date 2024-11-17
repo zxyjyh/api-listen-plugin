@@ -18,33 +18,45 @@ if (typeof window.ajaxInterceptorZxyInjected === 'undefined') {
       console.log('拦截器脚本加载完成');
       this.remove();
 
-
-      // 检查 background.js 是否处于监听状态
+      // 发送消息给background.js
       chrome.runtime.sendMessage(
-        { type: 'ajaxInterceptor', action: 'checkListening' },
+        { type: 'ajaxInterceptor', action: 'getTabId' },
         (response) => {
-          if (response.isListening) {
-            // 通知 injected.js 开始拦截
-            window.postMessage({
-              type: 'ajaxInterceptor',
-              to: 'injectedScript',
-              action: 'start'
-            }, '*');
-            console.log('监听已开启，通知 injected.js 开始拦截');
-          }else {
-            // 通知 injected.js 开始拦截
-            window.postMessage({
-              type: 'ajaxInterceptor',
-              to: 'injectedScript',
-              action: 'stop'
-            }, '*');
-            console.log('监听已取消，通知 injected.js 停止拦截');
+          if (chrome.runtime.lastError) {
+            console.warn('无法获取当前 tabId:', chrome.runtime.lastError.message);
+            return;
           }
+
+          const tabId = response.tabId;
+          console.log('获取到的 tabId:', tabId);
+
+          chrome.runtime.sendMessage(
+            { type: 'ajaxInterceptor', action: 'checkListening', tabId },
+            (response) => {
+              if (response.isListening) {
+                // 发送消息给 injected.js
+                window.postMessage({
+                  type: 'ajaxInterceptor',
+                  to: 'injectedScript',
+                  action: 'start',
+                  tabId,
+                }, '*');
+                console.log('监听已开始，通知 injected.js 开始监听');
+              } else {
+                window.postMessage({
+                  type: 'ajaxInterceptor',
+                  to: 'injectedScript',
+                  action: 'stop',
+                  tabId,
+                }, '*');
+                console.log('监听已取消，通知 injected.js 停止拦截');
+              }
+            }
+          );
         }
       );
-
-
     };
+
     (document.head || document.documentElement).appendChild(script);
   })();
 
@@ -56,7 +68,6 @@ if (typeof window.ajaxInterceptorZxyInjected === 'undefined') {
     }
 
     if (request.type === 'ajaxInterceptor' && request.to === 'pageScript' && request.action) {
-      console.log("处理 ajaxInterceptor 消息:", request);
       // 转发给 injected.js
       window.postMessage({
         type: 'ajaxInterceptor',
