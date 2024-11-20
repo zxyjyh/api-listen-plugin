@@ -256,7 +256,7 @@ function handleApiData(url, data) {
         confirmedStatusTime: '',///商家接單時間
         readiedStatusTime: getDateTime(el.pickupTime),///商家出餐時間
         completedStatusTime: getDateTime(el.completedTime),///訂單送達時間
-        products: el.takeAwayOrderItems.sort((a, b) => a.itemId - b.itemId).map(product => {
+        products: el.takeAwayOrderItems.map(product => {
           return {
             count: product.quantity,
             originPrice: product.unitPrice,
