@@ -356,9 +356,9 @@ function handleApiData(url, data) {
       products: value.items.map(product => {
         return {
           count: product.quantity,
-          originPrice: centToYuan(product.unit_price.fractional),
+          originPrice: centToYuan(product.total_price.fractional),
           name: product.name,
-          price: centToYuan(product.unit_price.fractional),
+          price: centToYuan(product.total_price.fractional),
           groups: product.modifiers && product.modifiers.length && product.modifiers.map(group => {
             return {
               count: product.quantity,
