@@ -641,13 +641,42 @@ function updateListeningState(tabId, url, isListening) {
   });
 }
 
+// function checkListeningState(tabId, sendResponse) {
+//   chrome.storage.local.get("listeningTabs", (result) => {
+//     const listeningTabs = result.listeningTabs || {};
+//     const state = listeningTabs[tabId]?.isListening || false;
+//     sendResponse({ isListening: state });
+//   });
+// }
+
 function checkListeningState(tabId, sendResponse) {
-  chrome.storage.local.get("listeningTabs", (result) => {
-    const listeningTabs = result.listeningTabs || {};
-    const state = listeningTabs[tabId]?.isListening || false;
-    sendResponse({ isListening: state });
+  chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
+    const currentTab = tabs[0];
+    if (currentTab && currentTab.url.startsWith("https://partner-hub.deliveroo.com/orders/")) {
+      chrome.storage.local.get("listeningTabs", (result) => {
+        const listeningTabs = result.listeningTabs || {};
+        if (!listeningTabs[currentTab.id]) {
+          listeningTabs[currentTab.id] = {};
+        }
+        listeningTabs[currentTab.id].isListening = true;
+
+        chrome.storage.local.set({ listeningTabs }, () => {
+          console.log("Updated listeningTabs:", listeningTabs);
+        });
+
+        sendResponse({ isListening: true });
+      });
+    } else {
+      chrome.storage.local.get("listeningTabs", (result) => {
+        const listeningTabs = result.listeningTabs || {};
+        const state = listeningTabs[tabId]?.isListening || false;
+        sendResponse({ isListening: state });
+      });
+    }
   });
 }
+
+
 
 
 
