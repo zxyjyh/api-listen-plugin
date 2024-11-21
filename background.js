@@ -350,7 +350,7 @@ function handleApiData(url, data) {
       deliveryOrderType: orderData.order.devlivery.provider === 'pickup' ? '自取' : '配送', ///配送類型
       remark: '', ///備註
     }
-  } else if (url.startsWith('https://restaurant-hub-data-api.deliveroo.net/api/orders')) {
+  } else if (url.startsWith('https://restaurant-hub-data-api.deliveroo.net/api/orders') && value.status !=='cancelled') {
     // deliveroo
     return {
       url,
