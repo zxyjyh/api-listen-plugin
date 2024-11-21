@@ -208,6 +208,18 @@ function handleApiData(url, data) {
 
   }
 
+  const getShopName = (value)=>{
+    if (value.restaurant_id === '608619'){
+      return 'WeBite Space'
+    }
+
+    if (value.restaurant_id === '657634'){
+      return 'WeBite Space (Tsim Sha Tsui)'
+    }
+
+    return  ''
+  }
+
   if (url.startsWith('https://merchant.mykeeta.com')) {
     // keeta
     const orderInfos = value.data && value.data.list && value.data.list.filter(el => el.merchantOrder.status === 40).map((el, idx) => {
@@ -348,7 +360,7 @@ function handleApiData(url, data) {
       status: '已完成',///訂單狀態
       orderViewId: value.order_number,///訂單號
       shopId: value.restaurant_id, ///門店id
-      shopName: value.restaurant_id === '608619' ? 'WeBite Space' : '',///門店名稱
+      shopName: getShopName(value),///門店名稱
       unconfirmedStatusTime: getDateTime(value.timeline.placed_at),///顧客下單時間
       confirmedStatusTime: getDateTime(value.timeline.accepted_at),///商家接單時間
       readiedStatusTime: getDateTime(value.timeline.prepare_for),///商家出餐時間
