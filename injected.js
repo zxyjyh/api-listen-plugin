@@ -98,9 +98,9 @@
       ajax_interceptor_qoweifjqon_zxy.settings.ajaxInterceptor_switchOn = true;
       // 获取当前页面的地址
       const u = new URL(location.href)
-      if (u.hostname !== 'partner-hub.deliveroo.com'){
+      if (u.hostname !== 'partner-hub.deliveroo.com') {
         window.XMLHttpRequest = ajax_interceptor_qoweifjqon_zxy.myXHR.bind(ajax_interceptor_qoweifjqon_zxy);
-      }else {
+      } else {
         window.XMLHttpRequest = OriginalXMLHttpRequest
       }
 

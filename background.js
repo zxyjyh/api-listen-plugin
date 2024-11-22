@@ -68,6 +68,10 @@ function openDatabase() {
 }
 
 function saveToDatabase(data, type) {
+  if (!data) {
+    return Promise.reject()
+  }
+
   return openDatabase().then((db) => {
     return new Promise((resolve, reject) => {
       const transaction = db.transaction([storeName], "readwrite");
@@ -121,7 +125,7 @@ function saveToDatabase(data, type) {
         if (type === "arr") {
           if (data && data.length) {
             for (const item of data) {
-              if (item.url.startsWith("https://restaurant-hub-data-api.deliveroo.net/api/insights/refunds/") ) {
+              if (item.url.startsWith("https://restaurant-hub-data-api.deliveroo.net/api/insights/refunds/")) {
                 await checkAndUpdateData(item); // 判断并更新数据
               } else {
                 const request = store.add(item);
@@ -130,7 +134,7 @@ function saveToDatabase(data, type) {
             }
           }
         } else {
-          if (data.url.startsWith("https://restaurant-hub-data-api.deliveroo.net/api/insights/refunds/")) {
+          if (data && data.url && data.url.startsWith("https://restaurant-hub-data-api.deliveroo.net/api/insights/refunds/")) {
             await checkAndUpdateData(data); // 判断并更新数据
           } else {
             const request = store.add(data);
@@ -294,23 +298,23 @@ function handleApiData(url, data) {
 
   }
 
-  const getShopName = (value)=>{
-    if (value.restaurant_id === '608619'){
+  const getShopName = (value) => {
+    if (value.restaurant_id === '608619') {
       return 'WeBite Space'
     }
 
-    if (value.restaurant_id === '657634'){
+    if (value.restaurant_id === '657634') {
       return 'WeBite Space (Tsim Sha Tsui)'
     }
 
-    return  ''
+    return ''
   }
 
-  const getProductPrice = (value)=>{
-    const price =  value.items.filter(el => !el.refund_reason).reduce((acc,product) => {
+  const getProductPrice = (value) => {
+    const price = value.items.filter(el => !el.refund_reason).reduce((acc, product) => {
       acc += product.total_price.fractional
       return acc
-    },0)
+    }, 0)
 
     return centToYuan(price)
   }
@@ -442,10 +446,10 @@ function handleApiData(url, data) {
       platformFee: '', ///平臺費
       discounts: '', ///優惠金額
       actTotal: orderData.order.orderValue, ///顧客實際支付
-      deliveryOrderType: orderData.order.devlivery.provider === 'pickup' ? '自取' : '配送', ///配送類型
+      deliveryOrderType: orderData.order.delivery.provider === 'pickup' ? '自取' : '配送', ///配送類型
       remark: '', ///備註
     }
-  } else if (url.startsWith('https://restaurant-hub-data-api.deliveroo.net/api/orders') && value.status !=='cancelled') {
+  } else if (url.startsWith('https://restaurant-hub-data-api.deliveroo.net/api/orders') && value.status !== 'cancelled') {
     // deliveroo
     // https://restaurant-hub-data-api.deliveroo.net/api/insights/refunds/69d11cfd-4c27-3084-a689-95da0a089ff4
     // https://restaurant-hub-data-api.deliveroo.net/api/orders/69d11cfd-4c27-3084-a689-95da0a089ff4
@@ -490,7 +494,7 @@ function handleApiData(url, data) {
       deliveryOrderType: value.status === 'delivered' ? '配送' : '自取', ///配送類型
       remark: '', ///備註
 
-      request_id:value.id
+      request_id: value.id
     }
   } else if (url.startsWith('https://restaurant-hub-data-api.deliveroo.net/api/insights/refunds/') && value.order_id) {
     // deliveroo
@@ -547,20 +551,21 @@ function saveData(url, data, sendResponse) {
 
   const apiData = handleApiData(url, data)
 
-  if (url.startsWith('https://vagw-api.ap.prd.portal.restaurant/query') || url.startsWith('https://restaurant-hub-data-api.deliveroo.net/api/orders') || url.startsWith('https://restaurant-hub-data-api.deliveroo.net/api/insights/refunds/')) {
+  if (apiData && url.startsWith('https://vagw-api.ap.prd.portal.restaurant/query') || url.startsWith('https://restaurant-hub-data-api.deliveroo.net/api/orders') || url.startsWith('https://restaurant-hub-data-api.deliveroo.net/api/insights/refunds/')) {
     saveToDatabase(apiData).then(() => {
       sendResponse({ success: true })
     }).catch((error) => {
       console.error("保存數據到 IndexedDB 時出錯:", error);
       sendResponse({ success: false })
     });
-  } else {
+  } else if(apiData){
     saveToDatabase(apiData, 'arr').then(() => {
       sendResponse({ success: true })
     }).catch((error) => {
       console.error("保存數據到 IndexedDB 時出錯:", error);
       sendResponse({ success: false })
     });
+  }else {
   }
 }
 
@@ -682,9 +687,9 @@ function exportData(sendResponse) {
 // 監聽來自 popup 和 content.js的消息
 chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
   if (message.action === "start") {
-    startListening(sendResponse,message.tabId,message.url);
+    startListening(sendResponse, message.tabId, message.url);
   } else if (message.action === "stop") {
-    stopListening(sendResponse,message.tabId,message.url);
+    stopListening(sendResponse, message.tabId, message.url);
   } else if (message.action === "export") {
     exportData(sendResponse);
   } else if (message.action === "clearData") {
