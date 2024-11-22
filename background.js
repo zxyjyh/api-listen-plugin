@@ -828,7 +828,7 @@ function checkListeningState(tabId, sendResponse) {
       const listeningTabs = result.listeningTabs || {};
 
       tabs.forEach((tab) => {
-        if (tab.url && tab.url.startsWith("https://partner-hub.deliveroo.com/orders")) {
+        if (tab.url && tab.url.startsWith("https://partner-hub.deliveroo.com/orders/")) {
           if (!listeningTabs[tab.id]) {
             listeningTabs[tab.id] = {};
           }
