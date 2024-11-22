@@ -1,0 +1,165 @@
+{
+  "order_id": "10835848186",
+  "order_uuid": "69d11cfd-4c27-3084-a689-95da0a089ff4",
+  "order_drn_id": "39aefd4c-fd04-4f6f-acc0-d5af4f295544",
+  "order_number": 8186,
+  "branch_id": 608619,
+  "branch_name": "WeBite Space",
+  "order_date": "2024-11-12T01:02:06.592632Z",
+  "order_refund_status": "Refunded",
+  "order_type": "DELIVERY",
+  "refund_total": {
+    "fractional": 3500,
+    "formatted": "$35.00"
+  },
+  "refund_paid_by_restaurant_total": {
+    "fractional": 3500,
+    "formatted": "$35.00"
+  },
+  "order_total": {
+    "fractional": 10250,
+    "formatted": "$102.50"
+  },
+  "order_sub_total": {
+    "fractional": 10000,
+    "formatted": "$100.00"
+  },
+  "order_gross_merchandise_value": {
+    "fractional": 10000,
+    "formatted": "$100.00"
+  },
+  "items": [
+    {
+      "id": "13789260072",
+      "name": "美式 Americano",
+      "quantity": 3,
+      "restaurant_name": null,
+      "refund_reason": null,
+      "unit_price": {
+        "fractional": 1300,
+        "formatted": "$13.00"
+      },
+      "total_price": {
+        "fractional": 3900,
+        "formatted": "$39.00"
+      },
+      "total_unit_price": {
+        "fractional": 1300,
+        "formatted": "$13.00"
+      },
+      "modifiers": [
+        {
+          "name": "中 Medium"
+        },
+        {
+          "name": "熱飲 Hot"
+        }
+      ],
+      "category_name": "經典咖啡 Classic Series"
+    },
+    {
+      "id": "13789260075",
+      "name": "美式 Americano",
+      "quantity": 2,
+      "restaurant_name": null,
+      "refund_reason": null,
+      "unit_price": {
+        "fractional": 1300,
+        "formatted": "$13.00"
+      },
+      "total_price": {
+        "fractional": 2600,
+        "formatted": "$26.00"
+      },
+      "total_unit_price": {
+        "fractional": 1300,
+        "formatted": "$13.00"
+      },
+      "modifiers": [
+        {
+          "name": "中 Medium"
+        },
+        {
+          "name": "冰飲 Iced"
+        }
+      ],
+      "category_name": "經典咖啡 Classic Series"
+    },
+    {
+      "id": "13789260081",
+      "name": "經典厚乳拿鐵 Classic Creamy Latte",
+      "quantity": 1,
+      "restaurant_name": null,
+      "refund_reason": "missing_items",
+      "unit_price": {
+        "fractional": 3500,
+        "formatted": "$35.00"
+      },
+      "total_price": {
+        "fractional": 3500,
+        "formatted": "$35.00"
+      },
+      "total_unit_price": {
+        "fractional": 3500,
+        "formatted": "$35.00"
+      },
+      "modifiers": [
+        {
+          "name": "冰飲 Iced"
+        }
+      ],
+      "category_name": "特調咖啡 Signature Series"
+    }
+  ],
+  "compensations": [
+    {
+      "refund_status": "Refunded",
+      "id": 365317911,
+      "refund_date": "2024-11-12T14:09:11.057444Z",
+      "status": "AUTOMATICALLY_RESOLVED",
+      "action_id": "missing_items",
+      "input_description": "",
+      "photos": [],
+      "selected_resolution": {
+        "resolution_type": "credit_resolution",
+        "source": "AGENT_SUPPORT_TOOL",
+        "repeat_order_id": "0",
+        "repeat_order_drn_id": "",
+        "amount": {
+          "fractional": 3500,
+          "currencyCode": "HKD"
+        }
+      },
+      "compensated_items": [
+        {
+          "name": "經典厚乳拿鐵 Classic Creamy Latte",
+          "id": "13789260081",
+          "reason": "missing_items"
+        }
+      ]
+    },
+    {
+      "refund_status": "Rejected",
+      "id": 365293529,
+      "refund_date": "2024-11-12T02:17:50.281584Z",
+      "status": "AUTOMATICALLY_RESOLVED",
+      "action_id": "missing_items",
+      "input_description": "",
+      "photos": [],
+      "selected_resolution": {
+        "resolution_type": "note_resolution",
+        "source": "AGENT_SUPPORT_TOOL",
+        "repeat_order_id": "0",
+        "repeat_order_drn_id": "",
+        "amount": null
+      },
+      "compensated_items": [
+        {
+          "name": "經典厚乳拿鐵 Classic Creamy Latte",
+          "id": "13789260081",
+          "reason": "missing_items"
+        }
+      ]
+    }
+  ]
+}

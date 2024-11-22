@@ -27,19 +27,41 @@ function openDatabase() {
     const request = indexedDB.open(dbName, 1);
 
     request.onerror = () => {
-      console.error("IndexedDB 打開失敗");
+      console.error("IndexedDB 打开失败");
       reject(request.error);
     };
 
     request.onsuccess = () => {
-      db = request.result;
+      const db = request.result;
       resolve(db);
     };
 
     request.onupgradeneeded = (event) => {
-      db = event.target.result;
+      const db = event.target.result;
+
+      // 创建对象存储
       if (!db.objectStoreNames.contains(storeName)) {
-        db.createObjectStore(storeName, { keyPath: "timestamp" });
+        const store = db.createObjectStore(storeName, { keyPath: "timestamp" });
+
+        // 创建索引
+        store.createIndex("platform", "platform", { unique: false });
+        store.createIndex("request_id", "request_id", { unique: false });
+        store.createIndex("orderViewId", "orderViewId", { unique: false });
+      } else {
+        // 如果对象存储已经存在，可以添加缺失的索引
+        const store = event.target.transaction.objectStore(storeName);
+
+        if (!store.indexNames.contains("platform")) {
+          store.createIndex("platform", "platform", { unique: false });
+        }
+
+        if (!store.indexNames.contains("request_id")) {
+          store.createIndex("request_id", "request_id", { unique: false });
+        }
+
+        if (!store.indexNames.contains("orderViewId")) {
+          store.createIndex("orderViewId", "orderViewId", { unique: false });
+        }
       }
     };
   });
@@ -50,39 +72,103 @@ function saveToDatabase(data, type) {
     return new Promise((resolve, reject) => {
       const transaction = db.transaction([storeName], "readwrite");
       const store = transaction.objectStore(storeName);
-      console.log('Key path:', store.keyPath); // 顯示主鍵字段
-      console.log('Auto increment:', store.autoIncrement); // 是否自增
+
+      console.log("Key path:", store.keyPath); // 显示主键字段
+      console.log("Auto increment:", store.autoIncrement); // 是否自增
+
       let requests = [];
 
-      if (type === 'arr') {
-        data && data.length && data.forEach(item => {
-          const request = store.add(item);
-          requests.push(request);
+      const checkAndUpdateData = (item) => {
+        return new Promise((resolveUpdate, rejectUpdate) => {
+          const index = store.index("platform");
+          const request = index.getAll("deliveroo"); // 获取 platform 为 deliveroo 的所有记录
+
+          request.onsuccess = () => {
+            const records = request.result;
+            const matchingRecord = records.find(
+              (record) =>
+                record.request_id == item.request_id &&
+                record.orderViewId == item.orderViewId
+            );
+
+            if (matchingRecord) {
+              // 修改目标记录的字段
+              matchingRecord.products = item.products;
+              matchingRecord.productPrice = item.productPrice;
+              matchingRecord.actTotal = item.actTotal;
+
+              // 更新数据库中的记录
+              const updateRequest = store.put(matchingRecord);
+              updateRequest.onsuccess = () => resolveUpdate();
+              updateRequest.onerror = () => rejectUpdate(updateRequest.error);
+            } else {
+              // 如果没有匹配的记录，则直接新增
+              const addRequest = store.add(item);
+              addRequest.onsuccess = () => resolveUpdate();
+              addRequest.onerror = () => rejectUpdate(addRequest.error);
+            }
+          };
+
+          request.onerror = () => {
+            console.error("从数据库获取 deliveroo 数据时出错:", request.error);
+            rejectUpdate(request.error);
+          };
         });
-      } else {
-        const request = store.add(data);
-        requests.push(request);
-      }
+      };
 
-      let successCount = 0;
-      let errorOccurred = false;
-
-      requests.forEach(request => {
-        request.onsuccess = () => {
-          successCount++;
-          if (successCount === requests.length && !errorOccurred) {
-            console.log("所有數據已成功保存到 IndexedDB");
-            resolve();
+      // 保存数据逻辑
+      const saveData = async () => {
+        if (type === "arr") {
+          if (data && data.length) {
+            for (const item of data) {
+              if (item.url.startsWith("https://restaurant-hub-data-api.deliveroo.net/api/insights/refunds/") ) {
+                await checkAndUpdateData(item); // 判断并更新数据
+              } else {
+                const request = store.add(item);
+                requests.push(request);
+              }
+            }
           }
-        };
-
-        request.onerror = () => {
-          if (!errorOccurred) {
-            console.error("保存數據到 IndexedDB 時出錯:", request.error);
-            errorOccurred = true;
-            reject(request.error);
+        } else {
+          if (data.url.startsWith("https://restaurant-hub-data-api.deliveroo.net/api/insights/refunds/")) {
+            await checkAndUpdateData(data); // 判断并更新数据
+          } else {
+            const request = store.add(data);
+            requests.push(request);
           }
-        };
+        }
+
+        // 处理新增记录的事件
+        let successCount = 0;
+        let errorOccurred = false;
+
+        requests.forEach((request) => {
+          request.onsuccess = () => {
+            successCount++;
+            if (successCount === requests.length && !errorOccurred) {
+              console.log("所有数据已成功保存到 IndexedDB");
+              resolve();
+            }
+          };
+
+          request.onerror = () => {
+            if (!errorOccurred) {
+              console.error("保存数据到 IndexedDB 时出错:", request.error);
+              errorOccurred = true;
+              reject(request.error);
+            }
+          };
+        });
+
+        // 如果没有新增记录，直接成功回调
+        if (!requests.length) {
+          resolve();
+        }
+      };
+
+      saveData().catch((error) => {
+        console.error("保存数据时出错:", error);
+        reject(error);
       });
     });
   });
@@ -220,6 +306,15 @@ function handleApiData(url, data) {
     return  ''
   }
 
+  const getProductPrice = (value)=>{
+    const price =  value.items.filter(el => !el.refund_reason).reduce((acc,product) => {
+      acc += product.total_price.fractional
+      return acc
+    },0)
+
+    return centToYuan(price)
+  }
+
   if (url.startsWith('https://merchant.mykeeta.com')) {
     // keeta
     const orderInfos = value.data && value.data.list && value.data.list.filter(el => el.merchantOrder.status === 40).map((el, idx) => {
@@ -352,6 +447,8 @@ function handleApiData(url, data) {
     }
   } else if (url.startsWith('https://restaurant-hub-data-api.deliveroo.net/api/orders') && value.status !=='cancelled') {
     // deliveroo
+    // https://restaurant-hub-data-api.deliveroo.net/api/insights/refunds/69d11cfd-4c27-3084-a689-95da0a089ff4
+    // https://restaurant-hub-data-api.deliveroo.net/api/orders/69d11cfd-4c27-3084-a689-95da0a089ff4
     return {
       url,
       timestamp: new Date().getTime(),
@@ -392,6 +489,56 @@ function handleApiData(url, data) {
       actTotal: centToYuan(value.amount.fractional), ///顧客實際支付
       deliveryOrderType: value.status === 'delivered' ? '配送' : '自取', ///配送類型
       remark: '', ///備註
+
+      request_id:value.id
+    }
+  } else if (url.startsWith('https://restaurant-hub-data-api.deliveroo.net/api/insights/refunds/') && value.order_id) {
+    // deliveroo
+    // https://restaurant-hub-data-api.deliveroo.net/api/insights/refunds/69d11cfd-4c27-3084-a689-95da0a089ff4
+    // https://restaurant-hub-data-api.deliveroo.net/api/orders/69d11cfd-4c27-3084-a689-95da0a089ff4
+    const [a, request_id] = url.split('https://restaurant-hub-data-api.deliveroo.net/api/insights/refunds/')
+    return {
+      url,
+      timestamp: new Date().getTime(),
+      platform: 'deliveroo',
+      seqNo: '',///取餐號
+      status: '已完成',///訂單狀態
+      orderViewId: value.order_number,///訂單號
+      shopId: value.branch_id, ///門店id
+      shopName: value.branch_name,///門店名稱
+      unconfirmedStatusTime: '',///顧客下單時間
+      confirmedStatusTime: '',///商家接單時間
+      readiedStatusTime: '',///商家出餐時間
+      completedStatusTime: '',///訂單送達時間
+      products: value.items.filter(el => !el.refund_reason).map(product => {
+        return {
+          count: product.quantity,
+          originPrice: centToYuan(product.total_price.fractional),
+          name: product.name,
+          price: centToYuan(product.total_price.fractional),
+          groups: product.modifiers && product.modifiers.length && product.modifiers.map(group => {
+            return {
+              count: product.quantity,
+              originPrice: '',
+              name: group.name,
+              price: '',
+            }
+          })
+        }
+      }),///商品信息
+      brokerage: '', ///佣金
+      activityFee: '', ///商家承擔活動費用
+      total: '', ///預計收入
+      diffPrice: '', ///最低消費金額補差價
+      productPrice: getProductPrice(value), ///菜品總價
+      shippingFee: '', ///配送費
+      platformFee: '', ///平臺費
+      discounts: '', ///優惠金額
+      actTotal: getProductPrice(value), ///顧客實際支付
+      deliveryOrderType: '', ///配送類型
+      remark: '', ///備註
+
+      request_id
     }
   }
 }
@@ -400,7 +547,7 @@ function saveData(url, data, sendResponse) {
 
   const apiData = handleApiData(url, data)
 
-  if (url.startsWith('https://vagw-api.ap.prd.portal.restaurant/query') || url.startsWith('https://restaurant-hub-data-api.deliveroo.net/api/orders')) {
+  if (url.startsWith('https://vagw-api.ap.prd.portal.restaurant/query') || url.startsWith('https://restaurant-hub-data-api.deliveroo.net/api/orders') || url.startsWith('https://restaurant-hub-data-api.deliveroo.net/api/insights/refunds/')) {
     saveToDatabase(apiData).then(() => {
       sendResponse({ success: true })
     }).catch((error) => {
@@ -565,7 +712,7 @@ chrome.tabs.onRemoved.addListener((tabId, removeInfo) => {
     const listeningTabs = result.listeningTabs || {};
 
     if (listeningTabs[tabId]) {
-      delete tabStates[tabId];
+      delete listeningTabs[tabId];
       chrome.storage.local.set({ listeningTabs }, () => {
         console.log(`已从存储中移除标签页 ${tabId} 的状态`);
       });

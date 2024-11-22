@@ -1,4 +1,4 @@
-(function(){
+(function () {
   const OriginalXMLHttpRequest = window.XMLHttpRequest;
 
   window.ajax_interceptor_qoweifjqon_zxy = {
@@ -11,6 +11,7 @@
         'https://merchant.mykeeta.com/api/order/history/getOrders',
         'https://vagw-api.ap.prd.portal.restaurant/query',
         'https://restaurant-hub-data-api.deliveroo.net/api/orders',
+        'https://restaurant-hub-data-api.deliveroo.net/api/insights/refunds/'
       ],
       interceptedResponses: {},
     },
@@ -91,10 +92,17 @@
       });
     },
 
+
     startInterceptor: function () {
       console.log('开始拦截');
       ajax_interceptor_qoweifjqon_zxy.settings.ajaxInterceptor_switchOn = true;
-      window.XMLHttpRequest = ajax_interceptor_qoweifjqon_zxy.myXHR.bind(ajax_interceptor_qoweifjqon_zxy);
+      // 获取当前页面的地址
+      const u = new URL(location.href)
+      if (u.hostname !== 'partner-hub.deliveroo.com'){
+        window.XMLHttpRequest = ajax_interceptor_qoweifjqon_zxy.myXHR.bind(ajax_interceptor_qoweifjqon_zxy);
+      }else {
+        window.XMLHttpRequest = OriginalXMLHttpRequest
+      }
 
       window.fetch = new Proxy(window.fetch, {
         apply: (target, thisArg, args) => {
