@@ -398,7 +398,7 @@ function handleApiData(url, data) {
     })
 
     return orderInfos
-  } else if (url.startsWith('https://vagw-api.ap.prd.portal.restaurant/query') && value.data.orders && value.data.orders.order && value.data.orders.order.order && value.data.orders.order.order.status === 'DELIVERED') {
+  } else if (url.startsWith('https://vagw-api.ap.prd.portal.restaurant/query') && value && value.data && value.data.orders && value.data.orders.order && value.data.orders.order.order && value.data.orders.order.order.status === 'DELIVERED') {
     // foodpanda
     const orderData = value.data.orders.order
     const getStatusTime = (val) => {
@@ -424,15 +424,16 @@ function handleApiData(url, data) {
       products: orderData.order.items && orderData.order.items.map(product => {
         return {
           count: product.quantity,
-          originPrice: product.unitPrice,
+          originPrice: mul(product.unitPrice, product.quantity),
           name: product.parentName !== product.name ? `${product.parentName}(${product.name})` : product.name,
-          price: product.unitPrice,
+          price: mul(product.unitPrice, product.quantity),
           groups: product.options && product.options.map(group => {
+            const count = mul(product.quantity, group.quantity)
             return {
-              count: mul(product.quantity, group.quantity),
-              originPrice: group.unitPrice,
+              count,
+              originPrice: mul(count, group.unitPrice),
               name: group.name,
-              price: group.unitPrice,
+              price: mul(count, group.unitPrice),
             }
           })
         }
