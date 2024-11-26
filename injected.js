@@ -171,13 +171,35 @@
   //   }
   // });
 
-  // Object.defineProperty(window, 'fetch', {
-  //   get: function () {
-  //     return ajax_interceptor_qoweifjqon_zxy.settings.ajaxInterceptor_switchOn ?
-  //       handleMyFetch():
-  //       ajax_interceptor_qoweifjqon_zxy.originalFetch;
-  //   }
-  // });
+  const u = new URL(location.href)
+  if (u.hostname === 'partner.foodpanda.com') {
+    const observer = new MutationObserver((mutationsList) => {
+      for (const mutation of mutationsList) {
+        if (mutation.addedNodes) {
+          mutation.addedNodes.forEach((node) => {
+            if (node.tagName === "SCRIPT" && node.src.includes("portalPluginOrders__Module")) {
+
+              node.addEventListener("load", () => {
+                window.fetch = ajax_interceptor_qoweifjqon_zxy.settings.ajaxInterceptor_switchOn ?
+                  ajax_interceptor_qoweifjqon_zxy.myFetch :
+                  ajax_interceptor_qoweifjqon_zxy.originalFetch;
+              });
+            }
+          });
+        }
+      }
+    });
+    observer.observe(document.documentElement, { childList: true, subtree: true });
+
+    Object.defineProperty(window, 'fetch', {
+      get: function () {
+        return ajax_interceptor_qoweifjqon_zxy.settings.ajaxInterceptor_switchOn ?
+          ajax_interceptor_qoweifjqon_zxy.myFetch :
+          ajax_interceptor_qoweifjqon_zxy.originalFetch;
+      }
+    });
+  }
+
 
   console.log('injected.js 执行完毕');
 })()
