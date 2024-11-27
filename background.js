@@ -275,6 +275,24 @@ function handleApiData(url, data) {
     return (mul(a, e) - mul(b, e)) / e;
   }
 
+  const getGroupInfo = (group)=>{
+    let spuName = ''
+    let price = 0
+    let count = 0
+    if (group && group.shopProductGroupSkuList.length){
+      const info =  group.shopProductGroupSkuList[0]
+      spuName = info && info.spuName || ''
+      price = info && info.price || 0
+      count = info && info.groupSkuCount || 0
+    }
+
+    return {
+      spuName,
+      price,
+      count
+    }
+  }
+
   const getProductsKeeta = (el) => {
     if (el.rebates && el.rebates.residueProducts && el.rebates.residueProducts.length) {
       //部分退款
@@ -285,12 +303,13 @@ function handleApiData(url, data) {
           name: item.name,
           price: centToYuan(mul(item.priceWithoutGroup.amount, item.count)),
           groups: item.groups.map(group => {
+           const info =  getGroupInfo(group)
             return {
-              name: group.shopProductGroupSkuList[0].spuName,
-              price: centToYuan(group.shopProductGroupSkuList[0].price),
-              originPrice: centToYuan(group.shopProductGroupSkuList[0].price),
-              count: Number(group.shopProductGroupSkuList[0].groupSkuCount),
-              groupSkuCount: Number(group.shopProductGroupSkuList[0].groupSkuCount)
+              name: info.spuName,
+              price: centToYuan(info.price),
+              originPrice: centToYuan(info.price),
+              count: Number(info.count),
+              groupSkuCount: Number(info.count)
             }
           })
         }
@@ -304,12 +323,13 @@ function handleApiData(url, data) {
           name: item.name,
           price: Number(centToYuan(item.priceWithoutGroup.originAmount)),
           groups: item.groups.map(group => {
+            const info = getGroupInfo(group)
             return {
-              name: group.shopProductGroupSkuList[0].spuName,
-              price: Number(centToYuan(group.shopProductGroupSkuList[0].price)),
-              originPrice: Number(centToYuan(group.shopProductGroupSkuList[0].price)),
-              count: Number(group.shopProductGroupSkuList[0].groupSkuCount),
-              groupSkuCount: Number(group.shopProductGroupSkuList[0].groupSkuCount)
+              name: info.spuName,
+              price: Number(centToYuan(info.price)),
+              originPrice: Number(centToYuan(info.price)),
+              count: Number(info.count),
+              groupSkuCount: Number(info.count)
             }
           })
         }
