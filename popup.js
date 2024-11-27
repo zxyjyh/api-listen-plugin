@@ -4,7 +4,7 @@ chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
         const tabId = currentTab.id;
         const url = currentTab.url;
 
-        console.log(tabId,url)
+        console.log(tabId, url)
 
         chrome.storage.local.get("listeningTabs", (result) => {
             const listeningTabs = result.listeningTabs || {};
@@ -20,7 +20,7 @@ document.getElementById("startButton").addEventListener("click", () => {
             const currentTab = tabs[0];
             const tabId = currentTab.id;
             const url = currentTab.url;
-            console.log(tabId,url)
+            console.log(tabId, url)
 
             chrome.runtime.sendMessage({ action: "start", tabId, url });
             updateListeningState(tabId, url, true);
@@ -36,7 +36,7 @@ document.getElementById("stopButton").addEventListener("click", () => {
             const tabId = currentTab.id;
             const url = currentTab.url;
 
-            chrome.runtime.sendMessage({ action: "stop", tabId,url });
+            chrome.runtime.sendMessage({ action: "stop", tabId, url });
             updateListeningState(tabId, url, false);
             updateButtonStates(false);
         }
@@ -74,3 +74,13 @@ function updateListeningState(tabId, url, isListening) {
         chrome.storage.local.set({ listeningTabs });
     });
 }
+
+
+chrome.runtime.sendMessage({ action: "getDataCount" }, (response) => {
+    console.log(response)
+    if (response.success) {
+        document.getElementById("dataCount").innerText = `当前的记录数: ${response.count}`;
+    } else {
+        console.error("获取数据失败");
+    }
+});

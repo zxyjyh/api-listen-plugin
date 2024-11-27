@@ -255,6 +255,26 @@ function handleApiData(url, data) {
     );
   }
 
+  const  sub = (a, b)=> {
+    if (!a) a = 0;
+    if (!b) b = 0;
+    let c = 0,
+      d = 0,
+      e = 0;
+    try {
+      c = String(a).split(".")[1].length;
+    } catch (f) {
+      c = 0;
+    }
+    try {
+      d = String(b).split(".")[1].length;
+    } catch (f) {
+      d = 0;
+    }
+    e = Math.pow(10, Math.max(c, d));
+    return (mul(a, e) - mul(b, e)) / e;
+  }
+
   const getProductsKeeta = (el) => {
     if (el.rebates && el.rebates.residueProducts && el.rebates.residueProducts.length) {
       //部分退款
@@ -401,12 +421,19 @@ function handleApiData(url, data) {
   } else if (url.startsWith('https://vagw-api.ap.prd.portal.restaurant/query') && value && value.data && value.data.orders && value.data.orders.order && value.data.orders.order.order && value.data.orders.order.order.status === 'DELIVERED') {
     // foodpanda
     const orderData = value.data.orders.order
-    const getStatusTime = (val) => {
+    const getStatusTime = (val,val2) => {
       const status = orderData.orderStatuses.find(el => el.status === val)
+      const status2 = val2 && orderData.orderStatuses.find(el => el.status === val2)
       if (status && status.timestamp) {
         return getDateTime(status.timestamp)
+      } else if (status2 && status2.timestamp){
+        return getDateTime(status2.timestamp)
       }
       return ''
+    }
+
+    const getDiscounts = ()=>{
+      return orderData && orderData.billing && orderData.billing.expense && orderData.billing.expense.totalDiscount || 0
     }
     return {
       url,
@@ -419,7 +446,7 @@ function handleApiData(url, data) {
       shopName: orderData.order.vendorName,///門店名稱
       unconfirmedStatusTime: getStatusTime('SENDING_TO_VENDOR'),///顧客下單時間
       confirmedStatusTime: getStatusTime('ACCEPTED'),///商家接單時間
-      readiedStatusTime: getStatusTime('ORDER_PREPARED'),///商家出餐時間
+      readiedStatusTime: getStatusTime('ORDER_PREPARED','COURIER_NEAR_PICK_UP'),///商家出餐時間
       completedStatusTime: getStatusTime('DELIVERED'),///訂單送達時間
       products: orderData.order.items && orderData.order.items.map(product => {
         return {
@@ -445,8 +472,8 @@ function handleApiData(url, data) {
       productPrice: orderData.order.orderValue, ///菜品總價
       shippingFee: '', ///配送費
       platformFee: '', ///平臺費
-      discounts: '', ///優惠金額
-      actTotal: orderData.order.orderValue, ///顧客實際支付
+      discounts: getDiscounts(), ///優惠金額
+      actTotal: sub(orderData.order.orderValue, getDiscounts()), ///顧客實際支付
       deliveryOrderType: orderData.order.delivery.provider === 'pickup' ? '自取' : '配送', ///配送類型
       remark: '', ///備註
     }
@@ -705,6 +732,17 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
     } else {
       sendResponse({ tabId: null });
     }
+  } else if (message.action === 'getDataCount'){
+    getDataFromDatabase()
+      .then(data => {
+        const uniqueData = filterData(data)
+        sendResponse({ success:true, count: uniqueData.length });
+        return uniqueData.length
+      }).catch(error=>{
+        console.log(error)
+        sendResponse({success:false,count:0})
+      })
+    return true
   }
 
   return true
