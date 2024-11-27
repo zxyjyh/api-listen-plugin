@@ -1,0 +1,1044 @@
+{
+  "code": 0,
+  "message": "操作成功",
+  "data": {
+    "orderInfo": {
+      "baseOrder": {
+        "orderViewId": 6910370694456,
+        "status": 40,
+        "remark": "需要餐具",
+        "chooseTableware": 1,
+        "deliveryTime": 1732270661577,
+        "estimatedTimeStart": 1732270361577,
+        "estimatedTimeEnd": 1732270961577,
+        "ctime": 1732269449245,
+        "payType": "bindpay",
+        "payTypeDesc": "網上付款",
+        "deliveryInstruction": {
+          "remark": "請直接放門口，不用按門鐘\nplease place outside door, do not ring door bell"
+        },
+        "openPrivacyNumber": 0
+      },
+      "merchantOrder": {
+        "ctime": 1732269449272,
+        "seqNo": 7535,
+        "status": 40,
+        "pushOrderResult": 0,
+        "orderViewId": 6910370694456,
+        "shopId": 589988,
+        "shopName": "WeBite Space OL 健康餐（湾仔店）",
+        "syncStatusResult": 0,
+        "unconfirmedStatusTime": 1732269451598,
+        "confirmedStatusTime": 1732269452031,
+        "readiedStatusTime": 1732269719698,
+        "completedStatusTime": 1732270375568,
+        "userId": 10000000856620,
+        "refundTag": 20,
+        "merchantOrderTraces": [
+          {
+            "orderViewId": 6910370694456,
+            "merchantOrderStatus": 40,
+            "shopId": 589988,
+            "userId": 10000000856620,
+            "opScene": 4010,
+            "opType": 20,
+            "opTime": 1732270375568,
+            "merchantOpType": 25,
+            "opId": 589988,
+            "ctime": 1732270375594,
+            "utime": 1732270375594
+          },
+          {
+            "orderViewId": 6910370694456,
+            "merchantOrderStatus": 35,
+            "shopId": 589988,
+            "userId": 10000000856620,
+            "opScene": 3500,
+            "opType": 20,
+            "opTime": 1732269719698,
+            "merchantOpType": 21,
+            "uuid": "00000000000009972D435EB5646EBBCAD87DCBE0237EBA170472964339645258",
+            "opId": 589988,
+            "ctime": 1732269719716,
+            "utime": 1732269719716
+          },
+          {
+            "orderViewId": 6910370694456,
+            "merchantOrderStatus": 30,
+            "shopId": 589988,
+            "userId": 10000000856620,
+            "opScene": 3000,
+            "opType": 20,
+            "opTime": 1732269452031,
+            "merchantOpType": 21,
+            "uuid": "00000000000009972D435EB5646EBBCAD87DCBE0237EBA170472964339645258",
+            "opId": 589988,
+            "ctime": 1732269452064,
+            "utime": 1732269452064
+          },
+          {
+            "orderViewId": 6910370694456,
+            "merchantOrderStatus": 20,
+            "shopId": 589988,
+            "userId": 10000000856620,
+            "opScene": 2000,
+            "opType": 20,
+            "opTime": 1732269451606,
+            "opId": 589988,
+            "ctime": 1732269451606,
+            "utime": 1732269451606
+          },
+          {
+            "orderViewId": 6910370694456,
+            "merchantOrderStatus": 10,
+            "shopId": 589988,
+            "userId": 10000000856620,
+            "opScene": 1000,
+            "opType": 10,
+            "opTime": 1732269449272,
+            "opId": 10000000856620,
+            "ctime": 1732269449274,
+            "utime": 1732269449274
+          }
+        ],
+        "etp": 1732270352031,
+        "etpl": 15,
+        "partRefundTag": 0,
+        "shopNameI18n": {
+          "en": "WeBite Space OL",
+          "default": "WeBite Space OL 健康餐（湾仔店）",
+          "zh-HK": "WeBite Space OL 健康餐（湾仔店）"
+        },
+        "allowedCancelEndTime": 1732443175568,
+        "seqNoStr": "7535",
+        "userGetMode": "delivery",
+        "shopCityId": 810001,
+        "userChooseCityId": 810001,
+        "shopRegion": "HK"
+      },
+      "merchantOrderDeliveries": [
+        {
+          "id": 38638173,
+          "waybillId": 1732269452128723,
+          "subimitDeliveryResult": 0,
+          "deliveryStatus": 50,
+          "deliveryStatusTime": 1732270375532,
+          "deliveryMode": "[1001]",
+          "courierName": "車手",
+          "courierPhone": "51****08",
+          "courierPrivacyPhone": "",
+          "orderViewId": 6910370694456,
+          "arrivedStatusTime": 1732270375532,
+          "merchantOrderDeliveryHisList": [
+            {
+              "orderViewId": 6910370694456,
+              "deliveryStatus": 50,
+              "ctime": 1732270375559,
+              "opTime": 1732270375532,
+              "shopId": 589988,
+              "waybillId": 1732269452128723,
+              "opScene": 10,
+              "courierId": 1689083636261174,
+              "courierName": "車手",
+              "courierPhone": "51****08",
+              "utime": 1732270375559,
+              "courierPhoneInterCode": "852",
+              "deliveryId": 38638173
+            },
+            {
+              "orderViewId": 6910370694456,
+              "deliveryStatus": 30,
+              "ctime": 1732269796822,
+              "opTime": 1732269796796,
+              "shopId": 589988,
+              "waybillId": 1732269452128723,
+              "opScene": 10,
+              "courierId": 1689083636261174,
+              "courierName": "車手",
+              "courierPhone": "51****08",
+              "utime": 1732269796822,
+              "courierPhoneInterCode": "852",
+              "deliveryId": 38638173
+            },
+            {
+              "orderViewId": 6910370694456,
+              "deliveryStatus": 25,
+              "ctime": 1732269778202,
+              "opTime": 1732269778177,
+              "shopId": 589988,
+              "waybillId": 1732269452128723,
+              "opScene": 10,
+              "courierId": 1689083636261174,
+              "courierName": "車手",
+              "courierPhone": "51****08",
+              "utime": 1732269778202,
+              "courierPhoneInterCode": "852",
+              "deliveryId": 38638173
+            },
+            {
+              "orderViewId": 6910370694456,
+              "deliveryStatus": 20,
+              "ctime": 1732269469770,
+              "opTime": 1732269469742,
+              "shopId": 589988,
+              "waybillId": 1732269452128723,
+              "opScene": 10,
+              "courierId": 1689083636261174,
+              "courierName": "車手",
+              "courierPhone": "51****08",
+              "utime": 1732269469770,
+              "courierPhoneInterCode": "852",
+              "deliveryId": 38638173
+            },
+            {
+              "orderViewId": 6910370694456,
+              "deliveryStatus": 10,
+              "ctime": 1732269462423,
+              "opTime": 1732269462406,
+              "shopId": 589988,
+              "waybillId": 1732269452128723,
+              "opScene": 10,
+              "courierName": "車手",
+              "courierPhone": "",
+              "utime": 1732269462423,
+              "deliveryId": 38638173
+            },
+            {
+              "orderViewId": 6910370694456,
+              "deliveryStatus": 0,
+              "ctime": 1732269452121,
+              "opTime": 1732269452116,
+              "shopId": 589988,
+              "waybillId": 1732269452128723,
+              "opScene": 10,
+              "courierName": "車手",
+              "courierPhone": "",
+              "utime": 1732269452121,
+              "deliveryId": 38638173
+            }
+          ],
+          "createdStatusTime": 1732269452116,
+          "dispatchedStatusTime": 1732269462406,
+          "receivedStatusTime": 1732269469742,
+          "toStoreStatusTime": 1732269778177,
+          "tookStatusTime": 1732269796796,
+          "ctime": 1732269452086,
+          "redesign": 0,
+          "courierId": 1689083636261174,
+          "courierPhoneInterCode": "852",
+          "privacyPhone": "",
+          "extensionNumber": "",
+          "privacyInterCode": "",
+          "courierInfoDesensitizePrivacy": true,
+          "showPrivacyPhone": false,
+          "commonExt": {
+            "courierVehicle": 1,
+            "vehiclePlateNumber": ""
+          }
+        }
+      ],
+      "deliveryInfos": [],
+      "recipientInfo": {
+        "name": "***",
+        "phone": "93****45",
+        "interCode": "852",
+        "phoneType": 1,
+        "addressName": "***",
+        "houseNumber": "***",
+        "point": {
+          "latitude": 22.278501,
+          "longitude": 114.1744741
+        },
+        "addressLocation": "193 駱克道,灣仔,香港",
+        "unitNumber": "2001",
+        "buildingNumber": "",
+        "addressViewInfo": "***",
+        "structType": 0,
+        "privacyPhone": "",
+        "extensionNumber": "",
+        "privacyInterCode": "",
+        "recipientInfoDesensitizePrivacy": true,
+        "showPrivacyPhone": false
+      },
+      "feeDtls": [
+        {
+          "code": "productPrice",
+          "name": "餐點總價",
+          "value": "$120.00",
+          "nameI18nEnum": "PRODUCT_PRICE",
+          "price": 12000,
+          "currency": "HKD"
+        },
+        {
+          "code": "shippingFee",
+          "name": "運費",
+          "value": "$11.00",
+          "nameI18nEnum": "SHIPPING_FEE",
+          "price": 1100,
+          "currency": "HKD"
+        },
+        {
+          "code": "platformFee",
+          "name": "平台服務費",
+          "value": "$2.00",
+          "nameI18nEnum": "PLATFORM_FEE",
+          "price": 200,
+          "currency": "HKD"
+        },
+        {
+          "code": "3",
+          "name": "滿$120享85折",
+          "value": "-$18.00",
+          "nameI18n": {},
+          "price": 1800,
+          "currency": "HKD"
+        },
+        {
+          "code": "4",
+          "name": "滿$0減運費$11",
+          "value": "-$11.00",
+          "nameI18n": {},
+          "price": 1100,
+          "currency": "HKD"
+        },
+        {
+          "code": "payTotal",
+          "name": "顧客實付",
+          "value": "$104.00",
+          "nameI18nEnum": "CUSTOMER_FEE",
+          "price": 10400,
+          "currency": "HKD"
+        }
+      ],
+      "products": [
+        {
+          "spuId": 11735497,
+          "skuId": 10598633,
+          "count": 1,
+          "price": 10200,
+          "priceStr": "$102.00",
+          "orderViewId": 6910370694456,
+          "originPrice": 12000,
+          "originPriceStr": "$120.00",
+          "name": "11-C1牛肉套餐",
+          "id": 96892235,
+          "currency": "HKD",
+          "spuPvList": [
+            {}
+          ],
+          "groups": [
+            {
+              "groupId": 4821115,
+              "groupName": "餐具",
+              "shopProductGroupSkuList": [
+                {
+                  "groupSkuId": 27468867,
+                  "spuId": 11754022,
+                  "spuName": "需要外賣餐具",
+                  "price": 200,
+                  "priceStr": "$2.00",
+                  "currency": "HKD",
+                  "spuPvList": [],
+                  "spuNameI18n": {
+                    "en": "Takeaway utensils required.",
+                    "default": "需要外賣餐具",
+                    "zh-HK": "需要外賣餐具"
+                  },
+                  "groupSkuCount": 1,
+                  "count": 1,
+                  "groupSkuExtra": {}
+                }
+              ],
+              "groupNameI18n": {
+                "en": "Cutlery",
+                "default": "餐具",
+                "zh-HK": "餐具"
+              },
+              "groupExtra": {}
+            },
+            {
+              "groupId": 4809538,
+              "groupName": "11-C1牛肉套餐-主菜",
+              "shopProductGroupSkuList": [
+                {
+                  "groupSkuId": 27461543,
+                  "spuId": 11754904,
+                  "spuName": "H紅酒汁燴牛肉",
+                  "price": 0,
+                  "priceStr": "$0.00",
+                  "currency": "HKD",
+                  "spuPvList": [
+                    {}
+                  ],
+                  "spuNameI18n": {
+                    "en": "Braised Beef in Red Wine Sauce",
+                    "default": "H紅酒汁燴牛肉",
+                    "zh-HK": "H紅酒汁燴牛肉"
+                  },
+                  "groupSkuCount": 1,
+                  "count": 1,
+                  "groupSkuExtra": {}
+                }
+              ],
+              "groupNameI18n": {
+                "en": "11-C1 Beef Set Meal - Main Course",
+                "default": "11-C1牛肉套餐-主菜",
+                "zh-HK": "11-C1牛肉套餐-主菜"
+              },
+              "groupExtra": {}
+            },
+            {
+              "groupId": 4812422,
+              "groupName": "11-C套餐-搭配1",
+              "shopProductGroupSkuList": [
+                {
+                  "groupSkuId": 27475400,
+                  "spuId": 11758814,
+                  "spuName": "H川香麻婆豆腐",
+                  "price": 400,
+                  "priceStr": "$4.00",
+                  "currency": "HKD",
+                  "spuPvList": [
+                    {}
+                  ],
+                  "spuNameI18n": {
+                    "en": "9-H Sichuan Spicy Mapo Tofu",
+                    "default": "H川香麻婆豆腐",
+                    "zh-HK": "H川香麻婆豆腐"
+                  },
+                  "groupSkuCount": 1,
+                  "count": 1,
+                  "groupSkuExtra": {}
+                }
+              ],
+              "groupNameI18n": {
+                "zh-HK": "11-C套餐-搭配1",
+                "default": "11-C套餐-搭配1"
+              },
+              "groupExtra": {}
+            },
+            {
+              "groupId": 4833640,
+              "groupName": "11-C套餐-搭配2",
+              "shopProductGroupSkuList": [
+                {
+                  "groupSkuId": 27458823,
+                  "spuId": 11739423,
+                  "spuName": "H清炒菠菜",
+                  "price": 400,
+                  "priceStr": "$4.00",
+                  "currency": "HKD",
+                  "spuPvList": [
+                    {}
+                  ],
+                  "spuNameI18n": {
+                    "en": "Stir-fried Spinach with Garlic",
+                    "default": "H清炒菠菜",
+                    "zh-HK": "H清炒菠菜"
+                  },
+                  "groupSkuCount": 1,
+                  "count": 1,
+                  "groupSkuExtra": {}
+                }
+              ],
+              "groupNameI18n": {
+                "zh-HK": "11-C套餐-搭配2",
+                "default": "11-C套餐-搭配2"
+              },
+              "groupExtra": {}
+            },
+            {
+              "groupId": 4809536,
+              "groupName": "主食*",
+              "shopProductGroupSkuList": [
+                {
+                  "groupSkuId": 27462760,
+                  "spuId": 11752090,
+                  "spuName": "H牛肉燜飯",
+                  "price": 500,
+                  "priceStr": "$5.00",
+                  "currency": "HKD",
+                  "spuPvList": [
+                    {}
+                  ],
+                  "spuNameI18n": {
+                    "en": "H Braised Beef Rice",
+                    "default": "H牛肉燜飯",
+                    "zh-HK": "H牛肉燜飯"
+                  },
+                  "groupSkuCount": 1,
+                  "count": 1,
+                  "groupSkuExtra": {}
+                }
+              ],
+              "groupNameI18n": {
+                "en": "9-C Set Meal - Main Course",
+                "default": "主食*",
+                "zh-HK": "主食*"
+              },
+              "groupExtra": {}
+            }
+          ],
+          "remark": "",
+          "desc": "需要外賣餐具,H紅酒汁燴牛肉,H川香麻婆豆腐,H清炒菠菜,H牛肉燜飯",
+          "picList": [
+            "http://img-ap-hongkong.mykeeta.net/sailorproduct/f7073554f29975ec3156d0c91c76dd29132027.jpg"
+          ],
+          "spec": "",
+          "priceWithoutGroup": {
+            "amount": 10500,
+            "amountStr": "$105.00",
+            "originAmount": 10500,
+            "originAmountStr": "$105.00",
+            "unitPrice": 10500,
+            "originUnitPrice": 10500
+          },
+          "priceWithGroup": {
+            "amount": 12000,
+            "amountStr": "$120.00",
+            "originAmount": 12000,
+            "originAmountStr": "$120.00",
+            "unitPrice": 12000,
+            "originUnitPrice": 12000
+          },
+          "nameI18n": {
+            "en": "11-C1 Beef Set Meal",
+            "default": "11-C1牛肉套餐",
+            "zh-HK": "11-C1牛肉套餐"
+          },
+          "descI18n": {
+            "zh-HK": "需要外賣餐具,H紅酒汁燴牛肉,H川香麻婆豆腐,H清炒菠菜,H牛肉燜飯",
+            "default": "需要外賣餐具,H紅酒汁燴牛肉,H川香麻婆豆腐,H清炒菠菜,H牛肉燜飯"
+          },
+          "specI18n": {
+            "zh-HK": "",
+            "default": ""
+          },
+          "promotions": [],
+          "tags": [],
+          "notLast": false,
+          "spuExtra": {},
+          "skuExtra": {}
+        }
+      ],
+      "refundInfos": [
+        {
+          "applyType": 1001,
+          "refundMoney": 10400,
+          "status": 2002,
+          "refundType": 0,
+          "applyReason": "部分菜品不符合訂單的要求，如配菜錯誤；附加信息：  無牛肉",
+          "refundStatusHisList": [
+            {
+              "utime": 1732271116372,
+              "toStatus": 2002,
+              "opReason": "會跟客服说幫你退掉主菜的價錢 非常抱歉",
+              "opTime": 1732271116331,
+              "opUserType": 20
+            },
+            {
+              "utime": 1732270728832,
+              "toStatus": 1001,
+              "opReason": "部分菜品不符合訂單的要求，如配菜錯誤；附加信息：  無牛肉",
+              "opTime": 1732270728790,
+              "opUserType": 10
+            }
+          ],
+          "orderViewId": 6910370694456,
+          "i18n": {
+            "currency": "HKD"
+          },
+          "opTime": 1732271116331,
+          "applyReasonExt": {
+            "img": [
+              "https://img-ap-hongkong.mykeeta.net/sailorc/863b1478c728c42d90b55c1390835ecb3130102.jpg"
+            ]
+          },
+          "applyOpType": 10,
+          "handleOpType": 20,
+          "commonExt": "{\"actRefundMoney\":10400,\"applyRefundSource\":0,\"bigOrderTag\":false,\"cancelReason\":\"  無牛肉\",\"cancelType\":501018,\"i18n\":{\"cityId\":\"810001\",\"currency\":\"HKD\",\"locale\":\"zh-HK\",\"platform\":\"4\",\"region\":\"HK\"},\"merchantDealTimeRange\":[{\"endTime\":1732271400000,\"startTime\":1732270728790},{\"endTime\":1732502928790,\"startTime\":1732492800000}],\"products\":[{\"orderProductId\":96892235,\"refundCount\":1,\"refundPrice\":0}],\"refundMoneyDetails\":[{\"total\":10400,\"type\":2}],\"refundMoneyWithoutRound\":10400,\"specialRemind\":false}",
+          "partRefund": 0,
+          "duty": 20,
+          "dutyNoticeTitle": "用戶申請退款可能是商戶原因",
+          "dutyNotice": "建議同意退款，避免客訴。",
+          "refundMoneyStr": "$104.00",
+          "transferType": 2,
+          "id": 1162709,
+          "commonExtDTO": {
+            "cancelType": 501018
+          },
+          "ctime": 1732270728811,
+          "actRefundMoney": 10400,
+          "actRefundMoneyStr": "$104.00"
+        }
+      ],
+      "feeDtl": {
+        "merchantFee": {
+          "i18n": {
+            "currency": "HKD"
+          },
+          "productPrice": 12000,
+          "brokerage": 2425,
+          "activityFee": 2300,
+          "total": 7275,
+          "platformServiceFee": 200,
+          "diffPrice": 0,
+          "productPriceStr": "$120.00",
+          "brokerageStr": "-$24.25",
+          "activityFeeStr": "-$23.00",
+          "platformServiceFeeStr": "$2.00",
+          "diffPriceStr": "$0.00",
+          "totalStr": "$72.75",
+          "merchantActivityFeeDtls": [
+            {
+              "i18n": {
+                "currency": "HKD"
+              },
+              "type": 3,
+              "typeName": "满折",
+              "activityId": "3135839",
+              "reduceFee": 1800,
+              "sillAmount": 12000,
+              "merchantActivityFee": 1800,
+              "merchantActivityFeeStr": "$18.00"
+            },
+            {
+              "i18n": {
+                "currency": "HKD"
+              },
+              "type": 4,
+              "typeName": "減配送費",
+              "activityId": "2937947",
+              "reduceFee": 1100,
+              "sillAmount": 0,
+              "merchantActivityFee": 500,
+              "platformActivityFee": 600,
+              "merchantActivityFeeStr": "$5.00",
+              "platformActivityFeeStr": "$6.00"
+            }
+          ]
+        },
+        "customerFee": {
+          "i18n": {
+            "currency": "HKD"
+          },
+          "productPrice": 12000,
+          "shippingFee": 1100,
+          "platformFee": 200,
+          "discounts": 2900,
+          "tip": 0,
+          "diffPrice": 0,
+          "payTotal": 10400,
+          "productPriceStr": "$120.00",
+          "shippingFeeStr": "$11.00",
+          "platformFeeStr": "$2.00",
+          "discountsStr": "-$29.00",
+          "tipStr": "$0.00",
+          "diffPriceStr": "$0.00",
+          "payTotalStr": "$104.00",
+          "originPrice": 13300,
+          "originPriceStr": "$133.00",
+          "productPriceSubTotal": 10200,
+          "productPriceSubTotalStr": "$102.00",
+          "showDiscounts": 2900,
+          "showDiscountsStr": "-$29.00",
+          "actTotal": 10400,
+          "actTotalStr": "$104.00"
+        }
+      },
+      "orderPromotionDtlList": [
+        {
+          "i18n": {
+            "currency": "HKD"
+          },
+          "type": 3,
+          "typeName": "满折",
+          "promotionRuleDesc": "滿$120享85折",
+          "activityId": "3135839",
+          "reduceFee": 1800,
+          "sillAmount": 12000,
+          "merchantActivityFee": 1800,
+          "remark": "{\"actName\":\"满折活动-20241113115801\",\"templateId\":3,\"sillAmount\":12000,\"reduceAmount\":1800,\"originalReduceAmount\":1800,\"actualDiscount\":0.85,\"mainCategory\":0,\"subCategory\":0,\"couponConfigId\":0,\"actSchemeId\":0,\"actReportId\":0}",
+          "merchantActivityFeeStr": "$18.00",
+          "couponConfigId": "0"
+        },
+        {
+          "i18n": {
+            "currency": "HKD"
+          },
+          "type": 4,
+          "typeName": "減配送費",
+          "promotionRuleDesc": "滿$0減運費$11",
+          "activityId": "2937947",
+          "reduceFee": 1100,
+          "sillAmount": 0,
+          "merchantActivityFee": 500,
+          "platformActivityFee": 600,
+          "remark": "{\"templateId\":4,\"sillAmount\":0,\"reduceAmount\":1100,\"originalReduceAmount\":2100,\"actualDiscount\":0.0,\"mainCategory\":0,\"subCategory\":0,\"couponConfigId\":0,\"actSchemeId\":0,\"actReportId\":0}",
+          "merchantActivityFeeStr": "$5.00",
+          "platformActivityFeeStr": "$6.00",
+          "couponConfigId": "0"
+        }
+      ],
+      "privacy": true,
+      "rebates": {
+        "residueProducts": [
+          {
+            "spuId": 11735497,
+            "skuId": 10598633,
+            "count": 1,
+            "price": 10200,
+            "priceStr": "$102.00",
+            "orderViewId": 6910370694456,
+            "originPrice": 12000,
+            "originPriceStr": "$120.00",
+            "name": "11-C1牛肉套餐",
+            "id": 96892235,
+            "currency": "HKD",
+            "spuPvList": [
+              {}
+            ],
+            "groups": [
+              {
+                "groupId": 4821115,
+                "groupName": "餐具",
+                "shopProductGroupSkuList": [
+                  {
+                    "groupSkuId": 27468867,
+                    "spuId": 11754022,
+                    "spuName": "需要外賣餐具",
+                    "price": 200,
+                    "priceStr": "$2.00",
+                    "currency": "HKD",
+                    "spuPvList": [],
+                    "spuNameI18n": {
+                      "en": "Takeaway utensils required.",
+                      "default": "需要外賣餐具",
+                      "zh-HK": "需要外賣餐具"
+                    },
+                    "groupSkuCount": 1,
+                    "count": 1,
+                    "groupSkuExtra": {}
+                  }
+                ],
+                "groupNameI18n": {
+                  "en": "Cutlery",
+                  "default": "餐具",
+                  "zh-HK": "餐具"
+                },
+                "groupExtra": {}
+              },
+              {
+                "groupId": 4809538,
+                "groupName": "11-C1牛肉套餐-主菜",
+                "shopProductGroupSkuList": [],
+                "groupNameI18n": {
+                  "en": "11-C1 Beef Set Meal - Main Course",
+                  "default": "11-C1牛肉套餐-主菜",
+                  "zh-HK": "11-C1牛肉套餐-主菜"
+                },
+                "groupExtra": {}
+              },
+              {
+                "groupId": 4812422,
+                "groupName": "11-C套餐-搭配1",
+                "shopProductGroupSkuList": [
+                  {
+                    "groupSkuId": 27475400,
+                    "spuId": 11758814,
+                    "spuName": "H川香麻婆豆腐",
+                    "price": 400,
+                    "priceStr": "$4.00",
+                    "currency": "HKD",
+                    "spuPvList": [
+                      {}
+                    ],
+                    "spuNameI18n": {
+                      "en": "9-H Sichuan Spicy Mapo Tofu",
+                      "default": "H川香麻婆豆腐",
+                      "zh-HK": "H川香麻婆豆腐"
+                    },
+                    "groupSkuCount": 1,
+                    "count": 1,
+                    "groupSkuExtra": {}
+                  }
+                ],
+                "groupNameI18n": {
+                  "zh-HK": "11-C套餐-搭配1",
+                  "default": "11-C套餐-搭配1"
+                },
+                "groupExtra": {}
+              },
+              {
+                "groupId": 4833640,
+                "groupName": "11-C套餐-搭配2",
+                "shopProductGroupSkuList": [
+                  {
+                    "groupSkuId": 27458823,
+                    "spuId": 11739423,
+                    "spuName": "H清炒菠菜",
+                    "price": 400,
+                    "priceStr": "$4.00",
+                    "currency": "HKD",
+                    "spuPvList": [
+                      {}
+                    ],
+                    "spuNameI18n": {
+                      "en": "Stir-fried Spinach with Garlic",
+                      "default": "H清炒菠菜",
+                      "zh-HK": "H清炒菠菜"
+                    },
+                    "groupSkuCount": 1,
+                    "count": 1,
+                    "groupSkuExtra": {}
+                  }
+                ],
+                "groupNameI18n": {
+                  "zh-HK": "11-C套餐-搭配2",
+                  "default": "11-C套餐-搭配2"
+                },
+                "groupExtra": {}
+              },
+              {
+                "groupId": 4809536,
+                "groupName": "主食*",
+                "shopProductGroupSkuList": [
+                  {
+                    "groupSkuId": 27462760,
+                    "spuId": 11752090,
+                    "spuName": "H牛肉燜飯",
+                    "price": 500,
+                    "priceStr": "$5.00",
+                    "currency": "HKD",
+                    "spuPvList": [
+                      {}
+                    ],
+                    "spuNameI18n": {
+                      "en": "H Braised Beef Rice",
+                      "default": "H牛肉燜飯",
+                      "zh-HK": "H牛肉燜飯"
+                    },
+                    "groupSkuCount": 1,
+                    "count": 1,
+                    "groupSkuExtra": {}
+                  }
+                ],
+                "groupNameI18n": {
+                  "en": "9-C Set Meal - Main Course",
+                  "default": "主食*",
+                  "zh-HK": "主食*"
+                },
+                "groupExtra": {}
+              }
+            ],
+            "remark": "",
+            "desc": "需要外賣餐具,H紅酒汁燴牛肉,H川香麻婆豆腐,H清炒菠菜,H牛肉燜飯",
+            "picList": [
+              "http://img-ap-hongkong.mykeeta.net/sailorproduct/f7073554f29975ec3156d0c91c76dd29132027.jpg"
+            ],
+            "spec": "",
+            "priceWithoutGroup": {
+              "amount": 10500,
+              "amountStr": "$105.00",
+              "originAmount": 10500,
+              "originAmountStr": "$105.00",
+              "unitPrice": 10500,
+              "originUnitPrice": 10500
+            },
+            "priceWithGroup": {
+              "amount": 12000,
+              "amountStr": "$120.00",
+              "originAmount": 12000,
+              "originAmountStr": "$120.00",
+              "unitPrice": 12000,
+              "originUnitPrice": 12000
+            },
+            "nameI18n": {
+              "en": "11-C1 Beef Set Meal",
+              "default": "11-C1牛肉套餐",
+              "zh-HK": "11-C1牛肉套餐"
+            },
+            "descI18n": {
+              "zh-HK": "需要外賣餐具,H紅酒汁燴牛肉,H川香麻婆豆腐,H清炒菠菜,H牛肉燜飯",
+              "default": "需要外賣餐具,H紅酒汁燴牛肉,H川香麻婆豆腐,H清炒菠菜,H牛肉燜飯"
+            },
+            "specI18n": {
+              "zh-HK": "",
+              "default": ""
+            },
+            "promotions": [],
+            "tags": [],
+            "notLast": false,
+            "spuExtra": {},
+            "skuExtra": {}
+          }
+        ],
+        "rebatesPrintWarnTitle": "*更新後的餐品",
+        "rebatesPrintWarnInfo": "以下是需要準備的餐品",
+        "updatedPrintTitle": "*已更新*",
+        "updatedPrintWarnInfo": "該訂單已部分退款",
+        "refundedOptions": [
+          {
+            "spuName": "H紅酒汁燴牛肉",
+            "groupSkuCount": 1,
+            "notLast": false,
+            "spuNameI18n": {
+              "default": "H紅酒汁燴牛肉",
+              "zh-HK": "H紅酒汁燴牛肉",
+              "en": "Braised Beef in Red Wine Sauce"
+            }
+          }
+        ],
+        "compensationPriceStr": "$39.00",
+        "rebatesPrintWarnTitleI18nEnum": "PARTIAL_REFUND_UPDATED_RECEIPT",
+        "rebatesPrintWarnInfoI18nEnum": "PARTIAL_REFUND_MEAL_PREPARE_REMIND",
+        "updatedPrintTitleI18nEnum": "PARTIAL_REFUND_RECEIPT_NOTICE",
+        "updatedPrintWarnInfoI18nEnum": "PARTIAL_REFUND_RECEIPT_NOTICE_TEXT"
+      },
+      "rebatesTag": false,
+      "userInfo": {
+        "email": "***",
+        "userName": "***",
+        "phone": "852*****8945",
+        "newUser": false,
+        "userPhone": "93****45",
+        "interCode": "852",
+        "phoneType": 1
+      },
+      "bigOrderTag": false,
+      "tagCodes": [
+        101000,
+        105000
+      ],
+      "refundInfo": {
+        "status": 2002,
+        "statusDesc": "商戶拒絕退款",
+        "partRefund": 0,
+        "valuationRule": "退款公式：[退款商品價格 / （總訂單價格 + 最低消費金額補差價）] × [實際支付金額 - 貼士 - 平台費 - 配送費]",
+        "refundInfos": [
+          {
+            "applyType": 1001,
+            "refundMoney": 10400,
+            "status": 2002,
+            "refundType": 0,
+            "applyReason": "部分菜品不符合訂單的要求，如配菜錯誤；附加信息：  無牛肉",
+            "refundStatusHisList": [
+              {
+                "utime": 1732271116372,
+                "toStatus": 2002,
+                "opReason": "會跟客服说幫你退掉主菜的價錢 非常抱歉",
+                "opTime": 1732271116331,
+                "opUserType": 20
+              },
+              {
+                "utime": 1732270728832,
+                "toStatus": 1001,
+                "opReason": "部分菜品不符合訂單的要求，如配菜錯誤；附加信息：  無牛肉",
+                "opTime": 1732270728790,
+                "opUserType": 10
+              }
+            ],
+            "orderViewId": 6910370694456,
+            "i18n": {
+              "currency": "HKD"
+            },
+            "opTime": 1732271116331,
+            "applyReasonExt": {
+              "img": [
+                "https://img-ap-hongkong.mykeeta.net/sailorc/863b1478c728c42d90b55c1390835ecb3130102.jpg"
+              ]
+            },
+            "applyOpType": 10,
+            "handleOpType": 20,
+            "commonExt": "{\"actRefundMoney\":10400,\"applyRefundSource\":0,\"bigOrderTag\":false,\"cancelReason\":\"  無牛肉\",\"cancelType\":501018,\"i18n\":{\"cityId\":\"810001\",\"currency\":\"HKD\",\"locale\":\"zh-HK\",\"platform\":\"4\",\"region\":\"HK\"},\"merchantDealTimeRange\":[{\"endTime\":1732271400000,\"startTime\":1732270728790},{\"endTime\":1732502928790,\"startTime\":1732492800000}],\"products\":[{\"orderProductId\":96892235,\"refundCount\":1,\"refundPrice\":0}],\"refundMoneyDetails\":[{\"total\":10400,\"type\":2}],\"refundMoneyWithoutRound\":10400,\"specialRemind\":false}",
+            "partRefund": 0,
+            "duty": 20,
+            "dutyNoticeTitle": "用戶申請退款可能是商戶原因",
+            "dutyNotice": "建議同意退款，避免客訴。",
+            "refundMoneyStr": "$104.00",
+            "transferType": 2,
+            "id": 1162709,
+            "commonExtDTO": {
+              "cancelType": 501018
+            },
+            "ctime": 1732270728811,
+            "actRefundMoney": 10400,
+            "actRefundMoneyStr": "$104.00"
+          }
+        ],
+        "refundNodeList": [
+          {
+            "title": "客服操作部分退款",
+            "nodeType": 1,
+            "partRefund": 1,
+            "responsible": 20,
+            "responsibleDesc": "商家",
+            "opReason": "",
+            "opTime": 1732283783288,
+            "opUserType": 30,
+            "opUserTypeIcon": "https://s3-ap-hongkong.mykeeta.net/sailorfempcpublic/merchant/order/kefu.png",
+            "cssCompensationDisplay": "無餐損補償",
+            "cssCompensationDisplayColor": "#1F1F1F",
+            "refundMoney": "$39.00",
+            "refundProductCount": 1,
+            "refundedOptions": [
+              {
+                "spuName": "H紅酒汁燴牛肉",
+                "groupSkuCount": 1,
+                "notLast": false,
+                "spuNameI18n": {
+                  "default": "H紅酒汁燴牛肉",
+                  "zh-HK": "H紅酒汁燴牛肉",
+                  "en": "Braised Beef in Red Wine Sauce"
+                }
+              }
+            ],
+            "bizId": 41995,
+            "allowedAppeal": 1
+          },
+          {
+            "title": "商戶拒絕退款",
+            "nodeType": 0,
+            "partRefund": 0,
+            "opReason": "會跟客服说幫你退掉主菜的價錢 非常抱歉",
+            "opTime": 1732271116331,
+            "opUserType": 20,
+            "opUserTypeIcon": "https://s3-ap-hongkong.mykeeta.net/sailorfempcpublic/merchant/order/merchant.png",
+            "refundMoney": "$104.00",
+            "status": 2002,
+            "bizId": 1162709,
+            "allowedAppeal": 0,
+            "actRefundMoney": "$104.00"
+          },
+          {
+            "title": "用戶申請全部退",
+            "nodeType": 0,
+            "partRefund": 0,
+            "opReason": "部分菜品不符合訂單的要求，如配菜錯誤；附加信息：  無牛肉",
+            "applyReasonExt": {
+              "img": [
+                "https://img-ap-hongkong.mykeeta.net/sailorc/863b1478c728c42d90b55c1390835ecb3130102.jpg"
+              ]
+            },
+            "opTime": 1732270728790,
+            "opUserType": 10,
+            "opUserTypeIcon": "https://s3-ap-hongkong.mykeeta.net/sailorfempcpublic/merchant/order/customer.png",
+            "refundMoney": "$104.00",
+            "status": 1001,
+            "bizId": 1162709,
+            "allowedAppeal": 0,
+            "actRefundMoney": "$104.00"
+          }
+        ],
+        "appealRefundNums": 1,
+        "appealRefundEndTime": 1732888583288,
+        "appealInfoList": [],
+        "opTime": 1732271116331
+      },
+      "partRefundOrderTag": true,
+      "groupChoiceCompensationTag": true,
+      "printTemplateType": 1
+    }
+  },
+  "success": true
+}

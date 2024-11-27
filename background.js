@@ -275,12 +275,12 @@ function handleApiData(url, data) {
     return (mul(a, e) - mul(b, e)) / e;
   }
 
-  const getGroupInfo = (group)=>{
+  const getGroupInfo = (group) => {
     let spuName = ''
     let price = 0
     let count = 0
-    if (group && group.shopProductGroupSkuList.length){
-      const info =  group.shopProductGroupSkuList[0]
+    if (group && group.shopProductGroupSkuList.length) {
+      const info = group.shopProductGroupSkuList[0]
       spuName = info && info.spuName || ''
       price = info && info.price || 0
       count = info && info.groupSkuCount || 0
@@ -302,8 +302,11 @@ function handleApiData(url, data) {
           originPrice: centToYuan(mul(item.priceWithoutGroup.originAmount, item.count)),
           name: item.name,
           price: centToYuan(mul(item.priceWithoutGroup.amount, item.count)),
-          groups: item.groups.map(group => {
-           const info =  getGroupInfo(group)
+          groups: item && item.groups.length && item.groups.filter(group => {
+            const info = getGroupInfo(group)
+            return !!info.spuName
+          }).map(group => {
+            const info = getGroupInfo(group)
             return {
               name: info.spuName,
               price: centToYuan(info.price),
@@ -322,7 +325,10 @@ function handleApiData(url, data) {
           originPrice: Number(centToYuan(item.priceWithoutGroup.amount)),
           name: item.name,
           price: Number(centToYuan(item.priceWithoutGroup.originAmount)),
-          groups: item.groups.map(group => {
+          groups: item && item.groups.length && item.groups.filter(group => {
+            const info = getGroupInfo(group)
+            return !!info.spuName
+          }).map(group => {
             const info = getGroupInfo(group)
             return {
               name: info.spuName,
