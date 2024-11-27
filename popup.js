@@ -52,7 +52,13 @@ document.getElementById("closeButton").addEventListener("click", function () {
 });
 
 document.getElementById("clearButton").addEventListener("click", function () {
-    chrome.runtime.sendMessage({ action: "clearData" });
+    chrome.runtime.sendMessage({ action: "clearData" }, (response)=>{
+        if (response.success) {
+            document.getElementById("dataCount").innerText = `当前的记录数: ${response.count}`;
+        } else {
+            console.error("获取数据失败");
+        }
+    });
 });
 
 function updateButtonStates(isListening) {

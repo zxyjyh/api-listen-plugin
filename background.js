@@ -208,13 +208,13 @@ function clearDatabase(sendResponse) {
 
       request.onsuccess = () => {
         console.log("IndexedDB 數據已成功清除");
-        sendResponse({ success: true })
+        sendResponse && sendResponse({ success: true })
         resolve();
       };
 
       request.onerror = () => {
         console.error("清除 IndexedDB 數據時出錯:", request.error);
-        sendResponse({ success: false })
+        sendResponse && sendResponse({ success: false })
         reject(request.error);
       };
     });
@@ -255,7 +255,7 @@ function handleApiData(url, data) {
     );
   }
 
-  const  sub = (a, b)=> {
+  const sub = (a, b) => {
     if (!a) a = 0;
     if (!b) b = 0;
     let c = 0,
@@ -421,18 +421,18 @@ function handleApiData(url, data) {
   } else if (url.startsWith('https://vagw-api.ap.prd.portal.restaurant/query') && value && value.data && value.data.orders && value.data.orders.order && value.data.orders.order.order && value.data.orders.order.order.status === 'DELIVERED') {
     // foodpanda
     const orderData = value.data.orders.order
-    const getStatusTime = (val,val2) => {
+    const getStatusTime = (val, val2) => {
       const status = orderData.orderStatuses.find(el => el.status === val)
       const status2 = val2 && orderData.orderStatuses.find(el => el.status === val2)
       if (status && status.timestamp) {
         return getDateTime(status.timestamp)
-      } else if (status2 && status2.timestamp){
+      } else if (status2 && status2.timestamp) {
         return getDateTime(status2.timestamp)
       }
       return ''
     }
 
-    const getDiscounts = ()=>{
+    const getDiscounts = () => {
       return orderData && orderData.billing && orderData.billing.expense && orderData.billing.expense.totalDiscount || 0
     }
     return {
@@ -446,7 +446,7 @@ function handleApiData(url, data) {
       shopName: orderData.order.vendorName,///門店名稱
       unconfirmedStatusTime: getStatusTime('SENDING_TO_VENDOR'),///顧客下單時間
       confirmedStatusTime: getStatusTime('ACCEPTED'),///商家接單時間
-      readiedStatusTime: getStatusTime('ORDER_PREPARED','COURIER_NEAR_PICK_UP'),///商家出餐時間
+      readiedStatusTime: getStatusTime('ORDER_PREPARED', 'COURIER_NEAR_PICK_UP'),///商家出餐時間
       completedStatusTime: getStatusTime('DELIVERED'),///訂單送達時間
       products: orderData.order.items && orderData.order.items.map(product => {
         return {
@@ -586,14 +586,14 @@ function saveData(url, data, sendResponse) {
       console.error("保存數據到 IndexedDB 時出錯:", error);
       sendResponse({ success: false })
     });
-  } else if(apiData){
+  } else if (apiData) {
     saveToDatabase(apiData, 'arr').then(() => {
       sendResponse({ success: true })
     }).catch((error) => {
       console.error("保存數據到 IndexedDB 時出錯:", error);
       sendResponse({ success: false })
     });
-  }else {
+  } else {
   }
 }
 
@@ -721,7 +721,16 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
   } else if (message.action === "export") {
     exportData(sendResponse);
   } else if (message.action === "clearData") {
-    clearDatabase(sendResponse)
+    clearDatabase().then(() => {
+      return getDataFromDatabase()
+    }).then((data) => {
+      const uniqueData = filterData(data)
+      sendResponse({ success: true, count: uniqueData.length });
+      return uniqueData.length
+    }).catch(() => {
+      console.log(error)
+      sendResponse({ success: false, count: 0 })
+    })
   } else if (message.type === 'ajaxInterceptor' && message.action === 'saveData') {
     saveData(message.url, message.data, sendResponse);
   } else if (message.type === 'ajaxInterceptor' && message.action === 'checkListening') {
@@ -732,15 +741,15 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
     } else {
       sendResponse({ tabId: null });
     }
-  } else if (message.action === 'getDataCount'){
+  } else if (message.action === 'getDataCount') {
     getDataFromDatabase()
       .then(data => {
         const uniqueData = filterData(data)
-        sendResponse({ success:true, count: uniqueData.length });
+        sendResponse({ success: true, count: uniqueData.length });
         return uniqueData.length
-      }).catch(error=>{
+      }).catch(error => {
         console.log(error)
-        sendResponse({success:false,count:0})
+        sendResponse({ success: false, count: 0 })
       })
     return true
   }
