@@ -408,7 +408,7 @@ function handleApiData(url, data) {
         status: el.status === 10 ? '已完成' : '未完成',///訂單狀態
         orderViewId: el.orderRefId,///訂單號
         shopId: el.orPoiId, ///門店id
-        shopName: el.poiName,///門店名稱
+        shopName: el.poiName + '(' + el.districtName + ')',///門店名稱
         unconfirmedStatusTime: getDateTime(el.createTime),///顧客下單時間
         confirmedStatusTime: '',///商家接單時間
         readiedStatusTime: getDateTime(el.pickupTime),///商家出餐時間
