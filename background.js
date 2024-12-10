@@ -439,7 +439,7 @@ function handleApiData(url, data) {
         discounts: '', ///優惠金額
         actTotal: '', ///顧客實際支付
         deliveryOrderType: el.deliveryOrderType, ///訂單類型
-        remark: el.remark, ///備註
+        remark: '', ///備註
       }
     })
 
