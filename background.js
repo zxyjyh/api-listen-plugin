@@ -511,9 +511,9 @@ function handleApiData(url, data) {
       url,
       timestamp: new Date().getTime(),
       platform: 'deliveroo',
-      seqNo: '',///取餐號
+      seqNo: value.order_number,///取餐號
       status: '已完成',///訂單狀態
-      orderViewId: value.order_number,///訂單號
+      orderViewId: value.id,///訂單號
       shopId: value.restaurant_id, ///門店id
       shopName: getShopName(value),///門店名稱
       unconfirmedStatusTime: getDateTime(value.timeline.placed_at),///顧客下單時間
@@ -559,9 +559,9 @@ function handleApiData(url, data) {
       url,
       timestamp: new Date().getTime(),
       platform: 'deliveroo',
-      seqNo: '',///取餐號
+      seqNo: value.order_number,///取餐號
       status: '已完成',///訂單狀態
-      orderViewId: value.order_number,///訂單號
+      orderViewId: value.id,///訂單號
       shopId: value.branch_id, ///門店id
       shopName: value.branch_name,///門店名稱
       unconfirmedStatusTime: '',///顧客下單時間
