@@ -92,7 +92,7 @@ function saveToDatabase(data, type) {
             const matchingRecord = records.find(
               (record) =>
                 record.request_id == item.request_id &&
-                record.orderViewId == item.orderViewId
+                record.seqNo == item.seqNo
             );
 
             if (matchingRecord) {
